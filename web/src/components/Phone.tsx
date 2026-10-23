@@ -82,8 +82,8 @@ export default function Phone({
             <div className="slide empty">
               <div>
                 <span className="empty-glyph" aria-hidden="true">▶</span>
-                <b>Reels arrive automatically</b>
-                <p>Trending reels about GitHub repos are discovered on Instagram every day and appear here, each with the repo it mentions.</p>
+                <b>No reels indexed yet</b>
+                <p>Search the repository catalog, or add a reel you know. Connected discovery sources add reels after a successful pipeline run.</p>
                 <button className="link on-dark" onClick={onAdd}>Know a reel? Add it</button>
               </div>
             </div>

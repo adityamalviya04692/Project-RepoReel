@@ -37,11 +37,11 @@ def normalize_apify(item: dict, topic: str) -> Optional[dict]:
     code = item.get("shortCode") or item.get("shortcode")
     owner = (item.get("ownerUsername") or "").lower()
     is_reel = item.get("productType") == "clips" or str(item.get("type", "")).lower() == "video"
-    if not code or not owner or not is_reel:
+    if not code or not owner or not is_reel or not item.get("timestamp"):
         return None
     return {
         "shortcode": code, "url": f"https://www.instagram.com/reel/{code}/", "creator": owner,
-        "posted": (item.get("timestamp") or "")[:10] or date.today().isoformat(), "caption": (item.get("caption") or "")[:2000],
+        "posted": (item.get("timestamp") or "")[:10], "caption": (item.get("caption") or "")[:2000],
         "likes": _int(item.get("likesCount")), "comments": _int(item.get("commentsCount")),
         "views": _int(item.get("videoPlayCount") or item.get("videoViewCount")),
         "hashtags": item.get("hashtags") or [], "mentions": item.get("mentions") or [], "source": f"apify:{topic}",
@@ -92,17 +92,20 @@ def discover(today: date, log: Callable[[str], None] = print) -> dict:
         u = apify.usage()
         stats["budget"] = u
         if apify.budget_ok(u):
+            failures = 0
             for t in pick_topics(today):
                 try:
                     items = apify.topic_reels(t, REELS_PER_TOPIC)
                 except RuntimeError as e:
                     log(f"  apify {t['q']}: {e}")
+                    failures += 1
                     continue
                 got = [x for x in (normalize_apify(i, t["q"]) for i in items) if x]
                 new += got
                 stats["topics"].append({"q": t["q"], "kind": t["kind"], "reels": len(got)})
                 log(f"  apify {t['kind']} {t['q']!r}: {len(got)} reels")
-            stats["apify"] = "ok"
+            stats["apify"] = ("error: no topics completed" if failures == len(pick_topics(today)) else "partial: some topics failed") if failures else "ok"
+            stats["budget"] = apify.usage()
         else:
             stats["apify"] = "skipped: monthly free credit nearly used" if u else "skipped: usage unavailable"
 
@@ -159,3 +162,8 @@ def save(reels: list[dict], creators: dict[str, dict]) -> None:
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def _load_replay(bronze: Path) -> list[dict]:
+    path = bronze / "reels_discovered.jsonl"
+    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()] if path.exists() else []

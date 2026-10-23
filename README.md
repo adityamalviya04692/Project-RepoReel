@@ -47,7 +47,7 @@ Everything runs on **GitHub Actions + GitHub Pages**, with no servers and no pai
 
 No manual curation is needed. Every run of the pipeline:
 
-1. **Discovers reels** on Instagram for rotating topics (`#github`, `#githubrepo`, `#aitools`, `#claudecode`, `#mcp`, "github repo", "ai agent github", …) through **Apify's free plan** ($5 of usage every month, no card). A budget guard reads Apify's usage API and stops at $4.50, so it never costs money.
+1. **Discovers reels** on Instagram for rotating topics (`#github`, `#githubrepo`, `#aitools`, `#claudecode`, `#mcp`, "github repo", "ai agent github", …) through **Apify's free plan** ($5 of usage every month, no card). Before each actor launch, a budget guard checks account usage against the lower of $4.50 and the account limit. Each run also requests a $0.25 provider-side charge cap, and billable requests are never automatically retried. Usage reporting can lag and concurrent runs can overlap; set an account-level spending limit in Apify as the final backstop.
 2. **Matches each caption to a repository** (URLs, `owner/repo`, names, hashtags, with on-the-fly GitHub lookups). Only reels that resolve to a real repo are shown.
 3. **Finds the creators** behind those reels and vets them automatically: follower counts come from Meta's free **Business Discovery API** when connected (otherwise a few capped Apify lookups), and trust comes from accuracy, consistency, engagement and recency.
 4. Keeps a **120-day reel history**, so the index grows every day.
@@ -76,14 +76,14 @@ cd web && npm install && npm run dev
 ```
 
 ## Responsible by design
-- Reels are displayed with Instagram's official embed; embed data is never stored or analysed. Discovery stays within free tiers by design (budget guard, daily caps, caching).
+- Reels are displayed with Instagram's official embed; embed data is never stored or analysed. Discovery includes usage checks, per-run charge caps, daily caps and caching. Free-tier availability and actor pricing depend on the provider.
 - **Snap a reel** runs OCR on the user's own screenshot, in their browser. Nothing is uploaded.
-- Creators can ask to be removed; dead posts are dropped on the next run.
+- Report removed posts or request creator removal through a GitHub issue. History expires after 120 days; automatic deleted-post detection is not implemented.
 - Health flags (archived, stale, no licence) and a "read the code before running it" note on every repo.
 
 ## Roadmap
 - **P0** (this release): catalog, snapshots, HN signal, matching, in-browser semantic search, Snap a reel, creators, pipeline status
-- **P1**: Instagram Business Discovery for allowlisted creators (followers, captions, engagement), automatic trust updates
+- **P1**: Validate connected Instagram discovery and creator trust against real provider responses; Business Discovery integration is implemented but needs credentials
 - **P2**: creator opt-in submissions with frame OCR and speech-to-text
 - **P3**: an MCP server so Claude can query RepoReel directly; weekly digests per use case
 

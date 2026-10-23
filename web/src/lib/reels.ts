@@ -3,7 +3,6 @@
    browser (localStorage). Ranking blends meaning, keywords, recency, creator trust and repo health. */
 
 import type { Data, Reel, Repo } from './data';
-import { embedQuery } from './embedder';
 import { resolve } from './match';
 import { BM25, tokens } from './rank';
 
@@ -108,16 +107,6 @@ export async function buildItems(data: Data, local: LocalReel[]): Promise<ReelIt
       verified: false, badge: 'local', trust: 0.4, vec: null,
     });
   }
-  // Local reels are embedded in the browser (same model as the pipeline).
-  await Promise.all(
-    items.filter((i) => !i.vec).map(async (i) => {
-      try {
-        i.vec = await embedQuery(reelText(i, i.repoRow !== undefined ? data.repos[i.repoRow] : undefined));
-      } catch {
-        i.vec = null;
-      }
-    }),
-  );
   return items.sort((a, b) => Date.parse(b.posted) - Date.parse(a.posted));
 }
 
@@ -137,7 +126,7 @@ export function rankReels(query: string, qvec: Float32Array | null, items: ReelI
     .map((item, k) => {
       const sem = qvec && item.vec ? Math.min(1, Math.max(0, (dot(qvec, item.vec) - 0.15) / 0.5)) : 0;
       const kw = kwMax > 0 ? kwRaw[k] / kwMax : 0;
-      const relevance = qvec ? 0.75 * sem + 0.25 * kw : kw;
+      const relevance = qvec && item.vec ? 0.75 * sem + 0.25 * kw : kw;
       const days = (Date.now() - Date.parse(item.posted)) / 864e5;
       const recency = Math.exp(-Math.max(0, days) / 60);
       const health = item.repoRow !== undefined ? data.repos[item.repoRow].sc.health : 0.5;

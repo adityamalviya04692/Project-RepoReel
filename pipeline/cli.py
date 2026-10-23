@@ -98,9 +98,9 @@ def main(argv=None) -> int:
     run.rows(creators=len(creators_in), reels=len(reels_in), golden_queries=len(golden))
 
     # Automated discovery: trending reels about repos (Apify free credit) + known creators (Graph API).
-    if args.replay and (bronze / "reels_discovered.jsonl").exists():  # replays never spend Apify credit
-        disc = run.stage("reels · replay bronze", lambda: {"reels": [json.loads(l) for l in (bronze / "reels_discovered.jsonl").read_text().splitlines() if l.strip()],
-                                                           "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": True}})
+    if args.replay:  # replays never call external APIs
+        disc = run.stage("reels · replay bronze", lambda: {"reels": auto._load_replay(bronze),
+                                                           "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": True, "apify": "not called (replay)", "graph": "not called (replay)", "topics": [], "budget": None}})
     else:
         disc = run.stage("reels · discover on Instagram", auto.discover, TODAY)
     run.rows(fetched=disc["stats"]["fetched"], history=len(disc["reels"]), creators_seen=len(disc["creators"]))
@@ -124,9 +124,6 @@ def main(argv=None) -> int:
         enriched = run.stage("enrich · replay bronze", lambda: [json.loads(l) for l in (bronze / "gh_repo_graphql.jsonl").read_text().splitlines() if l.strip()])
         known = {r["full_name"].lower() for r in enriched}
         missing = [r.repo for r in reels_in if r.repo and r.repo.lower() not in known]
-        if missing and GITHUB_TOKEN:  # new curated reels may name repos the bronze snapshot doesn't have
-            enriched += github.lookup(missing)
-            _jsonl(bronze / "gh_repo_graphql.jsonl", enriched)
         run.rows(repos=len(enriched), from_hn_or_reels=len(missing))
     else:
         enriched = run.stage("enrich · GitHub GraphQL", github.enrich, ids)
@@ -174,7 +171,7 @@ def main(argv=None) -> int:
         budget = {"searches": 25}  # GitHub search fallback is slow (rate limit); cap per run
 
         def fallback(name: str):
-            if budget["searches"] <= 0:
+            if args.replay or budget["searches"] <= 0:
                 return None
             budget["searches"] -= 1
             return github.search_name(name)
@@ -205,7 +202,7 @@ def main(argv=None) -> int:
     # Repos named in reels but missing from the catalog: fetch, embed and add them.
     def _extend():
         missing = sorted({r["repo"] for r in reels if r.get("repo") and r["repo"].lower() not in index})
-        added = github.lookup(missing) if missing else []
+        added = github.lookup(missing) if missing and not args.replay else []
         nonlocal_vecs = None
         if added:
             for a in added:
@@ -215,11 +212,14 @@ def main(argv=None) -> int:
             nonlocal_vecs = embed([f"{a['full_name'].split('/')[1].replace('-', ' ')}. {a['description']}. Topics: {', '.join(a['topics'])}. {clean_readme(a.get('readme') or '', 1200)}" for a in added])
             for i, a in enumerate(added):
                 index[a["full_name"].lower()] = len(repos) - len(added) + i
-        for r in reels:  # canonical casing + health check now that every matched repo is known
+        for r in reels:  # canonical casing + reject unresolvable references
             i = index.get((r.get("repo") or "").lower())
             if i is not None:
                 r["repo"] = repos[i]["full_name"]
                 r["repo_ok"] = bool(not repos[i]["archived"] and health(repos[i]) >= 0.4)
+            elif r.get("repo"):
+                review.append({"url": r["url"], "candidate": r["repo"], "confidence": r["confidence"], "evidence": {"reason": "repository not resolved"}})
+                r.update(repo=None, repo_ok=None)
         return added, nonlocal_vecs
     added, extra_vecs = run.stage("extend · repos found in reels", _extend)
     if extra_vecs is not None:
@@ -235,7 +235,7 @@ def main(argv=None) -> int:
                 counts[r["creator"]] = counts.get(r["creator"], 0) + 1
         for h, n in counts.items():
             disc["creators"].setdefault(h, {"followers": None})["repo_reels"] = n
-        filled = auto.fill_followers(disc["creators"], sorted(counts, key=lambda h: -counts[h]), TODAY)
+        filled = 0 if args.replay else auto.fill_followers(disc["creators"], sorted(counts, key=lambda h: -counts[h]), TODAY)
         auto.save(disc["reels"], disc["creators"])
         for h in counts:
             if h not in known:
@@ -329,7 +329,7 @@ def main(argv=None) -> int:
             parts += [repo["full_name"].split("/")[1].replace("-", " "), repo["description"], " ".join(repo["topics"])]
         return ". ".join(p for p in parts if p)
     n = run.stage("gold · publish site data", _gold)
-    run.rows(files=6, repos=n)
+    run.rows(files=7, repos=n)
 
     # run summary (last 30 runs kept)
     runs_path = HISTORY / "runs.json"

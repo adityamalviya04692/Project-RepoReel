@@ -4,7 +4,7 @@ import type { Data } from '../lib/data';
 import { embedQuery, isReady, onLoad, warm } from '../lib/embedder';
 import { compact } from '../lib/format';
 import { BM25, aiLabel, rank, searchText, tokens, type Facets, type Ranked } from '../lib/rank';
-import { buildItems, loadLocal, rankReels, type ReelHit, type ReelItem } from '../lib/reels';
+import { buildItems, loadLocal, rankReels, reelText, type ReelHit, type ReelItem } from '../lib/reels';
 import Phone from '../components/Phone';
 import ReelResult from '../components/ReelResult';
 import RepoCard from '../components/RepoCard';
@@ -37,7 +37,22 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
   useEffect(() => setDraft(query), [query]);
   useEffect(() => {
     let live = true;
-    void buildItems(data, loadLocal()).then((x) => live && setItems(x));
+    void buildItems(data, loadLocal()).then(async (x) => {
+      if (!live) return;
+      setItems(x);
+      // Show local additions immediately; improve their search vectors in the background.
+      if (!x.some((item) => !item.vec)) return;
+      const enriched = await Promise.all(x.map(async (item) => {
+        if (item.vec) return item;
+        try {
+          const vec = await embedQuery(reelText(item, item.repoRow !== undefined ? data.repos[item.repoRow] : undefined));
+          return { ...item, vec };
+        } catch {
+          return item;
+        }
+      }));
+      if (live) setItems(enriched);
+    });
     return () => {
       live = false;
     };
@@ -91,6 +106,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
     box.current?.blur();
   };
   const searching = !!query.trim();
+  const discoveryConnected = !!data.discovery && [data.discovery.stats.apify, data.discovery.stats.graph].some((s) => s === 'ok' || s.startsWith('ok ·') || s.startsWith('partial:'));
 
   const rising = useMemo(
     () => data.repos.map((r, i) => ({ r, i })).filter(({ r }) => (r.mo.d7 ?? 0) > 0 && !r.a).sort((a, b) => (b.r.mo.d7 ?? 0) - (a.r.mo.d7 ?? 0)).slice(0, 12),
@@ -142,7 +158,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                   {live.q === query && live.state === 'done' && live.note && <p className="fine">Live search: {live.note}</p>}
                   {pool.length === 0 ? (
                     <div className="empty-note">
-                      <b>No reels found for this yet.</b> New reels about repos are discovered on Instagram every day{LIVE_URL ? '' : ' (live search is not enabled on this deployment)'}. Here are the repos that fit:
+                      <b>No reels found for this yet.</b> {discoveryConnected ? 'Discovery runs daily; no matching reels have been indexed yet.' : 'Automated discovery is not connected on this deployment.'}{LIVE_URL ? '' : ' Live search is not enabled.'} Here are the repos that fit:
                     </div>
                   ) : strong.length ? (
                     <h3 className="answers-h">{strong.length} reel{strong.length > 1 ? 's' : ''} for this</h3>
@@ -173,7 +189,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                       ))}
                     </>
                   ) : (
-                    <p className="fine">{compact(data.repos.length)} repositories indexed and refreshed daily. Reels about repos are discovered on Instagram automatically{data.discovery?.stats.apify === 'not configured' ? ' once the free discovery key is connected' : ''}.</p>
+                    <p className="fine">{compact(data.repos.length)} repositories indexed and refreshed daily. {discoveryConnected ? 'Reel discovery is connected.' : 'Reel discovery is not connected yet. You can add a reel yourself.'}</p>
                   )}
                 </motion.div>
               )}

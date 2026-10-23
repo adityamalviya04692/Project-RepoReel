@@ -138,3 +138,9 @@ def test_quality_flags_misalignment_and_unknown_creators():
 def test_clean_readme_strips_markup():
     md = '<p align="center"><img src="x"></p>\n# Title\n[![badge](b)](l) Fast **tool** for [docs](http://x).\n```bash\npip install x\n```'
     assert clean_readme(md) == "Title Fast tool for docs."
+
+
+def test_quality_blocks_reels_pointing_to_unresolved_repositories():
+    repos = [{"full_name": f"o/r{i}", "url": "u", "stars": 1, "mo": {}} for i in range(150)]
+    checks = {c['name']: c['status'] for c in quality.run(repos, 150, [{"creator": "a", "url": "x", "repo": "missing/repo"}], [{"handle": "a"}], 0)}
+    assert checks['reels reference known repositories'] == 'fail'

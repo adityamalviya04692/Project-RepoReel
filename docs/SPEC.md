@@ -2,7 +2,20 @@
 
 > **Describe what you're building. Get the right GitHub repo, and the reel that shows it working.**
 
-Status: v0.1 spec · Owner: Aditya Malviya · Last updated: 23 Oct 2026
+Status: original v0.1 design (see implementation notes below) · Owner: Aditya Malviya · Last updated: 23 Oct 2026
+
+
+## Implementation notes · 23 Oct 2026
+
+The sections below record the original design. Current behavior differs in these areas:
+
+- The implemented UI is reel-first, with repository fallback when there is no indexed reel.
+- Optional Apify discovery uses a third-party scraper for public captions and metadata. Display still uses Instagram's official embed. This supersedes the original official-API-only design; it is not a claim about permission under Instagram's terms.
+- `pipeline.yml` commits history and published data to `main` and calls the Pages workflow directly. Data passes quality checks before publication.
+- Meta Business Discovery and the optional live Worker are implemented but require account configuration and real-data validation.
+- Replay avoids GitHub, Apify and Meta API calls. It may download model assets if they are not cached.
+- Automatic deleted-post detection, creator opt-in processing, MCP access and digests remain future work.
+- Budget checks and per-run caps reduce spending risk; delayed usage and concurrent requests require an account-level limit as the backstop.
 
 ---
 

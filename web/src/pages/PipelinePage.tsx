@@ -15,7 +15,7 @@ export default function PipelinePage({ data }: { data: Data }) {
         <div className="wrap">
           <p className="eyebrow on-dark">Pipeline status</p>
           <h1 className="h-lg">Refreshed {ago(L.finished)}.</h1>
-          <p className="lead muted-on-dark">A scheduled GitHub Actions job ingests GitHub, Hacker News and curated creator data, transforms it bronze → silver → gold with DuckDB, embeds every repository, checks quality, evaluates retrieval and publishes static files for this site.</p>
+          <p className="lead muted-on-dark">A scheduled GitHub Actions job ingests GitHub, Hacker News and connected reel sources, transforms it bronze → silver → gold with DuckDB, embeds every repository, checks quality, evaluates retrieval and publishes static files for this site.</p>
           <div className="kpis">
             <div><b>{compact(L.catalog)}</b><span>repositories</span></div>
             <div><b>{L.snapshot_days}</b><span>days of star snapshots</span></div>
@@ -134,7 +134,7 @@ function Discovery({ data }: { data: Data }) {
         <div><b>{d.shown_reels}</b><span>reels linked to a repo</span></div>
         <div><b>{d.history_reels}</b><span>reels seen in the last 120 days</span></div>
         <div><b>{d.stats.fetched}</b><span>fetched in the last run</span></div>
-        <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `of the $5 free monthly credit` : 'free credit usage'}</span></div>
+        <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `account monthly usage (limit $${b.plan_cap.toFixed(2)})` : 'free credit usage'}</span></div>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>
         Apify (free plan): {d.stats.apify} · Instagram Graph API: {d.stats.graph}{d.stats.replay ? ' · replayed from bronze' : ''}

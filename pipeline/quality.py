@@ -29,6 +29,8 @@ def run(repos: list[dict], vec_rows: int, reels: list[dict], creators: list[dict
     handles = {c["handle"] for c in creators}
     unknown = sorted({r["creator"] for r in reels} - handles)
     add("reels reference known creators", not unknown, f"unknown: {', '.join(unknown)}" if unknown else f"{len(reels)} reels, {len(creators)} creators")
+    orphaned = [r["url"] for r in reels if r.get("repo") and r["repo"].lower() not in set(names)]
+    add("reels reference known repositories", not orphaned, f"{len(orphaned)} unresolved references" if orphaned else "all repository references resolved")
     unmatched = [r["url"] for r in reels if not r.get("repo")]
     add("every reel matched to a repo", not unmatched, f"{len(unmatched)} unmatched (see review queue)" if unmatched else "all matched", warn_only=True)
     big_jumps = [r["full_name"] for r in repos if (r["mo"].get("d7") or 0) > max(5000, r["stars"] * 0.9) and not r["mo"].get("est")]

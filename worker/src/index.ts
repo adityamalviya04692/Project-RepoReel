@@ -5,7 +5,10 @@
    repositories itself. */
 
 interface Env {
-  CACHE: KVNamespace;
+  CACHE: {
+    get(key: string): Promise<string | null>;
+    put(key: string, value: string, options?: { expirationTtl: number }): Promise<unknown>;
+  };
   APIFY_TOKEN: string;
   DAILY_LIMIT: string;
   MONTHLY_CAP_USD: string;
@@ -23,23 +26,32 @@ export function keywords(q: string): string {
 
 function cors(env: Env, req: Request): Record<string, string> {
   const origin = req.headers.get('Origin') ?? '';
-  const allowed = origin === env.ALLOWED_ORIGIN || origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1');
+  const allowed = origin === env.ALLOWED_ORIGIN || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
   return { 'Access-Control-Allow-Origin': allowed ? origin : env.ALLOWED_ORIGIN, 'Access-Control-Allow-Methods': 'GET', 'Content-Type': 'application/json' };
 }
 
 async function budgetOk(env: Env): Promise<boolean> {
-  const cached = await env.CACHE.get('budget');
-  if (cached) return cached === 'ok';
-  const r = await fetch(`https://api.apify.com/v2/users/me/limits?token=${env.APIFY_TOKEN}`);
-  const used = r.ok ? Number((await r.json<{ data: { current: { monthlyUsageUsd: number } } }>()).data.current.monthlyUsageUsd) : Infinity;
-  const ok = used + 0.25 < Number(env.MONTHLY_CAP_USD);
-  await env.CACHE.put('budget', ok ? 'ok' : 'over', { expirationTtl: 3600 });
-  return ok;
+  if (!env.APIFY_TOKEN) return false;
+  try {
+    const r = await fetch('https://api.apify.com/v2/users/me/limits', { headers: { Authorization: `Bearer ${env.APIFY_TOKEN}` } });
+    if (!r.ok) return false;
+    const { data } = await r.json() as { data: { current: { monthlyUsageUsd: number }; limits: { maxMonthlyUsageUsd: number } } };
+    const used = data.current.monthlyUsageUsd;
+    const plan = data.limits.maxMonthlyUsageUsd;
+    const cap = Number(env.MONTHLY_CAP_USD);
+    return [used, plan, cap].every(Number.isFinite) && used >= 0 && used + 0.25 < Math.min(plan, cap);
+  } catch {
+    return false;
+  }
 }
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const headers = cors(env, req);
+    const origin = req.headers.get('Origin');
+    if (origin && headers['Access-Control-Allow-Origin'] !== origin) return new Response(JSON.stringify({ error: 'origin not allowed' }), { status: 403, headers });
+    if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+    if (req.method !== 'GET') return new Response(JSON.stringify({ error: 'method not allowed' }), { status: 405, headers });
     const url = new URL(req.url);
     if (url.pathname !== '/live') return new Response(JSON.stringify({ error: 'not found' }), { status: 404, headers });
     const q = (url.searchParams.get('q') ?? '').slice(0, 200);
@@ -51,18 +63,24 @@ export default {
 
     const today = new Date().toISOString().slice(0, 10);
     const used = Number((await env.CACHE.get(`count:${today}`)) ?? 0);
-    if (used >= Number(env.DAILY_LIMIT)) return new Response(JSON.stringify({ keywords: kw, reels: [], note: 'daily live-search limit reached' }), { headers });
+    const dailyLimit = Number(env.DAILY_LIMIT);
+    if (!Number.isFinite(dailyLimit) || dailyLimit <= 0 || !Number.isFinite(used) || used >= dailyLimit) return new Response(JSON.stringify({ keywords: kw, reels: [], note: 'daily live-search limit reached' }), { headers });
     if (!(await budgetOk(env))) return new Response(JSON.stringify({ keywords: kw, reels: [], note: 'monthly free credit nearly used' }), { headers });
     await env.CACHE.put(`count:${today}`, String(used + 1), { expirationTtl: 2 * DAY });
 
-    const r = await fetch(`https://api.apify.com/v2/acts/apify~instagram-hashtag-scraper/run-sync-get-dataset-items?token=${env.APIFY_TOKEN}&timeout=120`, {
+    let r: Response;
+    try {
+      r = await fetch('https://api.apify.com/v2/acts/apify~instagram-hashtag-scraper/run-sync-get-dataset-items?timeout=120&maxTotalChargeUsd=0.25', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.APIFY_TOKEN}` },
       body: JSON.stringify({ hashtags: [kw], keywordSearch: true, resultsType: 'reels', resultsLimit: 12 }),
     });
+    } catch {
+      return new Response(JSON.stringify({ keywords: kw, reels: [], note: 'search unavailable' }), { status: 502, headers });
+    }
     if (!r.ok) return new Response(JSON.stringify({ keywords: kw, reels: [], note: `search failed (${r.status})` }), { status: 502, headers });
     type Item = { shortCode?: string; ownerUsername?: string; timestamp?: string; caption?: string; likesCount?: number; videoPlayCount?: number; productType?: string; type?: string };
-    const items = (await r.json<Item[]>()) ?? [];
+    const items = (await r.json() as Item[]) ?? [];
     const reels = items
       .filter((i) => i.shortCode && i.ownerUsername && (i.productType === 'clips' || String(i.type).toLowerCase() === 'video'))
       .map((i) => ({

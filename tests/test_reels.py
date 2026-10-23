@@ -59,3 +59,64 @@ def test_discover_without_tokens_is_a_no_op(tmp_path, monkeypatch):
     monkeypatch.setattr(auto.instagram_graph, "configured", lambda: False)
     out = auto.discover(date(2026, 10, 23), log=lambda _: None)
     assert out["reels"] == [] and out["stats"]["apify"] == "not configured"
+
+
+def test_budget_rejects_invalid_and_lower_account_limits():
+    for u in ({"used": 0, "plan_cap": 0}, {"used": float('nan'), "plan_cap": 5},
+              {"used": -1, "plan_cap": 5}, {"used": 1, "plan_cap": 1.1}, {}):
+        assert not apify.budget_ok(u)
+
+
+def test_usage_fails_closed_on_incomplete_or_unavailable_data(monkeypatch):
+    import httpx
+    class Response:
+        status_code = 200
+        def json(self):
+            return {"data": {"current": {}, "limits": {}}}
+    monkeypatch.setattr(apify, 'request', lambda *a, **kw: Response())
+    assert apify.usage('test-token') is None
+    def fail(*a, **kw):
+        raise httpx.ConnectError('unavailable')
+    monkeypatch.setattr(apify, 'request', fail)
+    assert apify.usage('test-token') is None
+
+
+def test_actor_rechecks_budget_caps_cost_and_does_not_retry(monkeypatch):
+    import pytest
+    calls = []
+    monkeypatch.setattr(apify, 'usage', lambda token: {"used": 1, "plan_cap": 5})
+    class Response:
+        status_code = 200
+        def json(self):
+            return [APIFY_ITEM]
+    monkeypatch.setattr(apify, 'request', lambda *a, **kw: calls.append((a, kw)) or Response())
+    assert apify.run_actor('actor', {}, token='test-token') == [APIFY_ITEM]
+    args, kw = calls[0]
+    assert kw['retries'] == 0
+    assert kw['params']['maxTotalChargeUsd'] == 0.25
+    assert 'token' not in kw['params']
+    monkeypatch.setattr(apify, 'usage', lambda token: None)
+    with pytest.raises(RuntimeError, match='budget'):
+        apify.run_actor('actor', {}, token='test-token')
+    assert len(calls) == 1
+
+
+def test_discovery_reports_all_provider_failures(tmp_path, monkeypatch):
+    monkeypatch.setattr(auto, 'REELS_FILE', tmp_path / 'reels.json')
+    monkeypatch.setattr(auto, 'CREATORS_FILE', tmp_path / 'creators.json')
+    monkeypatch.setattr(auto, 'APIFY_TOKEN', 'test-token')
+    monkeypatch.setattr(auto.instagram_graph, 'configured', lambda: False)
+    monkeypatch.setattr(apify, 'usage', lambda: {"used": 0, "plan_cap": 5})
+    def fail(*a):
+        raise RuntimeError('HTTP 401')
+    monkeypatch.setattr(apify, 'topic_reels', fail)
+    out = auto.discover(date(2026, 10, 23), log=lambda _: None)
+    assert out['stats']['apify'] == 'error: no topics completed'
+
+
+def test_replay_without_discovery_snapshot_is_empty(tmp_path):
+    assert auto._load_replay(tmp_path) == []
+
+
+def test_missing_timestamp_is_not_invented():
+    assert auto.normalize_apify({**APIFY_ITEM, 'timestamp': ''}, 'x') is None
