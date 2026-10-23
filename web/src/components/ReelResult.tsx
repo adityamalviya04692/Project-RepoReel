@@ -16,7 +16,7 @@ export default function ReelResult({ it, data, n, active, onWatch, onDetails }: 
       transition={{ type: 'spring', bounce: 0, duration: 0.4, delay: Math.min(n, 6) * 0.04 }}
       onClick={onWatch}
     >
-      <span className="rr-n">{n + 1}</span>
+      <span className="rr-n"><img src={`https://github.com/${(it.repo ?? 'github').split('/')[0]}.png?size=80`} alt="" width="36" height="36" /></span>
       <div className="rr-body">
         <div className="rr-who">
           <b>@{it.creator}</b>

@@ -73,6 +73,7 @@ export default function Phone({
 
   return (
     <div className="phone-wrap" onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <img className="phone-hand" src={`${import.meta.env.BASE_URL}images/phone-hand.png`} alt="" aria-hidden="true" />
       <div className="phone" aria-label="Reels">
         <div className="phone-status" aria-hidden="true">
           <span>9:41</span>

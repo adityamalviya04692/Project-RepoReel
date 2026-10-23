@@ -443,3 +443,71 @@ h2, .h-lg { font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
 @media (prefers-reduced-transparency: reduce) { .nav { background: var(--parchment); backdrop-filter: none; } .sheet { background: var(--canvas); backdrop-filter: none; } }
 @media (prefers-contrast: more) { .repo-card, .chip, .search-pill { border-color: var(--ink-80); } }
+
+/* Instagram-inspired light editorial feed. Brand identity remains RepoReel. */
+:root { --primary:#0095f6; --primary-focus:#1877f2; --ink:#262626; --ink-80:#363636; --ink-48:#737373; --parchment:#fafafa; --pearl:#fafafa; --hairline:#dbdbdb; --divider:#efefef; --r-lg:12px; --r-md:8px; --font:'Instagram Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+body,.lead,.desc { font-size:14px; line-height:1.5; letter-spacing:0; }
+.nav { background:#fff; backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid #dbdbdb; }
+.nav-inner { height:72px; }
+.brand { font-size:26px; font-weight:700; letter-spacing:-1px; }
+.brand svg { color:#262626; }
+.nav-links { gap:26px; }
+.nav-links a { display:flex; align-items:center; gap:9px; font-size:14px; letter-spacing:0; }
+.nav-icon { width:23px; height:23px; flex:none; }
+.nav-links a.on { font-weight:700; }
+.nav-gh { color:#737373; font-size:13px; }
+.stage-hero { background:#fafafa; padding:44px 0 72px; }
+.stage-grid { grid-template-columns:minmax(0,630px) minmax(360px,1fr); gap:72px; }
+.eyebrow { font-size:13px; line-height:1.5; letter-spacing:0; color:#737373; font-weight:600; }
+.ask-title { font-size:clamp(32px,4vw,48px); line-height:1.12; letter-spacing:-1.5px; font-weight:700; margin-bottom:24px; }
+.ask-title.small { font-size:32px; }
+.ask-box { border:1px solid #dbdbdb; border-radius:12px; padding:18px; box-shadow:none; }
+.ask-box:focus-within { border-color:#a8a8a8; box-shadow:none; }
+.ask-box textarea { font-size:16px; letter-spacing:0; }
+.btn { border-radius:8px; font-size:14px; font-weight:600; padding:9px 16px; letter-spacing:0; }
+.btn.secondary { border-color:#dbdbdb; color:#262626; background:#fff; }
+.btn.secondary:hover { background:#f5f5f5; }
+.btn.small { border-radius:8px; font-size:12px; padding:7px 12px; }
+.chips { gap:8px; margin-top:18px; }
+.chip { border-radius:8px; background:#efefef; border-color:transparent; padding:8px 12px; font-size:12px; letter-spacing:0; }
+.chip:hover { background:#e8e8e8; border-color:transparent; }
+.answers { gap:0; margin-top:26px; }
+.answers-h { font-size:14px; color:#262626; padding:12px 0; margin:0; border-bottom:1px solid #dbdbdb; }
+.reel-result { grid-template-columns:42px 1fr; gap:12px; border:0; border-bottom:1px solid #dbdbdb; border-radius:0; background:transparent; padding:22px 0; box-shadow:none; }
+.reel-result.active { border-color:#dbdbdb; box-shadow:none; }
+.rr-n,.reel-result.active .rr-n { width:42px; height:42px; padding:3px; background:linear-gradient(35deg,#ffd776,#f56040,#c13584,#833ab4); color:transparent; }
+.rr-n img { width:36px; height:36px; border:2px solid #fff; border-radius:50%; background:#fff; }
+.rr-who { font-size:14px; gap:8px; }
+.rr-who b { font-weight:600; }
+.rr-who .muted { font-size:12px; }
+.rr-caption { font-size:14px; line-height:1.6; margin-top:10px; color:#262626; }
+.rr-repo { background:#fff; border:1px solid #efefef; border-radius:8px; padding:14px; }
+.rr-repo b { font-family:var(--font); font-size:14px; }
+.rr-repo small { font-size:12px; }
+.trust { border-radius:5px; font-size:10px; background:#efefef; border:0; color:#737373; }
+.phone-col { top:110px; padding-bottom:125px; isolation:isolate; }
+.phone-wrap { isolation:isolate; }
+.phone-hand { position:absolute; z-index:-1; pointer-events:none; width:200%; max-width:none; height:auto; left:-50%; top:-6%; }
+.phone { width:320px; height:658px; border-radius:45px; padding:10px; box-shadow:0 0 0 2px #555,0 0 0 6px #262626,0 20px 48px #0002; }
+.phone-screen { border-radius:35px; }
+.phone-status { left:10px; right:10px; top:10px; }
+.phone-controls { right:-48px; }
+.add-reel { background:white; border:1px solid #dbdbdb; border-radius:8px; padding:9px 14px; font-size:12px; position:relative; z-index:2; }
+.tile.dark { background:#fafafa; color:#262626; border-top:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb; }
+.eyebrow.on-dark,.muted-on-dark,.health.on-dark,.tile.dark .kpis span { color:#737373; }
+.rail-card,.tile.dark .kpis div { background:#fff; color:#262626; border:1px solid #dbdbdb; border-radius:8px; }
+.rail-card > span { color:#737373; }
+.health.on-dark .ai { color:#0095f6; }
+.tile { padding:48px 0; }
+.tile h2 { font-size:28px; letter-spacing:-.7px; }
+.tile .lead { font-size:16px; }
+.footer { background:#fff; border-top:1px solid #efefef; }
+@media(max-width:1100px) { .stage-grid { gap:38px; grid-template-columns:minmax(0,1fr) 340px; } }
+@media(max-width:833px) { .nav-inner { height:64px; gap:14px; } .brand { font-size:22px; } .nav-links { gap:18px; } .nav-links a span { display:none; } .stage-grid { grid-template-columns:1fr; gap:36px; } .phone-col { position:relative; top:auto; padding-bottom:140px; } .phone-hand { width:185%; left:-42.5%; } .ask-title { font-size:36px; } }
+@media(max-width:480px) { .nav-gh { display:none; } .nav-links { gap:16px; } .stage-hero { padding-top:28px; overflow:hidden; } .phone { width:290px; height:600px; } .phone-controls { right:-36px; } .wrap { width:calc(100% - 32px); } .rr-actions { gap:8px; } }
+.phone-hand { width:240%; left:-69%; top:-9.3%; mask-image:linear-gradient(#000 0%,#000 78%,transparent 100%); }
+.phone-col { padding-bottom:300px; }
+@media(max-width:833px) { .phone-hand { width:240%; left:-69%; } .phone-col { padding-bottom:310px; } }
+@media(min-width:834px) and (max-width:1150px) { .stage-grid { grid-template-columns:minmax(0,620px); justify-content:center; gap:48px; } .phone-col { position:relative; top:auto; } }
+.phone-wrap { max-width:100%; }
+@media(min-width:1151px) { .stage-grid { grid-template-columns:minmax(0,600px) minmax(380px,1fr); gap:90px; } }

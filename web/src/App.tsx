@@ -50,7 +50,7 @@ export default function App() {
           <a className="brand" href="#/" onClick={() => go('/')}><Logo size={26} /><span>RepoReel</span></a>
           <div className="nav-links">
             {NAV.map(([p, label]) => (
-              <a key={p} href={`#${p}`} className={route.path === p ? 'on' : ''}>{label}</a>
+              <a key={p} href={`#${p}`} className={route.path === p ? 'on' : ''}><svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">{p === '/' ? <><circle cx="10.5" cy="10.5" r="7.5" /><path d="m16 16 5 5" /></> : p === '/snap' ? <><rect x="3" y="5" width="18" height="16" rx="4" /><circle cx="12" cy="13" r="4" /><path d="m8 5 1-3h6l1 3" /></> : p === '/creators' ? <><circle cx="12" cy="8" r="4" /><path d="M4 22v-3a8 8 0 0 1 16 0v3" /></> : <><path d="M4 20V10m8 10V4m8 16v-7" /></>}</svg><span>{label}</span></a>
             ))}
           </div>
           <a className="nav-gh" href="https://github.com/adityamalviya04692/Project-RepoReel" target="_blank" rel="noreferrer">GitHub ↗</a>
