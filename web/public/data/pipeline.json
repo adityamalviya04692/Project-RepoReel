@@ -1,11 +1,11 @@
 {
  "last": {
-  "finished": "2026-10-23T12:05:19+00:00",
-  "seconds": 303.3,
+  "finished": "2026-10-23T12:19:15+00:00",
+  "seconds": 249.2,
   "stages": [
    {
     "name": "discover \u00b7 replay bronze",
-    "seconds": 0.02,
+    "seconds": 0.03,
     "rows": {
      "repos": 4165
     }
@@ -27,8 +27,17 @@
     }
    },
    {
+    "name": "reels \u00b7 discover on Instagram",
+    "seconds": 0.0,
+    "rows": {
+     "fetched": 0,
+     "history": 0,
+     "creators_seen": 0
+    }
+   },
+   {
     "name": "enrich \u00b7 replay bronze",
-    "seconds": 0.24,
+    "seconds": 0.25,
     "rows": {
      "repos": 4304,
      "from_hn_or_reels": 0
@@ -36,7 +45,7 @@
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.33,
+    "seconds": 0.34,
     "rows": {
      "repos": 4303,
      "snapshots": 4303,
@@ -45,7 +54,7 @@
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 297.47,
+    "seconds": 243.57,
     "rows": {
      "vectors": 4303,
      "dims": 384
@@ -53,7 +62,7 @@
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 1.59,
+    "seconds": 1.56,
     "rows": {
      "reels": 0,
      "matched": 0,
@@ -61,8 +70,23 @@
     }
    },
    {
+    "name": "extend \u00b7 repos found in reels",
+    "seconds": 0.0,
+    "rows": {
+     "added": 0
+    }
+   },
+   {
+    "name": "creators \u00b7 discover & vet",
+    "seconds": 0.0,
+    "rows": {
+     "creators": 0,
+     "followers_filled": 0
+    }
+   },
+   {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.05,
+    "seconds": 1.0,
     "rows": {
      "repos": 4303,
      "creators": 0,
@@ -71,7 +95,7 @@
    },
    {
     "name": "quality \u00b7 checks",
-    "seconds": 0.01,
+    "seconds": 0.0,
     "rows": {
      "passed": 9,
      "warnings": 0,
@@ -80,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.98,
+    "seconds": 0.75,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -90,7 +114,7 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 0.07,
+    "seconds": 0.05,
     "rows": {
      "files": 6,
      "repos": 4303
@@ -346,6 +370,12 @@
   {
    "finished": "2026-10-23T12:05:19+00:00",
    "seconds": 303.3,
+   "catalog": 4303,
+   "failed": 0
+  },
+  {
+   "finished": "2026-10-23T12:19:15+00:00",
+   "seconds": 249.2,
    "catalog": 4303,
    "failed": 0
   }

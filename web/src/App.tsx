@@ -32,7 +32,9 @@ export default function App() {
     load().then(setData, (e) => setError(String(e)));
     return () => removeEventListener('hashchange', on);
   }, []);
-  useEffect(() => window.scrollTo({ top: 0 }), [route.path]);
+  useEffect(() => {
+    window.scrollTo({ top: 0 }); // braces matter: newer browsers return a Promise from scrollTo, which React would call as a cleanup
+  }, [route.path]);
 
   const go = (path: string, params: Record<string, string> = {}) => {
     const qs = new URLSearchParams(Object.entries(params).filter(([, v]) => v)).toString();
