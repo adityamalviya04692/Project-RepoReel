@@ -36,3 +36,9 @@ Reviewed 23 October 2026. Use this file and the source code for current behavior
 - Creator badges use followers and posting frequency. The implementation does not verify professional/public account status or prove a creator's identity. Accuracy is a repository-health signal, not a semantic fact-check of every claim.
 - Retrieval evaluation covers 12 repository queries, not reel-matching precision or all real user queries. Published metrics should be read as measured, without claiming perfect retrieval.
 - Automatic deleted-post detection, opt-in frame/audio processing, MCP access and digests remain roadmap features. Local additions stay in the visitor's browser unless exported and committed manually.
+
+## Recovering an interrupted run
+
+GraphQL read responses are retried if their JSON/UTF-8 is truncated. Enrichment saves each completed batch atomically into bronze. In Actions, dispatch **Nightly data pipeline** with `resume_from_run` set to the failed run ID while its seven-day bronze artifact still exists. The workflow restores those files, skips repeated discovery requests and fetches only missing repository metadata. Creator lookups may still run behind the same spending guard. On older runs created before checkpointing, enrichment must start again, but the recorded topic results are reused.
+
+Locally, `python -m pipeline.cli run --resume` resumes available bronze with GitHub credentials; `--replay` is the source-API-free rebuild path.

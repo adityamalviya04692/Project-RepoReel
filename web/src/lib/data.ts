@@ -53,7 +53,7 @@ export interface Pipeline {
 }
 
 export interface Discovery {
-  stats: { apify: string; graph: string; topics: { q: string; kind: string; reels: number }[]; fetched: number; budget: { used: number; plan_cap: number; resets: string | null } | null; replay?: boolean };
+  stats: { apify: string; graph: string; topics: { q: string; kind: string; reels: number }[]; fetched: number; budget: { used: number; plan_cap: number; resets: string | null } | null; replay?: boolean; resumed?: boolean };
   history_reels: number;
   shown_reels: number;
 }

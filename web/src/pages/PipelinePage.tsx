@@ -137,7 +137,7 @@ function Discovery({ data }: { data: Data }) {
         <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `account monthly usage (limit $${b.plan_cap.toFixed(2)})` : 'free credit usage'}</span></div>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>
-        Apify (free plan): {d.stats.apify} · Instagram Graph API: {d.stats.graph}{d.stats.replay ? ' · replayed from bronze' : ''}
+        Apify (free plan): {d.stats.apify} · Instagram Graph API: {d.stats.graph}{d.stats.replay ? ' · replayed from bronze' : d.stats.resumed ? ' · resumed from retained bronze' : ''}
       </p>
       {d.stats.topics.length > 0 && (
         <div className="topics-today">

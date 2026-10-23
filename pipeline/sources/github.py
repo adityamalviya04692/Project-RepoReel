@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import time
+import json
+from pathlib import Path
 from typing import Iterable, Optional
 
 from ..config import CATEGORIES, SEARCH_PAGES
@@ -72,22 +74,40 @@ def _flatten(n: dict) -> dict:
 
 
 def _graphql(query: str, variables: dict) -> dict:
-    r = request("POST", GRAPHQL, headers=gh_headers(), json={"query": query, "variables": variables})
-    r.raise_for_status()
-    body = r.json()
-    if body.get("errors") and not body.get("data"):
-        raise RuntimeError(body["errors"][0].get("message"))
-    return body.get("data") or {}
+    # These are read-only queries. A truncated successful response is safe to retry.
+    for attempt in range(3):
+        r = request("POST", GRAPHQL, headers=gh_headers(), json={"query": query, "variables": variables})
+        r.raise_for_status()
+        try:
+            body = r.json()
+        except (ValueError, UnicodeError):
+            if attempt == 2:
+                raise RuntimeError("GitHub returned malformed JSON after three read attempts") from None
+            time.sleep(2 ** attempt)
+            continue
+        if body.get("errors") and not body.get("data"):
+            raise RuntimeError(body["errors"][0].get("message"))
+        return body.get("data") or {}
+    return {}
 
 
-def enrich(node_ids: Iterable[str], batch: int = 40, log=print) -> list[dict]:
+def enrich(node_ids: Iterable[str], batch: int = 40, log=print, checkpoint: Optional[Path] = None) -> list[dict]:
     """Full metadata and README for each repo, 40 per GraphQL call."""
-    ids = list(node_ids)
-    out: list[dict] = []
+    ids = list(dict.fromkeys(node_ids))
+    cached = [json.loads(line) for line in checkpoint.read_text().splitlines() if line.strip()] if checkpoint and checkpoint.exists() else []
+    by_id = {r["repo_id"]: r for r in cached}
+    wanted = set(ids)
+    out: list[dict] = [r for rid, r in by_id.items() if rid in wanted]
+    ids = [rid for rid in ids if rid not in by_id]
     q = f"query($ids: [ID!]!) {{ nodes(ids: $ids) {{ {_FIELDS} }} }}"
     for i in range(0, len(ids), batch):
         data = _graphql(q, {"ids": ids[i : i + batch]})
         out.extend(_flatten(n) for n in data.get("nodes", []) if n)
+        if checkpoint:
+            checkpoint.parent.mkdir(parents=True, exist_ok=True)
+            temporary = checkpoint.with_suffix('.tmp')
+            temporary.write_text(''.join(json.dumps(r) + '\n' for r in out))
+            temporary.replace(checkpoint)
         if (i // batch) % 10 == 0:
             log(f"  enrich {min(i + batch, len(ids))}/{len(ids)}")
     return out

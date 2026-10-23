@@ -4,8 +4,14 @@ on:
   schedule:
     - cron: "15 3 * * *"   # 03:15 UTC daily
   workflow_dispatch:
+    inputs:
+      resume_from_run:
+        description: "Resume a failed run's bronze files without repeating reel topic searches"
+        type: string
+        required: false
 
 permissions:
+  actions: read
   contents: write
   pages: write
   id-token: write
@@ -31,17 +37,31 @@ jobs:
           key: fastembed-minilm-l6-v2
       - name: Unit tests
         run: python -m pytest -q tests
+      - name: Restore bronze for a resumed run
+        if: inputs.resume_from_run != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESUME_RUN: ${{ inputs.resume_from_run }}
+        run: |
+          [[ "$RESUME_RUN" =~ ^[0-9]+$ ]] || exit 1
+          gh run download "$RESUME_RUN" --name "bronze-$RESUME_RUN" --dir data/bronze
       - name: Run pipeline (discover → enrich → silver → embed → match → score → quality → eval → gold)
         env:
           # A fine-grained PAT (public repo read) raises GraphQL limits; GITHUB_TOKEN works for this catalog size.
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           FASTEMBED_CACHE_PATH: ${{ runner.temp }}/fastembed
           PYTHONUNBUFFERED: "1"
+          RESUME_RUN: ${{ inputs.resume_from_run }}
           # Free automated reel discovery (optional; the run works without them):
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}          # Apify free plan, $5/month credit, guarded
           IG_USER_ID: ${{ secrets.IG_USER_ID }}            # Meta Graph API (free), for creator followers
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: python -m pipeline.cli run
+        run: |
+          if [ -n "$RESUME_RUN" ]; then
+            python -m pipeline.cli run --resume
+          else
+            python -m pipeline.cli run
+          fi
       - name: Keep raw bronze files for 7 days
         if: always()
         uses: actions/upload-artifact@v4

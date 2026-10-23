@@ -38,7 +38,7 @@ export default function RepoCard({ r, data, why, onOpen, index = 0, compact = fa
         </div>
       ) : (
         <p className="proof-empty">
-          No vetted creator reels yet
+          No reels indexed yet
           {r.hn ? (
             <>
               {' · '}

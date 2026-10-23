@@ -101,7 +101,6 @@ export default function Phone({
                       src={`https://www.instagram.com/reel/${it.shortcode}/embed/`}
                       allow="autoplay; encrypted-media; picture-in-picture; clipboard-write"
                       loading="lazy"
-                      allowTransparency
                     />
                   ) : (
                     <button className="poster" onClick={() => play(it.key)} aria-label={`Play reel by @${it.creator}`}>

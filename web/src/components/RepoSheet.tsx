@@ -92,7 +92,7 @@ export default function RepoSheet({ data, row, onClose, onOpen }: { data: Data; 
                 ))}
               </div>
             ) : (
-              <p className="proof-empty">No vetted creator has posted about this repo yet.</p>
+              <p className="proof-empty">No reels are indexed for this repo yet.</p>
             )}
           </section>
 

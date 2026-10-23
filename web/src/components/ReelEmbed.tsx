@@ -51,7 +51,7 @@ export default function ReelEmbed({ reel, creator }: { reel: Reel; creator?: Cre
         </button>
       )}
       <figcaption>
-        {creator && <span className={`trust ${creator.badge}`}>{creator.badge === 'top' ? 'Top creator' : 'Verified'} · {Math.round(creator.trust * 100)}</span>}
+        {creator && <span className={`trust ${creator.badge}`}>{creator.badge === 'top' ? 'Top creator' : creator.badge === 'verified' ? 'Verified' : 'Pending'} · {Math.round(creator.trust * 100)}</span>}
         <a href={reel.url} target="_blank" rel="noreferrer">Open on Instagram ↗</a>
       </figcaption>
     </figure>

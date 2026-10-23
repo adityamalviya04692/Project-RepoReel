@@ -2,7 +2,7 @@
 
 <h1 align="center">RepoReel</h1>
 <p align="center"><b>Describe what you're building. Get the right GitHub repo, and the reel that shows it working.</b></p>
-<p align="center"><a href="https://adityamalviya04692.github.io/Project-RepoReel/">Live site</a> · <a href="docs/SPEC.md">Spec</a> · <a href="docs/DESIGN.md">Design system</a> · <a href="https://adityamalviya04692.github.io/Project-RepoReel/#/pipeline">Pipeline status</a></p>
+<p align="center"><a href="https://adityamalviya04692.github.io/Project-RepoReel/">Live site</a> · <a href="docs/SPEC.md">Spec</a> · <a href="docs/DESIGN.md">Design system</a> · <a href="docs/PROJECT_STATUS.md">Implementation status</a> · <a href="https://adityamalviya04692.github.io/Project-RepoReel/#/pipeline">Pipeline status</a></p>
 
 ---
 
@@ -29,7 +29,7 @@ flowchart LR
   G --> W[GitHub Pages · React<br/>search · Snap a reel · creators · status]
 ```
 
-Everything runs on **GitHub Actions + GitHub Pages**, with no servers and no paid APIs.
+The catalog and site run on **GitHub Actions + GitHub Pages**, with no always-on server. Optional Instagram discovery uses metered Apify usage credit.
 
 | Layer | What happens |
 |---|---|

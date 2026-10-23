@@ -65,7 +65,9 @@ def main(argv=None) -> int:
     ap.add_argument("command", choices=["run"])
     ap.add_argument("--limit", type=int, default=0, help="cap catalog size (for quick local runs)")
     ap.add_argument("--replay", action="store_true", help="rebuild silver/gold from today's bronze files without calling any API")
+    ap.add_argument("--resume", action="store_true", help="reuse bronze discovery files and resume missing GitHub enrichment; no repeat topic searches")
     args = ap.parse_args(argv)
+    reuse_bronze = args.replay or args.resume
     if not GITHUB_TOKEN and not args.replay:
         print("GITHUB_TOKEN is required (export GITHUB_TOKEN=$(gh auth token))", file=sys.stderr)
         return 2
@@ -73,7 +75,11 @@ def main(argv=None) -> int:
     run = Run()
     today = TODAY.isoformat()
     bronze = BRONZE / today
-    if args.replay:
+    if args.resume and not bronze.exists():
+        snapshots = sorted(p for p in BRONZE.glob("????-??-??") if (p / "gh_search_hits.jsonl").exists())
+        if snapshots:
+            bronze = snapshots[-1]
+    if reuse_bronze:
         def _read(name: str) -> list:
             return [json.loads(line) for line in (bronze / name).read_text().splitlines() if line.strip()]
         found = run.stage("discover · replay bronze", lambda: {r["node_id"]: {**r, "categories": set(r["categories"])} for r in _read("gh_search_hits.jsonl")})
@@ -98,9 +104,9 @@ def main(argv=None) -> int:
     run.rows(creators=len(creators_in), reels=len(reels_in), golden_queries=len(golden))
 
     # Automated discovery: trending reels about repos (Apify free credit) + known creators (Graph API).
-    if args.replay:  # replays never call external APIs
+    if reuse_bronze:  # reuse recorded topics; replay never calls source APIs
         disc = run.stage("reels · replay bronze", lambda: {"reels": auto._load_replay(bronze),
-                                                           "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": True, "apify": "not called (replay)", "graph": "not called (replay)", "topics": [], "budget": None}})
+                                                           "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": args.replay, "resumed": args.resume, "apify": "not called (replay)" if args.replay else "reused recorded reels", "graph": "not called (replay)" if args.replay else "not called (resume)", "topics": [], "budget": None}})
     else:
         disc = run.stage("reels · discover on Instagram", auto.discover, TODAY)
     run.rows(fetched=disc["stats"]["fetched"], history=len(disc["reels"]), creators_seen=len(disc["creators"]))
@@ -126,7 +132,7 @@ def main(argv=None) -> int:
         missing = [r.repo for r in reels_in if r.repo and r.repo.lower() not in known]
         run.rows(repos=len(enriched), from_hn_or_reels=len(missing))
     else:
-        enriched = run.stage("enrich · GitHub GraphQL", github.enrich, ids)
+        enriched = run.stage("enrich · GitHub GraphQL", github.enrich, ids, checkpoint=bronze / "gh_repo_graphql.jsonl")
         known = {r["full_name"].lower() for r in enriched}
         extra = [m["full_name"] for m in hn_hits.values() if m["full_name"].lower() not in known and m["top_points"] >= HN_MIN_POINTS_TO_ADD]
         extra += [r.repo for r in reels_in if r.repo and r.repo.lower() not in known]
