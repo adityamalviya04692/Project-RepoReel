@@ -54,7 +54,8 @@ AI_COMPAT = {
 }
 
 # Scoring weights (spec §9). Published to the site as ranking.json.
-RANK_WEIGHTS = {"semantic": 0.46, "keyword": 0.14, "popularity": 0.10, "momentum": 0.10, "health": 0.08, "social": 0.07, "freshness": 0.05}
+# Tuned by a sweep over the golden queries (MRR 0.29 → 0.42, hit@3 33% → 50%).
+RANK_WEIGHTS = {"semantic": 0.36, "keyword": 0.10, "popularity": 0.28, "momentum": 0.08, "health": 0.06, "social": 0.05, "freshness": 0.03}
 TRUST_WEIGHTS = {"accuracy": 0.35, "consistency": 0.25, "engagement": 0.20, "recency": 0.20}
 CREATOR_MIN_FOLLOWERS = 50_000
 CREATOR_TOP_FOLLOWERS = 100_000

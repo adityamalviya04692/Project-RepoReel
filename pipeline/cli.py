@@ -6,6 +6,7 @@ Every stage is timed and counted; the run summary feeds the site's Pipeline stat
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import math
 import shutil
@@ -238,10 +239,22 @@ def main(argv=None) -> int:
         (GOLD / "embeddings.i8").write_bytes(quantize(vecs).tobytes())
         (GOLD / "creators.json").write_text(json.dumps({"creators": sorted(trust.values(), key=lambda t: -t["trust"]),
             "gates": {"min_followers": CREATOR_MIN_FOLLOWERS, "min_posts_60d": CREATOR_MIN_POSTS_60D}, "weights": TRUST_WEIGHTS}, indent=1))
-        (GOLD / "reels.json").write_text(json.dumps({"reels": [{k: v for k, v in r.items() if k != "caption"} | {"caption_excerpt": (r.get("caption") or "")[:160]} for r in reels], "review": review}, indent=1, default=str))
+        # Each reel gets its own vector (caption + the repo it covers), so search ranks reels directly.
+        reel_vecs = embed([reel_text(r) for r in reels]) if reels else np.zeros((0, 384), np.float32)
+        (GOLD / "reels.json").write_text(json.dumps({"reels": [
+            {k: v for k, v in r.items() if k not in ("caption", "evidence")} | {"caption": (r.get("caption") or "")[:400], "vec": base64.b64encode(quantize(reel_vecs[i : i + 1]).tobytes()).decode()}
+            for i, r in enumerate(reels)], "review": review}, indent=1, default=str))
         (GOLD / "ranking.json").write_text(json.dumps({"weights": RANK_WEIGHTS, "ai": AI_COMPAT, "platforms": PLATFORMS, "languages": LANGUAGES, "categories": CATEGORY_WORDS,
             "labels": {k: v["label"] for k, v in CATEGORIES.items()}}, indent=1))
         return len(cat_repos)
+
+    def reel_text(r: dict) -> str:
+        i = index.get((r.get("repo") or "").lower())
+        repo = repos[i] if i is not None else None
+        parts = [r.get("caption") or ""]
+        if repo:
+            parts += [repo["full_name"].split("/")[1].replace("-", " "), repo["description"], " ".join(repo["topics"])]
+        return ". ".join(p for p in parts if p)
     n = run.stage("gold · publish site data", _gold)
     run.rows(files=6, repos=n)
 

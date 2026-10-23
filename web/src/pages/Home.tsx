@@ -1,163 +1,219 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Data } from '../lib/data';
 import { embedQuery, isReady, onLoad, warm } from '../lib/embedder';
 import { compact } from '../lib/format';
-import { BM25, aiLabel, rank, searchText, tokens, type Ranked, type Facets } from '../lib/rank';
+import { BM25, aiLabel, rank, searchText, tokens, type Facets, type Ranked } from '../lib/rank';
+import { buildItems, loadLocal, rankReels, type ReelHit, type ReelItem } from '../lib/reels';
+import Phone from '../components/Phone';
+import ReelResult from '../components/ReelResult';
 import RepoCard from '../components/RepoCard';
 import HealthStrip from '../components/HealthStrip';
+import AddReel from '../components/AddReel';
 
 const EXAMPLES = [
-  'Apply to jobs on LinkedIn automatically, works with Claude',
-  'Scrape any website into clean markdown for my LLM',
-  'Let an AI agent use my browser',
-  'Chat with my PDFs, runs locally',
-  'Turn podcasts into transcripts offline',
+  'Apply to LinkedIn jobs automatically with AI',
+  'Scrape any website into clean data for my LLM',
+  'Let an AI agent control my browser',
+  'Chat with my PDFs on my laptop',
+  'Turn videos into transcripts offline',
 ];
+const MATCH_MIN = 0.3; // below this relevance a reel isn't really about the need
 
 export default function Home({ data, query, setQuery, onOpen }: { data: Data; query: string; setQuery: (q: string) => void; onOpen: (row: number) => void }) {
   const bm25 = useMemo(() => new BM25(data.repos.map((r) => tokens(searchText(r)))), [data]);
   const [draft, setDraft] = useState(query);
-  const [results, setResults] = useState<{ facets: Facets; results: Ranked[]; semantic: boolean } | null>(null);
+  const [items, setItems] = useState<ReelItem[]>([]);
+  const [version, setVersion] = useState(0);
+  const [qvec, setQvec] = useState<Float32Array | null>(null);
+  const [active, setActive] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
   const [modelP, setModelP] = useState(isReady() ? 1 : 0);
-  const input = useRef<HTMLInputElement>(null);
+  const box = useRef<HTMLTextAreaElement>(null);
+
   useEffect(() => onLoad(setModelP), []);
   useEffect(() => setDraft(query), [query]);
-
   useEffect(() => {
-    if (!query.trim()) {
-      setResults(null);
-      return;
-    }
     let live = true;
-    window.scrollTo({ top: 0 });
-    // Keyword ranking is instant; the semantic pass replaces it as soon as the query is embedded.
-    setResults({ ...rank(query, null, data, bm25), semantic: false });
-    embedQuery(query)
-      .then((v) => live && setResults({ ...rank(query, v, data, bm25), semantic: true }))
-      .catch(() => {});
+    void buildItems(data, loadLocal()).then((x) => live && setItems(x));
     return () => {
       live = false;
     };
-  }, [query, data, bm25]);
+  }, [data, version]);
+
+  useEffect(() => {
+    setQvec(null);
+    window.scrollTo({ top: 0 });
+    if (!query.trim()) return;
+    let live = true;
+    embedQuery(query).then((v) => live && setQvec(v)).catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [query]);
+
+  const reelHits: ReelHit[] = useMemo(() => (query.trim() ? rankReels(query, qvec, items, data) : []), [query, qvec, items, data]);
+  const strong = reelHits.filter((h) => h.relevance >= MATCH_MIN);
+  const shownReels = query.trim() ? (strong.length ? strong : reelHits.slice(0, 3)) : [];
+  const repos: { facets: Facets; results: Ranked[] } | null = useMemo(() => (query.trim() ? rank(query, qvec, data, bm25, 6) : null), [query, qvec, data, bm25]);
+  const reelRepos = new Set(shownReels.map((h) => h.item.repo?.toLowerCase()));
+  const repoOnly = repos ? repos.results.filter((x) => !reelRepos.has(data.repos[x.i].n.toLowerCase())).slice(0, strong.length ? 3 : 5) : [];
+
+  const feed = query.trim() ? (shownReels.length ? shownReels.map((h) => h.item) : items) : items;
+  useEffect(() => {
+    if (!feed.length) setActive(null);
+    else if (!active || !feed.some((f) => f.key === active)) setActive(feed[0].key);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [feed.map((f) => f.key).join('|')]);
+  const onActive = useCallback((k: string) => setActive(k), []);
+  // From a result card: play it, and on narrow screens bring the phone into view.
+  const watch = (k: string) => {
+    setActive(k);
+    if (innerWidth < 834) document.querySelector('.phone-col')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const submit = (q: string) => {
+    setQuery(q.trim());
+    box.current?.blur();
+  };
+  const searching = !!query.trim();
 
   const rising = useMemo(
     () => data.repos.map((r, i) => ({ r, i })).filter(({ r }) => (r.mo.d7 ?? 0) > 0 && !r.a).sort((a, b) => (b.r.mo.d7 ?? 0) - (a.r.mo.d7 ?? 0)).slice(0, 12),
     [data],
   );
-  const trusted = data.creators.creators.filter((c) => c.eligible).slice(0, 6);
-
-  const submit = (q: string) => {
-    setQuery(q.trim());
-    input.current?.blur();
-  };
 
   return (
     <>
-      <section className={`tile parchment hero${results ? ' compact' : ''}`}>
-        <div className="wrap narrow">
-          {!results && <p className="eyebrow">Find the repo. Watch the proof.</p>}
-          <h1>{results ? 'What are you building?' : <>What are you<br />building?</>}</h1>
-          <form className="search-pill" onSubmit={(e) => (e.preventDefault(), submit(draft))} role="search">
-            <span aria-hidden="true" className="glass">⌕</span>
-            <input
-              ref={input}
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-              onFocus={warm}
-              placeholder="Describe the tool you need, in your own words"
-              aria-label="Describe what you're building"
-            />
-            {draft && <button type="button" className="clear" onClick={() => (setDraft(''), setQuery(''), input.current?.focus())} aria-label="Clear">✕</button>}
-            <button className="btn primary" disabled={!draft.trim()}>Search</button>
-          </form>
-          {!results && (
-            <div className="chips center">
-              {EXAMPLES.map((e) => (
-                <button key={e} className="chip" onClick={() => (setDraft(e), submit(e))}>{e}</button>
-              ))}
-            </div>
-          )}
-          {!results && <p className="fine center">{compact(data.repos.length)} repositories, refreshed daily · ranked by meaning, momentum, health and creator proof</p>}
+      <section className="stage-hero">
+        <div className="wrap stage-grid">
+          <div className="ask">
+            <p className="eyebrow">Find the reel. Then the repo.</p>
+            <h1 className={`ask-title${searching ? ' small' : ''}`}>{searching ? 'Your answer, as a reel' : <>What are you<br />trying to build?</>}</h1>
+            <form className="ask-box" onSubmit={(e) => (e.preventDefault(), submit(draft))} role="search">
+              <textarea
+                ref={box}
+                value={draft}
+                rows={searching ? 1 : 3}
+                onChange={(e) => setDraft(e.target.value)}
+                onFocus={warm}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    submit(draft);
+                  }
+                }}
+                placeholder="Describe your problem in your own words, e.g. “I want an AI that applies to jobs in Pune for me”"
+                aria-label="Describe your problem"
+              />
+              <div className="ask-bar">
+                {searching && <button type="button" className="link" onClick={() => (setDraft(''), setQuery(''))}>Clear</button>}
+                <span className={`mode${modelP >= 1 ? ' on' : ''}`}>{modelP >= 1 ? '● understands meaning' : modelP > 0 ? `loading language model ${Math.round(modelP * 100)}%` : ''}</span>
+                <button className="btn primary" disabled={!draft.trim()}>Find the reel</button>
+              </div>
+            </form>
+            {!searching && (
+              <div className="chips">
+                {EXAMPLES.map((e) => (
+                  <button key={e} className="chip" onClick={() => (setDraft(e), submit(e))}>{e}</button>
+                ))}
+              </div>
+            )}
+
+            <AnimatePresence mode="wait">
+              {searching ? (
+                <motion.div key={`r-${query}`} className="answers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
+                  {repos && <Understood facets={repos.facets} labels={data.ranking.labels} />}
+                  {items.length === 0 ? (
+                    <div className="empty-note">
+                      <b>No reels indexed yet.</b> Reels come from vetted creators (curated in <code>reels.yaml</code>) and from reels you add.{' '}
+                      <button className="link" onClick={() => setAdding(true)}>Add a reel you've seen</button>. Meanwhile, here are the repos that fit:
+                    </div>
+                  ) : strong.length ? (
+                    <h3 className="answers-h">{strong.length} reel{strong.length > 1 ? 's' : ''} for this</h3>
+                  ) : (
+                    <div className="empty-note">No reel covers this exactly yet. Here are the closest reels, and the repos that fit below.</div>
+                  )}
+                  {shownReels.map((h, n) => (
+                    <ReelResult key={h.item.key} it={h.item} data={data} n={n} active={h.item.key === active} onWatch={() => watch(h.item.key)} onDetails={onOpen} />
+                  ))}
+                  {repoOnly.length > 0 && (
+                    <>
+                      <h3 className="answers-h">{strong.length ? 'More repos for this · no reel yet' : 'Repos for this'}</h3>
+                      <div className="result-list">
+                        {repoOnly.map((x, k) => (
+                          <RepoCard key={data.repos[x.i].n} r={data.repos[x.i]} data={data} why={x.why} index={k} onOpen={() => onOpen(x.i)} compact />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </motion.div>
+              ) : (
+                <motion.div key="latest" className="answers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
+                  {items.length > 0 ? (
+                    <>
+                      <h3 className="answers-h">Latest reels</h3>
+                      {items.slice(0, 4).map((it, n) => (
+                        <ReelResult key={it.key} it={it} data={data} n={n} active={it.key === active} onWatch={() => watch(it.key)} onDetails={onOpen} />
+                      ))}
+                    </>
+                  ) : (
+                    <p className="fine">{compact(data.repos.length)} repositories indexed and refreshed daily. Reels from vetted creators are being curated. <button className="link" onClick={() => setAdding(true)}>Add a reel</button></p>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <aside className="phone-col">
+            <Phone items={feed} data={data} activeKey={active} onActive={onActive} autoplay={!searching} onAdd={() => setAdding(true)} />
+            <button className="link add-reel" onClick={() => setAdding(true)}>+ Add a reel you've seen</button>
+          </aside>
         </div>
       </section>
 
-      <AnimatePresence mode="wait">
-        {results ? (
-          <motion.section key="results" className="tile light results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
-            <div className="wrap narrow">
-              <Understood facets={results.facets} labels={data.ranking.labels} semantic={results.semantic} modelP={modelP} />
-              <div className="result-list">
-                {results.results.map((x, k) => (
-                  <RepoCard key={data.repos[x.i].n} r={data.repos[x.i]} data={data} why={x.why} index={k} onOpen={() => onOpen(x.i)} />
+      {!searching && (
+        <>
+          <section className="tile dark">
+            <div className="wrap">
+              <p className="eyebrow on-dark">Rising this week</p>
+              <h2>Repos creators will be talking about next.</h2>
+              <div className="rail" role="list">
+                {rising.map(({ r, i }) => (
+                  <button key={r.n} className="rail-card" role="listitem" onClick={() => onOpen(i)}>
+                    <img className="avatar" src={`https://github.com/${r.n.split('/')[0]}.png?size=72`} alt="" width="36" height="36" loading="lazy" />
+                    <b>{r.n.split('/')[1]}</b>
+                    <span>{r.d.slice(0, 96)}</span>
+                    <HealthStrip r={r} dark />
+                  </button>
                 ))}
               </div>
             </div>
-          </motion.section>
-        ) : (
-          <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
-            <section className="tile dark">
-              <div className="wrap">
-                <p className="eyebrow on-dark">Rising this week</p>
-                <h2>Momentum from our own daily snapshots.</h2>
-                <div className="rail" role="list">
-                  {rising.map(({ r, i }) => (
-                    <button key={r.n} className="rail-card" role="listitem" onClick={() => onOpen(i)}>
-                      <img className="avatar" src={`https://github.com/${r.n.split('/')[0]}.png?size=72`} alt="" width="36" height="36" loading="lazy" />
-                      <b>{r.n.split('/')[1]}</b>
-                      <span>{r.d.slice(0, 96)}</span>
-                      <HealthStrip r={r} dark />
-                    </button>
-                  ))}
-                </div>
+          </section>
+          <section className="tile parchment">
+            <div className="wrap split">
+              <div>
+                <p className="eyebrow">Saw a reel somewhere?</p>
+                <h2>Snap it. Get the repo.</h2>
+                <p className="lead muted">Drop a screenshot of the frame that shows the repo name. OCR runs in your browser and finds the exact repository, with no DMs and no "comment REPO".</p>
+                <a className="btn primary" href="#/snap">Snap a reel</a>
               </div>
-            </section>
-            <section className="tile light">
-              <div className="wrap">
-                <p className="eyebrow">Trusted creators</p>
-                <h2>Reels count only from vetted creators.</h2>
-                <p className="lead muted">
-                  {compact(data.creators.gates.min_followers)}+ followers, {data.creators.gates.min_posts_60d}+ repo posts in 60 days, and an accuracy score
-                  checked against GitHub: creators who hype dead repos sink automatically.
-                </p>
-                {trusted.length ? (
-                  <div className="creator-row">
-                    {trusted.map((c) => (
-                      <a key={c.handle} className="creator-chip" href={`https://www.instagram.com/${c.handle}/`} target="_blank" rel="noreferrer">
-                        <b>@{c.handle}</b>
-                        <span>{compact(c.followers)} followers · trust {Math.round(c.trust * 100)}</span>
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="empty-note">The creator list is being curated. <a href="#/creators">See how creators are vetted →</a></p>
-                )}
+              <div>
+                <p className="eyebrow">Only trusted creators</p>
+                <h2>Proof has to be earned.</h2>
+                <p className="lead muted">{compact(data.creators.gates.min_followers)}+ followers, regular repo posts, and an accuracy score checked against GitHub. Creators who hype dead repos sink automatically.</p>
+                <a className="btn secondary" href="#/creators">How creators are vetted</a>
               </div>
-            </section>
-            <section className="tile parchment">
-              <div className="wrap split">
-                <div>
-                  <p className="eyebrow">Saw a reel?</p>
-                  <h2>Snap it. Get the repo.</h2>
-                  <p className="lead muted">Drop a screenshot of the frame that shows the repo. OCR runs in your browser and finds the exact repository, with no DMs and no "comment REPO".</p>
-                  <a className="btn primary" href="#/snap">Snap a reel</a>
-                </div>
-                <div>
-                  <p className="eyebrow">Built like a data platform</p>
-                  <h2>A pipeline you can inspect.</h2>
-                  <p className="lead muted">GitHub, Hacker News and curated creator data flow through bronze, silver and gold layers every night, with quality checks and retrieval evaluation.</p>
-                  <a className="btn secondary" href="#/pipeline">Pipeline status</a>
-                </div>
-              </div>
-            </section>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
+          </section>
+        </>
+      )}
+      <AddReel data={data} open={adding} onClose={() => setAdding(false)} onChange={() => setVersion((v) => v + 1)} />
     </>
   );
 }
 
-function Understood({ facets, labels, semantic, modelP }: { facets: Facets; labels: Record<string, string>; semantic: boolean; modelP: number }) {
+function Understood({ facets, labels }: { facets: Facets; labels: Record<string, string> }) {
   const chips = [
     ...facets.categories.map((c) => labels[c] ?? c),
     ...facets.platforms.map((p) => p[0].toUpperCase() + p.slice(1)),
@@ -165,13 +221,11 @@ function Understood({ facets, labels, semantic, modelP }: { facets: Facets; labe
     ...(facets.language ? [facets.language] : []),
     ...(facets.location ? [`📍 ${facets.location}`] : []),
   ];
+  if (!chips.length) return null;
   return (
     <div className="understood">
       <span className="label">Understood</span>
-      {chips.length ? chips.map((c) => <span key={c} className="chip static">{c}</span>) : <span className="muted">your description</span>}
-      <span className={`mode${semantic ? ' on' : ''}`} title={semantic ? 'Ranked by meaning and keywords' : 'Keyword ranking until the language model loads'}>
-        {semantic ? '● semantic' : modelP > 0 && modelP < 1 ? `loading model ${Math.round(modelP * 100)}%` : '○ keyword'}
-      </span>
+      {chips.map((c) => <span key={c} className="chip static">{c}</span>)}
     </div>
   );
 }

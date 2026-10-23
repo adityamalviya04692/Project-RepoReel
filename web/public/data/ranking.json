@@ -1,0 +1,237 @@
+{
+ "weights": {
+  "semantic": 0.36,
+  "keyword": 0.1,
+  "popularity": 0.28,
+  "momentum": 0.08,
+  "health": 0.06,
+  "social": 0.05,
+  "freshness": 0.03
+ },
+ "ai": {
+  "mcp": [
+   "mcp",
+   "model context protocol",
+   "mcp-server",
+   "mcp server"
+  ],
+  "claude": [
+   "claude",
+   "anthropic",
+   "claude code",
+   "claude-code"
+  ],
+  "openai": [
+   "openai",
+   "chatgpt",
+   "gpt-4",
+   "gpt-5",
+   "gpt4",
+   "codex"
+  ],
+  "gemini": [
+   "gemini",
+   "google ai studio",
+   "vertex ai"
+  ],
+  "local": [
+   "ollama",
+   "llama.cpp",
+   "lm studio",
+   "vllm",
+   "gguf"
+  ]
+ },
+ "platforms": {
+  "linkedin": [
+   "linkedin"
+  ],
+  "naukri": [
+   "naukri"
+  ],
+  "indeed": [
+   "indeed"
+  ],
+  "glassdoor": [
+   "glassdoor"
+  ],
+  "whatsapp": [
+   "whatsapp"
+  ],
+  "telegram": [
+   "telegram"
+  ],
+  "discord": [
+   "discord"
+  ],
+  "slack": [
+   "slack"
+  ],
+  "notion": [
+   "notion"
+  ],
+  "gmail": [
+   "gmail",
+   "email"
+  ],
+  "youtube": [
+   "youtube"
+  ],
+  "instagram": [
+   "instagram"
+  ],
+  "twitter": [
+   "twitter",
+   "x.com"
+  ],
+  "reddit": [
+   "reddit"
+  ],
+  "github": [
+   "github"
+  ],
+  "excel": [
+   "excel",
+   "spreadsheet",
+   "google sheets"
+  ],
+  "pdf": [
+   "pdf"
+  ]
+ },
+ "languages": {
+  "python": "Python",
+  "typescript": "TypeScript",
+  "javascript": "JavaScript",
+  "go": "Go",
+  "golang": "Go",
+  "rust": "Rust",
+  "java": "Java",
+  "c++": "C++",
+  "swift": "Swift",
+  "kotlin": "Kotlin"
+ },
+ "categories": {
+  "job-search": [
+   "job",
+   "jobs",
+   "hiring",
+   "apply",
+   "resume",
+   "cv",
+   "career",
+   "interview"
+  ],
+  "scraping": [
+   "scrape",
+   "scraper",
+   "scraping",
+   "crawl",
+   "crawler",
+   "extract data"
+  ],
+  "browser": [
+   "browser",
+   "web automation",
+   "click",
+   "fill forms",
+   "playwright",
+   "selenium"
+  ],
+  "rag": [
+   "rag",
+   "documents",
+   "knowledge base",
+   "chat with",
+   "retrieval",
+   "search my"
+  ],
+  "mcp": [
+   "mcp",
+   "model context protocol"
+  ],
+  "agents": [
+   "agent",
+   "autonomous",
+   "multi-agent"
+  ],
+  "coding": [
+   "code",
+   "coding",
+   "developer",
+   "pull request",
+   "refactor"
+  ],
+  "voice": [
+   "voice",
+   "speech",
+   "tts",
+   "transcribe",
+   "podcast",
+   "audio"
+  ],
+  "documents": [
+   "ocr",
+   "pdf",
+   "invoice",
+   "receipt",
+   "document"
+  ],
+  "automation": [
+   "automate",
+   "automation",
+   "workflow",
+   "zapier",
+   "n8n"
+  ],
+  "media": [
+   "image",
+   "video",
+   "photo",
+   "thumbnail",
+   "diffusion",
+   "generate images"
+  ],
+  "bots": [
+   "bot",
+   "chatbot",
+   "whatsapp",
+   "telegram",
+   "discord"
+  ],
+  "data": [
+   "etl",
+   "pipeline",
+   "data engineering",
+   "warehouse",
+   "dbt",
+   "spark"
+  ],
+  "local-llm": [
+   "local",
+   "offline",
+   "on my laptop",
+   "ollama",
+   "self-hosted",
+   "private"
+  ]
+ },
+ "labels": {
+  "agents": "AI agents",
+  "mcp": "MCP servers",
+  "claude": "Claude tools",
+  "job-search": "Job search",
+  "scraping": "Web scraping",
+  "browser": "Browser automation",
+  "rag": "RAG & search",
+  "data": "Data engineering",
+  "local-llm": "Local LLMs",
+  "coding": "Coding agents",
+  "voice": "Voice & speech",
+  "documents": "Documents & OCR",
+  "automation": "Workflow automation",
+  "media": "Image & video AI",
+  "bots": "Chat bots",
+  "rising": "Rising now"
+ }
+}

@@ -4,12 +4,12 @@ import HealthStrip from './HealthStrip';
 import ReelEmbed from './ReelEmbed';
 
 /* A result: what the repo is, why it matches, how healthy it is, and creator reels as proof. */
-export default function RepoCard({ r, data, why, onOpen, index = 0 }: { r: Repo; data: Data; why?: string[]; onOpen: () => void; index?: number }) {
+export default function RepoCard({ r, data, why, onOpen, index = 0, compact = false }: { r: Repo; data: Data; why?: string[]; onOpen: () => void; index?: number; compact?: boolean }) {
   const [owner, name] = r.n.split('/');
   const reels = data.reelsByRepo.get(r.n.toLowerCase()) ?? [];
   return (
     <motion.article
-      className="repo-card"
+      className={`repo-card${compact ? ' compact' : ''}`}
       layout="position"
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function RepoCard({ r, data, why, onOpen, index = 0 }: { r: Repo;
       )}
       <p className="desc">{r.d || r.x.slice(0, 180)}</p>
       <HealthStrip r={r} />
-      {reels.length > 0 ? (
+      {compact ? null : reels.length > 0 ? (
         <div className="reels-row">
           {reels.slice(0, 3).map((rl) => (
             <ReelEmbed key={rl.url} reel={rl} creator={data.creatorByHandle.get(rl.creator)} />

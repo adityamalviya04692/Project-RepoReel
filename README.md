@@ -6,12 +6,12 @@
 
 ---
 
-Builders now discover tools through short-form creators: *"this repo lets AI apply to jobs for you, comment REPO and I'll DM you"*. Search engines are bad at this, and the handoff is broken. RepoReel flips it around:
+Builders now discover tools through Instagram reels (*"this repo lets AI apply to jobs for you, comment REPO and I'll DM you"*), but when you need one later you can't find it again, on Instagram or on Google. **RepoReel takes your problem and hands you back the exact reel to watch**, with the repo it talks about one tap away.
 
-1. A **nightly data pipeline** keeps a catalog of thousands of useful repositories (AI agents, MCP servers, scraping, automation, RAG, job-search tools…) with health, momentum and community signals.
-2. You **describe your need in plain language**. RepoReel understands it (task, platform, AI tool, language, location) and ranks repos by meaning, keywords, momentum, health and social proof.
-3. Each result shows **reels from vetted creators** (50k+ followers, posting regularly, and accurate when checked against GitHub) using Instagram's official embed, as proof the repo does what you need.
-4. Saw a reel? **Snap it**: drop a screenshot and on-device OCR reads the repo name off the frame.
+1. **Ask in plain language.** A large ask panel understands the task, the platform, the AI tool, the language and the location.
+2. **Get reels, not links.** Reels are ranked by meaning (on-device MiniLM embeddings), keywords, recency, creator trust and repo health. They play in a phone on the right with Instagram's official embed; every reel carries the repo it mentions and an **Open repo** button.
+3. **Verify before you use.** Each answer shows the repo's stars, weekly momentum, last push and licence from a nightly pipeline over 4,000+ repositories. When no reel covers your need yet, the closest repos are listed instead.
+4. **Saw a reel elsewhere?** **Snap it** (on-device OCR on a screenshot) to get the repo, or **Add it**: it's indexed instantly in your browser and exports as `reels.yaml` lines for everyone.
 
 ## Architecture
 

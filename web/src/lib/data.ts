@@ -29,7 +29,8 @@ export interface Creator {
 
 export interface Reel {
   url: string; creator: string; posted: string; repo: string | null; confidence: number; method: string | null;
-  likes?: number | null; comments?: number | null; views?: number | null; caption_excerpt?: string;
+  likes?: number | null; comments?: number | null; views?: number | null; caption?: string;
+  vec?: string; // base64 int8 384-d (caption + repo text), from the pipeline
 }
 
 export interface Ranking {
@@ -92,14 +93,12 @@ export function load(): Promise<Data> {
     const reelsByRepo = new Map<string, Reel[]>();
     for (const rl of reels.reels) {
       if (!rl.repo) continue;
-      const c = creatorByHandle.get(rl.creator);
-      if (!c?.eligible) continue; // only vetted creators are shown as proof
       const k = rl.repo.toLowerCase();
       reelsByRepo.set(k, [...(reelsByRepo.get(k) ?? []), rl]);
     }
     // Best reels first: trust × match confidence × recency.
     for (const [k, list] of reelsByRepo) {
-      const score = (r: Reel) => (creatorByHandle.get(r.creator)?.trust ?? 0) * r.confidence * Math.exp(-(Date.now() - Date.parse(r.posted)) / 864e5 / 45);
+      const score = (r: Reel) => (0.3 + (creatorByHandle.get(r.creator)?.trust ?? 0)) * r.confidence * Math.exp(-(Date.now() - Date.parse(r.posted)) / 864e5 / 45);
       reelsByRepo.set(k, [...list].sort((a, b) => score(b) - score(a)));
     }
     return { generated: catalog.generated, repos: catalog.repos, vecs: new Int8Array(vecBuf), dims: catalog.dims, ranking, creators, reels, pipeline, byName, reelsByRepo, creatorByHandle };

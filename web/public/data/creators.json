@@ -1,0 +1,13 @@
+{
+ "creators": [],
+ "gates": {
+  "min_followers": 50000,
+  "min_posts_60d": 4
+ },
+ "weights": {
+  "accuracy": 0.35,
+  "consistency": 0.25,
+  "engagement": 0.2,
+  "recency": 0.2
+ }
+}

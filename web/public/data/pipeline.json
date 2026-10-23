@@ -1,0 +1,353 @@
+{
+ "last": {
+  "finished": "2026-10-23T12:05:19+00:00",
+  "seconds": 303.3,
+  "stages": [
+   {
+    "name": "discover \u00b7 replay bronze",
+    "seconds": 0.02,
+    "rows": {
+     "repos": 4165
+    }
+   },
+   {
+    "name": "hn \u00b7 replay bronze",
+    "seconds": 0.01,
+    "rows": {
+     "repos_mentioned": 2960
+    }
+   },
+   {
+    "name": "curated \u00b7 creators & reels",
+    "seconds": 0.0,
+    "rows": {
+     "creators": 0,
+     "reels": 0,
+     "golden_queries": 12
+    }
+   },
+   {
+    "name": "enrich \u00b7 replay bronze",
+    "seconds": 0.24,
+    "rows": {
+     "repos": 4304,
+     "from_hn_or_reels": 0
+    }
+   },
+   {
+    "name": "silver \u00b7 DuckDB transforms",
+    "seconds": 0.33,
+    "rows": {
+     "repos": 4303,
+     "snapshots": 4303,
+     "snapshot_days": 1
+    }
+   },
+   {
+    "name": "embed \u00b7 all-MiniLM-L6-v2",
+    "seconds": 297.47,
+    "rows": {
+     "vectors": 4303,
+     "dims": 384
+    }
+   },
+   {
+    "name": "match \u00b7 reels \u2192 repos",
+    "seconds": 1.59,
+    "rows": {
+     "reels": 0,
+     "matched": 0,
+     "review_queue": 0
+    }
+   },
+   {
+    "name": "score \u00b7 health, momentum, trust",
+    "seconds": 1.05,
+    "rows": {
+     "repos": 4303,
+     "creators": 0,
+     "eligible_creators": 0
+    }
+   },
+   {
+    "name": "quality \u00b7 checks",
+    "seconds": 0.01,
+    "rows": {
+     "passed": 9,
+     "warnings": 0,
+     "failed": 0
+    }
+   },
+   {
+    "name": "eval \u00b7 golden queries",
+    "seconds": 0.98,
+    "rows": {
+     "queries": 12,
+     "hit1": 0.333,
+     "hit3": 0.5,
+     "mrr": 0.417
+    }
+   },
+   {
+    "name": "gold \u00b7 publish site data",
+    "seconds": 0.07,
+    "rows": {
+     "files": 6,
+     "repos": 4303
+    }
+   }
+  ],
+  "checks": [
+   {
+    "name": "catalog not empty",
+    "status": "pass",
+    "detail": "4303 repositories"
+   },
+   {
+    "name": "unique repositories",
+    "status": "pass",
+    "detail": "0 duplicates"
+   },
+   {
+    "name": "required fields present",
+    "status": "pass",
+    "detail": "full_name and url on every row"
+   },
+   {
+    "name": "stars non-negative",
+    "status": "pass",
+    "detail": "stars \u2265 0"
+   },
+   {
+    "name": "embeddings aligned",
+    "status": "pass",
+    "detail": "4303 vectors for 4303 repos"
+   },
+   {
+    "name": "catalog size stable",
+    "status": "pass",
+    "detail": "4303 \u2192 4303 (-0%)"
+   },
+   {
+    "name": "reels reference known creators",
+    "status": "pass",
+    "detail": "0 reels, 0 creators"
+   },
+   {
+    "name": "every reel matched to a repo",
+    "status": "pass",
+    "detail": "all matched"
+   },
+   {
+    "name": "plausible star velocity",
+    "status": "pass",
+    "detail": "no anomalies"
+   }
+  ],
+  "eval": {
+   "queries": 12,
+   "hit1": 0.333,
+   "hit3": 0.5,
+   "mrr": 0.417,
+   "rows": [
+    {
+     "query": "an AI agent that can use my web browser and click around websites for me",
+     "expect": [
+      "browser-use/browser-use"
+     ],
+     "first_hit": 1,
+     "top3": [
+      "browser-use/browser-use",
+      "jackwener/opencli",
+      "lexmount/moli"
+     ]
+    },
+    {
+     "query": "scrape websites into clean markdown for my LLM",
+     "expect": [
+      "unclecode/crawl4ai",
+      "mendableai/firecrawl",
+      "firecrawl/firecrawl"
+     ],
+     "first_hit": 1,
+     "top3": [
+      "unclecode/crawl4ai",
+      "0xmassi/webclaw",
+      "scrapegraphai/scrapegraph-ai"
+     ]
+    },
+    {
+     "query": "collection of MCP servers to connect Claude to my tools",
+     "expect": [
+      "modelcontextprotocol/servers",
+      "punkpeye/awesome-mcp-servers"
+     ],
+     "first_hit": 1,
+     "top3": [
+      "punkpeye/awesome-mcp-servers",
+      "prefecthq/fastmcp",
+      "samanhappy/mcphub"
+     ]
+    },
+    {
+     "query": "run large language models locally on my laptop",
+     "expect": [
+      "ollama/ollama",
+      "ggml-org/llama.cpp",
+      "ggerganov/llama.cpp"
+     ],
+     "first_hit": null,
+     "top3": [
+      "handsonllm/hands-on-large-language-models",
+      "mudler/localai",
+      "rasbt/llms-from-scratch"
+     ]
+    },
+    {
+     "query": "self-hosted workflow automation like Zapier",
+     "expect": [
+      "n8n-io/n8n",
+      "activepieces/activepieces"
+     ],
+     "first_hit": 2,
+     "top3": [
+      "automatisch/automatisch",
+      "activepieces/activepieces",
+      "n8n-io/n8n"
+     ]
+    },
+    {
+     "query": "scrape job listings from LinkedIn and Indeed",
+     "expect": [
+      "speedyapply/JobSpy",
+      "cullenwatson/JobSpy",
+      "Bunsly/JobSpy"
+     ],
+     "first_hit": 1,
+     "top3": [
+      "speedyapply/jobspy",
+      "spinlud/py-linkedin-jobs-scraper",
+      "godsscion/auto_job_applier_linkedin"
+     ]
+    },
+    {
+     "query": "chat with my PDF documents using RAG",
+     "expect": [
+      "infiniflow/ragflow",
+      "Mintplex-Labs/anything-llm",
+      "run-llama/llama_index"
+     ],
+     "first_hit": null,
+     "top3": [
+      "cinnamon/kotaemon",
+      "storytold/pdfcraft",
+      "paddlepaddle/paddleocr"
+     ]
+    },
+    {
+     "query": "open source text to speech model with natural voices",
+     "expect": [
+      "coqui-ai/TTS",
+      "SWivid/F5-TTS",
+      "resemble-ai/chatterbox",
+      "hexgrad/kokoro"
+     ],
+     "first_hit": null,
+     "top3": [
+      "debpalash/voicestudio",
+      "cjpais/handy",
+      "jamiepine/voicebox"
+     ]
+    },
+    {
+     "query": "AI coding agent that works in my terminal",
+     "expect": [
+      "Aider-AI/aider",
+      "paul-gauthier/aider",
+      "openai/codex",
+      "anthropics/claude-code",
+      "sst/opencode"
+     ],
+     "first_hit": null,
+     "top3": [
+      "cline/cline",
+      "aaif-goose/goose",
+      "qwenlm/qwen-code"
+     ]
+    },
+    {
+     "query": "convert PDF and Office documents to markdown",
+     "expect": [
+      "microsoft/markitdown",
+      "docling-project/docling",
+      "DS4SD/docling",
+      "opendatalab/MinerU"
+     ],
+     "first_hit": 2,
+     "top3": [
+      "firecrawl/anydoc",
+      "docling-project/docling",
+      "oomol-lab/pdf-craft"
+     ]
+    },
+    {
+     "query": "build a team of AI agents that collaborate",
+     "expect": [
+      "crewAIInc/crewAI",
+      "microsoft/autogen",
+      "joaomdmoura/crewAI"
+     ],
+     "first_hit": null,
+     "top3": [
+      "mvschwarz/openrig",
+      "langchain-ai/langchain",
+      "ashishpatel26/500-ai-agents-projects"
+     ]
+    },
+    {
+     "query": "speech to text transcription that runs offline",
+     "expect": [
+      "openai/whisper",
+      "ggml-org/whisper.cpp",
+      "ggerganov/whisper.cpp",
+      "SYSTRAN/faster-whisper"
+     ],
+     "first_hit": null,
+     "top3": [
+      "cjpais/handy",
+      "openwhispr/openwhispr",
+      "debpalash/voicestudio"
+     ]
+    }
+   ]
+  },
+  "catalog": 4303,
+  "snapshot_days": 1
+ },
+ "history": [
+  {
+   "finished": "2026-10-23T11:27:04+00:00",
+   "seconds": 569.5,
+   "catalog": 463,
+   "failed": 0
+  },
+  {
+   "finished": "2026-10-23T11:52:15+00:00",
+   "seconds": 1494.5,
+   "catalog": 4303,
+   "failed": 0
+  },
+  {
+   "finished": "2026-10-23T11:56:07+00:00",
+   "seconds": 214.1,
+   "catalog": 4303,
+   "failed": 0
+  },
+  {
+   "finished": "2026-10-23T12:05:19+00:00",
+   "seconds": 303.3,
+   "catalog": 4303,
+   "failed": 0
+  }
+ ]
+}

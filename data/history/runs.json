@@ -1,0 +1,26 @@
+[
+ {
+  "finished": "2026-10-23T11:27:04+00:00",
+  "seconds": 569.5,
+  "catalog": 463,
+  "failed": 0
+ },
+ {
+  "finished": "2026-10-23T11:52:15+00:00",
+  "seconds": 1494.5,
+  "catalog": 4303,
+  "failed": 0
+ },
+ {
+  "finished": "2026-10-23T11:56:07+00:00",
+  "seconds": 214.1,
+  "catalog": 4303,
+  "failed": 0
+ },
+ {
+  "finished": "2026-10-23T12:05:19+00:00",
+  "seconds": 303.3,
+  "catalog": 4303,
+  "failed": 0
+ }
+]
