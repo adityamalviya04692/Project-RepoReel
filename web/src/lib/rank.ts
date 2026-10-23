@@ -86,7 +86,9 @@ export interface Ranked {
 
 export function rank(query: string, qvec: Float32Array | null, data: Data, bm25: BM25, k = 8): { facets: Facets; results: Ranked[] } {
   const f = understand(query, data.ranking);
-  const w = data.ranking.weights;
+  // Until the query is embedded (model still downloading), keywords carry the semantic weight;
+  // otherwise popularity and momentum would decide the ranking on their own.
+  const w = qvec ? data.ranking.weights : { ...data.ranking.weights, keyword: data.ranking.weights.keyword + data.ranking.weights.semantic, semantic: 0 };
   const kw = bm25.scores(tokens(`${query} ${f.categories.join(' ')}`));
   let max = 0;
   for (const v of kw) max = Math.max(max, v);

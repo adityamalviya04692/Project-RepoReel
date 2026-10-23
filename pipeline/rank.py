@@ -96,7 +96,8 @@ def search_text(r: dict) -> str:
 
 def rank(query: str, qvec: Optional[np.ndarray], repos: list[dict], vecs: Optional[np.ndarray], bm25: BM25, k: int = 10) -> list[tuple[int, float]]:
     f = understand(query)
-    w = RANK_WEIGHTS
+    # Without a query vector, keywords carry the semantic weight (the browser does the same while its model loads).
+    w = RANK_WEIGHTS if qvec is not None else {**RANK_WEIGHTS, "keyword": RANK_WEIGHTS["keyword"] + RANK_WEIGHTS["semantic"], "semantic": 0.0}
     kw = bm25.scores(tokens(query + " " + " ".join(f["categories"])))
     kw = kw / kw.max() if kw.max() > 0 else kw
     sem = (vecs @ qvec).astype(np.float32) if (qvec is not None and vecs is not None) else np.zeros(len(repos), np.float32)
