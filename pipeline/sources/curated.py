@@ -16,8 +16,9 @@ HANDLE = re.compile(r"^[A-Za-z0-9._]{1,30}$")
 
 class Creator(BaseModel):
     handle: str
-    followers: int = Field(ge=0)
+    followers: Optional[int] = Field(default=None, ge=0, description="None = not checked yet (auto-discovered creators)")
     niche: str = ""
+    source: str = "curated"
     added: Optional[date] = None
     repo_posts_60d: Optional[int] = Field(default=None, ge=0, description="override; otherwise counted from reels.yaml")
 

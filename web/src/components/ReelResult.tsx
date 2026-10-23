@@ -23,6 +23,8 @@ export default function ReelResult({ it, data, n, active, onWatch, onDetails }: 
           {it.badge === 'top' && <span className="trust top">Top creator</span>}
           {it.badge === 'verified' && <span className="trust">Verified</span>}
           {it.badge === 'local' && <span className="trust">Added by you</span>}
+          {it.badge === 'live' && <span className="trust live">Live from Instagram</span>}
+          {it.badge === 'pending' && <span className="trust">New creator</span>}
           <span className="muted">{ago(it.posted)}</span>
         </div>
         {it.caption && <p className="rr-caption">“{it.caption.slice(0, 180)}{it.caption.length > 180 ? '…' : ''}”</p>}

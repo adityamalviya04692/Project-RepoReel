@@ -10,6 +10,7 @@ import ReelResult from '../components/ReelResult';
 import RepoCard from '../components/RepoCard';
 import HealthStrip from '../components/HealthStrip';
 import AddReel from '../components/AddReel';
+import { LIVE_URL, liveSearch } from '../lib/live';
 
 const EXAMPLES = [
   'Apply to LinkedIn jobs automatically with AI',
@@ -28,6 +29,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
   const [qvec, setQvec] = useState<Float32Array | null>(null);
   const [active, setActive] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
+  const [live, setLive] = useState<{ q: string; items: ReelItem[]; state: 'idle' | 'searching' | 'done'; note?: string }>({ q: '', items: [], state: 'idle' });
   const [modelP, setModelP] = useState(isReady() ? 1 : 0);
   const box = useRef<HTMLTextAreaElement>(null);
 
@@ -52,12 +54,24 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
     };
   }, [query]);
 
-  const reelHits: ReelHit[] = useMemo(() => (query.trim() ? rankReels(query, qvec, items, data) : []), [query, qvec, items, data]);
+  const pool = useMemo(() => (live.q === query ? [...items, ...live.items.filter((l) => !items.some((i) => i.url === l.url))] : items), [items, live, query]);
+  const reelHits: ReelHit[] = useMemo(() => (query.trim() ? rankReels(query, qvec, pool, data) : []), [query, qvec, pool, data]);
   const strong = reelHits.filter((h) => h.relevance >= MATCH_MIN);
   const shownReels = query.trim() ? (strong.length ? strong : reelHits.slice(0, 3)) : [];
   const repos: { facets: Facets; results: Ranked[] } | null = useMemo(() => (query.trim() ? rank(query, qvec, data, bm25, 6) : null), [query, qvec, data, bm25]);
   const reelRepos = new Set(shownReels.map((h) => h.item.repo?.toLowerCase()));
   const repoOnly = repos ? repos.results.filter((x) => !reelRepos.has(data.repos[x.i].n.toLowerCase())).slice(0, strong.length ? 3 : 5) : [];
+
+  // Nothing in the index for this need → search Instagram live (free worker, cached and capped).
+  const indexStrong = query.trim() && qvec ? rankReels(query, qvec, items, data).some((h) => h.relevance >= MATCH_MIN) : true;
+  useEffect(() => {
+    if (!LIVE_URL || !query.trim() || !qvec || indexStrong || live.q === query) return;
+    setLive({ q: query, items: [], state: 'searching' });
+    liveSearch(query, data)
+      .then((r) => setLive({ q: query, items: r.items, state: 'done', note: r.note }))
+      .catch(() => setLive({ q: query, items: [], state: 'done', note: 'live search unavailable' }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, qvec, indexStrong]);
 
   const feed = query.trim() ? (shownReels.length ? shownReels.map((h) => h.item) : items) : items;
   useEffect(() => {
@@ -124,10 +138,11 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
               {searching ? (
                 <motion.div key={`r-${query}`} className="answers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
                   {repos && <Understood facets={repos.facets} labels={data.ranking.labels} />}
-                  {items.length === 0 ? (
+                  {live.q === query && live.state === 'searching' && <div className="live-status"><i className="spin" aria-hidden="true" /> Searching Instagram for fresh reels on this…</div>}
+                  {live.q === query && live.state === 'done' && live.note && <p className="fine">Live search: {live.note}</p>}
+                  {pool.length === 0 ? (
                     <div className="empty-note">
-                      <b>No reels indexed yet.</b> Reels come from vetted creators (curated in <code>reels.yaml</code>) and from reels you add.{' '}
-                      <button className="link" onClick={() => setAdding(true)}>Add a reel you've seen</button>. Meanwhile, here are the repos that fit:
+                      <b>No reels found for this yet.</b> New reels about repos are discovered on Instagram every day{LIVE_URL ? '' : ' (live search is not enabled on this deployment)'}. Here are the repos that fit:
                     </div>
                   ) : strong.length ? (
                     <h3 className="answers-h">{strong.length} reel{strong.length > 1 ? 's' : ''} for this</h3>
@@ -158,7 +173,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                       ))}
                     </>
                   ) : (
-                    <p className="fine">{compact(data.repos.length)} repositories indexed and refreshed daily. Reels from vetted creators are being curated. <button className="link" onClick={() => setAdding(true)}>Add a reel</button></p>
+                    <p className="fine">{compact(data.repos.length)} repositories indexed and refreshed daily. Reels about repos are discovered on Instagram automatically{data.discovery?.stats.apify === 'not configured' ? ' once the free discovery key is connected' : ''}.</p>
                   )}
                 </motion.div>
               )}
@@ -167,7 +182,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
 
           <aside className="phone-col">
             <Phone items={feed} data={data} activeKey={active} onActive={onActive} autoplay={!searching} onAdd={() => setAdding(true)} />
-            <button className="link add-reel" onClick={() => setAdding(true)}>+ Add a reel you've seen</button>
+            <button className="link add-reel" onClick={() => setAdding(true)}>Know a reel we missed? Add it</button>
           </aside>
         </div>
       </section>

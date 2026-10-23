@@ -24,7 +24,7 @@ export interface Repo {
 export interface Creator {
   handle: string; followers: number; niche: string; reels: number; posts_60d: number;
   accuracy: number; consistency: number; engagement: number; recency: number; trust: number;
-  eligible: boolean; badge: 'top' | 'verified' | 'pending'; reasons: string[];
+  eligible: boolean; badge: 'top' | 'verified' | 'pending'; reasons: string[]; source?: string;
 }
 
 export interface Reel {
@@ -52,6 +52,12 @@ export interface Pipeline {
   history: { finished: string; seconds: number; catalog: number }[];
 }
 
+export interface Discovery {
+  stats: { apify: string; graph: string; topics: { q: string; kind: string; reels: number }[]; fetched: number; budget: { used: number; plan_cap: number; resets: string | null } | null; replay?: boolean };
+  history_reels: number;
+  shown_reels: number;
+}
+
 export interface Data {
   generated: string;
   repos: Repo[];
@@ -61,6 +67,7 @@ export interface Data {
   creators: { creators: Creator[]; gates: { min_followers: number; min_posts_60d: number } };
   reels: { reels: Reel[]; review: { url: string; candidate: string; confidence: number }[] };
   pipeline: Pipeline | null;
+  discovery: Discovery | null;
   byName: Map<string, number>;
   reelsByRepo: Map<string, Reel[]>;
   creatorByHandle: Map<string, Creator>;
@@ -77,13 +84,14 @@ let loading: Promise<Data> | null = null;
 
 export function load(): Promise<Data> {
   return (loading ??= (async () => {
-    const [catalog, vecBuf, ranking, creators, reels, pipeline] = await Promise.all([
+    const [catalog, vecBuf, ranking, creators, reels, pipeline, discovery] = await Promise.all([
       json<{ generated: string; dims: number; repos: Repo[] }>('catalog.json'),
       fetch(base + 'embeddings.i8').then((r) => r.arrayBuffer()),
       json<Ranking>('ranking.json'),
       json<Data['creators']>('creators.json'),
       json<Data['reels']>('reels.json'),
       json<Pipeline>('pipeline.json').catch(() => null),
+      json<Discovery>('discovery.json').catch(() => null),
     ]);
     const maxLog = Math.max(1, ...catalog.repos.map((r) => Math.log1p(r.s)));
     for (const r of catalog.repos) r.sc.pop = Math.log1p(r.s) / maxLog; // same as pipeline/rank.py
@@ -101,7 +109,7 @@ export function load(): Promise<Data> {
       const score = (r: Reel) => (0.3 + (creatorByHandle.get(r.creator)?.trust ?? 0)) * r.confidence * Math.exp(-(Date.now() - Date.parse(r.posted)) / 864e5 / 45);
       reelsByRepo.set(k, [...list].sort((a, b) => score(b) - score(a)));
     }
-    return { generated: catalog.generated, repos: catalog.repos, vecs: new Int8Array(vecBuf), dims: catalog.dims, ranking, creators, reels, pipeline, byName, reelsByRepo, creatorByHandle };
+    return { generated: catalog.generated, repos: catalog.repos, vecs: new Int8Array(vecBuf), dims: catalog.dims, ranking, creators, reels, pipeline, discovery, byName, reelsByRepo, creatorByHandle };
   })());
 }
 

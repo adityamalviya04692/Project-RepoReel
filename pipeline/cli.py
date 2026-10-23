@@ -18,6 +18,7 @@ from pathlib import Path
 import numpy as np
 
 from . import quality as qa
+from . import reels as auto
 from .config import (BRONZE, CATEGORIES, CREATOR_MIN_FOLLOWERS, CREATOR_MIN_POSTS_60D, GITHUB_TOKEN, GOLD, HISTORY, HN_MIN_POINTS_TO_ADD,
                      MATCH_ACCEPT, MATCH_REVIEW, RANK_WEIGHTS, AI_COMPAT, TODAY, TRUST_WEIGHTS)
 from .embed import embed, quantize
@@ -96,6 +97,25 @@ def main(argv=None) -> int:
     golden = curated.golden()
     run.rows(creators=len(creators_in), reels=len(reels_in), golden_queries=len(golden))
 
+    # Automated discovery: trending reels about repos (Apify free credit) + known creators (Graph API).
+    if args.replay and (bronze / "reels_discovered.jsonl").exists():  # replays never spend Apify credit
+        disc = run.stage("reels · replay bronze", lambda: {"reels": [json.loads(l) for l in (bronze / "reels_discovered.jsonl").read_text().splitlines() if l.strip()],
+                                                           "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": True}})
+    else:
+        disc = run.stage("reels · discover on Instagram", auto.discover, TODAY)
+    run.rows(fetched=disc["stats"]["fetched"], history=len(disc["reels"]), creators_seen=len(disc["creators"]))
+    _jsonl(bronze / "reels_discovered.jsonl", disc["reels"])
+    curated_urls = {r.url for r in reels_in}
+    for r in disc["reels"]:
+        if r["url"] in curated_urls or not r.get("posted"):
+            continue
+        try:
+            reels_in.append(curated.Reel(url=r["url"], creator=r["creator"], posted=r["posted"], caption=r.get("caption") or "",
+                                         likes=r.get("likes"), comments=r.get("comments"), views=r.get("views")))
+        except ValueError:
+            continue
+    discovered_urls = {r["url"] for r in disc["reels"]}
+
     # 4. enrich: search hits + strong HN-only repos + repos named in curated reels
     ids = list(found)
     if args.limit:
@@ -151,7 +171,14 @@ def main(argv=None) -> int:
             if i is None:
                 return 0.5
             return float(max(0.0, min(1.0, (embed([text])[0] @ vecs[i] - 0.15) / 0.55)))
-        resolver = Resolver([{"full_name": r["full_name"], "stars": r["stars"]} for r in repos], semantic=semantic, fallback=github.search_name)
+        budget = {"searches": 25}  # GitHub search fallback is slow (rate limit); cap per run
+
+        def fallback(name: str):
+            if budget["searches"] <= 0:
+                return None
+            budget["searches"] -= 1
+            return github.search_name(name)
+        resolver = Resolver([{"full_name": r["full_name"], "stars": r["stars"]} for r in repos], semantic=semantic, fallback=fallback)
         out, review = [], []
         for reel in reels_in:
             rec = reel.model_dump()
@@ -164,7 +191,7 @@ def main(argv=None) -> int:
                     rec.update(repo=top.full_name, confidence=top.confidence, method=top.method, evidence=top.evidence)
                 else:
                     rec.update(repo=None, confidence=top.confidence if top else 0, method=top.method if top else None)
-                    if top and top.confidence >= MATCH_REVIEW:
+                    if top and top.confidence >= MATCH_REVIEW and reel.url not in discovered_urls:
                         review.append({"url": reel.url, "candidate": top.full_name, "confidence": top.confidence, "evidence": top.evidence})
             else:
                 rec.update(repo=None, confidence=0, method=None)
@@ -174,6 +201,51 @@ def main(argv=None) -> int:
         return out, review
     reels, review = run.stage("match · reels → repos", _match)
     run.rows(reels=len(reels), matched=sum(1 for r in reels if r.get("repo")), review_queue=len(review))
+
+    # Repos named in reels but missing from the catalog: fetch, embed and add them.
+    def _extend():
+        missing = sorted({r["repo"] for r in reels if r.get("repo") and r["repo"].lower() not in index})
+        added = github.lookup(missing) if missing else []
+        nonlocal_vecs = None
+        if added:
+            for a in added:
+                a["topics"] = list(a.get("topics") or [])
+                a["excerpt"] = clean_readme(a.get("readme") or "", 600)
+                repos.append(a)
+            nonlocal_vecs = embed([f"{a['full_name'].split('/')[1].replace('-', ' ')}. {a['description']}. Topics: {', '.join(a['topics'])}. {clean_readme(a.get('readme') or '', 1200)}" for a in added])
+            for i, a in enumerate(added):
+                index[a["full_name"].lower()] = len(repos) - len(added) + i
+        for r in reels:  # canonical casing + health check now that every matched repo is known
+            i = index.get((r.get("repo") or "").lower())
+            if i is not None:
+                r["repo"] = repos[i]["full_name"]
+                r["repo_ok"] = bool(not repos[i]["archived"] and health(repos[i]) >= 0.4)
+        return added, nonlocal_vecs
+    added, extra_vecs = run.stage("extend · repos found in reels", _extend)
+    if extra_vecs is not None:
+        vecs = np.vstack([vecs, extra_vecs])
+    run.rows(added=len(added))
+
+    # Creators: curated ones plus every author of a matched repo reel; fill follower counts (free paths first).
+    def _creators():
+        known = {c.handle for c in creators_in}
+        counts: dict[str, int] = {}
+        for r in reels:
+            if r.get("repo"):
+                counts[r["creator"]] = counts.get(r["creator"], 0) + 1
+        for h, n in counts.items():
+            disc["creators"].setdefault(h, {"followers": None})["repo_reels"] = n
+        filled = auto.fill_followers(disc["creators"], sorted(counts, key=lambda h: -counts[h]), TODAY)
+        auto.save(disc["reels"], disc["creators"])
+        for h in counts:
+            if h not in known:
+                c = disc["creators"][h]
+                creators_in.append(curated.Creator(handle=h, followers=c.get("followers"), niche="auto-discovered", source="auto"))
+        return filled
+    filled = run.stage("creators · discover & vet", _creators)
+    run.rows(creators=len(creators_in), followers_filled=filled)
+    # Only reels that point at a real repo are worth showing (curated ones stay for the review queue).
+    reels = [r for r in reels if r.get("repo") or r["url"] not in discovered_urls]
 
     # 8. scores
     def _score():
@@ -237,6 +309,7 @@ def main(argv=None) -> int:
         } for r in repos]
         (GOLD / "catalog.json").write_text(json.dumps({"generated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "count": len(repos), "dims": int(vecs.shape[1]), "repos": cat_repos}, separators=(",", ":")))
         (GOLD / "embeddings.i8").write_bytes(quantize(vecs).tobytes())
+        (GOLD / "discovery.json").write_text(json.dumps({"stats": disc["stats"], "history_reels": len(disc["reels"]), "shown_reels": len(reels)}, indent=1, default=str))
         (GOLD / "creators.json").write_text(json.dumps({"creators": sorted(trust.values(), key=lambda t: -t["trust"]),
             "gates": {"min_followers": CREATOR_MIN_FOLLOWERS, "min_posts_60d": CREATOR_MIN_POSTS_60D}, "weights": TRUST_WEIGHTS}, indent=1))
         # Each reel gets its own vector (caption + the repo it covers), so search ranks reels directly.

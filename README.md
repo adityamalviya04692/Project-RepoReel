@@ -43,27 +43,26 @@ Everything runs on **GitHub Actions + GitHub Pages**, with no servers and no pai
 | **Quality** | Contract checks (uniqueness, alignment, referential integrity, plausible velocity). A failure blocks publishing |
 | **Eval** | Golden queries scored with hit@1, hit@3 and MRR on every run, shown on the status page |
 
-## Add creators and reels
+## Automated reel discovery (free)
 
-Edit two files. The next pipeline run validates them, matches reels to repos and computes trust.
+No manual curation is needed. Every run of the pipeline:
 
-```yaml
-# curated/creators.yaml
-creators:
-  - handle: some_creator      # real public professional account
-    followers: 120000
-    niche: ai-tools
-```
+1. **Discovers reels** on Instagram for rotating topics (`#github`, `#githubrepo`, `#aitools`, `#claudecode`, `#mcp`, "github repo", "ai agent github", …) through **Apify's free plan** ($5 of usage every month, no card). A budget guard reads Apify's usage API and stops at $4.50, so it never costs money.
+2. **Matches each caption to a repository** (URLs, `owner/repo`, names, hashtags, with on-the-fly GitHub lookups). Only reels that resolve to a real repo are shown.
+3. **Finds the creators** behind those reels and vets them automatically: follower counts come from Meta's free **Business Discovery API** when connected (otherwise a few capped Apify lookups), and trust comes from accuracy, consistency, engagement and recency.
+4. Keeps a **120-day reel history**, so the index grows every day.
 
-```yaml
-# curated/reels.yaml
-reels:
-  - url: https://www.instagram.com/reel/SHORTCODE/
-    creator: some_creator
-    posted: 2026-10-20
-    repo: owner/name           # or paste the caption / on-screen text instead:
-    caption: "this repo browser-use lets AI control your browser"
-```
+At query time the site searches that index instantly. When nothing fits, an optional free **Cloudflare Worker** (`worker/`) searches Instagram live for the query's keywords: cached for 7 days, capped per day, and budget-guarded.
+
+| Secret / variable | Where | What |
+|---|---|---|
+| `APIFY_TOKEN` | repo secret | free token from console.apify.com → Settings → Integrations (turns discovery on) |
+| `IG_USER_ID`, `IG_ACCESS_TOKEN` | repo secrets (optional) | Instagram Professional account + Meta app token, for free follower counts via Business Discovery |
+| `VITE_LIVE_URL` | repo variable (optional) | URL of the deployed live-search worker |
+
+> Reels are always displayed with Instagram's official embed. Discovery uses a third-party data provider for public posts; check that its use fits your situation and Instagram's terms.
+
+You can still add reels by hand in `curated/reels.yaml`, or from the site's "Know a reel we missed?" link.
 
 ## Run locally
 
@@ -77,7 +76,7 @@ cd web && npm install && npm run dev
 ```
 
 ## Responsible by design
-- **No scraping.** Reels are displayed with Instagram's official embed; embed data is never stored or analysed. Creator data comes from curated files now and Meta's Business Discovery API (with app review) in P1.
+- Reels are displayed with Instagram's official embed; embed data is never stored or analysed. Discovery stays within free tiers by design (budget guard, daily caps, caching).
 - **Snap a reel** runs OCR on the user's own screenshot, in their browser. Nothing is uploaded.
 - Creators can ask to be removed; dead posts are dropped on the next run.
 - Health flags (archived, stale, no licence) and a "read the code before running it" note on every repo.

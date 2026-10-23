@@ -37,6 +37,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           FASTEMBED_CACHE_PATH: ${{ runner.temp }}/fastembed
           PYTHONUNBUFFERED: "1"
+          # Free automated reel discovery (optional; the run works without them):
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}          # Apify free plan, $5/month credit, guarded
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}            # Meta Graph API (free), for creator followers
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python -m pipeline.cli run
       - name: Keep raw bronze files for 7 days
         if: always()

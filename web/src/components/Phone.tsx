@@ -82,9 +82,9 @@ export default function Phone({
             <div className="slide empty">
               <div>
                 <span className="empty-glyph" aria-hidden="true">▶</span>
-                <b>No reels indexed yet</b>
-                <p>Add a reel you've seen, with the repo it shows, and it appears here instantly.</p>
-                <button className="btn primary small" onClick={onAdd}>Add a reel</button>
+                <b>Reels arrive automatically</b>
+                <p>Trending reels about GitHub repos are discovered on Instagram every day and appear here, each with the repo it mentions.</p>
+                <button className="link on-dark" onClick={onAdd}>Know a reel? Add it</button>
               </div>
             </div>
           )}
@@ -108,7 +108,7 @@ export default function Phone({
                       <span className="poster-play" aria-hidden="true">▶</span>
                       <span className="poster-meta">
                         <b>@{it.creator}</b>
-                        <small>{ago(it.posted)}{it.badge === 'top' ? ' · Top creator' : it.badge === 'verified' ? ' · Verified' : it.badge === 'local' ? ' · added by you' : ''}</small>
+                        <small>{ago(it.posted)}{it.badge === 'top' ? ' · Top creator' : it.badge === 'verified' ? ' · Verified' : it.badge === 'local' ? ' · added by you' : it.badge === 'live' ? ' · live result' : ''}</small>
                         {it.caption && <em>{it.caption.slice(0, 120)}</em>}
                       </span>
                     </button>

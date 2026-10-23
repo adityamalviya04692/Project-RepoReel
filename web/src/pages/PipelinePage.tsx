@@ -28,6 +28,8 @@ export default function PipelinePage({ data }: { data: Data }) {
       </section>
       <section className="tile light">
         <div className="wrap">
+          <h2 className="h-md">Reel discovery</h2>
+          <Discovery data={data} />
           <h2 className="h-md">Lineage</h2>
           <Lineage />
           <h2 className="h-md">Stages</h2>
@@ -119,5 +121,29 @@ function Lineage() {
       {col(604, 'Gold · static files', ['catalog + embeddings', 'trends & health', 'creator trust', 'pipeline report'], 'gold')}
       {col(804, 'Site', ['search', 'repo sheet', 'snap a reel', 'this page'], 'site')}
     </svg>
+  );
+}
+
+function Discovery({ data }: { data: Data }) {
+  const d = data.discovery;
+  if (!d) return <p className="muted small">Discovery has not run yet.</p>;
+  const b = d.stats.budget;
+  return (
+    <>
+      <div className="discovery">
+        <div><b>{d.shown_reels}</b><span>reels linked to a repo</span></div>
+        <div><b>{d.history_reels}</b><span>reels seen in the last 120 days</span></div>
+        <div><b>{d.stats.fetched}</b><span>fetched in the last run</span></div>
+        <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `of the $5 free monthly credit` : 'free credit usage'}</span></div>
+      </div>
+      <p className="muted small" style={{ marginTop: 12 }}>
+        Apify (free plan): {d.stats.apify} · Instagram Graph API: {d.stats.graph}{d.stats.replay ? ' · replayed from bronze' : ''}
+      </p>
+      {d.stats.topics.length > 0 && (
+        <div className="topics-today">
+          {d.stats.topics.map((t) => <span key={t.q}>{t.kind === 'hashtag' ? '#' : ''}{t.q} · {t.reels}</span>)}
+        </div>
+      )}
+    </>
   );
 }

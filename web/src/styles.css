@@ -356,6 +356,19 @@ h2, .h-lg { font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.
 .phone-nav { position: absolute; right: -60px; top: 50%; translate: 0 -50%; display: flex; flex-direction: column; gap: 10px; }
 .add-reel { font-size: 15px; }
 
+/* live search */
+.live-status { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: var(--r-md); background: #f0f6ff; color: var(--ink-80); font-size: 15px; }
+.spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(0, 102, 204, 0.25); border-top-color: var(--primary); animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.trust.live { color: #c13584; border-color: rgba(193, 53, 132, 0.3); }
+.link.on-dark { color: var(--primary-on-dark); }
+.discovery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+.discovery div { padding: 16px 18px; border-radius: var(--r-lg); background: var(--parchment); display: flex; flex-direction: column; gap: 2px; }
+.discovery b { font-size: 20px; font-weight: 600; }
+.discovery span { font-size: 13px; color: var(--ink-48); }
+.topics-today { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.topics-today span { font-size: 13px; padding: 4px 10px; border-radius: var(--pill); background: var(--parchment); }
+
 /* dialog */
 .dialog { border: 0; border-radius: var(--r-lg); padding: 28px; width: min(560px, calc(100% - 28px)); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3); }
 .dialog[open] { animation: pop 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
@@ -392,6 +405,7 @@ h2, .h-lg { font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.
   .row2 { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  .discovery { grid-template-columns: 1fr 1fr; }
   .phone { width: min(330px, calc(100vw - 40px)); height: 600px; }
   .reel-result { grid-template-columns: 1fr; padding: 16px; }
   .rr-n { display: none; }

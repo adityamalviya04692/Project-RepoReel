@@ -18,7 +18,7 @@ export interface ReelItem {
   repoRow: number | undefined;
   source: 'curated' | 'local';
   verified: boolean;
-  badge: 'top' | 'verified' | 'pending' | 'local';
+  badge: 'top' | 'verified' | 'pending' | 'local' | 'live';
   trust: number;
   vec: Float32Array | null;
 }

@@ -73,15 +73,18 @@ def creator_trust(c: dict, reels: list[dict], today: date) -> dict:
     recency = math.exp(-((today - last).days) / 30) if last else 0.0
     w = TRUST_WEIGHTS
     trust = w["accuracy"] * accuracy + w["consistency"] * consistency + w["engagement"] * engagement + w["recency"] * recency
-    eligible = c["followers"] >= CREATOR_MIN_FOLLOWERS and posts_60d >= CREATOR_MIN_POSTS_60D
+    followers = c.get("followers")
+    eligible = followers is not None and followers >= CREATOR_MIN_FOLLOWERS and posts_60d >= CREATOR_MIN_POSTS_60D
     reasons = []
-    if c["followers"] < CREATOR_MIN_FOLLOWERS:
+    if followers is None:
+        reasons.append("followers not checked yet")
+    elif followers < CREATOR_MIN_FOLLOWERS:
         reasons.append(f"needs {CREATOR_MIN_FOLLOWERS:,}+ followers")
     if posts_60d < CREATOR_MIN_POSTS_60D:
         reasons.append(f"needs {CREATOR_MIN_POSTS_60D}+ repo posts in 60 days (has {posts_60d})")
-    badge = "top" if eligible and c["followers"] >= CREATOR_TOP_FOLLOWERS and trust >= 0.7 else "verified" if eligible else "pending"
+    badge = "top" if eligible and followers >= CREATOR_TOP_FOLLOWERS and trust >= 0.7 else "verified" if eligible else "pending"
     return {
-        "handle": c["handle"], "followers": c["followers"], "niche": c.get("niche", ""), "reels": len(mine), "posts_60d": posts_60d,
+        "handle": c["handle"], "followers": followers, "niche": c.get("niche", ""), "source": c.get("source", "curated"), "reels": len(mine), "posts_60d": posts_60d,
         "accuracy": round(accuracy, 3), "consistency": round(consistency, 3), "engagement": round(engagement, 3), "recency": round(recency, 3),
         "trust": round(trust, 3), "eligible": eligible, "badge": badge, "reasons": reasons,
     }

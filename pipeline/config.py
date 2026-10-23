@@ -62,3 +62,23 @@ CREATOR_TOP_FOLLOWERS = 100_000
 CREATOR_MIN_POSTS_60D = 4
 MATCH_ACCEPT = 0.80
 MATCH_REVIEW = 0.55
+
+# ---------- automated reel discovery (free tiers only) ----------
+APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
+APIFY_MONTHLY_CAP_USD = float(os.environ.get("APIFY_MONTHLY_CAP_USD", "4.5"))  # free plan gives $5/month; stop before it
+IG_USER_ID = os.environ.get("IG_USER_ID", "")            # your Instagram Professional account id (Graph API)
+IG_ACCESS_TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")  # long-lived token with instagram_basic, pages_read_engagement
+GRAPH = "https://graph.facebook.com/v23.0"
+
+# Topics rotate daily so every topic is covered each week while staying inside the free credit.
+REEL_TOPICS = [
+    {"q": "github", "kind": "hashtag"}, {"q": "githubrepo", "kind": "hashtag"}, {"q": "opensource", "kind": "hashtag"},
+    {"q": "aitools", "kind": "hashtag"}, {"q": "claudecode", "kind": "hashtag"}, {"q": "mcp", "kind": "hashtag"},
+    {"q": "aiagents", "kind": "hashtag"}, {"q": "pythonprojects", "kind": "hashtag"}, {"q": "automation", "kind": "hashtag"},
+    {"q": "github repo", "kind": "keyword"}, {"q": "open source ai tool", "kind": "keyword"}, {"q": "free ai tool github", "kind": "keyword"},
+    {"q": "claude mcp server", "kind": "keyword"}, {"q": "ai agent github", "kind": "keyword"},
+]
+TOPICS_PER_RUN = 4
+REELS_PER_TOPIC = 12            # ≈ 48 reels/run ≈ 1,450/month ≈ $3.80 at $2.60 per 1,000
+PROFILE_LOOKUPS_PER_RUN = 8     # new creators' follower counts (Apify) when no Graph token
+REEL_HISTORY_DAYS = 120

@@ -1,0 +1,16 @@
+# Free Cloudflare Worker: live Instagram reel search for queries the nightly index can't answer.
+# Setup: npx wrangler kv namespace create CACHE  → paste the id below
+#        npx wrangler secret put APIFY_TOKEN      → your free Apify token
+#        npx wrangler deploy                      → then set VITE_LIVE_URL for the site
+name = "reporeel-live"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+[vars]
+DAILY_LIMIT = "20"          # live searches per day (cached keywords don't count)
+MONTHLY_CAP_USD = "4.5"     # stop before Apify's free $5 monthly credit
+ALLOWED_ORIGIN = "https://adityamalviya04692.github.io"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
