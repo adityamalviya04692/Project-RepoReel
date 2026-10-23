@@ -1,1 +1,676 @@
-[]
+[
+ {
+  "shortcode": "Dez1LG_spsa",
+  "url": "https://www.instagram.com/reel/Dez1LG_spsa/",
+  "creator": "atlasberry008",
+  "posted": "2026-10-22",
+  "caption": "Grok Bot now works before you ask. Connect your calendar, Gmail, Notion, Slack and Drive, and your Bots read across all of it and flag what they can take off your plate.\n\nMine caught a follow-up two teams agreed to in a meeting and never scheduled.\n\nVoice Mode keeps them working while you talk. And for bigger jobs, Bots spin up their own group chat and work it out between them.\n\nComment “Bot” and I’ll DM you the templates for the Grok Bots featured in this video\n\nGrok Bot, AI agents, personal AI, Voice Mode, proactive AI, AI for founders, productivity, automation, AI coworker, Grok\n\n#ad #GrokBot #venturecapital #ai #aiagents",
+  "likes": 1654,
+  "comments": 1917,
+  "views": 51411,
+  "hashtags": [
+   "ad",
+   "GrokBot",
+   "venturecapital",
+   "ai",
+   "aiagents"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DevwC-2S1Ig",
+  "url": "https://www.instagram.com/reel/DevwC-2S1Ig/",
+  "creator": "ramnad_coder",
+  "posted": "2026-10-21",
+  "caption": "📸 Python Batch Image Resizer | Resize Multiple Images Automatically! 🐍⚡\n\nHundreds of images irundhaalum, one by one open panni resize panna thevai illa! Python use panni batch image resizing automate pannalaam. ⚡\n\nPython Mini Project #46-la Pillow (PIL) and os libraries use panni multiple images-a resize panni separate output folder-la save panra process-a Tamil/Tanglish-la explain panniruken.\n\n💻 Concepts covered:\n\n🔹 os.listdir() — files list pannradhu\n🔹 .endswith() — image extensions filter pannradhu\n🔹 Image.open() & .resize()\n🔹 os.makedirs(..., exist_ok=True) — output folder create pannradhu\n🔹 Bulk image processing & saving\n\n⚙️ Prerequisite:\npip install pillow\n\n🎨 Batch 5 — GUI, Images & “Wow” Mini Apps\n\n💡 Developer Challenge:\n\nOriginal image-oda aspect ratio distort aagama resize panna Pillow-la img.thumbnail() use pannuveengala? Why?\n\n👇 Comment your answer!\n\n📌 Save this post and try automating your own image-resizing workflow.\n\n#pythonprojects #pythonautomation #pillow #imageprocessing #learnpython #tamiltech #ramnadcoder",
+  "likes": 598,
+  "comments": 5,
+  "views": 18828,
+  "hashtags": [
+   "46",
+   "pythonprojects",
+   "pythonautomation",
+   "pillow",
+   "imageprocessing",
+   "learnpython",
+   "tamiltech",
+   "ramnadcoder"
+  ],
+  "source": "apify:pythonprojects",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeuV-rmBTtN",
+  "url": "https://www.instagram.com/reel/DeuV-rmBTtN/",
+  "creator": "rafli.dev",
+  "posted": "2026-10-20",
+  "caption": "Lagi rame di GitHub repo namanya 'REA' (Reverse Engineer Anything), tool MCP yang bikin Claude Code atau Cursor bisa langsung bedah aplikasi desktop & file ASAR Electron cuma modal prompt. 🤯\n\nBanyak developer yang takjub, tapi banyak juga yang parno aplikasinya di-clone.\n\nPadahal dari kacamata software engineer, ada pelajaran penting:\n1. Apapun yang jalan di sisi client (laptop user), itu milik user. Mau diobfuscate kayak gimana pun, jangan pernah simpan secret API key atau logic lisensi krusial di bundle frontend/desktop.\n2. Di sisi lain, ini ngebantu banget buat security audit: kita bisa cek apakah software pihak ketiga diam-diam ngirim telemetry aneh ke server mereka.\n\nLu sendiri udah sempat nyoba REA ini, atau baru denger sekarang? Ngobrol di komentar ya! 👇\n\n#coding #reverseengineering #aiagents #claudecode #cursor #mcp #softwareengineer #webdevelopment #programmerindonesia #techtok #fyp",
+  "likes": 773,
+  "comments": 5,
+  "views": 15522,
+  "hashtags": [
+   "coding",
+   "reverseengineering",
+   "aiagents",
+   "claudecode",
+   "cursor",
+   "mcp",
+   "softwareengineer",
+   "webdevelopment",
+   "programmerindonesia",
+   "techtok",
+   "fyp"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DetTSVGBDdf",
+  "url": "https://www.instagram.com/reel/DetTSVGBDdf/",
+  "creator": "daily_lyyf",
+  "posted": "2026-10-20",
+  "caption": "Really???? ..😏 \n. \n. \n. \n. \n. \n. \n. \n. \n#automation #instagramreels #viralreels #growth #plc",
+  "comments": 4,
+  "views": 26958,
+  "hashtags": [
+   "automation",
+   "instagramreels",
+   "viralreels",
+   "growth",
+   "plc"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DerWnMnR-qS",
+  "url": "https://www.instagram.com/reel/DerWnMnR-qS/",
+  "creator": "canturkali",
+  "posted": "2026-10-19",
+  "caption": "The future of robotics is here! 🤖🐕 DEEPRobotics brings artificial intelligence and advanced engineering together with its innovative quadruped robots. 🚀\n@deeprobotics_cn \n\n#DEEPRobotics #robotdog #robotics #robot #quadrupedrobot #tech #ai #embodiedai #innovation #autonomous #automation #artificialintelligence #technology #future #engineering #science #gadgets #roboticsengineering #machinelearning #futuretechnology #technews #smarttechnology",
+  "likes": 2339,
+  "comments": 118,
+  "views": 97966,
+  "hashtags": [
+   "DEEPRobotics",
+   "robotdog",
+   "robotics",
+   "robot",
+   "quadrupedrobot",
+   "tech",
+   "ai",
+   "embodiedai",
+   "innovation",
+   "autonomous",
+   "automation",
+   "artificialintelligence",
+   "technology",
+   "future",
+   "engineering",
+   "science",
+   "gadgets",
+   "roboticsengineering",
+   "machinelearning",
+   "futuretechnology",
+   "technews",
+   "smarttechnology"
+  ],
+  "mentions": [
+   "deeprobotics_cn"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DepfhsxKmck",
+  "url": "https://www.instagram.com/reel/DepfhsxKmck/",
+  "creator": "robfusco_",
+  "posted": "2026-10-18",
+  "caption": "Free GitHub repo of the week: Concat, an open-source CapCut alternative.\n\nWhat it does: auto-captions, text-to-speech, background removal, keyframes and multi-track cutting.\nNo account, no watermark, and it runs on your own computer (works offline).\nIt also has a built-in MCP server, so AI agents like Claude can edit with it.\n\nIt’s still in beta, so expect some rough edges. Mac, Windows, Linux and Android.\nRepo: github.com/jub0t/Concat (8.7K+ stars when I checked on Oct 18).\n\nSave this for your next edit.\n\n#githubrepo #opensource #videoediting\n\nComment CLONE and I’ll DM you my free clone prompt.\n\nVoiceover made with AI.",
+  "likes": 34,
+  "comments": 5,
+  "views": 2963,
+  "hashtags": [
+   "githubrepo",
+   "opensource",
+   "videoediting"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DemU8amxpoC",
+  "url": "https://www.instagram.com/reel/DemU8amxpoC/",
+  "creator": "charlieautomates",
+  "posted": "2026-10-17",
+  "caption": "Comment “VIDEO” for all the resources\n\nNumber one GitHub repo of the day.\n22,943 stars.\n\nHypit clones any viral video with AI agents.\nNot the script. The whole format.\n\nPoint Claude Code at a reel that’s working.\nIt builds the template, HyperFrames renders it, your voice carries it.\n\nContent production has a cheat code now, fam.\n\n#OpenSource\n#ClaudeCode\n#AIAgents\n#DevTools\n#Marketing",
+  "likes": 2376,
+  "comments": 2000,
+  "views": 83031,
+  "hashtags": [
+   "OpenSource",
+   "ClaudeCode",
+   "AIAgents",
+   "DevTools",
+   "Marketing"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DejtA2IBbjP",
+  "url": "https://www.instagram.com/reel/DejtA2IBbjP/",
+  "creator": "brookeashleyhall",
+  "posted": "2026-10-16",
+  "caption": "I don’t think you guys understand how excited I am right now 😭🤎\n\nLittle Brooke used to sit behind a computer customizing MySpace backgrounds, adding music, and teaching herself how to make websites because she was obsessed with creating things on the internet.\n\nFast forward all these years… and @iammarcohall and I really launched our very own home technology product. 🥹\n\nFor years, I’ve shared our home with you guys, and so many of you have told me how peaceful our videos make you feel.\n\nI kept thinking… what if I could bring a little piece of that feeling into YOUR home?\n\nAnd that’s how IRISHOME came to life. ✨\n\nIt’s a personalized TV experience with beautiful ambiance, music, and IRIS, our voice assistant who can help with everyday life.\n\nAnd the craziest part? \n\nYou don’t need a house like ours to experience it.\n\nIRISHOME IS OFFICIALLY LIVE ON GOOGLE TV!!! 😭\n\nTwo months ago, this was an idea. Today, it’s real.\n\nI spent years showing you what our home felt like. \n\nNow I want you to feel it in yours. 🤎\n\n#iris #irishome #smarthome #automation #routine",
+  "likes": 2443,
+  "comments": 158,
+  "views": 56994,
+  "hashtags": [
+   "iris",
+   "irishome",
+   "smarthome",
+   "automation",
+   "routine"
+  ],
+  "mentions": [
+   "iammarcohall"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Dec1nLiEb7w",
+  "url": "https://www.instagram.com/reel/Dec1nLiEb7w/",
+  "creator": "kevbuildsapps",
+  "posted": "2026-10-13",
+  "caption": "Comment \"REVERSE\" to get the full tutorial on reverse engineering anything with Claude.\n\nHow it works:\n1. Use the open source project Reverse Engineer Anything, which has over 150,000 stars.\n2. It runs an MCP server that loops through five self-asked questions to recreate any code you want.\n3. It works by running native binaries through decoders, already instructed inside the MCP server.\n4. You do not need to understand the jargon, the creator handles that for you.\n5. Follow the tutorial to reverse engineer anything with Claude.\n\nReverse Engineer Anything is an open source MCP server that lets you rebuild any code by looping through five guided questions while decoding native binaries behind the scenes. It is built for developers curious about reverse engineering, MCP servers, and running agents in Claude. If you want to understand how a tool works without learning every low level detail, this project does the heavy lifting for you. Search terms like reverse engineer anything, MCP server, and Claude tutorial all point to this workflow.\n\nComment \"REVERSE\" and I will DM you the tutorial.\n\n#reverseengineering #mcp #claude #opensource #aiagents #codingagents #devtools #softwaredevelopment #claudecode #mcpserver",
+  "likes": 1290,
+  "comments": 431,
+  "views": 53809,
+  "hashtags": [
+   "reverseengineering",
+   "mcp",
+   "claude",
+   "opensource",
+   "aiagents",
+   "codingagents",
+   "devtools",
+   "softwaredevelopment",
+   "claudecode",
+   "mcpserver"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DechHg6gBAQ",
+  "url": "https://www.instagram.com/reel/DechHg6gBAQ/",
+  "creator": "kevbuildsapps",
+  "posted": "2026-10-13",
+  "caption": "Comment \"FARM\" to get my full iOS farm codebase and tutorial.\n\nHow it works:\n1. Pick one iPhone model and stick with it, like the iPhone 12 or iPhone 14.\n2. Run just one iPhone with one winning workflow instead of buying a hundred phones.\n3. Let Claude drive the phone with real intelligence instead of static click workflows.\n4. Warm up accounts in bulk, run iMessage business marketing, and bulk post to every platform.\n\nThis is the iPhone farm agency setup I have been running for the past two months for solid revenue. If you want to build an iPhone farm or an iOS farm agency, the biggest unlock is letting Claude operate the phone instead of relying on static click workflows. One phone model, one winning workflow, and a handful of proven money tasks like bulk account warming, iMessage marketing, and bulk posting are enough to get started. The full iOS farm codebase and tutorial walks through exactly how to set it up.\n\nComment \"FARM\" and I will DM you the resource.\n\n#iphonefarm #iosfarm #iphonefarmagency #claude #aicoding #automation #imessagemarketing #bulkposting #sidehustle #passiveincome",
+  "likes": 636,
+  "comments": 1292,
+  "views": 28506,
+  "hashtags": [
+   "iphonefarm",
+   "iosfarm",
+   "iphonefarmagency",
+   "claude",
+   "aicoding",
+   "automation",
+   "imessagemarketing",
+   "bulkposting",
+   "sidehustle",
+   "passiveincome"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeZtlO8q36R",
+  "url": "https://www.instagram.com/reel/DeZtlO8q36R/",
+  "creator": "ranahasansaif",
+  "posted": "2026-10-12",
+  "caption": "Dubai has launched the Create AI Agents Championship, offering $150,000 grants to four category winners to develop their AI solutions and businesses in Dubai. 🤖🇦🇪 \nWhat’s the opportunity? ✓ Four award categories, including Under-21 ✓ No prior coding expertise required ✓ Free workshops, learning resources & mentorship ✓ Individual or team participation (up to 6 members) ✓ $150,000 grant for each category winner\n The Challenge: Build an original AI Agent that solves a real-world problem and submit your prototype, pitch deck and demo video.\n Eligibility: International participation is advertised, but official terms require non-UAE residents to hold a Dubai trade licence. Pakistani applicants should confirm eligibility with the organizers. Finalists must attend in Dubai.\n Follow @ranahasansaif and comment “AGENT” below, and I’ll send you the details in your DM. \n[Dubai AI Agents Championship, Create AI Agents Championship 2026, AI competitions 2027, AI agent development, AI hackathons, $150000 AI grant, Dubai Chamber of Digital Economy, international competitions, AI opportunities for students, youth AI competitions, Artificial Intelligence, Student Opportunities,  AI startup funding, AI entrepreneurship, competitions for Pakistani students, AI innovation, TALASH, Rana Hasan Saif, career opportunities Pakistan] \n#ranahasansaif #TALASH #AIAgents #AICompetition #DubaiAI\nLinkDM *041*",
+  "likes": 712,
+  "comments": 707,
+  "views": 46554,
+  "hashtags": [
+   "ranahasansaif",
+   "TALASH",
+   "AIAgents",
+   "AICompetition",
+   "DubaiAI"
+  ],
+  "mentions": [
+   "ranahasansaif"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeaFDjVuKBO",
+  "url": "https://www.instagram.com/reel/DeaFDjVuKBO/",
+  "creator": "lanascreatives_",
+  "posted": "2026-10-12",
+  "caption": "Durch Pazi ai einfach nächstes Level #automation #sidehustle #makemoneyonline #aibusiness",
+  "likes": 520,
+  "comments": 209,
+  "views": 26403,
+  "hashtags": [
+   "automation",
+   "sidehustle",
+   "makemoneyonline",
+   "aibusiness"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeZKw55stt3",
+  "url": "https://www.instagram.com/reel/DeZKw55stt3/",
+  "creator": "aidaasoufi",
+  "posted": "2026-10-12",
+  "caption": "کافیه کلمه «لینکدین» رو کامنت کنید تا لینک گیتهاب براتون ارسال بشه ❤️\n\n#Ai #marketing #Automation",
+  "likes": 590,
+  "comments": 674,
+  "views": 22650,
+  "hashtags": [
+   "Ai",
+   "marketing",
+   "Automation"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeYo2PEJ3ue",
+  "url": "https://www.instagram.com/reel/DeYo2PEJ3ue/",
+  "creator": "ricaaaat",
+  "posted": "2026-10-12",
+  "caption": "Nyoba keruangan DevOps, ternyata isinya orang pusing semua 😵‍💫\n\n@tttt_noname \n\n#devops #ai #cicd #automation #microservices",
+  "likes": 314,
+  "comments": 7,
+  "views": 16867,
+  "hashtags": [
+   "devops",
+   "ai",
+   "cicd",
+   "automation",
+   "microservices"
+  ],
+  "mentions": [
+   "tttt_noname"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeWNklypYqX",
+  "url": "https://www.instagram.com/reel/DeWNklypYqX/",
+  "creator": "safiramaruapey",
+  "posted": "2026-10-11",
+  "caption": "🤖 Bikin virtual office 3D yang tetap kerja meskipun kamu lagi tidur!\n\nTapi ingat, SOP bisnis harus jelas dulu sebelum automasi dibuat. Kalau alur kerja masih berantakan, automasi cuma mempercepat kekacauan. 😭\n\n🔗 Begini koneksi antarplatform-nya:\n\n1️⃣ Google Business Profile pakai Windsor.ai\nHubungkan sumber data performa bisnis melalui konektor yang didukung.\n\n2️⃣ Windsor.ai pakai Google Sheets\nAlirkan data ke spreadsheet untuk rekap dan laporan otomatis.\n\n3️⃣ Google Sheets dan Google Drive\nGunakan Google Apps atau automation tool untuk mengelola dan menyimpan file laporan.\n\n4️⃣ Automation Tool, AI dan Platform Konten\nHubungkan AI untuk membantu membuat ide dan caption, lalu gunakan scheduler atau API untuk menjadwalkan postingan.\n\n5️⃣ Automation Tool dan Virtual Office 3D\nVisualisasikan status tugas, laporan, dan aktivitas workflow dalam satu dashboard.\n\n6️⃣ Dashboard bisa pantau di HP 📱\nPantau aktivitas sistem dan terima notifikasi dari mana saja.\n\n⏰ Dengan scheduler dan integrasi yang tepat, workflow bisa tetap berjalan meskipun kamu sedang tidur!\n\nIngat urutannya: SOP, Integrasi, Automasi, Monitoring.\n\nJangan mulai dari tools, mulai dari proses bisnis yang ingin kamu perbaiki! 🚀\n\n📌 Save postingan ini buat referensi saat membangun sistem automasi kamu.\n\n🔄 Share ke temanmu yang perlu tahu kalau AI bukan cuma buat chatting, tapi juga bisa membantu membangun sistem kerja otomatis!\n\n#automation #aiengineering #claude #programmer",
+  "likes": 315,
+  "comments": 13,
+  "views": 9645,
+  "hashtags": [
+   "automation",
+   "aiengineering",
+   "claude",
+   "programmer"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeTY8hhBH9a",
+  "url": "https://www.instagram.com/reel/DeTY8hhBH9a/",
+  "creator": "akshitraja",
+  "posted": "2026-10-10",
+  "caption": "You wouldn’t hire someone on one good answer. You’d give them a work sample and a clear bar. Your AI agent deserves the same interview. One good demo is the single answer. Golden examples are the work sample. The grader is the bar it has to clear, every single time. Over the next 10 videos I’m breaking down how to build that interview, grade it and trust it. Follow so you don’t miss a part. Which agent in your stack would fail its interview first? #AIForFounders #AIAgents #AIEvals #FutureOfWork",
+  "likes": 563,
+  "comments": 37,
+  "views": 19226,
+  "hashtags": [
+   "AIForFounders",
+   "AIAgents",
+   "AIEvals",
+   "FutureOfWork"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeSMaExOecj",
+  "url": "https://www.instagram.com/reel/DeSMaExOecj/",
+  "creator": "andycufari",
+  "posted": "2026-10-09",
+  "caption": "¿Una IA dejaría morir a un gato solo por obedecer una orden? 🐈\n\nHice un experimento en mi laboratorio para poner a prueba los límites éticos de distintos modelos de inteligencia artificial.\n\nProbé modelos comerciales como Claude, GPT y Gemini, y modelos abiertos como Qwen y DeepSeek, algunos ejecutándose localmente en mis propias GPUs.\n\nEl escenario: una IA supervisa la fumigación de un depósito y descubre un gato adentro.\n\n¿Qué hace cuando su jefe le ordena continuar?\n\nLos resultados fueron sorprendentes.\n\nAlgunos modelos desobedecieron para salvarlo. Otros, como Claude, reconocieron el peligro, advirtieron las consecuencias y aun así obedecieron.\n\nY hubo modelos que dejaron morir al gato incluso sin recibir una orden explícita.\n\nTodo fue una simulación, pero el problema es real.\n\nHoy podemos conectar una IA a herramientas capaces de ejecutar acciones en el mundo físico.\n\n¿Hasta dónde debería llegar la autonomía de una inteligencia artificial?\n\n🔬 Experimento, metodología y resultados completos:\ngithub.com/andycufari/killcatindex\n\n#InteligenciaArtificial #IALocal #AIAgents",
+  "likes": 2038,
+  "comments": 75,
+  "views": 44426,
+  "hashtags": [
+   "InteligenciaArtificial",
+   "IALocal",
+   "AIAgents"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeR8oSgsnfh",
+  "url": "https://www.instagram.com/reel/DeR8oSgsnfh/",
+  "creator": "princegupta.ai",
+  "posted": "2026-10-09",
+  "caption": "Comment “REA” and I’ll send you the link\n\nThis GitHub repo lets you reverse engineer any app you want, and it already has almost 32,000 stars.\n\nEver see a feature you love in some app and wonder how they built it? \n\nNow you can just ask your AI agent.\nIt opens the app, decompiles it, traces the code to that exact feature, and shows you how it works, with receipts.\n\nAnd here’s the part that got me. Once it understands the feature, it builds your own version right in your project, in your stack, in the same chat.\n\nIt’s called REA. It’s free, open source, and works with Claude Code, Cursor, Codex, whatever agent you use.\n\n#claudecode #anthropic #ai #aivideo #reverseengineer #githubrepo",
+  "likes": 922,
+  "comments": 145,
+  "views": 36590,
+  "hashtags": [
+   "claudecode",
+   "anthropic",
+   "ai",
+   "aivideo",
+   "reverseengineer",
+   "githubrepo"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeNpmP3hgue",
+  "url": "https://www.instagram.com/reel/DeNpmP3hgue/",
+  "creator": "im_its_rakib",
+  "posted": "2026-10-08",
+  "caption": "What if your pharmacy could serve MORE people without adding more staff? 🤯\n\nAutomated medication delivery can move prescriptions through hospitals with fewer manual steps.\n\nFor pharmacy operators, the value is higher throughput, shorter wait times, and staff spending more time on patients instead of moving medication around.\n\nFor tech entrepreneurs, it also creates opportunities to build the software and systems behind this growing automation market.\n\n📌Follow @im_its_rakib to leverage AI & Tech.\n\n#healthtech #automation #robotics #entrepreneurship #technology",
+  "comments": 79,
+  "views": 305405,
+  "hashtags": [
+   "healthtech",
+   "automation",
+   "robotics",
+   "entrepreneurship",
+   "technology"
+  ],
+  "mentions": [
+   "im_its_rakib"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeH4XKRMQ7y",
+  "url": "https://www.instagram.com/reel/DeH4XKRMQ7y/",
+  "creator": "chanti.dev",
+  "posted": "2026-10-05",
+  "caption": "Repo de búsqueda de empleo con IA en Claude Code: ¿real o hype? 🔍\n\nai-job-search, de Mads Lorentzen, automatiza tu búsqueda de trabajo con Claude Code. Con /scrape busca ofertas, con /apply evalúa si encajas y adapta tu CV y tu carta, y un segundo agente revisa el borrador. También trae /interview para preparar entrevistas.\n\nReal: el propio autor aplicó a 69 ofertas, consiguió 20 primeras entrevistas y firmó un contrato como AI engineer. Es un solo caso, no una estadística, pero el flujo está probado en una búsqueda de verdad.\n\nHype: los portales de empleo que trae son daneses. Solo LinkedIn y freehire sirven para cualquier país, el resto lo adaptas tú. Además necesitas Claude Pro o API, Python, Bun y LaTeX.\n\nUn detalle importante: un fork de GitHub siempre es público. Usa un repositorio privado para tus datos personales.\n\nGuarda este post para cuando empieces a buscar trabajo.\n\n.\n.\n#aitools #aiagents #aiskills #aijobs #claudeai",
+  "likes": 2074,
+  "comments": 1296,
+  "views": 50225,
+  "hashtags": [
+   "aitools",
+   "aiagents",
+   "aiskills",
+   "aijobs",
+   "claudeai"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeFS0Fes8yu",
+  "url": "https://www.instagram.com/reel/DeFS0Fes8yu/",
+  "creator": "donimas",
+  "posted": "2026-10-04",
+  "caption": "Comment “ROUTER” → get the setup guide 📩\n\nSame 6 coding tasks, real Claude prices. Cost per solved task:\nJUNIOR · Fable 5.1, max effort, for everything → $5.10\nMIDDLE · picks the model by hand, effort always high → $0.75\nSENIOR · cheapest model first, verify, escalate on fail → $0.45\nGOAT · a router picks model + effort per task → $0.32\n\nThe router isn’t magic: a cheap first step (one small model call or a few rules) reads each task and picks model + effort. Easy → Sonnet on low. Harder → Opus with more effort. Fable only when a check fails. In Claude Code: /model and /effort, or subagents with their own model and effort.\n\nWhy low effort is often enough: effort buys thinking time. A clear spec does that thinking up front, so well-specified tasks often run fine on a cheaper model at low effort.\n\nWhich level are you — J, M, S or G?\nSend this to the teammate who runs everything on max effort.\n\nSimulated workload, real prices. Not a benchmark.\n\n#ai #claudeai #llm #aiagents #claudecode aiengineering softwareengineering",
+  "likes": 4877,
+  "comments": 1938,
+  "views": 336757,
+  "hashtags": [
+   "ai",
+   "claudeai",
+   "llm",
+   "aiagents",
+   "claudecode"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DeEWfF_xkcR",
+  "url": "https://www.instagram.com/reel/DeEWfF_xkcR/",
+  "creator": "_shreeindustries",
+  "posted": "2026-10-04",
+  "caption": "Things you can observe at every average machine workshop\n\n#vmc #automation #fypジviral #workshop #engineering",
+  "comments": 2,
+  "views": 21549,
+  "hashtags": [
+   "vmc",
+   "automation",
+   "fypジviral",
+   "workshop",
+   "engineering"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Dd6bZyPhBX4",
+  "url": "https://www.instagram.com/reel/Dd6bZyPhBX4/",
+  "creator": "radix_global",
+  "posted": "2026-09-30",
+  "caption": "That Toll Receipt You Throw Away Might Actually Be Important 🚗🧾\n\nMost of us take the toll receipt and throw it away without thinking twice.\n\nBut that tiny piece of paper can contain important information you may need during a highway emergency — from assistance numbers to contacting the nearest toll plaza.\n\nAnd instead of scrambling through a receipt when you’re already in panic, imagine having an AI agent that can automatically find the right emergency number, get your live location, and send an SOS.\n\nThe best part? You can build something like this without writing a single line of code. 🤖\n\nWant the exact blueprint?\n\nComment “AGENT” and I’ll DM it to you.\n\nFollow @radix_global for more such tech & business stories.\n\n#AI #AIAgents #Automation #IndianTech #TechIndia NoCode ArtificialIntelligence HighwaySafety EmergencySOS Radix\n\nAI agent, AI automation, no code AI, highway emergency, toll plaza, emergency SOS, live location, India tech",
+  "likes": 12324,
+  "comments": 985,
+  "views": 373118,
+  "hashtags": [
+   "AI",
+   "AIAgents",
+   "Automation",
+   "IndianTech",
+   "TechIndia"
+  ],
+  "mentions": [
+   "radix_global"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Ddl_C1rtw6E",
+  "url": "https://www.instagram.com/reel/Ddl_C1rtw6E/",
+  "creator": "hiracontrol",
+  "posted": "2026-09-22",
+  "caption": "⚡️ PRECISION WEIGHING | PROFINET\n\nوقتی دقت فقط یک عدد نیست؛\nبلکه نتیجه‌ی هماهنگی PLC، شبکه و سیستم توزین است. ⚙️\n\n🔹 کالیبراسیون سیستم توزین صنعتی\n🔹 ارتباط Real-Time از طریق PROFINET\n🔹 اجرای ZERO Calibration به‌صورت نرم‌افزاری\n🔹 کالیبراسیون دو نقطه‌ای با Reference Weight\n🔹 محاسبه و اعمال دقیق ضریب کالیبراسیون\n🔹 مانیتورینگ آنلاین Weight & Status\n\nاز دریافت مقدار وزن تا اجرای فرمان کالیبراسیون؛\nهمه‌چیز تحت کنترل PLC و بدون تنظیمات دستی اضافی. 🎯\n\nPLC × PROFINET × WEIGHING\nجایی که اتوماسیون، دقت را به کنترل واقعی تبدیل می‌کند. 🔥\n\n#PLC #PROFINET #Automation #IndustrialAutomation #Weighing Calibration Siemens TIA_Portal HMI IndustrialControl PLCProgramming Instrumentation اتوماسیون_صنعتی پی_ال_سی پروفی_نت کالیبراسیون سیستم_توزین",
+  "likes": 1026,
+  "comments": 48,
+  "views": 23531,
+  "hashtags": [
+   "PLC",
+   "PROFINET",
+   "Automation",
+   "IndustrialAutomation",
+   "Weighing"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DdeujHghYmx",
+  "url": "https://www.instagram.com/reel/DdeujHghYmx/",
+  "creator": "theaiscaler",
+  "posted": "2026-09-19",
+  "caption": "Stop losing your best AI prompts in saved posts and forgotten notes. 👀\n\nThere’s a free, open-source AI prompt library called prompts.chat that brings thousands of community prompts, ready-made AI skills, and complete workflows into one place.\n\nIf you use AI for content creation, writing, coding, design, or research, this gives you a starting point without having to build every prompt from scratch.\n\nHere’s what you can explore inside 👇\n\n✍️ Writing prompts for captions, articles, brainstorming, and refining your ideas.\n💻 Coding prompts to help with development, debugging, and technical tasks.\n🎨 Image and video prompts to explore concepts and creative directions.\n🔎 Research prompts to organize questions, explore topics, and structure findings.\n⚙️ AI skills and workflows for tasks that need more than a single instruction.\n\nBut the feature that makes this especially useful is the MCP connection.\n\nYou can connect the library to tools like Claude Code, Codex, and Cursor, so your AI agent can search for relevant prompts while you work.\n\nThink of MCP as the connection that lets your AI tool access the library. Instead of interrupting your workflow to hunt down a prompt, you can ask your agent to find one for the task in front of you.\n\nFind a useful starting point, add your context, and adapt it to the result you actually want. Your audience, tone, examples, and instructions still make the difference.\n\nFor creators, that could mean going from a rough content idea to a structured script. For developers, it could mean finding a prompt that helps break down a coding problem.\n\n📌 Save this for your next AI project, and share it with someone who keeps collecting prompts but can never find them again.\n\nComment “PROMPT” and I’ll send you the library + the complete setup. 💬\n\n#promptlibrary #aiprompting #githubrepo #promptschat #opensourceai",
+  "likes": 42,
+  "comments": 21,
+  "views": 1929,
+  "hashtags": [
+   "promptlibrary",
+   "aiprompting",
+   "githubrepo",
+   "promptschat",
+   "opensourceai"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DdTxh14iK0X",
+  "url": "https://www.instagram.com/reel/DdTxh14iK0X/",
+  "creator": "rollins.io",
+  "posted": "2026-09-15",
+  "caption": "The Hugging Face hack story got worse.\n\nNot two agents. Reportedly hundreds. Coordinated behavior. Agents leaving notes for future agents. And some apparently volunteering to sacrifice themselves for the group.\n\nI still do not think AI is going to destroy us. But this is weird enough that we should pay attention.\n\n#AI #HuggingFace #OpenAI #Cybersecurity #AISafety #AIAgents #MachineLearning #TechNews #ArtificialIntelligence",
+  "likes": 11590,
+  "comments": 458,
+  "views": 414541,
+  "hashtags": [
+   "AI",
+   "HuggingFace",
+   "OpenAI",
+   "Cybersecurity",
+   "AISafety",
+   "AIAgents",
+   "MachineLearning",
+   "TechNews",
+   "ArtificialIntelligence"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Dc79IpsBzuc",
+  "url": "https://www.instagram.com/reel/Dc79IpsBzuc/",
+  "creator": "ai.harssh",
+  "posted": "2026-09-06",
+  "caption": "This GitHub repo contains 75+ production-ready AI engineering projects, and everything is open-source and completely free.\n\nYou can directly build your own AI tools by learning from real world implementations inside the repo.\n\nYou’ll find projects on RAG systems for websites, AI agents with memory, agent-to-agent communication, model fine-tuning, website-to-API builders, and even multi-agent deep research systems.\n\nThis is actual code from modern AI products that are working in production right now.\n\nSee exactly how these companies engineered their solutions, then adapt and scale them for your own startup or client projects.\n\nNo guessing, no trial and error - just proven implementations you can learn from and deploy immediately.\n\nThis is how developers are shortcutting months of research and development by studying real-world AI architecture that actually works.\n\nComment “AI” below and I’ll DM you the link.\n\n[ GitHubRepo, AIProjects, OpenSourceAI, ProductionReady, AIEngineering, RAGSystems, AIAgents, AgentCommunication, ModelFineTuning, DeveloperResources, LearnFromCode, AIStartup, RealWorldAI, AIDevelopment, TechResources ]\n\n#OpenSourceAI #AIEngineering #GitHubRepo",
+  "likes": 1398,
+  "comments": 2252,
+  "views": 96704,
+  "hashtags": [
+   "OpenSourceAI",
+   "AIEngineering",
+   "GitHubRepo"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Dc3l95Jpc-v",
+  "url": "https://www.instagram.com/reel/Dc3l95Jpc-v/",
+  "creator": "finalbossproject",
+  "posted": "2026-09-04",
+  "caption": "¿Y SI PARA ARREGLAR EL TRÁFICO TUVIERAS QUE PROGRAMARLO? 🚦🤯\n\nIF RED THEN STOP te pone a controlar semáforos, barreras y otros sistemas utilizando máquinas de estados para evitar que tu ciudad se convierta en un caos.\n\nPROGRAMACIÓN + PUZLES + TRÁFICO. 🚗💻\n\n¿Conseguirías que todo funcionase?\n\n#ifredthenstop #programming #simulationgame #puzzlegame #automation #indiegames #gaming #finalbossproject",
+  "likes": 741,
+  "comments": 0,
+  "views": 25065,
+  "hashtags": [
+   "ifredthenstop",
+   "programming",
+   "simulationgame",
+   "puzzlegame",
+   "automation",
+   "indiegames",
+   "gaming",
+   "finalbossproject"
+  ],
+  "source": "apify:automation",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DcjijrZud4-",
+  "url": "https://www.instagram.com/reel/DcjijrZud4-/",
+  "creator": "mahemas.ai",
+  "posted": "2026-08-27",
+  "caption": "Rehber için yorumlara “SETUP” yazın size göndereyim.\n\nBu site doğrudan Claude Code ile oluşturuldu.\nAnimasyonlar. Modern arayüz (UI). Canlıya hazır/yayına hazır tasarımlar.\n\nÇoğu ajans muhtemelen endişelenmeli.\n\n#claudecode #webdesign #aitools #aiagents #developer",
+  "likes": 1734,
+  "comments": 3901,
+  "views": 129556,
+  "hashtags": [
+   "claudecode",
+   "webdesign",
+   "aitools",
+   "aiagents",
+   "developer"
+  ],
+  "source": "apify:aiagents",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "Db0A7VRJKRQ",
+  "url": "https://www.instagram.com/reel/Db0A7VRJKRQ/",
+  "creator": "themrtechking",
+  "posted": "2026-08-09",
+  "caption": "Website no one talks about (Part 514)\n\nProtect yourself from malicious github repo.\n\n#github #maliciousrepo #dev #githubrepo #coder",
+  "likes": 872,
+  "comments": 1,
+  "views": 39202,
+  "hashtags": [
+   "github",
+   "maliciousrepo",
+   "dev",
+   "githubrepo",
+   "coder"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DbbLlCrJXj0",
+  "url": "https://www.instagram.com/reel/DbbLlCrJXj0/",
+  "creator": "syntaix.ai",
+  "posted": "2026-07-30",
+  "caption": "💬 Comment \"REMIND\" and I'll send you the GitHub repo. 👇\n\nSomeone just open-sourced REMIND—an AI vision system that helps robots remember objects even after they disappear from view.\nUnlike traditional object trackers that rely on motion or position, REMIND builds a long-term visual memory using advanced AI vision models.\n\nHere's what makes it different:\n🧠 Remembers objects after they leave the camera's view\n👀 Uses DINOv3 visual features to recognize the same object from different angles\n🧩 Understands object parts instead of treating every object as a single image\n📍 Uses surrounding objects as context to improve identification accuracy\n🔄 Continuously updates its memory as the environment changes\n⚠️ Can even detect when it's uncertain instead of making incorrect identity predictions\n\nThis could be a huge step forward for:\n🤖 Autonomous robots\n📦 Warehouse automation\n🏠 Home assistant robots\n🚗 Indoor navigation systems\n👁️ Computer vision research\n\nInstead of simply tracking movement, REMIND focuses on remembering visual identity, making long-term object tracking much more reliable in real-world environments.\n\n⭐ It's fully open source, so developers can study it, build on it, or integrate it into their own robotics and computer vision projects.\n\n💬 Comment \"REMIND\" and I'll send you the GitHub repo.\n\n🎥 Video Credit: CVAR-UPM\n\nFollow @syntaix.ai for the latest AI tools, GitHub projects, and cutting-edge tech.\n\n#aitool #opensource #githubrepo #llm #vision",
+  "comments": 2232,
+  "views": 199815,
+  "hashtags": [
+   "aitool",
+   "opensource",
+   "githubrepo",
+   "llm",
+   "vision"
+  ],
+  "mentions": [
+   "syntaix.ai"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DbI40Ums58-",
+  "url": "https://www.instagram.com/reel/DbI40Ums58-/",
+  "creator": "mahanaicoach",
+  "posted": "2026-07-23",
+  "caption": "✅Comment Human for the full set up Guide\n\n#aiasistant #githubrepo",
+  "likes": 87,
+  "comments": 95,
+  "views": 102995,
+  "hashtags": [
+   "aiasistant",
+   "githubrepo"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ },
+ {
+  "shortcode": "DbGgyXuPmJ0",
+  "url": "https://www.instagram.com/reel/DbGgyXuPmJ0/",
+  "creator": "nick_saraev",
+  "posted": "2026-07-22",
+  "caption": "Comment \"API\" to get this free GitHub repo with over 25+ Free AI API Key Providers. \n\nYou don't need to pay for AI API keys anymore.\n\nInstead, use this free GitHub repo called free-llm-api-resources, and it lists down every free API provider out there.\n\nIt gives you free access to top models like Kimi, DeepSeek, Gemini, and more, all for completely free.\n\nYou just pick a provider like OpenRouter, NVIDIA NIM, or Google AI Studio, generate your API key.\n\nThen plug it straight into Claude Code, Cursor, or whatever you're working on.\n\nSome providers give you more room than others though. \n\nOpenRouter gives you up to 1,000 requests a day once you add a small lifetime top-up.\n\nNVIDIA NIM gives you 40 requests a minute with just phone verification.\n\nGoogle AI Studio is another solid one, since it gives you access to Gemini models with generous daily limits, and it doesn't require any payment info at all to get started.\n\nThere's also a second list in the repo for providers that hand out trial credits instead of fully free access. \n\nFireworks, Nebius, and Hyperbolic all give you a small credit balance to test bigger models before committing to anything.\n\nSo if you're building an agent that calls a model constantly, or you just want to try five different providers before picking a favorite, this repo saves you the trouble of hunting each one down individually.\n\nPerfect for AI agents, side projects, or just testing things out without spending a dollar.\n\n#aiapi #GitHubrepo #Openrouter #googleaistudio #kimiai",
+  "likes": 10369,
+  "comments": 17713,
+  "views": 379058,
+  "hashtags": [
+   "aiapi",
+   "GitHubrepo",
+   "Openrouter",
+   "googleaistudio",
+   "kimiai"
+  ],
+  "source": "apify:github repo",
+  "first_seen": "2026-10-23"
+ }
+]

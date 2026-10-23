@@ -1,11 +1,13 @@
 {
  "stats": {
-  "apify": "not configured",
-  "graph": "not configured",
-  "topics": [],
   "fetched": 0,
+  "replay": false,
+  "resumed": true,
+  "apify": "reused recorded reels",
+  "graph": "not called (resume)",
+  "topics": [],
   "budget": null
  },
- "history_reels": 0,
- "shown_reels": 0
+ "history_reels": 33,
+ "shown_reels": 6
 }

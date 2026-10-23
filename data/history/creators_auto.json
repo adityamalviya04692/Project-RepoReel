@@ -1,1 +1,50 @@
-{}
+{
+ "ai.harssh": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 6910,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": true
+ },
+ "andycufari": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 23825,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": true
+ },
+ "charlieautomates": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 54045,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": true
+ },
+ "princegupta.ai": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 6120,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": true
+ },
+ "robfusco_": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 1397,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": false
+ },
+ "theaiscaler": {
+  "business": false,
+  "checked": "2026-10-23",
+  "followers": 19565,
+  "followers_source": "apify",
+  "repo_reels": 1,
+  "verified": true
+ }
+}

@@ -1,5 +1,119 @@
 {
- "creators": [],
+ "creators": [
+  {
+   "handle": "charlieautomates",
+   "followers": 54045,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.659,
+   "recency": 0.819,
+   "trust": 0.677,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "andycufari",
+   "followers": 23825,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.595,
+   "recency": 0.627,
+   "trust": 0.626,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "robfusco_",
+   "followers": 1397,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.165,
+   "recency": 0.846,
+   "trust": 0.583,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "princegupta.ai",
+   "followers": 6120,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.365,
+   "recency": 0.627,
+   "trust": 0.58,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "theaiscaler",
+   "followers": 19565,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.408,
+   "recency": 0.322,
+   "trust": 0.527,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "ai.harssh",
+   "followers": 6910,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.472,
+   "recency": 0.209,
+   "trust": 0.517,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  }
+ ],
  "gates": {
   "min_followers": 50000,
   "min_posts_60d": 4

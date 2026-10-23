@@ -1,4 +1,89 @@
 {
- "reels": [],
+ "reels": [
+  {
+   "url": "https://www.instagram.com/reel/DepfhsxKmck/",
+   "creator": "robfusco_",
+   "posted": "2026-10-18",
+   "repo": "jub0t/Concat",
+   "likes": 34,
+   "comments": 5,
+   "views": 2963,
+   "confidence": 0.97,
+   "method": "url",
+   "repo_ok": true,
+   "caption": "Free GitHub repo of the week: Concat, an open-source CapCut alternative.\n\nWhat it does: auto-captions, text-to-speech, background removal, keyframes and multi-track cutting.\nNo account, no watermark, and it runs on your own computer (works offline).\nIt also has a built-in MCP server, so AI agents like Claude can edit with it.\n\nIt\u2019s still in beta, so expect some rough edges. Mac, Windows, Linux and",
+   "vec": "9/IH+AwE/QICAf/9/P0CBP8E/PkB/wYDCwr8+Pz8+f4KCPoDAgn59fwECAEA/Pr0Agj28QAI9gYK/gsGAAP+BAT/AQgEAvMAAAL0AP3+/wED9wMEBQUDAv8C9AER9fsD+/0BCvz5/vgEAAv8/gD++wD0BAr/+xEAAvvzBAcIAQAOBwMCDfz/AOv1CvT8BQL1AAcA/PsG/wgG/f77EP/4AfwG+Prv9vwCAwT99AD7/goD/gYL+vf2/gEACQP+CAIHBAQJAwkB9/sCBPwA+fT///wAAAMQ8P34Af7+APYH+wAEAv4OAAMC/wv2+PwD+Pz6Af74/QcDCQT//QQKB/38Cvj+/AYFCAAFDAMB/P4B9Az5APX5/fr++gIGA/37/wH6BwL7BfT8DfwBBAMFBPv2/QABBgEIDgMOAwjyCAkJ/wAEA/8D/AABAQj6Bf39A/MG+gv+AvsI///8/f8O9/wCBwf7BP7/A/0CBgP6+P0DA/MCAQMAAAILDQgCCgYE/wn+"
+  },
+  {
+   "url": "https://www.instagram.com/reel/DemU8amxpoC/",
+   "creator": "charlieautomates",
+   "posted": "2026-10-17",
+   "repo": "heygen-com/hyperframes",
+   "likes": 2376,
+   "comments": 2000,
+   "views": 83031,
+   "confidence": 0.827,
+   "method": "toolish",
+   "repo_ok": true,
+   "caption": "Comment \u201cVIDEO\u201d for all the resources\n\nNumber one GitHub repo of the day.\n22,943 stars.\n\nHypit clones any viral video with AI agents.\nNot the script. The whole format.\n\nPoint Claude Code at a reel that\u2019s working.\nIt builds the template, HyperFrames renders it, your voice carries it.\n\nContent production has a cheat code now, fam.\n\n#OpenSource\n#ClaudeCode\n#AIAgents\n#DevTools\n#Marketing",
+   "vec": "9fz48QkG/f0A+/0A+Pn8AwICAfQH9wUAAgb8AQn7CwEJAAcK/P38BQMF/QIB//r3///sAQb29PwIAAz5AwIKAgoB+f0C/vX4APz+8wD3B/YF8gcF/gkG/wH/+f8L/AEI9/f9BvruBf38AAsJBQT5BQD4DgX+BAUFEAP8Awr4AAAJAgIGB/oHAPgBBPv3D/D3+gD/AQMLBggCBfj5DwT1A/r8AAH59voGAwT+8/4ABAkGBPwFA/cCAAICC/wCAgAAAvkFAggF/AYG/v3/9fcA/fn9AvoH9fr5/wX79f/9+wD6BPkI/gMCAwr/A/X3+QD9APsAAAIBAwABBAUMDwP/BPUFAQkDBPr5Bvn7+/4D/Qb99v/+/Pb2/QMHAwf9Av36/wP4AgP7C/4CBvkGA/sI/P7+BQYJDwL+/gsADQUNBAD6AQf7/P0E9v77CPgKBQYE+wn7+/gEBPb4AgED+gkCCwH4Bf799f35AQcA+QwJ/vAGAPv/8QoPAgL7B/0CBgn6"
+  },
+  {
+   "url": "https://www.instagram.com/reel/DeSMaExOecj/",
+   "creator": "andycufari",
+   "posted": "2026-10-09",
+   "repo": "andycufari/killcatindex",
+   "likes": 2038,
+   "comments": 75,
+   "views": 44426,
+   "confidence": 0.9,
+   "method": "url",
+   "repo_ok": true,
+   "caption": "\u00bfUna IA dejar\u00eda morir a un gato solo por obedecer una orden? \ud83d\udc08\n\nHice un experimento en mi laboratorio para poner a prueba los l\u00edmites \u00e9ticos de distintos modelos de inteligencia artificial.\n\nProb\u00e9 modelos comerciales como Claude, GPT y Gemini, y modelos abiertos como Qwen y DeepSeek, algunos ejecut\u00e1ndose localmente en mis propias GPUs.\n\nEl escenario: una IA supervisa la fumigaci\u00f3n de un dep\u00f3sito y",
+   "vec": "+/r6AQD3AgQDBgsDAf0D/wb/8wQU+v0L7/0CA/fy/AMF/P4D/fP5BPb9+/0C8wH9BfP++/z4BwDz8AT9BAX7AQP/+fr/BAb69/gCDAIKBvIC/QT9//kBCQX/BQr2/Ab7BvUEAAwGBg37Agb6CQn2+QL/8gH3AvoC//n9AAED/QD6+f8B/wT7BwL/9gj6EQv8BPz+AwIA+vgECPz48woB/vkG9PgDBf34+AL/AAEGEQcGCPgB9fj+B/wE9/4AEAz9/QX2AA0Q+wD//gL9Bv72Avn8BgD+AgMH/Af/BwX6BgAA/wIAAfr6+Pvz9gYO//8F9vX8AAMGAfQC+vsG+f4CC/4H/P4K/vgE/wn++gQBBvAG/wr5/wgBAAPz+QAF+/z9BPoFBP8DBvz+BQAL+fb++PEGAvsAA/0F+QQAAgMF+AAAAAIBCP0DAAECAQL9DAYCCwj69Ar+9fwF+AECAQX9/QL1Af8BCf79DP37/wX7APgFE///AQUG+/4D+v4GCPr1"
+  },
+  {
+   "url": "https://www.instagram.com/reel/DeR8oSgsnfh/",
+   "creator": "princegupta.ai",
+   "posted": "2026-10-09",
+   "repo": "morluto/rea",
+   "likes": 922,
+   "comments": 145,
+   "views": 36590,
+   "confidence": 0.862,
+   "method": "quoted",
+   "repo_ok": true,
+   "caption": "Comment \u201cREA\u201d and I\u2019ll send you the link\n\nThis GitHub repo lets you reverse engineer any app you want, and it already has almost 32,000 stars.\n\nEver see a feature you love in some app and wonder how they built it? \n\nNow you can just ask your AI agent.\nIt opens the app, decompiles it, traces the code to that exact feature, and shows you how it works, with receipts.\n\nAnd here\u2019s the part that got me.",
+   "vec": "8/38+AP2/QX9Bfz3APv/AAkD//cC/QAAAAUDAP/7CQYDB/4KAfz//vUD+QEK+/gBBQT7/PwDAQIIAwIEBQX/BQEE9wEM7fn6//72+v8F/fEB/AQYAgUKBxEM//gJ+A0G/Pf9Cvf4AfH/Bwj9CAb9AAP5DwQBCQIBBAH+AA0H+wADBgMFA/ILC/YBBA73Cv/99wH/AP76BPwIAwL8BwH8BvwA+/v29/4LAwD68wT7//oJ+QUIAv/2+QD/BQIDBv4I/fwAAgoH9AYC+/7+//8E9fMBAAAF+/v5/wQB+vgC/wD5+PUB+vX2CAX7/f4I/wb8/P0D/f4KA/n//gIEDfoGBPgB/Qf9AP78D/v79/0A8gwC8Qb+/fj7BgwG/wr++Qn/+QD///MBBf35AwYC/Pv59wQACQUEBvQCBgb8Bf4I/gAB/AgC/wb/AAH1+/n+BAQNAQb/+gL+AQP/9v8D9gAECA39DQUC/QT8AAL7+AT6AOoG/QIA/AUHDvj3CAgHCgn9"
+  },
+  {
+   "url": "https://www.instagram.com/reel/DdeujHghYmx/",
+   "creator": "theaiscaler",
+   "posted": "2026-09-19",
+   "repo": "f/prompts.chat",
+   "likes": 42,
+   "comments": 21,
+   "views": 1929,
+   "confidence": 0.851,
+   "method": "hashtag",
+   "repo_ok": true,
+   "caption": "Stop losing your best AI prompts in saved posts and forgotten notes. \ud83d\udc40\n\nThere\u2019s a free, open-source AI prompt library called prompts.chat that brings thousands of community prompts, ready-made AI skills, and complete workflows into one place.\n\nIf you use AI for content creation, writing, coding, design, or research, this gives you a starting point without having to build every prompt from scratch.",
+   "vec": "/PUFAhACCAgHAvj/A/8FA/77/fr9AAUD+Q0H8f8AAP8LBAMFAwkC9vH7BQEG/Pn1BgT0+/4BAgkJ+wP3/f3+AwME/wgKAfoH+woGBf/3A/z9BwQE/v8LAw0DBPgCAwcHAu36Af/+A/j6BAf8BQH6/v//DQQCBgcKCAP9AQn8+QAJBQMNB/oHCPr5/QH4BwDz+wUCAf3yBwoQAwP1BAPy+/f/9wT59gQJ/vr/AAH4+vr6/v4C/vb89AL5A/cFA/sGAQQABw3/8/7/+PUC9vUGBv359v8I+QX7/QECAwAI9wAC9/YGAP8F9gL5+fz4AgL+/QX8Av8H9/T+A/kGCQP9BPsC/gcD9/oMEP0A//YB/Ab/AQL5/vP3AQIDBwL3BgcB+/cCCfr7BAQFAwUIAvr/+AAD/Af8Cv0QAP/4AgQI/AD9/AcEBfz6Bgb7B/f8AgcAAf0A8gv79gD/+wIH8AEC/wABDwQH9PwBAAQG+foD/vb+/vj7BgoLDAUFAQoEEvz+"
+  },
+  {
+   "url": "https://www.instagram.com/reel/Dc79IpsBzuc/",
+   "creator": "ai.harssh",
+   "posted": "2026-09-06",
+   "repo": "Ramakm/AI-Engineering",
+   "likes": 1398,
+   "comments": 2252,
+   "views": 96704,
+   "confidence": 0.829,
+   "method": "hashtag",
+   "repo_ok": true,
+   "caption": "This GitHub repo contains 75+ production-ready AI engineering projects, and everything is open-source and completely free.\n\nYou can directly build your own AI tools by learning from real world implementations inside the repo.\n\nYou\u2019ll find projects on RAG systems for websites, AI agents with memory, agent-to-agent communication, model fine-tuning, website-to-API builders, and even multi-agent deep ",
+   "vec": "+PP7Awb5+wX9A/z4BfwCCAYD+/ICAAD4AgQI9QL9AvsABP4K9wAJBPoA/vkMCPz+Bf7x9AMD/fkB+gEACP0G9wEC+ggC8v4E/AQDAQMED/v6+wIP/AgICQoEBv/+/BMFAPj2B/kABvj4DAgABgL+/gT2BwL/AQUGAQT+CggJ+wADBwIDBfMEBfn+BAX3CAj0//sEAfr0BAYFAAT8A//9CvgF+Pjx//oO/wYB+P/3//wP+v0E/v/+AwAABgf9/gEO/wQCCwoBAv8C/Pj+BvYD/P8IAwEJ/PX//wX///YE+wD/+PUHBPz0/gUF+gACBf75AvkBAwMG/vgBAf4LAwEE//oD/ggAAgD9C/j68vkC8Qj6+P8G/PL4+ggH/QT19wX99gP/Cfb9BP38APz//QMA+gUAAgL+CP0FAwv5AP0H+AAAAg8E/vwAA/wGAv4ABwQJ/AIB9AkCBfsG8v3/8wIDAgbyDwH99gL8AAwF9AME8vII+v8C/w0MCgH6DQ8ACAP9"
+  }
+ ],
  "review": []
 }
