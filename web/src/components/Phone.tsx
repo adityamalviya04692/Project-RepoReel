@@ -29,8 +29,13 @@ export default function Phone({
       fromScroll.current = false;
       return;
     }
-    const el = screen.current?.querySelector<HTMLElement>(`[data-key="${CSS.escape(activeKey ?? '')}"]`);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const root = screen.current;
+    const el = root?.querySelector<HTMLElement>(`[data-key="${CSS.escape(activeKey ?? '')}"]`);
+    if (root && el) {
+      // Scroll the phone only; scrollIntoView also moves the outer document on idle advance.
+      const top = root.scrollTop + el.getBoundingClientRect().top - root.getBoundingClientRect().top - root.clientTop;
+      root.scrollTo({ top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
   }, [activeKey]);
 
   // Scrolling inside the phone → the snapped reel becomes active.
