@@ -1,7 +1,10 @@
-node_modules
-dist
-.venv
-__pycache__
+.venv/
+__pycache__/
+.pytest_cache/
 .DS_Store
 *.local
 .env
+data/bronze/
+data/silver/
+web/node_modules/
+web/dist/

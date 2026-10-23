@@ -1,0 +1,17 @@
+# Reels that feature a GitHub repository.
+#
+# Give either `repo` (best: owner/name or a GitHub URL) or `caption`
+# (paste the caption or the on-screen text; the pipeline matches it to a repo).
+# Low-confidence matches land in the review queue on the Pipeline status page.
+# Reels are shown with Instagram's official embed; nothing is downloaded.
+#
+# - url: https://www.instagram.com/reel/SHORTCODE/
+#   creator: example_handle     # must exist in creators.yaml
+#   posted: 2026-10-20
+#   repo: owner/name            # optional if caption is given
+#   caption: "paste caption or on-screen repo text"   # optional
+#   likes: 12000                # optional, improves the engagement score
+#   comments: 340               # optional
+#   views: 450000               # optional
+
+reels: []

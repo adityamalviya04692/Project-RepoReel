@@ -1,0 +1,27 @@
+# Retrieval evaluation: a plain-language need and repos a good answer should rank highly.
+# Only expected repos present in the catalog are scored. Reported as hit@1, hit@3 and MRR.
+queries:
+  - query: an AI agent that can use my web browser and click around websites for me
+    expect: [browser-use/browser-use]
+  - query: scrape websites into clean markdown for my LLM
+    expect: [unclecode/crawl4ai, mendableai/firecrawl, firecrawl/firecrawl]
+  - query: collection of MCP servers to connect Claude to my tools
+    expect: [modelcontextprotocol/servers, punkpeye/awesome-mcp-servers]
+  - query: run large language models locally on my laptop
+    expect: [ollama/ollama, ggml-org/llama.cpp, ggerganov/llama.cpp]
+  - query: self-hosted workflow automation like Zapier
+    expect: [n8n-io/n8n, activepieces/activepieces]
+  - query: scrape job listings from LinkedIn and Indeed
+    expect: [speedyapply/JobSpy, cullenwatson/JobSpy, Bunsly/JobSpy]
+  - query: chat with my PDF documents using RAG
+    expect: [infiniflow/ragflow, Mintplex-Labs/anything-llm, run-llama/llama_index]
+  - query: open source text to speech model with natural voices
+    expect: [coqui-ai/TTS, SWivid/F5-TTS, resemble-ai/chatterbox, hexgrad/kokoro]
+  - query: AI coding agent that works in my terminal
+    expect: [Aider-AI/aider, paul-gauthier/aider, openai/codex, anthropics/claude-code, sst/opencode]
+  - query: convert PDF and Office documents to markdown
+    expect: [microsoft/markitdown, docling-project/docling, DS4SD/docling, opendatalab/MinerU]
+  - query: build a team of AI agents that collaborate
+    expect: [crewAIInc/crewAI, microsoft/autogen, joaomdmoura/crewAI]
+  - query: speech to text transcription that runs offline
+    expect: [openai/whisper, ggml-org/whisper.cpp, ggerganov/whisper.cpp, SYSTRAN/faster-whisper]

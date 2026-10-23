@@ -1,0 +1,17 @@
+# Instagram creators who post about GitHub repositories.
+#
+# Eligibility (all required, checked on every pipeline run):
+#   • followers >= 50,000        (>= 100,000 and trust >= 0.7 earns the "Top creator" badge)
+#   • >= 4 repo posts in the last 60 days (counted from reels.yaml, or set repo_posts_60d)
+#   • a public professional (Business or Creator) account
+#
+# Add one entry per creator. Use real handles only, and keep followers current
+# (from P1 the Business Discovery API fills followers automatically).
+#
+# - handle: example_handle      # without the @
+#   followers: 120000
+#   niche: ai-tools             # free text: ai-tools, dev-tools, automation, data…
+#   added: 2026-10-23
+#   repo_posts_60d: 8           # optional override
+
+creators: []
