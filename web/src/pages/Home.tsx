@@ -72,7 +72,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
   const pool = useMemo(() => (live.q === query ? [...items, ...live.items.filter((l) => !items.some((i) => i.url === l.url))] : items), [items, live, query]);
   const reelHits: ReelHit[] = useMemo(() => (query.trim() ? rankReels(query, qvec, pool, data) : []), [query, qvec, pool, data]);
   const strong = reelHits.filter((h) => h.relevance >= MATCH_MIN);
-  const shownReels = query.trim() ? (strong.length ? strong : reelHits.slice(0, 3)) : [];
+  const shownReels = query.trim() ? (strong.length ? strong : reelHits.filter((h) => h.relevance > 0).slice(0, 3)) : [];
   const repos: { facets: Facets; results: Ranked[] } | null = useMemo(() => (query.trim() ? rank(query, qvec, data, bm25, 6) : null), [query, qvec, data, bm25]);
   const reelRepos = new Set(shownReels.map((h) => h.item.repo?.toLowerCase()));
   const repoOnly = repos ? repos.results.filter((x) => !reelRepos.has(data.repos[x.i].n.toLowerCase())).slice(0, strong.length ? 3 : 5) : [];
@@ -88,7 +88,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, qvec, indexStrong]);
 
-  const feed = query.trim() ? (shownReels.length ? shownReels.map((h) => h.item) : items) : items;
+  const feed = query.trim() ? shownReels.map((h) => h.item) : items;
   useEffect(() => {
     if (!feed.length) setActive(null);
     else if (!active || !feed.some((f) => f.key === active)) setActive(feed[0].key);
@@ -163,7 +163,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                   ) : strong.length ? (
                     <h3 className="answers-h">{strong.length} reel{strong.length > 1 ? 's' : ''} for this</h3>
                   ) : (
-                    <div className="empty-note">No reel covers this exactly yet. Here are the closest reels, and the repos that fit below.</div>
+                    <div className="empty-note">{shownReels.length ? 'No reel covers this exactly yet. Here are the closest reels, and the repos that fit below.' : 'No reel covers this yet. The repository matches are below.'}</div>
                   )}
                   {shownReels.map((h, n) => (
                     <ReelResult key={h.item.key} it={h.item} data={data} n={n} active={h.item.key === active} onWatch={() => watch(h.item.key)} onDetails={onOpen} />
@@ -197,7 +197,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
           </div>
 
           <aside className="phone-col">
-            <Phone items={feed} data={data} activeKey={active} onActive={onActive} autoplay={!searching} onAdd={() => setAdding(true)} />
+            <Phone searching={searching} items={feed} data={data} activeKey={active} onActive={onActive} autoplay={!searching} onAdd={() => setAdding(true)} />
             <button className="link add-reel" onClick={() => setAdding(true)}>Know a reel we missed? Add it</button>
           </aside>
         </div>

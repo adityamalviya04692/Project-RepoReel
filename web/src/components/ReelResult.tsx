@@ -41,7 +41,7 @@ export default function ReelResult({ it, data, n, active, onWatch, onDetails }: 
           <div className="rr-repo"><span><b>{it.repo}</b><small>Not in our catalog yet</small></span></div>
         ) : null}
         <div className="rr-actions" onClick={(e) => e.stopPropagation()}>
-          <button className={`btn small ${active ? 'secondary' : 'primary'}`} onClick={onWatch}>{active ? 'Playing in phone' : '▶ Watch reel'}</button>
+          <button className={`btn small ${active ? 'secondary' : 'primary'}`} onClick={onWatch}>{active ? 'Selected in phone' : '▶ Watch reel'}</button>
           {(repo || it.repo) && <a className="btn small secondary" href={`https://github.com/${repo?.n ?? it.repo}`} target="_blank" rel="noreferrer">Open repo ↗</a>}
           {repo && it.repoRow !== undefined && <button className="link" onClick={() => onDetails(it.repoRow!)}>Repo details</button>}
           <a className="link" href={it.url} target="_blank" rel="noreferrer">Instagram ↗</a>

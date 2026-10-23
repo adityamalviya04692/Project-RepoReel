@@ -27,6 +27,8 @@ Reviewed 23 October 2026. Use this file and the source code for current behavior
 - Replay avoids all source API calls, even when credentials exist or no discovery snapshot was recorded. Model assets may still download if absent from cache.
 - Unresolved repository references are moved to review; a quality check blocks orphan repository links.
 - Reel additions no longer wait for model download before appearing. Items without a vector keep keyword relevance even after the query has a vector.
+- Explicit platform requests require evidence in the caption or linked repository metadata; unrelated AI reels no longer count as LinkedIn matches. Queries without a qualifying reel show repository fallback.
+- Phone advancement scrolls only its own container and unmounts an inactive player to stop hidden playback.
 - Empty and creator states describe the implemented behavior and distinguish pending creators from earned badges.
 
 ## Remaining boundaries

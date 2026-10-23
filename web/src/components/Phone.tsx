@@ -8,7 +8,7 @@ import type { ReelItem } from '../lib/reels';
    repo the reel is about and a direct "Open repo" link. Idle feeds advance on their own. */
 
 export default function Phone({
-  items, data, activeKey, onActive, autoplay, onAdd,
+  items, data, activeKey, onActive, autoplay, onAdd, searching = false,
 }: {
   items: ReelItem[];
   data: Data;
@@ -16,6 +16,7 @@ export default function Phone({
   onActive: (key: string) => void;
   autoplay: boolean;
   onAdd: () => void;
+  searching?: boolean;
 }) {
   const screen = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState<Set<string>>(new Set());
@@ -87,8 +88,8 @@ export default function Phone({
             <div className="slide empty">
               <div>
                 <span className="empty-glyph" aria-hidden="true">▶</span>
-                <b>No reels indexed yet</b>
-                <p>Search the repository catalog, or add a reel you know. Connected discovery sources add reels after a successful pipeline run.</p>
+                <b>{searching ? 'No matching reel yet' : 'No reels indexed yet'}</b>
+                <p>{searching ? 'Try another search, or open one of the matching repositories.' : 'Search the repository catalog, or add a reel you know. Connected discovery sources add reels after a successful pipeline run.'}</p>
                 <button className="link on-dark" onClick={onAdd}>Know a reel? Add it</button>
               </div>
             </div>
@@ -96,7 +97,7 @@ export default function Phone({
           {items.map((it) => {
             const repo = it.repoRow !== undefined ? data.repos[it.repoRow] : undefined;
             const isOn = it.key === activeKey;
-            const show = loaded.has(it.key);
+            const show = isOn && loaded.has(it.key);
             return (
               <section key={it.key} className={`slide${isOn ? ' on' : ''}`} data-key={it.key}>
                 <div className="slide-media">

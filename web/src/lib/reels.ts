@@ -4,7 +4,7 @@
 
 import type { Data, Reel, Repo } from './data';
 import { resolve } from './match';
-import { BM25, tokens } from './rank';
+import { BM25, tokens, understand } from './rank';
 
 export interface ReelItem {
   key: string;
@@ -119,14 +119,19 @@ const dot = (a: Float32Array, b: Float32Array) => {
 /** Ranks reels for a need. `relevance` (0–1) says how well the reel matches; low means "nothing on this yet". */
 export function rankReels(query: string, qvec: Float32Array | null, items: ReelItem[], data: Data): ReelHit[] {
   if (!items.length) return [];
-  const texts = items.map((i) => tokens(reelText(i, i.repoRow !== undefined ? data.repos[i.repoRow] : undefined)));
+  const rawTexts = items.map((i) => reelText(i, i.repoRow !== undefined ? data.repos[i.repoRow] : undefined));
+  const texts = rawTexts.map(tokens);
+  const requiredPlatforms = understand(query, data.ranking).platforms;
   const kwRaw = new BM25(texts).scores(tokens(query));
   const kwMax = Math.max(0, ...kwRaw);
   return items
     .map((item, k) => {
       const sem = qvec && item.vec ? Math.min(1, Math.max(0, (dot(qvec, item.vec) - 0.15) / 0.5)) : 0;
       const kw = kwMax > 0 ? kwRaw[k] / kwMax : 0;
-      const relevance = qvec && item.vec ? 0.75 * sem + 0.25 * kw : kw;
+      const describedPlatforms = understand(rawTexts[k], data.ranking).platforms;
+      const platformFits = requiredPlatforms.every((p) => describedPlatforms.includes(p));
+      // A generic AI similarity does not establish support for an explicitly requested platform.
+      const relevance = platformFits ? (qvec && item.vec ? 0.75 * sem + 0.25 * kw : kw) : 0;
       const days = (Date.now() - Date.parse(item.posted)) / 864e5;
       const recency = Math.exp(-Math.max(0, days) / 60);
       const health = item.repoRow !== undefined ? data.repos[item.repoRow].sc.health : 0.5;
