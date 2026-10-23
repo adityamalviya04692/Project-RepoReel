@@ -13,18 +13,17 @@ export default function Creators({ data }: { data: Data }) {
         <div className="wrap narrow">
           <p className="eyebrow">Creators</p>
           <h1 className="h-lg">Proof has to be earned.</h1>
-          <p className="lead muted">A reel only appears next to a repo when its creator passes every gate. Trust is recomputed on each pipeline run.</p>
+          <p className="lead muted">Reels are linked to repositories even while a creator is pending. Creator badges require the follower and posting thresholds below; trust is recomputed on each pipeline run.</p>
           <div className="gates">
             <div><b>{compact(gates.min_followers)}+</b><span>followers</span></div>
             <div><b>{gates.min_posts_60d}+</b><span>repo posts in 60 days</span></div>
-            <div><b>Public</b><span>professional account</span></div>
           </div>
           <div className="formula">
             <code>trust = {w.accuracy}·accuracy + {w.consistency}·consistency + {w.engagement}·engagement + {w.recency}·recency</code>
             <ul>
               <li><b>Accuracy</b>: the share of their repo claims that point to a real, active, healthy repository.</li>
               <li><b>Consistency</b>: how regularly they post about repos.</li>
-              <li><b>Engagement</b>: likes and comments per view, which penalises bought audiences.</li>
+              <li><b>Engagement</b>: likes and comments per view, when those counts are available.</li>
               <li><b>Recency</b>: recent posts count more.</li>
             </ul>
           </div>
@@ -56,7 +55,7 @@ export default function Creators({ data }: { data: Data }) {
             </div>
           ) : (
             <div className="empty-note">
-              <p>No creators are vetted yet. The list is curated in <code>curated/creators.yaml</code> and their reels in <code>curated/reels.yaml</code>. Each pipeline run validates them, matches reels to repositories and computes trust.</p>
+              <p>No creators have earned a badge yet. Connected discovery finds creators from matched reels; each pipeline run checks available follower counts, posting history and repository health.</p>
             </div>
           )}
           {pending.length > 0 && (
@@ -69,7 +68,7 @@ export default function Creators({ data }: { data: Data }) {
               </ul>
             </>
           )}
-          <p className="fine">RepoReel uses Instagram's official embeds and APIs only, and never scrapes or downloads content. Creators can ask to be removed at any time.</p>
+          <p className="fine">Reels play through Instagram's official embed. Optional discovery uses Apify to collect public post metadata; follower counts can also come from Meta's Business Discovery API. Badges are calculated signals, not a manual identity or account-type verification. Creators can request removal through our GitHub repository.</p>
         </div>
       </section>
     </>

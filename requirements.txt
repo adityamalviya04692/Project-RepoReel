@@ -5,3 +5,5 @@ pydantic>=2.7
 numpy>=1.26
 fastembed>=0.7
 pytest>=8.0
+
+pytz>=2024.1

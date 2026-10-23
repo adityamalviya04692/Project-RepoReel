@@ -230,9 +230,9 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                 <a className="btn primary" href="#/snap">Snap a reel</a>
               </div>
               <div>
-                <p className="eyebrow">Only trusted creators</p>
+                <p className="eyebrow">Creator trust, explained</p>
                 <h2>Proof has to be earned.</h2>
-                <p className="lead muted">{compact(data.creators.gates.min_followers)}+ followers, regular repo posts, and an accuracy score checked against GitHub. Creators who hype dead repos sink automatically.</p>
+                <p className="lead muted">{compact(data.creators.gates.min_followers)}+ followers and regular repo posts are required for a creator badge. Repository health and available engagement counts contribute to trust.</p>
                 <a className="btn secondary" href="#/creators">How creators are vetted</a>
               </div>
             </div>
