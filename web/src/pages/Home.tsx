@@ -19,7 +19,32 @@ const EXAMPLES = [
   'Chat with my PDFs on my laptop',
   'Turn videos into transcripts offline',
 ];
-const MATCH_MIN = 0.3; // below this relevance a reel isn't really about the need
+const MATCH_MIN = 0.3;
+const HINT = 'Describe your problem in your own words, e.g. “I want an AI that applies to jobs in Pune for me”';
+
+/* The empty question box types example questions, so a first-time visitor sees how to ask. It pauses
+   while the box has focus or text, and stays a plain placeholder under reduced motion. */
+function useTypedHint(examples: string[], active: boolean) {
+  const [text, setText] = useState('');
+  useEffect(() => {
+    if (!active || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setText('');
+      return;
+    }
+    let i = 0, n = 0, dir = 1, timer = 0;
+    const tick = () => {
+      const ex = examples[i % examples.length];
+      n += dir;
+      setText(ex.slice(0, n));
+      if (dir > 0 && n >= ex.length) { dir = -1; timer = window.setTimeout(tick, 1700); return; }
+      if (dir < 0 && n <= 0) { dir = 1; i++; timer = window.setTimeout(tick, 350); return; }
+      timer = window.setTimeout(tick, dir > 0 ? 42 : 18);
+    };
+    timer = window.setTimeout(tick, 900);
+    return () => clearTimeout(timer);
+  }, [examples, active]);
+  return text;
+} // below this relevance a reel isn't really about the need
 
 export default function Home({ data, query, setQuery, onOpen }: { data: Data; query: string; setQuery: (q: string) => void; onOpen: (row: number) => void }) {
   const bm25 = useMemo(() => new BM25(data.repos.map((r) => tokens(searchText(r)))), [data]);
@@ -32,6 +57,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
   const [live, setLive] = useState<{ q: string; items: ReelItem[]; state: 'idle' | 'searching' | 'done'; note?: string }>({ q: '', items: [], state: 'idle' });
   const [modelP, setModelP] = useState(isReady() ? 1 : 0);
   const box = useRef<HTMLTextAreaElement>(null);
+  const [focused, setFocused] = useState(false);
 
   useEffect(() => onLoad(setModelP), []);
   useEffect(() => setDraft(query), [query]);
@@ -122,6 +148,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
     box.current?.blur();
   };
   const searching = !!query.trim();
+  const typedHint = useTypedHint(EXAMPLES, !searching && !draft && !focused);
   const discoveryConnected = !!data.discovery && [data.discovery.stats.apify, data.discovery.stats.graph].some((s) => s === 'ok' || s.startsWith('ok ·') || s.startsWith('partial:'));
 
   const rising = useMemo(
@@ -142,14 +169,15 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                 value={draft}
                 rows={searching ? 1 : 3}
                 onChange={(e) => setDraft(e.target.value)}
-                onFocus={warm}
+                onFocus={() => (warm(), setFocused(true))}
+                onBlur={() => setFocused(false)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
                     submit(draft);
                   }
                 }}
-                placeholder="Describe your problem in your own words, e.g. “I want an AI that applies to jobs in Pune for me”"
+                placeholder={typedHint ? `${typedHint}▍` : HINT}
                 aria-label="Describe your problem"
               />
               <div className="ask-bar">
