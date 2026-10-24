@@ -1,0 +1,590 @@
+{
+"abacusai": {
+"full_name": "abacusai/Long-Context",
+"stars": 604
+},
+"agent-to-agent": {
+"full_name": "NirDiamant/agents-towards-production",
+"stars": 21760
+},
+"agentcommunication": {
+"full_name": "GoogleCloudPlatform/agentcommunication_client",
+"stars": 8
+},
+"agenticai": {
+"full_name": "microsoft/agenticai-design-patterns",
+"stars": 691
+},
+"ai-assisted": {
+"full_name": "iam-veeramalla/ai-assisted-devops",
+"stars": 929
+},
+"aicoding": {
+"full_name": "lili-luo/aicoding-cookbook",
+"stars": 683
+},
+"aihumanizer": {
+"full_name": "AIHumanizerBenchmark/AIHumanizerBenchmark",
+"stars": 2
+},
+"aiprompting": {
+"full_name": "hammertoe/AIPromptingWorkshop",
+"stars": 2
+},
+"aitohuman": {
+"full_name": "DaffTzy5912/AItoHuman",
+"stars": 0
+},
+"aitools2026": null,
+"aivideo": {
+"full_name": "Longxiaohao/AIvideo",
+"stars": 112
+},
+"aivideos": {
+"full_name": "dongguacute/AIVideoSearch",
+"stars": 7
+},
+"aivoice": {
+"full_name": "KoljaB/LocalAIVoiceChat",
+"stars": 736
+},
+"aiwebsites": {
+"full_name": "LeonelAwouma/aiwebsites",
+"stars": 0
+},
+"always-on": {
+"full_name": "pradt2/always-online-stun",
+"stars": 1046
+},
+"android": {
+"full_name": "wasabeef/awesome-android-ui",
+"stars": 58113
+},
+"animationlibrary": {
+"full_name": "xmh19936688/AnimationLibrary",
+"stars": 2
+},
+"anthropic": {
+"full_name": "mukul975/Anthropic-Cybersecurity-Skills",
+"stars": 34939
+},
+"api": {
+"full_name": "public-apis/public-apis",
+"stars": 491832
+},
+"appdevelopment": {
+"full_name": "GmAbhishek/AppDevelopment",
+"stars": 16
+},
+"auto-captions": {
+"full_name": "shaishaicookie/fcpx-auto-captions",
+"stars": 371
+},
+"automateddesign": {
+"full_name": "alfredtayloraero/AutomatedDesignOfCompositeSpacecraftStructures",
+"stars": 1
+},
+"b-roll": {
+"full_name": "rollup/rollup-plugin-babel",
+"stars": 698
+},
+"built-in": {
+"full_name": "TwoTailsGames/Unity-Built-in-Shaders",
+"stars": 959
+},
+"capcut": {
+"full_name": "Hommy-master/capcut-mate",
+"stars": 2017
+},
+"cinematicvideo": {
+"full_name": "aiindonesiaart/cinematicvideo-promptgenerator",
+"stars": 0
+},
+"claudeai": {
+"full_name": "sahaj-b/claudeAI-frontend-clone",
+"stars": 11
+},
+"claudetips": {
+"full_name": "dcubasoy/claudetips",
+"stars": 0
+},
+"codingagents": {
+"full_name": "SylphAI-Inc/codingagents.md",
+"stars": 45
+},
+"coldemail": {
+"full_name": "mak-raiaan/ColdEmailPhDMSc",
+"stars": 130
+},
+"computer": {
+"full_name": "ossu/computer-science",
+"stars": 210305
+},
+"contentcreation": {
+"full_name": "Krish01agrawal/motia-ContentCreation-Agent",
+"stars": 4
+},
+"cursor": {
+"full_name": "PatrickJS/awesome-cursorrules",
+"stars": 41011
+},
+"cybersecurity": {
+"full_name": "mukul975/Anthropic-Cybersecurity-Skills",
+"stars": 34938
+},
+"data-driven": {
+"full_name": "DataExpert-io/llm-driven-data-engineering",
+"stars": 1159
+},
+"designautomation": {
+"full_name": "Autodesk-Forge/forge-designautomation-tools",
+"stars": 18
+},
+"developer-friendly": {
+"full_name": "developer-friendly/blog",
+"stars": 34
+},
+"developerresources": {
+"full_name": "OpenDDS/DeveloperResources",
+"stars": 1
+},
+"developers": {
+"full_name": "bradtraversy/design-resources-for-developers",
+"stars": 67235
+},
+"developertools": {
+"full_name": "roys/java-android-developertools",
+"stars": 127
+},
+"devops": {
+"full_name": "bregman-arie/devops-exercises",
+"stars": 84949
+},
+"devtools": {
+"full_name": "ChromeDevTools/chrome-devtools-mcp",
+"stars": 54083
+},
+"dot": {
+"full_name": "onyx-dot-app/onyx",
+"stars": 32944
+},
+"double-checks": {
+"full_name": "daxv18iiph/double-checks",
+"stars": 0
+},
+"elevenlabs": {
+"full_name": "elevenlabs/elevenlabs-python",
+"stars": 3154
+},
+"ethicalhacking": {
+"full_name": "mrH0411/Ebook-EthicalHacking",
+"stars": 404
+},
+"file": {
+"full_name": "files-community/Files",
+"stars": 46184
+},
+"fine-tuning": {
+"full_name": "Plachtaa/VITS-fast-fine-tuning",
+"stars": 5000
+},
+"framermotion": {
+"full_name": "wrongakram/framermotion-react-router",
+"stars": 182
+},
+"freeapis": {
+"full_name": "xiaoxuan6/FreeApiServer",
+"stars": 10
+},
+"freellmapi": {
+"full_name": "tashfeenahmed/freellmapi",
+"stars": 40786
+},
+"game": {
+"full_name": "Donchitos/Claude-Code-Game-Studios",
+"stars": 27381
+},
+"game-changer": {
+"full_name": "Syy9/GameViewSizeChanger",
+"stars": 63
+},
+"gamedevelopment": {
+"full_name": "sideeffects/GameDevelopmentToolset",
+"stars": 1096
+},
+"genai": {
+"full_name": "NirDiamant/GenAI_Agents",
+"stars": 24682
+},
+"githubrepo": {
+"full_name": "8LWXpg/PowerToysRun-GitHubRepo",
+"stars": 132
+},
+"godmod3": {
+"full_name": "MSL135/GODMOD3",
+"stars": 542
+},
+"google": {
+"full_name": "google-gemini/gemini-cli",
+"stars": 107805
+},
+"googleai": {
+"full_name": "minerva-ml/open-solution-googleai-object-detection",
+"stars": 47
+},
+"googlemapscraper": {
+"full_name": "SoCloseSociety/GoogleMapScraper",
+"stars": 10
+},
+"human-like": {
+"full_name": "kampelmuehler/synthesizing_human_like_sketches",
+"stars": 44
+},
+"humanizeai": {
+"full_name": "icarodredd/HumanizeAI",
+"stars": 4
+},
+"imagetovideo": {
+"full_name": "MasayukiSuda/ImageToVideoAndroid",
+"stars": 116
+},
+"instantwebsite": {
+"full_name": "instantwebsite/design",
+"stars": 9
+},
+"instinct": {
+"full_name": "project-instinct/InstinctLab",
+"stars": 856
+},
+"jub0t": {
+"full_name": "jub0t/Concat",
+"stars": 11266
+},
+"learnfromcode": {
+"full_name": "pippoberto/LearnFromCode",
+"stars": 1
+},
+"link": {
+"full_name": "Ebazhanov/linkedin-skill-assessments-quizzes",
+"stars": 28869
+},
+"links": {
+"full_name": "hmjz100/LinkSwift",
+"stars": 27585
+},
+"linux": {
+"full_name": "torvalds/linux",
+"stars": 253340
+},
+"localgeneration": null,
+"long-term": {
+"full_name": "longbridge/longbridge-terminal",
+"stars": 1024
+},
+"ltx": {
+"full_name": "Lightricks/LTX-Video",
+"stars": 11167
+},
+"ltx2": {
+"full_name": "wildminder/awesome-ltx2",
+"stars": 600
+},
+"maps": {
+"full_name": "react-native-maps/react-native-maps",
+"stars": 16014
+},
+"marketing": {
+"full_name": "coreyhaines31/marketingskills",
+"stars": 56343
+},
+"mausbot": {
+"full_name": "mheise/mausbot",
+"stars": 1
+},
+"mcpserver": {
+"full_name": "AgentSmithers/x64DbgMCPServer",
+"stars": 741
+},
+"modelfinetuning": {
+"full_name": "Nachi2006/ModelFineTuning",
+"stars": 0
+},
+"multi-agent": {
+"full_name": "open-multi-agent/open-multi-agent",
+"stars": 7021
+},
+"multi-track": {
+"full_name": "Smorodov/Multitarget-tracker",
+"stars": 2422
+},
+"nocode": {
+"full_name": "kelseyhightower/nocode",
+"stars": 65949
+},
+"nosubscription": {
+"full_name": "netspan/pve-nosubscription-repo",
+"stars": 0
+},
+"one-liners": {
+"full_name": "0xPugal/One-Liners",
+"stars": 1628
+},
+"open-sourced": {
+"full_name": "cockroachlabs/open-sourced-interview-process",
+"stars": 430
+},
+"openaidots": {
+"full_name": "tecxbro/openaidotsonimessage",
+"stars": 0
+},
+"openproject": {
+"full_name": "opf/openproject",
+"stars": 16618
+},
+"openrouter": {
+"full_name": "OpenRouterArchived/openrouter-runner",
+"stars": 1256
+},
+"opensourceai": {
+"full_name": "thebigbone/opensourceAI",
+"stars": 389
+},
+"osint": {
+"full_name": "jivoi/awesome-osint",
+"stars": 30445
+},
+"pdf": {
+"full_name": "Stirling-Tools/Stirling-PDF",
+"stars": 94878
+},
+"per-contact": {
+"full_name": "fayland/perl-www-contact",
+"stars": 22
+},
+"plagiarismremover": {
+"full_name": "simranvolunesia/PlagiarismRemover",
+"stars": 16
+},
+"posthog": {
+"full_name": "PostHog/posthog",
+"stars": 40409
+},
+"product-market": {
+"full_name": "soumyadip007/E-Marketplace-for-buying-and-reselling-products-Web-Project-Using-JSP-Servlet-Jstl-Security-Jdbc",
+"stars": 79
+},
+"production-grade": {
+"full_name": "FareedKhan-dev/production-grade-agentic-system",
+"stars": 1014
+},
+"production-ready": {
+"full_name": "wassim249/fastapi-langgraph-agent-production-ready-template",
+"stars": 2718
+},
+"productionready": {
+"full_name": "danthegoodman1/ProductionReadyPostgres",
+"stars": 3
+},
+"prompt": {
+"full_name": "f/prompts.chat",
+"stars": 174364
+},
+"promptlibrary": {
+"full_name": "MrXie23/PromptLibrary",
+"stars": 44
+},
+"prowebsite": {
+"full_name": "yildiz442351/prowebsiteee",
+"stars": 2
+},
+"r2": {
+"full_name": "SciPhi-AI/R2R",
+"stars": 8043
+},
+"re-explain": {
+"full_name": "AstraZeneca/awesome-explainable-graph-reasoning",
+"stars": 1995
+},
+"re-exploring": {
+"full_name": "jbadger3/ExploringRectangleDetection",
+"stars": 40
+},
+"ready-made": {
+"full_name": "shakurocom/Ready-Made-Swift-UI-Animation-Components",
+"stars": 65
+},
+"real-world": {
+"full_name": "alecmuffett/real-world-onion-sites",
+"stars": 2250
+},
+"recon": {
+"full_name": "six2dez/reconftw",
+"stars": 8287
+},
+"removeplagiarism": null,
+"reverse": {
+"full_name": "zhaoxuya520/reverse-skill",
+"stars": 43206
+},
+"reverseengineer": {
+"full_name": "0xZ0F/Z0FCourse_ReverseEngineering",
+"stars": 5984
+},
+"reverseengineering": {
+"full_name": "0xZ0F/Z0FCourse_ReverseEngineering",
+"stars": 5984
+},
+"rule-based": {
+"full_name": "Sorosliu1029/Rule-based_Expert_System",
+"stars": 113
+},
+"s3": {
+"full_name": "s3fs-fuse/s3fs-fuse",
+"stars": 10017
+},
+"saas": {
+"full_name": "nextjs/saas-starter",
+"stars": 16220
+},
+"sales": {
+"full_name": "PeterH0323/Streamer-Sales",
+"stars": 3796
+},
+"sanandreas": {
+"full_name": "in0finite/SanAndreasUnity",
+"stars": 2666
+},
+"secret": {
+"full_name": "trimstray/the-book-of-secret-knowledge",
+"stars": 252873
+},
+"self-asked": null,
+"self-improvement": {
+"full_name": "leezythu/Awesome-Harness-Self-Improvement",
+"stars": 124
+},
+"singlecommand": {
+"full_name": "sohag-pro/SingleCommand",
+"stars": 7
+},
+"softwaredevelopment": {
+"full_name": "alexpaul/SoftwareDevelopmentResources",
+"stars": 17
+},
+"softwareengineering": {
+"full_name": "phanxuanquang/UIT_SoftwareEngineering_Subjects",
+"stars": 210
+},
+"sounddesign": {
+"full_name": "gahntpo/SoundDesignSwiftUI",
+"stars": 6
+},
+"startup": {
+"full_name": "ZachGoldberg/Startup-CTO-Handbook",
+"stars": 14218
+},
+"step-by-step": {
+"full_name": "dvgodoy/PyTorchStepByStep",
+"stars": 1503
+},
+"supercomputer": {
+"full_name": "l4rz/building-a-poor-mans-supercomputer",
+"stars": 191
+},
+"superpowers": {
+"full_name": "obra/superpowers",
+"stars": 304547
+},
+"techreels": {
+"full_name": "karelysdisla2-cmd/techreels",
+"stars": 0
+},
+"techresources": {
+"full_name": "shanicesmith98/techresources",
+"stars": 12
+},
+"testautomation": {
+"full_name": "narayananpalani/testautomation",
+"stars": 114
+},
+"text-to-speech": {
+"full_name": "buriburisuri/speech-to-text-wavenet",
+"stars": 4006
+},
+"texttovideo": {
+"full_name": "TextToVideoAI/TextToVideoAI",
+"stars": 24
+},
+"two-factor": {
+"full_name": "jazzband/django-two-factor-auth",
+"stars": 1881
+},
+"typescript": {
+"full_name": "microsoft/TypeScript",
+"stars": 111588
+},
+"ux": {
+"full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+"stars": 139820
+},
+"veo3": {
+"full_name": "jax-explorer/awesome-veo3-videos",
+"stars": 118
+},
+"vibecoding": {
+"full_name": "1EchA/how-to-vibecoding",
+"stars": 930
+},
+"video": {
+"full_name": "Developer-Y/cs-video-courses",
+"stars": 83758
+},
+"videocreation": {
+"full_name": "pawanreddy-u/videocreation",
+"stars": 1
+},
+"videoediting": {
+"full_name": "ShelinShelin/VideoEditing",
+"stars": 141
+},
+"videogeneration": {
+"full_name": "explainingai-code/VideoGeneration-PyTorch",
+"stars": 19
+},
+"voicecloning": {
+"full_name": "musikalkemist/tts-voicecloning-course",
+"stars": 103
+},
+"webdesign": {
+"full_name": "grayghostvisuals/webdesignerschecklist",
+"stars": 414
+},
+"webdevelopment": {
+"full_name": "priyansh70/Dot-Batch_WebDevelopment-Notes",
+"stars": 335
+},
+"website": {
+"full_name": "sdmg15/Best-websites-a-programmer-should-visit",
+"stars": 76192
+},
+"website-to-api": {
+"full_name": "bipuldey19/Torrent-Searcher-API-with-Website",
+"stars": 20
+},
+"websitebuilder": {
+"full_name": "jbuffin/WebsiteBuilder",
+"stars": 25
+},
+"websocket": {
+"full_name": "gorilla/websocket",
+"stars": 24881
+},
+"wi-fi": {
+"full_name": "OthmanAdi/planning-with-files",
+"stars": 27621
+},
+"ycombinator": {
+"full_name": "PolymerSearch/awesome-ycombinator",
+"stars": 61
+}
+}

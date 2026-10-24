@@ -2,35 +2,46 @@
  "stats": {
   "apify": "ok",
   "graph": "not configured",
+  "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "open source ai tool",
+    "q": "github repo",
     "kind": "keyword",
-    "reels": 12
+    "reels": 10,
+    "kept": 6
    },
    {
-    "q": "free ai tool github",
+    "q": "open source github",
     "kind": "keyword",
-    "reels": 12
-   },
-   {
-    "q": "claude mcp server",
-    "kind": "keyword",
-    "reels": 12
-   },
-   {
-    "q": "ai agent github",
-    "kind": "keyword",
-    "reels": 12
+    "reels": 10,
+    "kept": 8
    }
   ],
-  "fetched": 48,
+  "fetched": 44,
+  "kept": 25,
+  "rejected": {
+   "not_english": 0,
+   "off_topic": 11
+  },
+  "feeds": {
+   "graph": 0,
+   "apify": 3
+  },
+  "ocr": 32,
   "budget": {
-   "used": 0.20290369183119875,
+   "used": 0.3937934742418599,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
-  }
+  },
+  "allowance": 49,
+  "repo_creators": 40,
+  "creators_seen": 74,
+  "history_pages": 0,
+  "pauses": 0,
+  "backfilled_creators": 0,
+  "candidates": 0
  },
- "history_reels": 72,
- "shown_reels": 11
+ "history_reels": 62,
+ "shown_reels": 62,
+ "matched_reels": 16
 }
