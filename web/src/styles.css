@@ -870,3 +870,10 @@ h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; letter-spacing: -0.015
 .sound-hint { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); color: #fff; font-size: 10.5px; font-weight: 600; text-shadow: none; pointer-events: none; animation: hint-in 500ms ease both 600ms; }
 @keyframes hint-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .sound-hint { animation: none; } }
+
+/* Layout guards (audit 2026-10-25): nothing may widen the page. */
+.stage-hero { overflow-x: clip; } /* the oversized hand image behind the phone stays inside the viewport */
+.claim > *, .spot-grid > *, .info-grid > *, .trend-panels > *, .snap-grid > *, .glow-grid > * { min-width: 0; } /* grid items may shrink below their content */
+@media (max-width: 833px) {
+  .formula code { white-space: normal; overflow-wrap: anywhere; }
+}
