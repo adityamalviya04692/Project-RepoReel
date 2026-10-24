@@ -150,6 +150,9 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
               </div>
             )}
 
+          </div>
+
+          <div className="answer-col">
             <AnimatePresence mode="wait">
               {searching ? (
                 <motion.div key={`r-${query}`} className="answers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
@@ -196,7 +199,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
             </AnimatePresence>
           </div>
 
-          <aside className="phone-col">
+          <aside className={`phone-col${searching && !feed.length ? ' no-reels' : ''}`}>
             <Phone searching={searching} items={feed} data={data} activeKey={active} onActive={onActive} autoplay={!searching} onAdd={() => setAdding(true)} />
             <button className="link add-reel" onClick={() => setAdding(true)}>Know a reel we missed? Add it</button>
           </aside>

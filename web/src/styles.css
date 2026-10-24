@@ -511,3 +511,60 @@ body,.lead,.desc { font-size:14px; line-height:1.5; letter-spacing:0; }
 @media(min-width:834px) and (max-width:1150px) { .stage-grid { grid-template-columns:minmax(0,620px); justify-content:center; gap:48px; } .phone-col { position:relative; top:auto; } }
 .phone-wrap { max-width:100%; }
 @media(min-width:1151px) { .stage-grid { grid-template-columns:minmax(0,600px) minmax(380px,1fr); gap:90px; } }
+
+/* Keep reading order and usable card widths on phones. */
+.ask { grid-column:1; grid-row:1; min-width:0; }
+.answer-col { grid-column:1; grid-row:2; min-width:0; }
+.stage-grid { row-gap:0; }
+.phone-col { grid-column:2; grid-row:1 / span 2; }
+.reel-result > div, .repo-card { min-width:0; }
+.rr-caption { overflow-wrap:anywhere; }
+@media(max-width:1150px) {
+  .stage-grid { row-gap:32px; }
+  .ask { grid-column:1; grid-row:1; }
+  .phone-col { grid-column:1; grid-row:2; }
+  .answer-col { grid-column:1; grid-row:3; }
+}
+@media(max-width:833px) {
+  .nav-inner { gap:8px; }
+  .brand { flex-shrink:0; }
+  .brand span { display:inline; font-size:21px; }
+  .nav-links { margin-left:auto; gap:0; overflow:visible; }
+  .nav-links a { width:44px; height:44px; justify-content:center; padding:0; }
+  .stage-hero { overflow:clip; padding-bottom:40px; }
+  .stage-grid { gap:28px; }
+  .ask-title, .ask-title.small { font-size:32px; margin-bottom:20px; }
+  .ask-box { padding:14px; }
+  .ask-box textarea { min-height:88px; }
+  .ask-bar { flex-wrap:wrap; gap:8px; }
+  .ask-bar .mode { flex:1 1 130px; font-size:10px; }
+  .btn, .rr-actions button, .rr-actions a, .add-reel { min-height:44px; }
+  .chips { flex-wrap:nowrap; overflow-x:auto; margin-right:-16px; padding:0 16px 8px 0; scroll-snap-type:x proximity; }
+  .chip { flex:none; max-width:85vw; white-space:normal; min-height:44px; scroll-snap-align:start; text-align:left; }
+  .phone-col { padding-bottom:170px; gap:16px; }
+  .phone { width:290px; height:600px; }
+  .phone-hand { width:240%; left:-69%; }
+  .answers { margin-top:0; }
+  .reel-result { grid-template-columns:minmax(0,1fr); gap:0; padding:20px 0; }
+  .rr-n { display:none; }
+  .rr-repo { padding:12px; }
+  .rr-repo .avatar { flex-shrink:0; }
+  .rr-actions { gap:8px 12px; }
+  .understood { flex-wrap:wrap; }
+  .wrap.narrow { width:calc(100% - 32px); }
+  .reels-row { grid-template-columns:1fr; }
+}
+@media(max-width:360px) {
+  .brand span { display:none; }
+  .phone { width:270px; height:560px; }
+  .ask-title, .ask-title.small { font-size:30px; }
+}
+
+@media(max-width:1150px) { .phone-col.no-reels { display:none; } .phone-col.no-reels + * { grid-row:2; } .stage-grid:has(.phone-col.no-reels) .answer-col { grid-row:2; } }
+@media(max-width:480px) {
+  .repo-card header { display:grid; grid-template-columns:36px minmax(0,1fr); gap:10px; }
+  .repo-card header > .avatar { width:36px; height:36px; }
+  .repo-card header > .btn { grid-column:2; justify-self:start; }
+  .repo-card h3 { font-size:17px; line-height:1.4; }
+  .repo-card.compact { padding:16px; }
+}
