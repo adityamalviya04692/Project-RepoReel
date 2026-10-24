@@ -106,7 +106,7 @@ def main(argv=None) -> int:
 
     # Automated discovery: trending reels about repos (Apify free credit) + known creators (Graph API).
     if reuse_bronze:  # reuse recorded topics; replay never calls source APIs
-        disc = run.stage("reels · replay bronze", lambda: {"reels": [r for r in auto._load_replay(bronze) if keep(r)], "rejected": None,
+        disc = run.stage("reels · replay bronze", lambda: {"reels": auto.merge([r for r in auto.load_history() if keep(r)], [r for r in auto._load_replay(bronze) if keep(r)], TODAY), "rejected": None,
                                                            "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": args.replay, "resumed": args.resume, "apify": "not called (replay)" if args.replay else "reused recorded reels", "graph": "not called (replay)" if args.replay else "not called (resume)", "topics": [], "budget": None}})
     else:
         disc = run.stage("reels · discover on Instagram", auto.discover, TODAY)

@@ -56,3 +56,14 @@ def test_replay_never_contacts_sources(tmp_path, monkeypatch, with_discovery_sna
     published = json.loads((gold / 'reels.json').read_text())
     assert all(r['repo'] is None for r in published['reels'])
     assert any(r['candidate'] == 'missing/manual' for r in published['review'])
+
+
+def test_resume_merges_bronze_into_newer_history(tmp_path, monkeypatch):
+    """A recovery run adds the recorded reels to whatever history exists now; it never drops newer reels."""
+    from pipeline import reels as auto
+    monkeypatch.setattr(auto, 'REELS_FILE', tmp_path / 'reels.json')
+    caption = 'This open-source tool is great and you can find the repo on GitHub today'
+    auto.save([{'shortcode': 'NEW1', 'url': 'https://www.instagram.com/reel/NEW1/', 'creator': 'a', 'posted': '2026-10-24', 'caption': caption}], {})
+    bronze = [{'shortcode': 'OLD1', 'url': 'https://www.instagram.com/reel/OLD1/', 'creator': 'b', 'posted': '2026-10-20', 'caption': caption}]
+    merged = auto.merge(auto.load_history(), bronze, date(2026, 10, 24))
+    assert {r['shortcode'] for r in merged} == {'NEW1', 'OLD1'}

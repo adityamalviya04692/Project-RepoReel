@@ -34,6 +34,8 @@ jobs:
     timeout-minutes: 340   # up to 4 h of rate-limited Graph crawling, then the build
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}   # the branch tip when the job starts: a queued run must not rebuild on data that moved since
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
