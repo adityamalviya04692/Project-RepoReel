@@ -1,13 +1,36 @@
 {
  "stats": {
-  "fetched": 0,
-  "replay": false,
-  "resumed": true,
-  "apify": "reused recorded reels",
-  "graph": "not called (resume)",
-  "topics": [],
-  "budget": null
+  "apify": "ok",
+  "graph": "not configured",
+  "topics": [
+   {
+    "q": "open source ai tool",
+    "kind": "keyword",
+    "reels": 12
+   },
+   {
+    "q": "free ai tool github",
+    "kind": "keyword",
+    "reels": 12
+   },
+   {
+    "q": "claude mcp server",
+    "kind": "keyword",
+    "reels": 12
+   },
+   {
+    "q": "ai agent github",
+    "kind": "keyword",
+    "reels": 12
+   }
+  ],
+  "fetched": 48,
+  "budget": {
+   "used": 0.20290369183119875,
+   "plan_cap": 5.0,
+   "resets": "2026-11-22T23:59:59.999Z"
+  }
  },
- "history_reels": 33,
- "shown_reels": 6
+ "history_reels": 72,
+ "shown_reels": 11
 }
