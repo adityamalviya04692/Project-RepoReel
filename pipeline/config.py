@@ -70,15 +70,38 @@ IG_USER_ID = os.environ.get("IG_USER_ID", "")            # your Instagram Profes
 IG_ACCESS_TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")  # long-lived token with instagram_basic, pages_read_engagement
 GRAPH = "https://graph.facebook.com/v23.0"
 
-# Topics rotate daily so every topic is covered each week while staying inside the free credit.
+# Discovery finds creators who post about repos; their feeds then supply most reels (higher precision
+# per call than any hashtag). Generic tags (#automation, #aiagents) were dropped: mostly off-topic.
 REEL_TOPICS = [
-    {"q": "github", "kind": "hashtag"}, {"q": "githubrepo", "kind": "hashtag"}, {"q": "opensource", "kind": "hashtag"},
-    {"q": "aitools", "kind": "hashtag"}, {"q": "claudecode", "kind": "hashtag"}, {"q": "mcp", "kind": "hashtag"},
-    {"q": "aiagents", "kind": "hashtag"}, {"q": "pythonprojects", "kind": "hashtag"}, {"q": "automation", "kind": "hashtag"},
-    {"q": "github repo", "kind": "keyword"}, {"q": "open source ai tool", "kind": "keyword"}, {"q": "free ai tool github", "kind": "keyword"},
-    {"q": "claude mcp server", "kind": "keyword"}, {"q": "ai agent github", "kind": "keyword"},
+    {"q": "githubrepo", "kind": "hashtag"}, {"q": "githubprojects", "kind": "hashtag"}, {"q": "opensourcetools", "kind": "hashtag"},
+    {"q": "github", "kind": "hashtag"}, {"q": "opensource", "kind": "hashtag"}, {"q": "claudecode", "kind": "hashtag"},
+    {"q": "opensourceai", "kind": "hashtag"}, {"q": "github repo", "kind": "keyword"}, {"q": "open source github", "kind": "keyword"},
+    {"q": "free github tool", "kind": "keyword"}, {"q": "github project", "kind": "keyword"},
 ]
-TOPICS_PER_RUN = 4
-REELS_PER_TOPIC = 12            # ≈ 48 reels/run ≈ 1,450/month ≈ $3.80 at $2.60 per 1,000
+TOPICS_PER_RUN = 2
 PROFILE_LOOKUPS_PER_RUN = 8     # new creators' follower counts (Apify) when no Graph token
-REEL_HISTORY_DAYS = 120
+
+# Apify free plan: spread the remaining monthly credit evenly over the days left in the cycle.
+APIFY_USD_PER_RESULT = 0.0027   # conservative per-result price for the Instagram actors on the free plan
+APIFY_MAX_RESULTS_PER_RUN = 120
+APIFY_TOPIC_SHARE = 0.4         # the rest goes to feeds of creators who already post about repos
+APIFY_FEED_PER_CREATOR = 8      # newest reels per creator feed
+
+# Graph API (free): Business Discovery pages through a creator's whole public history.
+# A crawl spends Meta's hourly allowance (~200 calls per app user), pauses until the window refreshes and
+# continues while CRAWL_MINUTES last; the nightly job crawls for hours. Without CRAWL_MINUTES a run makes
+# at most GRAPH_CALLS_PER_RUN calls.
+CRAWL_MINUTES = int(os.environ.get("CRAWL_MINUTES") or 0)
+GRAPH_CALLS_PER_RUN = 160
+GRAPH_PAUSE_SECONDS = 900
+GRAPH_MEDIA_PAGE = 30
+REEL_BACKFILL_DAYS: int | None = None  # None = a creator's whole public history
+# Hashtag recent media = public posts from the last 24 hours. Meta allows 30 unique hashtags per 7 days.
+GRAPH_HASHTAGS = ["githubrepo", "github", "opensource", "githubprojects", "opensourcetools", "claudecode", "opensourceai", "aitools", "pythonprojects", "developertools"]
+GRAPH_HASHTAG_PAGES = 2
+
+OCR_PER_RUN = 150               # reel covers read with Tesseract when the caption hides the repo name
+REELS_PUBLISH_MAX = 12000       # reels in the first download (newest first); every reel is in the per-repo shards
+REELS_PER_REPO_MAX = 6          # per repo in that first download
+REELS_PER_REPO_SHARD = 60       # per repo in its shard
+REMATCH_DAYS = 7                # unmatched reels are matched again after this (the catalog keeps growing)

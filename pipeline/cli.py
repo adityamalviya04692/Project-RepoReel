@@ -6,27 +6,28 @@ Every stage is timed and counted; the run summary feeds the site's Pipeline stat
 from __future__ import annotations
 
 import argparse
-import base64
 import json
 import math
 import shutil
 import sys
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import numpy as np
 
 from . import quality as qa
 from . import reels as auto
+from .classify import keep
 from .config import (BRONZE, CATEGORIES, CREATOR_MIN_FOLLOWERS, CREATOR_MIN_POSTS_60D, GITHUB_TOKEN, GOLD, HISTORY, HN_MIN_POINTS_TO_ADD,
-                     MATCH_ACCEPT, MATCH_REVIEW, RANK_WEIGHTS, AI_COMPAT, TODAY, TRUST_WEIGHTS)
+                     MATCH_ACCEPT, MATCH_REVIEW, RANK_WEIGHTS, AI_COMPAT, REELS_PER_REPO_MAX, REELS_PER_REPO_SHARD, REELS_PUBLISH_MAX, REMATCH_DAYS, TODAY,
+                     TRUST_WEIGHTS)
 from .embed import embed, quantize
-from .matching import Resolver
+from .matching import Resolver, extract
 from .rank import BM25, CATEGORY_WORDS, LANGUAGES, PLATFORMS, rank, search_text, tokens
 from .scoring import ai_compat, creator_trust, health, momentum, momentum_score
 from .sources import curated, github, hn
-from .text import clean_readme
+from .text import clean_readme, shard_key
 from .transforms import history_for, silver
 
 
@@ -105,10 +106,11 @@ def main(argv=None) -> int:
 
     # Automated discovery: trending reels about repos (Apify free credit) + known creators (Graph API).
     if reuse_bronze:  # reuse recorded topics; replay never calls source APIs
-        disc = run.stage("reels · replay bronze", lambda: {"reels": auto._load_replay(bronze),
+        disc = run.stage("reels · replay bronze", lambda: {"reels": [r for r in auto._load_replay(bronze) if keep(r)], "rejected": None,
                                                            "creators": auto._load(auto.CREATORS_FILE, {}), "stats": {"fetched": 0, "replay": args.replay, "resumed": args.resume, "apify": "not called (replay)" if args.replay else "reused recorded reels", "graph": "not called (replay)" if args.replay else "not called (resume)", "topics": [], "budget": None}})
     else:
         disc = run.stage("reels · discover on Instagram", auto.discover, TODAY)
+        auto.save(disc["reels"], disc["creators"], disc.get("rejected"))  # a long crawl is never lost to a later failure
     run.rows(fetched=disc["stats"]["fetched"], history=len(disc["reels"]), creators_seen=len(disc["creators"]))
     _jsonl(bronze / "reels_discovered.jsonl", disc["reels"])
     curated_urls = {r.url for r in reels_in}
@@ -121,6 +123,7 @@ def main(argv=None) -> int:
         except ValueError:
             continue
     discovered_urls = {r["url"] for r in disc["reels"]}
+    ocr_text = {r["url"]: r["ocr"] for r in disc["reels"] if r.get("ocr")}
 
     # 4. enrich: search hits + strong HN-only repos + repos named in curated reels
     ids = list(found)
@@ -169,26 +172,49 @@ def main(argv=None) -> int:
 
     # 7. match curated reels to repos
     def _match():
+        text_vecs: dict[str, np.ndarray] = {}
+
         def semantic(text: str, full: str) -> float:
             i = index.get(full.lower())
             if i is None:
                 return 0.5
-            return float(max(0.0, min(1.0, (embed([text])[0] @ vecs[i] - 0.15) / 0.55)))
-        budget = {"searches": 25}  # GitHub search fallback is slow (rate limit); cap per run
+            if text not in text_vecs:
+                text_vecs[text] = embed([text])[0]
+            return float(max(0.0, min(1.0, (text_vecs[text] @ vecs[i] - 0.15) / 0.55)))
+        # GitHub search fallback is slow (30/min): cap new searches per run and remember every answer.
+        cache_path = HISTORY / "name_search_cache.json"
+        cache: dict = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+        budget = {"searches": 150}
 
         def fallback(name: str):
+            key = name.lower()
+            if key in cache:
+                return cache[key]
             if args.replay or budget["searches"] <= 0:
                 return None
             budget["searches"] -= 1
-            return github.search_name(name)
+            cache[key] = github.search_name(name)
+            return cache[key]
         resolver = Resolver([{"full_name": r["full_name"], "stars": r["stars"]} for r in repos], semantic=semantic, fallback=fallback)
         out, review = [], []
+        hist = {r["url"]: r for r in disc["reels"]}
+        recheck = (TODAY - timedelta(days=REMATCH_DAYS)).isoformat()
         for reel in reels_in:
             rec = reel.model_dump()
-            if reel.repo:
+            h = hist.get(reel.url)
+            m = (h or {}).get("match")
+            # Matches are cached on the history row: a repo already in the catalog is final; "no repo" is retried weekly.
+            cached = bool(m and ((m.get("repo") or "").lower() in index or (not m.get("repo") and (m.get("on") or "") >= recheck)))
+            if cached:
+                rec.update(repo=m.get("repo"), confidence=m.get("confidence", 0), method=m.get("method"))
+            elif reel.repo:
                 rec.update(repo=reel.repo, confidence=1.0, method="manual")
-            elif reel.caption:
-                ms = resolver.resolve(reel.caption)
+            elif reel.caption or reel.url in ocr_text:
+                ms = resolver.resolve(reel.caption) if reel.caption else []
+                if not (ms and ms[0].confidence >= MATCH_ACCEPT) and reel.url in ocr_text:
+                    # Cover text is noisy: only explicit names (github.com/owner/name, owner/name) count.
+                    explicit = " ".join(f"github.com/{c.owner}/{c.text}" for c in extract(ocr_text[reel.url]) if c.kind in ("url", "owner_repo"))
+                    ms = sorted(ms + (resolver.resolve(explicit) if explicit else []), key=lambda m: -m.confidence)
                 top = ms[0] if ms else None
                 if top and top.confidence >= MATCH_ACCEPT:
                     rec.update(repo=top.full_name, confidence=top.confidence, method=top.method, evidence=top.evidence)
@@ -198,9 +224,12 @@ def main(argv=None) -> int:
                         review.append({"url": reel.url, "candidate": top.full_name, "confidence": top.confidence, "evidence": top.evidence})
             else:
                 rec.update(repo=None, confidence=0, method=None)
+            if h is not None and not cached:
+                h["match"] = {"repo": rec.get("repo"), "confidence": rec.get("confidence", 0), "method": rec.get("method"), "on": TODAY.isoformat()}
             i = index.get((rec.get("repo") or "").lower())
             rec["repo_ok"] = None if rec.get("repo") is None else bool(i is not None and not repos[i]["archived"] and health(repos[i]) >= 0.4)
             out.append(rec)
+        cache_path.write_text(json.dumps(cache, indent=0, sort_keys=True))
         return out, review
     reels, review = run.stage("match · reels → repos", _match)
     run.rows(reels=len(reels), matched=sum(1 for r in reels if r.get("repo")), review_queue=len(review))
@@ -237,12 +266,12 @@ def main(argv=None) -> int:
         known = {c.handle for c in creators_in}
         counts: dict[str, int] = {}
         for r in reels:
-            if r.get("repo"):
-                counts[r["creator"]] = counts.get(r["creator"], 0) + 1
+            if r["creator"]:
+                counts[r["creator"]] = counts.get(r["creator"], 0) + bool(r.get("repo"))
         for h, n in counts.items():
             disc["creators"].setdefault(h, {"followers": None})["repo_reels"] = n
         filled = 0 if args.replay else auto.fill_followers(disc["creators"], sorted(counts, key=lambda h: -counts[h]), TODAY)
-        auto.save(disc["reels"], disc["creators"])
+        auto.save(disc["reels"], disc["creators"], disc.get("rejected"))
         for h in counts:
             if h not in known:
                 c = disc["creators"][h]
@@ -250,8 +279,8 @@ def main(argv=None) -> int:
         return filled
     filled = run.stage("creators · discover & vet", _creators)
     run.rows(creators=len(creators_in), followers_filled=filled)
-    # Only reels that point at a real repo are worth showing (curated ones stay for the review queue).
-    reels = [r for r in reels if r.get("repo") or r["url"] not in discovered_urls]
+    # Every discovered reel already passed the English + about-a-repo check; unresolved ones are shown too
+    # (the browser says the repo isn't named) because they still answer searches by caption.
 
     # 8. scores
     def _score():
@@ -315,14 +344,38 @@ def main(argv=None) -> int:
         } for r in repos]
         (GOLD / "catalog.json").write_text(json.dumps({"generated": datetime.now(timezone.utc).isoformat(timespec="seconds"), "count": len(repos), "dims": int(vecs.shape[1]), "repos": cat_repos}, separators=(",", ":")))
         (GOLD / "embeddings.i8").write_bytes(quantize(vecs).tobytes())
-        (GOLD / "discovery.json").write_text(json.dumps({"stats": disc["stats"], "history_reels": len(disc["reels"]), "shown_reels": len(reels)}, indent=1, default=str))
         (GOLD / "creators.json").write_text(json.dumps({"creators": sorted(trust.values(), key=lambda t: -t["trust"]),
             "gates": {"min_followers": CREATOR_MIN_FOLLOWERS, "min_posts_60d": CREATOR_MIN_POSTS_60D}, "weights": TRUST_WEIGHTS}, indent=1))
-        # Each reel gets its own vector (caption + the repo it covers), so search ranks reels directly.
-        reel_vecs = embed([reel_text(r) for r in reels]) if reels else np.zeros((0, 384), np.float32)
-        (GOLD / "reels.json").write_text(json.dumps({"reels": [
-            {k: v for k, v in r.items() if k not in ("caption", "evidence")} | {"caption": (r.get("caption") or "")[:400], "vec": base64.b64encode(quantize(reel_vecs[i : i + 1]).tobytes()).decode()}
-            for i, r in enumerate(reels)], "review": review}, indent=1, default=str))
+        # Newest first, a few per repo, capped so the browser download stays reasonable.
+        per_repo: dict[str, int] = {}
+        shown = []
+        for r in sorted(reels, key=lambda r: str(r["posted"]), reverse=True):
+            k = (r.get("repo") or "").lower()
+            if k and per_repo.get(k, 0) >= REELS_PER_REPO_MAX:
+                continue
+            per_repo[k] = per_repo.get(k, 0) + 1
+            shown.append(r)
+            if len(shown) >= REELS_PUBLISH_MAX:
+                break
+        keys = ("url", "creator", "posted", "repo", "confidence", "method", "likes", "comments", "views")
+        compact = lambda r: {k: r.get(k) for k in keys if r.get(k) is not None} | {"repo": r.get("repo"), "caption": (r.get("caption") or "")[:300]}  # noqa: E731
+        rows = [compact(r) for r in shown]
+        # Every repo's reels (up to REELS_PER_REPO_SHARD, newest first) in 256 small files the browser loads on demand.
+        shards: dict[str, dict[str, list]] = {}
+        for r in sorted(reels, key=lambda r: str(r["posted"]), reverse=True):
+            if r.get("repo"):
+                bucket = shards.setdefault(shard_key(r["repo"]), {}).setdefault(r["repo"].lower(), [])
+                if len(bucket) < REELS_PER_REPO_SHARD:
+                    bucket.append(compact(r))
+        shard_dir = GOLD / "reels"
+        shard_dir.mkdir(exist_ok=True)
+        for key in (f"{i:02x}" for i in range(256)):  # all buckets exist (empty = {}), so the browser never sees a 404
+            (shard_dir / f"{key}.json").write_text(json.dumps(shards.get(key, {}), separators=(",", ":"), default=str))
+        (GOLD / "reels.json").write_text(json.dumps({"reels": rows, "review": review}, separators=(",", ":"), default=str))
+        # One int8 row per published reel (caption + the repo it covers), in reels.json order: binary, not base64.
+        (GOLD / "reel_vecs.i8").write_bytes(quantize(embed([reel_text(r) for r in shown])).tobytes() if shown else b"")
+        (GOLD / "discovery.json").write_text(json.dumps({"stats": disc["stats"], "history_reels": len(disc["reels"]), "shown_reels": len(shown),
+                                                         "matched_reels": sum(1 for r in shown if r.get("repo"))}, indent=1, default=str))
         (GOLD / "ranking.json").write_text(json.dumps({"weights": RANK_WEIGHTS, "ai": AI_COMPAT, "platforms": PLATFORMS, "languages": LANGUAGES, "categories": CATEGORY_WORDS,
             "labels": {k: v["label"] for k, v in CATEGORIES.items()}}, indent=1))
         return len(cat_repos)

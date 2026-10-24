@@ -53,15 +53,22 @@ export interface Pipeline {
 }
 
 export interface Discovery {
-  stats: { apify: string; graph: string; topics: { q: string; kind: string; reels: number }[]; fetched: number; budget: { used: number; plan_cap: number; resets: string | null } | null; replay?: boolean; resumed?: boolean };
+  stats: {
+    apify: string; graph: string; graph_hashtags?: string; topics: { q: string; kind: string; reels: number; kept?: number }[]; fetched: number;
+    budget: { used: number; plan_cap: number; resets: string | null } | null; replay?: boolean; resumed?: boolean;
+    kept?: number; rejected?: { not_english: number; off_topic: number }; feeds?: { graph: number; apify: number }; ocr?: number;
+    allowance?: number; repo_creators?: number; creators_seen?: number; history_pages?: number; pauses?: number; backfilled_creators?: number; candidates?: number;
+  };
   history_reels: number;
   shown_reels: number;
+  matched_reels?: number;
 }
 
 export interface Data {
   generated: string;
   repos: Repo[];
   vecs: Int8Array;
+  reelVecs: Int8Array; // one row per reels.json entry (caption + repo), empty when not published
   dims: number;
   ranking: Ranking;
   creators: { creators: Creator[]; gates: { min_followers: number; min_posts_60d: number } };
@@ -80,13 +87,29 @@ const json = async <T,>(f: string): Promise<T> => {
   return r.json();
 };
 
+/** Per-repo reel shard a repository lives in (FNV-1a, 256 buckets); pipeline/text.py shard_key() matches. */
+export function shardKey(name: string): string {
+  let h = 0x811c9dc5;
+  for (const b of new TextEncoder().encode(name.toLowerCase())) h = Math.imul(h ^ b, 0x01000193) >>> 0;
+  return (h & 0xff).toString(16).padStart(2, '0');
+}
+
+const shards = new Map<string, Promise<Record<string, Reel[]>>>();
+/** Every published reel about one repo (newest first), loaded on demand from its shard. */
+export function reelsForRepo(name: string): Promise<Reel[]> {
+  const key = shardKey(name);
+  if (!shards.has(key)) shards.set(key, json<Record<string, Reel[]>>(`reels/${key}.json`).catch(() => ({})));
+  return shards.get(key)!.then((s) => s[name.toLowerCase()] ?? []);
+}
+
 let loading: Promise<Data> | null = null;
 
 export function load(): Promise<Data> {
   return (loading ??= (async () => {
-    const [catalog, vecBuf, ranking, creators, reels, pipeline, discovery] = await Promise.all([
+    const [catalog, vecBuf, reelVecBuf, ranking, creators, reels, pipeline, discovery] = await Promise.all([
       json<{ generated: string; dims: number; repos: Repo[] }>('catalog.json'),
       fetch(base + 'embeddings.i8').then((r) => r.arrayBuffer()),
+      fetch(base + 'reel_vecs.i8').then((r) => (r.ok ? r.arrayBuffer() : new ArrayBuffer(0)), () => new ArrayBuffer(0)),
       json<Ranking>('ranking.json'),
       json<Data['creators']>('creators.json'),
       json<Data['reels']>('reels.json'),
@@ -109,7 +132,7 @@ export function load(): Promise<Data> {
       const score = (r: Reel) => (0.3 + (creatorByHandle.get(r.creator)?.trust ?? 0)) * r.confidence * Math.exp(-(Date.now() - Date.parse(r.posted)) / 864e5 / 45);
       reelsByRepo.set(k, [...list].sort((a, b) => score(b) - score(a)));
     }
-    return { generated: catalog.generated, repos: catalog.repos, vecs: new Int8Array(vecBuf), dims: catalog.dims, ranking, creators, reels, pipeline, discovery, byName, reelsByRepo, creatorByHandle };
+    return { generated: catalog.generated, repos: catalog.repos, vecs: new Int8Array(vecBuf), reelVecs: new Int8Array(reelVecBuf), dims: catalog.dims, ranking, creators, reels, pipeline, discovery, byName, reelsByRepo, creatorByHandle };
   })());
 }
 

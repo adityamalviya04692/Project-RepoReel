@@ -45,12 +45,46 @@ The catalog and site run on **GitHub Actions + GitHub Pages**, with no always-on
 
 ## Automated reel discovery (free)
 
-No manual curation is needed. Every run of the pipeline:
+No manual curation is needed. Discovery is built around **creators**, not hashtags: most reels from a
+creator who posts about repos are repo reels, so their feeds give far more per call than any hashtag.
+Every run of the pipeline:
 
-1. **Discovers reels** on Instagram for rotating topics (`#github`, `#githubrepo`, `#aitools`, `#claudecode`, `#mcp`, "github repo", "ai agent github", …) through **Apify's free plan** ($5 of usage every month, no card). Before each actor launch, a budget guard checks account usage against the lower of $4.50 and the account limit. Each run also requests a $0.25 provider-side charge cap, and billable requests are never automatically retried. Usage reporting can lag and concurrent runs can overlap; set an account-level spending limit in Apify as the final backstop.
-2. **Matches each caption to a repository** (URLs, `owner/repo`, names, hashtags, with on-the-fly GitHub lookups). Only reels that resolve to a real repo are shown.
-3. **Finds the creators** behind those reels and vets them automatically: follower counts come from Meta's free **Business Discovery API** when connected (otherwise a few capped Apify lookups), and trust comes from accuracy, consistency, engagement and recency.
-4. Keeps a **120-day reel history**, so the index grows every day.
+1. **Finds new posts about repos**: Meta's free **Hashtag Search** (public posts from the last 24 hours for
+   `#githubrepo`, `#github`, `#opensource`, … when the Graph API is connected) and a few precise
+   **Apify** hashtag/keyword searches. Apify's free plan gives $5 of usage a month; the pipeline spreads
+   what is left under a $4.50 cap evenly over the days remaining in the cycle, checks usage before every
+   actor launch, caps each run at $0.25 provider-side and never retries a billable request.
+2. **Keeps only English reels about a repo** (`pipeline/classify.py`: script check, stopword vote, and a
+   GitHub / open-source / repo / `owner/name` signal). Rejected reels are remembered and never judged twice.
+3. **Reads the feeds of repo creators**: anyone with English repo reels. Meta's free **Business Discovery**
+   API returns a creator's reels page by page, so every creator's *whole* public history is crawled and
+   then refreshed daily. Creators tagged in repo-reel captions are probed with one call and join when they
+   post about repos too, so the creator graph keeps growing. The nightly job crawls for up to 4 hours,
+   pausing whenever Meta's hourly allowance (~200 calls) is nearly used; progress is committed even if a
+   later stage fails. Creators the API can't read (personal accounts, or no Graph token) get Apify reel feeds.
+4. **Extracts the repo**: GitHub URLs, `owner/name`, names and hashtags in the caption, GitHub search for
+   names not in the catalog (answers cached), and Tesseract OCR of the reel cover when the caption only
+   says "comment REPO". Reels whose repo stays unknown are still shown, labelled "repo not named".
+5. **Vets creators** (followers, regular repo posts, accuracy, engagement, recency) and keeps every repo reel:
+   history is sharded by month in `data/history/reels/`, matches are cached per reel, and the site gets the
+   newest 12,000 reels up front plus every repo's reels in 256 on-demand shards (`web/public/data/reels/`).
+
+| Secret / variable | Where | What |
+|---|---|---|
+| `APIFY_TOKEN` | repo secret | free token from console.apify.com → Settings → Integrations |
+| `IG_USER_ID`, `IG_ACCESS_TOKEN` | repo secrets (recommended) | Graph API: creator feeds + hashtag search, free. This is what makes the index grow quickly |
+| `VITE_LIVE_URL` | repo variable (optional) | URL of the deployed live-search worker |
+
+**Connecting the Graph API (about 15 minutes, free):**
+1. In the Instagram app, switch your account to a Professional account (Creator or Business) and link it to a Facebook Page.
+2. At developers.facebook.com create a Business app and add Instagram Graph API (the Facebook Login variant).
+   For hashtag search, also request the *Instagram Public Content Access* feature (standard access is enough for your own account).
+3. In the Graph API Explorer, generate a user token with `instagram_basic`, `pages_show_list`, `pages_read_engagement` and `business_management`;
+   exchange it for a long-lived token, then call `me/accounts` with it: the Page token it returns does not expire.
+4. `GET {page-id}?fields=instagram_business_account` gives `IG_USER_ID`. Save both as repo secrets:
+   `gh secret set IG_USER_ID` and `gh secret set IG_ACCESS_TOKEN`.
+
+The Pipeline page reports each source's status, including an expired token or a missing permission.
 
 At query time the site searches that index instantly. When nothing fits, an optional free **Cloudflare Worker** (`worker/`) searches Instagram live for the query's keywords: cached for 7 days, capped per day, and budget-guarded.
 
@@ -60,7 +94,7 @@ At query time the site searches that index instantly. When nothing fits, an opti
 | `IG_USER_ID`, `IG_ACCESS_TOKEN` | repo secrets (optional) | Instagram Professional account + Meta app token, for free follower counts via Business Discovery |
 | `VITE_LIVE_URL` | repo variable (optional) | URL of the deployed live-search worker |
 
-> Reels are always displayed with Instagram's official embed. Discovery uses a third-party data provider for public posts; check that its use fits your situation and Instagram's terms.
+> Reels are always displayed with Instagram's official embed. Discovery uses Meta's official Graph API and a third-party data provider (Apify) for public posts; it never logs in to Instagram or works around its access controls. Check that this fits your situation and Instagram's terms.
 
 You can still add reels by hand in `curated/reels.yaml`, or from the site's "Know a reel we missed?" link.
 

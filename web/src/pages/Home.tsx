@@ -4,7 +4,8 @@ import type { Data } from '../lib/data';
 import { embedQuery, isReady, onLoad, warm } from '../lib/embedder';
 import { compact } from '../lib/format';
 import { BM25, aiLabel, rank, searchText, tokens, type Facets, type Ranked } from '../lib/rank';
-import { buildItems, loadLocal, rankReels, reelText, type ReelHit, type ReelItem } from '../lib/reels';
+import { buildItems, itemsFromShard, loadLocal, rankReels, reelText, type ReelHit, type ReelItem } from '../lib/reels';
+import { reelsForRepo } from '../lib/data';
 import Phone from '../components/Phone';
 import ReelResult from '../components/ReelResult';
 import RepoCard from '../components/RepoCard';
@@ -68,11 +69,27 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
     };
   }, [query]);
 
-  const pool = useMemo(() => (live.q === query ? [...items, ...live.items.filter((l) => !items.some((i) => i.url === l.url))] : items), [items, live, query]);
+  // The first download holds the newest reels; older ones about the best-matching repos come from their shards.
+  const [deep, setDeep] = useState<{ q: string; items: ReelItem[] }>({ q: '', items: [] });
+  const repos: { facets: Facets; results: Ranked[] } | null = useMemo(() => (query.trim() ? rank(query, qvec, data, bm25, 6) : null), [query, qvec, data, bm25]);
+  const topRepos = useMemo(() => (repos ? repos.results.map((x) => data.repos[x.i].n) : []), [repos, data]);
+  useEffect(() => {
+    if (!topRepos.length) return;
+    let alive = true;
+    void Promise.all(topRepos.map(reelsForRepo)).then((lists) => alive && setDeep({ q: query, items: itemsFromShard(lists.flat(), data) }));
+    return () => {
+      alive = false;
+    };
+  }, [topRepos, query, data]);
+  const pool = useMemo(() => {
+    const extra = [...(live.q === query ? live.items : []), ...(deep.q === query ? deep.items : [])];
+    if (!extra.length) return items;
+    const have = new Set(items.map((i) => i.url));
+    return [...items, ...extra.filter((l) => !have.has(l.url) && have.add(l.url))];
+  }, [items, live, deep, query]);
   const reelHits: ReelHit[] = useMemo(() => (query.trim() ? rankReels(query, qvec, pool, data) : []), [query, qvec, pool, data]);
   const strong = reelHits.filter((h) => h.relevance >= MATCH_MIN);
   const shownReels = query.trim() ? (strong.length ? strong : reelHits.filter((h) => h.relevance > 0).slice(0, 3)) : [];
-  const repos: { facets: Facets; results: Ranked[] } | null = useMemo(() => (query.trim() ? rank(query, qvec, data, bm25, 6) : null), [query, qvec, data, bm25]);
   const reelRepos = new Set(shownReels.map((h) => h.item.repo?.toLowerCase()));
   const repoOnly = repos ? repos.results.filter((x) => !reelRepos.has(data.repos[x.i].n.toLowerCase())).slice(0, strong.length ? 3 : 5) : [];
 
@@ -168,7 +185,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                     <div className="empty-note">{shownReels.length ? 'No reel covers this exactly yet. Here are the closest reels, and the repos that fit below.' : 'No reel covers this yet. The repository matches are below.'}</div>
                   )}
                   {shownReels.map((h, n) => (
-                    <ReelResult key={h.item.key} it={h.item} data={data} n={n} active={h.item.key === active} onWatch={() => watch(h.item.key)} onDetails={onOpen} />
+                    <ReelResult key={h.item.key} it={h.item} data={data} n={n} active={h.item.key === active} onWatch={() => watch(h.item.key)} onDetails={onOpen} onSearch={(q) => (setDraft(q), submit(q))} />
                   ))}
                   {repoOnly.length > 0 && (
                     <>
@@ -187,7 +204,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                     <>
                       <h3 className="answers-h">Latest reels from vetted creators <small>{items.length} indexed</small></h3>
                       {items.slice(0, 4).map((it, n) => (
-                        <ReelResult key={it.key} it={it} data={data} n={n} active={it.key === active} onWatch={() => watch(it.key)} onDetails={onOpen} />
+                        <ReelResult key={it.key} it={it} data={data} n={n} active={it.key === active} onWatch={() => watch(it.key)} onDetails={onOpen} onSearch={(q) => (setDraft(q), submit(q))} />
                       ))}
                     </>
                   ) : (

@@ -2,16 +2,18 @@
 from __future__ import annotations
 
 import math
+from datetime import date, datetime
 from typing import Optional
 
 import httpx
 
-from ..config import APIFY_MONTHLY_CAP_USD, APIFY_TOKEN
+from ..config import APIFY_MAX_RESULTS_PER_RUN, APIFY_MONTHLY_CAP_USD, APIFY_TOKEN, APIFY_USD_PER_RESULT
 from ..http import request
 
 API = "https://api.apify.com/v2"
 HASHTAG_ACTOR = "apify~instagram-hashtag-scraper"
 PROFILE_ACTOR = "apify~instagram-profile-scraper"
+REEL_ACTOR = "apify~instagram-reel-scraper"
 RUN_CAP_USD = 0.25
 
 
@@ -67,6 +69,23 @@ def topic_reels(topic: dict, limit: int) -> list[dict]:
     if topic["kind"] == "keyword":
         payload["keywordSearch"] = True
     return run_actor(HASHTAG_ACTOR, payload)
+
+
+def creator_reels(usernames: list[str], per: int) -> list[dict]:
+    """Newest reels from several creators in one actor run (one start fee instead of one per creator)."""
+    return run_actor(REEL_ACTOR, {"username": usernames, "resultsLimit": per}) if usernames and per > 0 else []
+
+
+def allowance(u: Optional[dict], today: date, cap: float = APIFY_MONTHLY_CAP_USD, reserve: float = RUN_CAP_USD) -> int:
+    """Results this run may buy: the credit left under the cap, spread evenly over the days left in the cycle."""
+    if not budget_ok(u, cap, reserve):
+        return 0
+    left = min(cap, float(u["plan_cap"])) - float(u["used"]) - reserve
+    try:
+        days = max(1, (datetime.fromisoformat(str(u.get("resets"))[:10]).date() - today).days + 1)
+    except ValueError:
+        days = 30
+    return max(0, min(APIFY_MAX_RESULTS_PER_RUN, int(left / days / APIFY_USD_PER_RESULT)))
 
 
 def profiles(usernames: list[str]) -> list[dict]:

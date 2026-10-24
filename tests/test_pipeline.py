@@ -144,3 +144,9 @@ def test_quality_blocks_reels_pointing_to_unresolved_repositories():
     repos = [{"full_name": f"o/r{i}", "url": "u", "stars": 1, "mo": {}} for i in range(150)]
     checks = {c['name']: c['status'] for c in quality.run(repos, 150, [{"creator": "a", "url": "x", "repo": "missing/repo"}], [{"handle": "a"}], 0)}
     assert checks['reels reference known repositories'] == 'fail'
+
+
+def test_shard_key_matches_the_browser():
+    from pipeline.text import shard_key
+    # web/src/lib/reels.test.ts asserts the same three keys for data.ts shardKey()
+    assert [shard_key("browser-use/browser-use"), shard_key("Ramakm/AI-Engineering"), shard_key("f/prompts.chat")] == ["a0", "9b", "db"]

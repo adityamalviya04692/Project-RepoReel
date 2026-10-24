@@ -133,17 +133,21 @@ function Discovery({ data }: { data: Data }) {
   return (
     <>
       <div className="discovery">
-        <div><b>{d.shown_reels}</b><span>reels linked to a repo</span></div>
-        <div><b>{d.history_reels}</b><span>reels seen in the last 120 days</span></div>
-        <div><b>{d.stats.fetched}</b><span>fetched in the last run</span></div>
-        <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `account monthly usage (limit $${b.plan_cap.toFixed(2)})` : 'free credit usage'}</span></div>
+        <div><b>{d.shown_reels}</b><span>English repo reels shown{d.matched_reels != null ? ` · ${d.matched_reels} with the repo identified` : ''}</span></div>
+        <div><b>{d.history_reels}</b><span>repo reels kept in history</span></div>
+        <div><b>{d.stats.repo_creators ?? '—'}</b><span>repo creators whose feeds are read{d.stats.backfilled_creators ? ` · ${d.stats.backfilled_creators} with full history` : ''}{d.stats.candidates ? ` · ${d.stats.candidates} tagged creators to check` : ''}</span></div>
+        <div><b>{d.stats.fetched}</b><span>fetched in the last run{d.stats.kept != null ? ` · ${d.stats.kept} new repo reels` : ''}</span></div>
+        <div><b>{b ? `$${b.used.toFixed(2)}` : '—'}</b><span>{b ? `Apify monthly usage (cap $${b.plan_cap.toFixed(2)})${d.stats.allowance ? ` · ${d.stats.allowance} results today` : ''}` : 'free credit usage'}</span></div>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>
-        Apify (free plan): {d.stats.apify} · Instagram Graph API: {d.stats.graph}{d.stats.replay ? ' · replayed from bronze' : d.stats.resumed ? ' · resumed from retained bronze' : ''}
+        Apify (free plan): {d.stats.apify} · Graph Business Discovery: {d.stats.graph}{d.stats.graph_hashtags && d.stats.graph_hashtags !== 'not configured' ? ` · Graph hashtags: ${d.stats.graph_hashtags}` : ''}
+        {d.stats.rejected ? ` · rejected ${d.stats.rejected.not_english} not in English, ${d.stats.rejected.off_topic} not about a repo` : ''}
+        {d.stats.ocr ? ` · ${d.stats.ocr} covers read with OCR` : ''}
+        {d.stats.replay ? ' · replayed from bronze' : d.stats.resumed ? ' · resumed from retained bronze' : ''}
       </p>
       {d.stats.topics.length > 0 && (
         <div className="topics-today">
-          {d.stats.topics.map((t) => <span key={t.q}>{t.kind === 'hashtag' ? '#' : ''}{t.q} · {t.reels}</span>)}
+          {d.stats.topics.map((t) => <span key={t.q}>{t.kind === 'hashtag' ? '#' : ''}{t.q} · {t.reels}{t.kept != null ? ` → ${t.kept} kept` : ''}</span>)}
         </div>
       )}
     </>

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 vi.mock('./embedder', () => ({ embedQuery: vi.fn(() => new Promise(() => {})) }));
-import { buildItems, rankReels, type ReelItem } from './reels';
+import { buildItems, rankReels, type ReelItem, captionQuery } from './reels';
 import type { Data } from './data';
 
 const data = { reels: { reels: [] }, repos: [], byName: new Map(), creatorByHandle: new Map(), ranking: { ai: {}, platforms: { linkedin: ['linkedin'] }, languages: {}, categories: {} } } as unknown as Data;
@@ -32,5 +32,27 @@ describe('explicit platform requests', () => {
     const linkedData = { ...data, repos: [{ n: 'owner/job-tool', d: 'A LinkedIn job assistant', t: [], sc: { health: 1 } }] } as unknown as Data;
     const linked = { ...item, caption: 'AI application assistant', repoRow: 0 };
     expect(rankReels('LinkedIn jobs', null, [linked], linkedData)[0].relevance).toBe(1);
+  });
+});
+
+describe('captionQuery', () => {
+  it('keeps what the reel describes and drops calls to action, tags and links', () => {
+    const q = captionQuery('Comment "CLAUDE" to get this free tool. You can now run Claude Code for free with almost unlimited usage. 🔥 #ai @someone https://x.co/a');
+    expect(q).toBe('You can now run Claude Code for free with almost unlimited usage');
+  });
+});
+
+describe('captionQuery length', () => {
+  it('cuts long captions at a word boundary', () => {
+    const q = captionQuery('word '.repeat(60));
+    expect(q.length).toBeLessThanOrEqual(140);
+    expect(q.endsWith('word')).toBe(true);
+  });
+});
+
+describe('shardKey', () => {
+  it('matches the pipeline (pipeline/text.py shard_key)', async () => {
+    const { shardKey } = await import('./data');
+    expect([shardKey('browser-use/browser-use'), shardKey('Ramakm/AI-Engineering'), shardKey('f/prompts.chat')]).toEqual(['a0', '9b', 'db']);
   });
 });

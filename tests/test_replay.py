@@ -30,7 +30,7 @@ def test_replay_never_contacts_sources(tmp_path, monkeypatch, with_discovery_sna
     if with_discovery_snapshot:
         (bronze / 'reels_discovered.jsonl').write_text(json.dumps({
             'url': 'https://www.instagram.com/reel/Test123/', 'creator': 'tester',
-            'shortcode': 'Test123', 'posted': '2026-10-22', 'caption': 'github.com/missing/tool'
+            'shortcode': 'Test123', 'posted': '2026-10-22', 'caption': 'This open-source tool is great, the code is at github.com/missing/tool'
         }) + '\n')
     for name, value in [('TODAY', today), ('BRONZE', tmp_path / 'bronze'), ('HISTORY', history), ('GOLD', gold), ('GITHUB_TOKEN', 'configured')]:
         monkeypatch.setattr(cli, name, value)
@@ -51,6 +51,8 @@ def test_replay_never_contacts_sources(tmp_path, monkeypatch, with_discovery_sna
     report = json.loads((gold / 'discovery.json').read_text())
     assert report['stats']['replay'] is True
     assert report['stats']['apify'] == 'not called (replay)'
+    if with_discovery_snapshot:  # the match is cached on the history row, so tomorrow's run skips it
+        assert cli.auto.load_history()[0]['match']['on'] == today.isoformat()
     published = json.loads((gold / 'reels.json').read_text())
     assert all(r['repo'] is None for r in published['reels'])
     assert any(r['candidate'] == 'missing/manual' for r in published['review'])

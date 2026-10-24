@@ -27,7 +27,7 @@ def run(repos: list[dict], vec_rows: int, reels: list[dict], creators: list[dict
         drop = (prev_count - len(repos)) / prev_count
         add("catalog size stable", drop < 0.3, f"{prev_count} → {len(repos)} ({-drop:+.0%})", warn_only=True)
     handles = {c["handle"] for c in creators}
-    unknown = sorted({r["creator"] for r in reels} - handles)
+    unknown = sorted({r["creator"] for r in reels if r["creator"]} - handles)  # "" = hashtag reel, owner not exposed by Meta
     add("reels reference known creators", not unknown, f"unknown: {', '.join(unknown)}" if unknown else f"{len(reels)} reels, {len(creators)} creators")
     orphaned = [r["url"] for r in reels if r.get("repo") and r["repo"].lower() not in set(names)]
     add("reels reference known repositories", not orphaned, f"{len(orphaned)} unresolved references" if orphaned else "all repository references resolved")

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import type { Data } from '../lib/data';
 import { ago, compact } from '../lib/format';
-import type { ReelItem } from '../lib/reels';
+import { captionQuery, type ReelItem } from '../lib/reels';
 
 const BADGE: Record<ReelItem['badge'], [string, string]> = {
   top: ['top', 'Top creator'],
@@ -14,7 +14,7 @@ const initials = (h: string) => h.replace(/[^a-z0-9]/gi, '').slice(0, 2).toUpper
 
 /* One reel answer: who posted it, what it says, and the repo it mentions, with
    "Watch" (plays it in the phone) and "Open repo" (straight to GitHub). */
-export default function ReelResult({ it, data, n, active, onWatch, onDetails }: { it: ReelItem; data: Data; n: number; active: boolean; onWatch: () => void; onDetails: (row: number) => void }) {
+export default function ReelResult({ it, data, n, active, onWatch, onDetails, onSearch }: { it: ReelItem; data: Data; n: number; active: boolean; onWatch: () => void; onDetails: (row: number) => void; onSearch?: (q: string) => void }) {
   const repo = it.repoRow !== undefined ? data.repos[it.repoRow] : undefined;
   const [cls, label] = BADGE[it.badge];
   return (
@@ -46,7 +46,15 @@ export default function ReelResult({ it, data, n, active, onWatch, onDetails }: 
           </div>
         ) : it.repo ? (
           <div className="rr-repo"><span><b>{it.repo}</b><small>Not in our catalog yet</small></span></div>
-        ) : null}
+        ) : (
+          <div className="rr-repo pending" onClick={(e) => e.stopPropagation()}>
+            <span>
+              <b>Repo not named in the caption</b>
+              <small>The creator shows it in the video. Watch the reel, or look for repos that match what it describes.</small>
+            </span>
+            {onSearch && captionQuery(it.caption) && <button className="btn small ghost" onClick={() => onSearch(captionQuery(it.caption))}>Find matching repos</button>}
+          </div>
+        )}
         <div className="rr-actions" onClick={(e) => e.stopPropagation()}>
           <button className={`btn small ${active ? 'ghost' : 'primary'}`} onClick={onWatch}>{active ? '● Playing in phone' : '▶ Watch reel'}</button>
           {(repo || it.repo) && <a className="btn small secondary" href={`https://github.com/${repo?.n ?? it.repo}`} target="_blank" rel="noreferrer">Open repo ↗</a>}

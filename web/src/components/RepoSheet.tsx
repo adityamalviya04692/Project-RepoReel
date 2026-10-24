@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useMotionValue, useTransform } from 'motion/react';
-import type { Data } from '../lib/data';
+import { reelsForRepo, type Data } from '../lib/data';
 import { ago, compact } from '../lib/format';
 import { aiLabel, similar } from '../lib/rank';
 import HealthStrip from './HealthStrip';
@@ -18,7 +18,15 @@ export default function RepoSheet({ data, row, onClose, onOpen }: { data: Data; 
   const y = useMotionValue(window.innerHeight);
   const scrim = useTransform(y, [0, window.innerHeight * 0.9], [1, 0]);
   const sheet = useRef<HTMLDivElement>(null);
-  const reels = data.reelsByRepo.get(r.n.toLowerCase()) ?? [];
+  const [reels, setReels] = useState(() => data.reelsByRepo.get(r.n.toLowerCase()) ?? []);
+  useEffect(() => {
+    let live = true;
+    setReels(data.reelsByRepo.get(r.n.toLowerCase()) ?? []);
+    void reelsForRepo(r.n).then((all) => live && all.length && setReels(all)); // the full list lives in the repo's shard
+    return () => {
+      live = false;
+    };
+  }, [data, r.n]);
   const near = similar(data, row, 4);
 
   useEffect(() => {

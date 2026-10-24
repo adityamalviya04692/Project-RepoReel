@@ -40,3 +40,12 @@ def name_similarity(a: str, b: str) -> float:
         return 1.0
     ta, tb = trigrams(a), trigrams(b)
     return len(ta & tb) / max(1, len(ta | tb))
+
+
+def shard_key(name: str) -> str:
+    """Which per-repo reel shard a repository lives in: FNV-1a over the lowercased name, 256 buckets.
+    web/src/lib/data.ts computes the same key."""
+    h = 0x811C9DC5
+    for b in name.lower().encode():
+        h = ((h ^ b) * 0x01000193) & 0xFFFFFFFF
+    return f"{h & 0xFF:02x}"
