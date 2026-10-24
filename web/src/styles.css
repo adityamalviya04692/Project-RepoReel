@@ -859,3 +859,14 @@ h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; letter-spacing: -0.015
 .rr-repo.pending span { flex: 1; min-width: 200px; }
 .rr-repo.pending b { font-family: var(--font); font-size: 13px; color: #e5e5e5; }
 .rr-repo.pending small { color: #8e8e8e; }
+
+/* phone: the real embed sits under a placeholder that fades out once Instagram has loaded it */
+.slide-media > .poster, .slide-media > iframe { position: absolute; left: 0; top: 86px; width: 100%; height: calc(100% - 86px); } /* iframes don't stretch between top/bottom */
+.slide-media > iframe { opacity: 0; transition: opacity 400ms ease; background: #000; }
+.slide-media > iframe.live { opacity: 1; }
+.slide-media > .poster { z-index: 1; transition: opacity 400ms ease; pointer-events: none; }
+.slide-media > .poster.gone { opacity: 0; }
+.poster-play .spin { width: 26px; height: 26px; border-width: 3px; }
+.sound-hint { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); color: #fff; font-size: 10.5px; font-weight: 600; text-shadow: none; pointer-events: none; animation: hint-in 500ms ease both 600ms; }
+@keyframes hint-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sound-hint { animation: none; } }

@@ -4,8 +4,13 @@ import { ago, compact } from '../lib/format';
 import type { ReelItem } from '../lib/reels';
 
 /* A phone that scrolls reels like Instagram does: vertical, one reel per screen, snapping.
-   The reel in view loads Instagram's official embed; every slide carries a bottom bar with the
-   repo the reel is about and a direct "Open repo" link. Idle feeds advance on their own. */
+   The reel in view (and the next one, preloaded) shows Instagram's official embed straight away;
+   every slide carries a bottom bar with the repo and a direct "Open repo" link.
+   Instagram's embed can't be autoplayed, muted or asked when a video ends, so an idle feed advances
+   on a timer instead; tapping a reel plays it with sound in Instagram's own player, and a reel that
+   is playing (the embed has focus) holds the feed until the visitor moves on. */
+
+const ADVANCE_MS = 9000;
 
 export default function Phone({
   items, data, activeKey, onActive, autoplay, onAdd, searching = false,
@@ -19,7 +24,8 @@ export default function Phone({
   searching?: boolean;
 }) {
   const screen = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState<Set<string>>(new Set());
+  const [ready, setReady] = useState<Set<string>>(new Set()); // embeds that finished loading
+  const [playing, setPlaying] = useState<string | null>(null); // the reel the visitor tapped into
   const [hover, setHover] = useState(false);
   const fromScroll = useRef(false);
   const index = Math.max(0, items.findIndex((i) => i.key === activeKey));
@@ -61,14 +67,25 @@ export default function Phone({
     return () => io.disconnect();
   }, [items, activeKey, onActive]);
 
-  // Idle feed: advance every 7 s unless the visitor is interacting or a reel is playing.
+  // Tapping into an embed moves focus into its iframe: that's the only signal Instagram gives us.
   useEffect(() => {
-    if (!autoplay || hover || items.length < 2 || (activeKey && loaded.has(activeKey))) return;
-    const t = setTimeout(() => onActive(items[(index + 1) % items.length].key), 7000);
-    return () => clearTimeout(t);
-  }, [autoplay, hover, items, index, activeKey, loaded, onActive]);
+    const onBlur = () => setTimeout(() => {
+      const f = document.activeElement;
+      if (f instanceof HTMLIFrameElement && screen.current?.contains(f)) setPlaying(f.closest<HTMLElement>('[data-key]')?.dataset.key ?? null);
+    });
+    addEventListener('blur', onBlur);
+    return () => removeEventListener('blur', onBlur);
+  }, []);
+  useEffect(() => setPlaying((p) => (p === activeKey ? p : null)), [activeKey]);
 
-  const play = (key: string) => setLoaded((s) => new Set(s).add(key));
+  // Idle feed: advance on a timer unless the visitor is hovering or a reel is playing.
+  useEffect(() => {
+    if (!autoplay || hover || items.length < 2 || (activeKey && playing === activeKey)) return;
+    const t = setTimeout(() => onActive(items[(index + 1) % items.length].key), ADVANCE_MS);
+    return () => clearTimeout(t);
+  }, [autoplay, hover, items, index, activeKey, playing, onActive]);
+
+  const nextKey = items.length > 1 ? items[(index + 1) % items.length].key : null;
   const step = (d: number) => items.length && onActive(items[(index + d + items.length) % items.length].key);
 
   return (
@@ -82,6 +99,12 @@ export default function Phone({
         </div>
         <div className="phone-top" aria-hidden="true">
           <b>Reels</b>
+          {activeKey && ready.has(activeKey) && playing !== activeKey && (
+            <span key={activeKey} className="sound-hint">
+              <svg viewBox="0 0 24 24" width="13" height="13"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" /><path d="m17 9 5 6m0-6-5 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+              tap the reel for sound
+            </span>
+          )}
           <span>{items.length ? `${index + 1} / ${items.length}` : ''}</span>
         </div>
         <div className="phone-screen" ref={screen}>
@@ -98,26 +121,27 @@ export default function Phone({
           {items.map((it) => {
             const repo = it.repoRow !== undefined ? data.repos[it.repoRow] : undefined;
             const isOn = it.key === activeKey;
-            const show = isOn && loaded.has(it.key);
+            const mounted = isOn || it.key === nextKey; // the reel in view, plus the next one preloaded
+            const live = ready.has(it.key);
             return (
               <section key={it.key} className={`slide${isOn ? ' on' : ''}`} data-key={it.key}>
                 <div className="slide-media">
-                  {show ? (
+                  <div className={`poster${live ? ' gone' : ''}`} aria-hidden={live}>
+                    <span className="poster-play" aria-hidden="true">{mounted ? <i className="spin" /> : '▶'}</span>
+                    <span className="poster-meta">
+                      <b>{it.creator ? `@${it.creator}` : 'Instagram reel'}</b>
+                      <small>{ago(it.posted)}{it.badge === 'top' ? ' · Top creator' : it.badge === 'verified' ? ' · Verified' : it.badge === 'local' ? ' · added by you' : it.badge === 'live' ? ' · live result' : ''}</small>
+                      {it.caption && <em>{it.caption.slice(0, 120)}</em>}
+                    </span>
+                  </div>
+                  {mounted && (
                     <iframe
                       title={`Reel by @${it.creator}`}
                       src={`https://www.instagram.com/reel/${it.shortcode}/embed/`}
                       allow="autoplay; encrypted-media; picture-in-picture; clipboard-write"
-                      loading="lazy"
+                      className={live ? 'live' : ''}
+                      onLoad={() => setReady((s) => (s.has(it.key) ? s : new Set(s).add(it.key)))}
                     />
-                  ) : (
-                    <button className="poster" onClick={() => play(it.key)} aria-label={`Play reel by @${it.creator}`}>
-                      <span className="poster-play" aria-hidden="true">▶</span>
-                      <span className="poster-meta">
-                        <b>@{it.creator}</b>
-                        <small>{ago(it.posted)}{it.badge === 'top' ? ' · Top creator' : it.badge === 'verified' ? ' · Verified' : it.badge === 'local' ? ' · added by you' : it.badge === 'live' ? ' · live result' : ''}</small>
-                        {it.caption && <em>{it.caption.slice(0, 120)}</em>}
-                      </span>
-                    </button>
                   )}
                 </div>
                 {(it.likes != null || it.comments != null) && (
