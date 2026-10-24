@@ -9,6 +9,10 @@ on:
         description: "Resume a failed run's bronze files without repeating reel topic searches"
         type: string
         required: false
+      apify_boost_usd:
+        description: "One-off backfill: dollars of this month's free Apify credit to spend now (0 = spread evenly; always stays under the cap)"
+        type: string
+        default: "0"
       crawl_minutes:
         description: "Minutes to crawl creator feeds with the Graph API (pauses for Meta's hourly limit)"
         type: string
@@ -59,6 +63,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
           RESUME_RUN: ${{ inputs.resume_from_run }}
           CRAWL_MINUTES: ${{ inputs.crawl_minutes || '240' }}
+          APIFY_BOOST_USD: ${{ inputs.apify_boost_usd || '0' }}
           # Free automated reel discovery (optional; the run works without them):
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}          # Apify free plan, $5/month credit, guarded
           IG_USER_ID: ${{ secrets.IG_USER_ID }}            # Meta Graph API (free): creator feeds + hashtag search

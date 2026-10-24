@@ -295,3 +295,36 @@ def test_history_is_sharded_by_month_and_legacy_file_migrated(tmp_path, monkeypa
     assert "thumb" not in auto.load_history()[0]
     auto.save([r for r in auto.load_history() if r["shortcode"] == "N1"], {})
     assert sorted(p.name for p in (tmp_path / "reels").glob("*.json")) == ["2026-10.json"]
+
+
+def test_boost_spends_credit_now_but_keeps_a_reserve_and_the_cap():
+    u = {"used": 0.2, "plan_cap": 5, "resets": "2026-11-22T23:59:59.999Z"}
+    assert apify.allowance(u, date(2026, 10, 24), cap=4.5) < 60                                   # normal: spread over the cycle
+    assert apify.allowance(u, date(2026, 10, 24), cap=4.5, boost_usd=3.0, boost_reserve=1.0) == 1111  # $3 now
+    # never past the cap: 4.5 − 0.2 used − 0.25 per-run reserve − 1.0 kept for daily runs = $3.05
+    assert apify.allowance(u, date(2026, 10, 24), cap=4.5, boost_usd=10.0, boost_reserve=1.0) == 1129
+    assert apify.allowance({**u, "used": 4.4}, date(2026, 10, 24), cap=4.5, boost_usd=3.0) == 0
+
+
+def test_boost_searches_every_topic_and_reads_deep_feeds_in_capped_runs(tmp_path, monkeypatch):
+    isolate(tmp_path, monkeypatch)
+    monkeypatch.setattr(auto, "APIFY_TOKEN", "test-token")
+    monkeypatch.setattr(auto, "APIFY_BOOST_USD", 1.0)
+    monkeypatch.setattr(auto.instagram_graph, "configured", lambda: False)
+    monkeypatch.setattr(apify, "usage", lambda: {"used": 0, "plan_cap": 5, "resets": "2026-11-22T00:00:00Z"})
+    searched, fed = [], []
+
+    def topic(t, n):
+        searched.append((t["q"], n))
+        return [reel(f"T{len(searched)}", f"maker{len(searched)}", EN_REPO)]
+
+    def feeds(users, per):
+        fed.append((tuple(users), per))
+        return [reel(f"F{u}{k}", u, EN_REPO) for u in users for k in range(3)]
+    monkeypatch.setattr(apify, "topic_reels", topic)
+    monkeypatch.setattr(apify, "creator_reels", feeds)
+    out = auto.discover(date(2026, 10, 24), log=lambda _: None)
+    assert len(searched) == len(auto.REEL_TOPICS) and all(n <= auto.APIFY_RESULTS_PER_ACTOR_RUN for _, n in searched)
+    assert fed and all(per == auto.APIFY_BOOST_FEED_PER_CREATOR and len(users) * per <= auto.APIFY_RESULTS_PER_ACTOR_RUN for users, per in fed)
+    assert out["stats"]["feeds"]["apify"] == len(auto.REEL_TOPICS)  # every creator found by a topic had its feed read
+    assert out["stats"]["kept"] == len(auto.REEL_TOPICS) * 4

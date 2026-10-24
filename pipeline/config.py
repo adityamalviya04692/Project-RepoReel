@@ -86,6 +86,12 @@ APIFY_USD_PER_RESULT = 0.0027   # conservative per-result price for the Instagra
 APIFY_MAX_RESULTS_PER_RUN = 120
 APIFY_TOPIC_SHARE = 0.4         # the rest goes to feeds of creators who already post about repos
 APIFY_FEED_PER_CREATOR = 8      # newest reels per creator feed
+APIFY_RESULTS_PER_ACTOR_RUN = 80  # stays under the $0.25 provider-side cap of each actor run
+# One-off backfill: spend up to this many dollars of the month's free credit in one run (never past the cap,
+# always leaving APIFY_BOOST_RESERVE_USD for the daily runs). 0 = normal even spreading.
+APIFY_BOOST_USD = float(os.environ.get("APIFY_BOOST_USD") or 0)
+APIFY_BOOST_RESERVE_USD = 1.0
+APIFY_BOOST_FEED_PER_CREATOR = 24
 
 # Graph API (free): Business Discovery pages through a creator's whole public history.
 # A crawl spends Meta's hourly allowance (~200 calls per app user), pauses until the window refreshes and
@@ -100,7 +106,7 @@ REEL_BACKFILL_DAYS: int | None = None  # None = a creator's whole public history
 GRAPH_HASHTAGS = ["githubrepo", "github", "opensource", "githubprojects", "opensourcetools", "claudecode", "opensourceai", "aitools", "pythonprojects", "developertools"]
 GRAPH_HASHTAG_PAGES = 2
 
-OCR_PER_RUN = 150               # reel covers read with Tesseract when the caption hides the repo name
+OCR_PER_RUN = 400               # reel covers read with Tesseract when the caption hides the repo name
 REELS_PUBLISH_MAX = 12000       # reels in the first download (newest first); every reel is in the per-repo shards
 REELS_PER_REPO_MAX = 6          # per repo in that first download
 REELS_PER_REPO_SHARD = 60       # per repo in its shard

@@ -76,11 +76,15 @@ def creator_reels(usernames: list[str], per: int) -> list[dict]:
     return run_actor(REEL_ACTOR, {"username": usernames, "resultsLimit": per}) if usernames and per > 0 else []
 
 
-def allowance(u: Optional[dict], today: date, cap: float = APIFY_MONTHLY_CAP_USD, reserve: float = RUN_CAP_USD) -> int:
-    """Results this run may buy: the credit left under the cap, spread evenly over the days left in the cycle."""
+def allowance(u: Optional[dict], today: date, cap: float = APIFY_MONTHLY_CAP_USD, reserve: float = RUN_CAP_USD,
+              boost_usd: float = 0.0, boost_reserve: float = 1.0) -> int:
+    """Results this run may buy: the credit left under the cap, spread evenly over the days left in the cycle.
+    With boost_usd (a one-off backfill), up to that much at once, still leaving boost_reserve for the daily runs."""
     if not budget_ok(u, cap, reserve):
         return 0
     left = min(cap, float(u["plan_cap"])) - float(u["used"]) - reserve
+    if boost_usd > 0:
+        return max(0, int(min(boost_usd, left - boost_reserve) / APIFY_USD_PER_RESULT))
     try:
         days = max(1, (datetime.fromisoformat(str(u.get("resets"))[:10]).date() - today).days + 1)
     except ValueError:

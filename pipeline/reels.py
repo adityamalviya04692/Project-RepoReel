@@ -19,7 +19,8 @@ from typing import Callable, Optional
 
 from . import ocr
 from .classify import english, keep
-from .config import (APIFY_FEED_PER_CREATOR, APIFY_TOKEN, APIFY_TOPIC_SHARE, CRAWL_MINUTES, GRAPH_CALLS_PER_RUN, GRAPH_HASHTAG_PAGES, GRAPH_HASHTAGS,
+from .config import (APIFY_BOOST_FEED_PER_CREATOR, APIFY_BOOST_RESERVE_USD, APIFY_BOOST_USD, APIFY_FEED_PER_CREATOR, APIFY_RESULTS_PER_ACTOR_RUN,
+                     APIFY_TOKEN, APIFY_TOPIC_SHARE, CRAWL_MINUTES, GRAPH_CALLS_PER_RUN, GRAPH_HASHTAG_PAGES, GRAPH_HASHTAGS,
                      GRAPH_MEDIA_PAGE, GRAPH_PAUSE_SECONDS, HISTORY, OCR_PER_RUN, PROFILE_LOOKUPS_PER_RUN, REEL_BACKFILL_DAYS, REEL_TOPICS, TOPICS_PER_RUN)
 from .matching import URL as GITHUB_URL, OWNER_REPO
 from .sources import apify, instagram_graph
@@ -306,9 +307,10 @@ class Discovery:
                                f"ok · {self.stats['feeds']['graph']} feeds · {self.stats['history_pages']} history pages · {got} new repo reels · "
                                f"{instagram_graph.usage['calls'] - calls0} calls")
 
-    def apify_topics(self, results: int) -> None:
-        topics = pick_topics(self.today)
-        per, failures = max(8, results // max(1, len(topics))), 0
+    def apify_topics(self, results: int, every: bool = False) -> None:
+        """Today's topics (or all of them in a backfill), at most one capped actor run each."""
+        topics = REEL_TOPICS if every else pick_topics(self.today)
+        per, failures = min(APIFY_RESULTS_PER_ACTOR_RUN, max(8, results // max(1, len(topics)))), 0
         for t in topics:
             try:
                 items = apify.topic_reels(t, per)
@@ -321,30 +323,40 @@ class Discovery:
             self.log(f"  apify {t['kind']} {t['q']!r}: {len(items)} reels, {got} new repo reels")
         self.stats["apify"] = ("error: no topics completed" if failures == len(topics) else "partial: some topics failed") if failures else "ok"
 
-    def apify_feeds(self, results: int) -> None:
-        """Newest reels of repo creators the Graph API can't read (or when it isn't configured)."""
-        todo = [h for h in self.repo_creators() if (self.creators[h].get("graph") or {}).get("status") != "ok"]
-        todo.sort(key=lambda h: self.creators[h].get("apify_feed") or "")
-        batch = todo[: max(0, results // APIFY_FEED_PER_CREATOR)]
-        if not batch:
-            return
-        try:
-            items = apify.creator_reels(batch, APIFY_FEED_PER_CREATOR)
-        except RuntimeError as e:
-            self.log(f"  apify feeds: {e}")
-            return
-        got = self.absorb([normalize_apify(i, "feed") for i in items])
-        for h in batch:
-            self.creators[h]["apify_feed"] = self.today.isoformat()
-        self.stats["feeds"]["apify"] = len(batch)
-        self.log(f"  apify feeds: {len(batch)} creators, {len(items)} reels, {got} new repo reels")
+    def apify_feeds(self, results: int, per: int = APIFY_FEED_PER_CREATOR, probe: bool = False) -> None:
+        """Newest reels of repo creators the Graph API can't read (or when it isn't configured), in actor runs
+        small enough for the per-run charge cap. A backfill also probes creators tagged in repo reels."""
+        def todo() -> list[str]:
+            ready = [h for h in self.repo_creators() if (self.creators[h].get("graph") or {}).get("status") != "ok"
+                     and self.creators[h].get("apify_feed") != self.today.isoformat()]
+            ready.sort(key=lambda h: self.creators[h].get("apify_feed") or "")
+            if probe:
+                ready += [h for h, c in self.creators.items() if h and c.get("probe") == "pending" and h not in ready]
+            return ready
+        size = max(1, APIFY_RESULTS_PER_ACTOR_RUN // per)
+        left = results
+        while left >= per and (batch := todo()[: min(size, left // per)]):
+            try:
+                items = apify.creator_reels(batch, per)
+            except RuntimeError as e:
+                self.log(f"  apify feeds: {e}")
+                return
+            left -= max(len(items), 1)
+            got = self.absorb([normalize_apify(i, "feed") for i in items])
+            for h in batch:
+                self.creators[h]["apify_feed"] = self.today.isoformat()
+                if self.creators[h].get("probe") == "pending":
+                    self.creators[h]["probe"] = "done"
+            self.stats["feeds"]["apify"] += len(batch)
+            self.log(f"  apify feeds: {len(batch)} creators, {len(items)} reels, {got} new repo reels")
 
     def run(self) -> dict:
         graph = instagram_graph.configured()
         if graph:
             self.graph_hashtags()
         u = apify.usage() if APIFY_TOKEN else None
-        allowance = apify.allowance(u, self.today) if u else 0
+        boost = APIFY_BOOST_USD > 0
+        allowance = apify.allowance(u, self.today, boost_usd=APIFY_BOOST_USD, boost_reserve=APIFY_BOOST_RESERVE_USD) if u else 0
         self.stats.update(budget=u, allowance=allowance)
         if APIFY_TOKEN and not allowance:
             self.stats["apify"] = "skipped: monthly free credit nearly used" if u else "skipped: usage unavailable"
@@ -352,12 +364,14 @@ class Discovery:
         # and any credit left unspent is spread over the remaining days by tomorrow's allowance.
         feed_share = int(allowance * (1 - APIFY_TOPIC_SHARE))
         if allowance:
-            self.apify_topics(allowance - feed_share)
+            self.apify_topics(allowance - feed_share, every=boost)
         if graph:
             self.graph_crawl()  # includes creators found a moment ago
         if allowance and feed_share:
-            self.apify_feeds(feed_share)
+            # A backfill reads deeper into each feed and also probes creators tagged in repo reels.
+            self.apify_feeds(feed_share, per=APIFY_BOOST_FEED_PER_CREATOR if boost else APIFY_FEED_PER_CREATOR, probe=boost)
             self.stats["budget"] = apify.usage()
+        self.stats["boost_usd"] = APIFY_BOOST_USD
         self.stats["kept"] = len(self.new)
         self.stats["repo_creators"] = len(self.repo_creators())
         self.stats["creators_seen"] = len([h for h in self.creators if h])

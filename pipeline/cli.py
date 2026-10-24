@@ -184,7 +184,7 @@ def main(argv=None) -> int:
         # GitHub search fallback is slow (30/min): cap new searches per run and remember every answer.
         cache_path = HISTORY / "name_search_cache.json"
         cache: dict = json.loads(cache_path.read_text()) if cache_path.exists() else {}
-        budget = {"searches": 150}
+        budget = {"searches": 300}
 
         def fallback(name: str):
             key = name.lower()
