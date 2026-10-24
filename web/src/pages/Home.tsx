@@ -8,7 +8,6 @@ import { buildItems, loadLocal, rankReels, reelText, type ReelHit, type ReelItem
 import Phone from '../components/Phone';
 import ReelResult from '../components/ReelResult';
 import RepoCard from '../components/RepoCard';
-import HealthStrip from '../components/HealthStrip';
 import AddReel from '../components/AddReel';
 import { LIVE_URL, liveSearch } from '../lib/live';
 
@@ -119,7 +118,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
         <div className="wrap stage-grid">
           <div className="ask">
             <p className="eyebrow">Find the reel. Then the repo.</p>
-            <h1 className={`ask-title${searching ? ' small' : ''}`}>{searching ? 'Your answer, as a reel' : <>What are you<br />trying to build?</>}</h1>
+            <h1 className={`ask-title${searching ? ' small' : ''}`}>{searching ? <>Your answer, <span className="grad">as a reel</span></> : <>What are you<br /><span className="grad">trying to build?</span></>}</h1>
             <form className="ask-box" onSubmit={(e) => (e.preventDefault(), submit(draft))} role="search">
               <textarea
                 ref={box}
@@ -164,7 +163,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                       <b>No reels found for this yet.</b> {discoveryConnected ? 'Discovery runs daily; no matching reels have been indexed yet.' : 'Automated discovery is not connected on this deployment.'}{LIVE_URL ? '' : ' Live search is not enabled.'} Here are the repos that fit:
                     </div>
                   ) : strong.length ? (
-                    <h3 className="answers-h">{strong.length} reel{strong.length > 1 ? 's' : ''} for this</h3>
+                    <h3 className="answers-h">Reels for this <small>{strong.length} match{strong.length > 1 ? 'es' : ''}</small></h3>
                   ) : (
                     <div className="empty-note">{shownReels.length ? 'No reel covers this exactly yet. Here are the closest reels, and the repos that fit below.' : 'No reel covers this yet. The repository matches are below.'}</div>
                   )}
@@ -186,7 +185,7 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
                 <motion.div key="latest" className="answers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
                   {items.length > 0 ? (
                     <>
-                      <h3 className="answers-h">Latest reels</h3>
+                      <h3 className="answers-h">Latest reels from vetted creators <small>{items.length} indexed</small></h3>
                       {items.slice(0, 4).map((it, n) => (
                         <ReelResult key={it.key} it={it} data={data} n={n} active={it.key === active} onWatch={() => watch(it.key)} onDetails={onOpen} />
                       ))}
@@ -210,32 +209,38 @@ export default function Home({ data, query, setQuery, onOpen }: { data: Data; qu
         <>
           <section className="tile dark">
             <div className="wrap">
-              <p className="eyebrow on-dark">Rising this week</p>
-              <h2>Repos creators will be talking about next.</h2>
-              <div className="rail" role="list">
-                {rising.map(({ r, i }) => (
-                  <button key={r.n} className="rail-card" role="listitem" onClick={() => onOpen(i)}>
-                    <img className="avatar" src={`https://github.com/${r.n.split('/')[0]}.png?size=72`} alt="" width="36" height="36" loading="lazy" />
+              <div className="section-head">
+                <div>
+                  <p className="eyebrow">Rising this week</p>
+                  <h2>Repos creators will be talking <span className="grad">about next.</span></h2>
+                </div>
+                <a className="link" href="#/pipeline">Full leaderboard →</a>
+              </div>
+              <div className="rise-grid">
+                {rising.slice(0, 8).map(({ r, i }) => (
+                  <button key={r.n} className="rise-card" onClick={() => onOpen(i)}>
+                    <span className="rise-icon"><img src={`https://github.com/${r.n.split('/')[0]}.png?size=72`} alt="" width="36" height="36" loading="lazy" /></span>
                     <b>{r.n.split('/')[1]}</b>
                     <span>{r.d.slice(0, 96)}</span>
-                    <HealthStrip r={r} dark />
+                    <div className="rise-stats"><span className="s">★ {compact(r.s)}</span><span className="v">+{compact(r.mo.d7 ?? 0)}/wk{r.mo.est ? '*' : ''}</span></div>
+                    <div className="rise-tags">{[r.l, ...r.cat.slice(0, 2).map((c) => data.ranking.labels[c] ?? c)].filter(Boolean).map((t) => <em key={t}>{t}</em>)}</div>
                   </button>
                 ))}
               </div>
             </div>
           </section>
-          <section className="tile parchment">
-            <div className="wrap split">
-              <div>
+          <section className="tile light">
+            <div className="wrap glow-grid">
+              <div className="glow-card">
                 <p className="eyebrow">Saw a reel somewhere?</p>
-                <h2>Snap it. Get the repo.</h2>
-                <p className="lead muted">Drop a screenshot of the frame that shows the repo name. OCR runs in your browser and finds the exact repository, with no DMs and no "comment REPO".</p>
+                <h2>Snap it. <span className="grad">Get the repo.</span></h2>
+                <p className="lead">Drop a screenshot of the frame that shows the repo name. OCR runs in your browser and finds the exact repository, with no DMs and no "comment REPO".</p>
                 <a className="btn primary" href="#/snap">Snap a reel</a>
               </div>
-              <div>
+              <div className="glow-card">
                 <p className="eyebrow">Creator trust, explained</p>
-                <h2>Proof has to be earned.</h2>
-                <p className="lead muted">{compact(data.creators.gates.min_followers)}+ followers and regular repo posts are required for a creator badge. Repository health and available engagement counts contribute to trust.</p>
+                <h2>Proof has to be <span className="grad">earned.</span></h2>
+                <p className="lead">{compact(data.creators.gates.min_followers)}+ followers and regular repo posts are required for a creator badge. Repository health and available engagement counts contribute to trust.</p>
                 <a className="btn secondary" href="#/creators">How creators are vetted</a>
               </div>
             </div>

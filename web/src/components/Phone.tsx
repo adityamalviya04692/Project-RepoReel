@@ -120,6 +120,13 @@ export default function Phone({
                     </button>
                   )}
                 </div>
+                {(it.likes != null || it.comments != null) && (
+                  <div className="rail-actions" aria-label="Engagement">
+                    {it.likes != null && <span><i>♥</i>{compact(it.likes)}</span>}
+                    {it.comments != null && <span><i>💬</i>{compact(it.comments)}</span>}
+                    <span><a href={it.url} target="_blank" rel="noreferrer" aria-label="Open on Instagram"><i>↗</i></a></span>
+                  </div>
+                )}
                 <div className="slide-repo">
                   {repo ? (
                     <>

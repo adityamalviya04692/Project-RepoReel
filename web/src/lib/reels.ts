@@ -20,6 +20,8 @@ export interface ReelItem {
   badge: 'top' | 'verified' | 'pending' | 'local' | 'live';
   trust: number;
   vec: Float32Array | null;
+  likes?: number | null;
+  comments?: number | null;
 }
 
 export interface ReelHit {
@@ -97,6 +99,7 @@ export async function buildItems(data: Data, local: LocalReel[]): Promise<ReelIt
       key: `c:${r.url}`, url: r.url, shortcode: shortcodeOf(r.url), creator: r.creator, posted: r.posted, caption: r.caption ?? '',
       repo: r.repo, repoRow: r.repo ? data.byName.get(r.repo.toLowerCase()) : undefined, source: 'curated',
       verified: !!c?.eligible, badge: c?.badge ?? 'pending', trust: c?.trust ?? 0.3, vec: decode(r.vec),
+      likes: r.likes, comments: r.comments,
     });
   }
   for (const r of local) {

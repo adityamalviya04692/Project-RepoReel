@@ -1,20 +1,22 @@
+import { useMemo, useState } from 'react';
 import type { Data } from '../lib/data';
 import { ago, compact, pct } from '../lib/format';
 
 /* The data-engineering view: freshness, per-stage timings and row counts, quality checks,
    retrieval evaluation, lineage and run history. */
-export default function PipelinePage({ data }: { data: Data }) {
+export default function PipelinePage({ data, onOpen }: { data: Data; onOpen: (row: number) => void }) {
   const p = data.pipeline;
-  if (!p) return <section className="tile light page"><div className="wrap narrow"><p className="empty-note">No pipeline run has been published yet.</p></div></section>;
+  if (!p) return <><Trending data={data} onOpen={onOpen} /><section className="tile light"><div className="wrap narrow"><p className="empty-note">No pipeline run has been published yet.</p></div></section></>;
   const L = p.last;
   const max = Math.max(...L.stages.map((s) => s.seconds));
   const hoursOld = (Date.now() - Date.parse(L.finished)) / 36e5;
   return (
     <>
-      <section className="tile dark page">
+      <Trending data={data} onOpen={onOpen} />
+      <section className="tile dark">
         <div className="wrap">
           <p className="eyebrow on-dark">Pipeline status</p>
-          <h1 className="h-lg">Refreshed {ago(L.finished)}.</h1>
+          <h2>Refreshed <span className="grad">{ago(L.finished)}.</span></h2>
           <p className="lead muted-on-dark">A scheduled GitHub Actions job ingests GitHub, Hacker News and connected reel sources, transforms it bronze → silver → gold with DuckDB, embeds every repository, checks quality, evaluates retrieval and publishes static files for this site.</p>
           <div className="kpis">
             <div><b>{compact(L.catalog)}</b><span>repositories</span></div>
@@ -145,5 +147,94 @@ function Discovery({ data }: { data: Data }) {
         </div>
       )}
     </>
+  );
+}
+
+/* Breakout leaderboard: catalog repos ranked by stars gained in the last 7 days, from daily snapshots. */
+function Trending({ data, onOpen }: { data: Data; onOpen: (row: number) => void }) {
+  const [cat, setCat] = useState('');
+  const movers = useMemo(() => data.repos.map((r, i) => ({ r, i })).filter(({ r }) => (r.mo.d7 ?? 0) > 0 && !r.a).sort((a, b) => (b.r.mo.d7 ?? 0) - (a.r.mo.d7 ?? 0)), [data]);
+  const cats = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const { r } of movers) for (const c of r.cat) m.set(c, (m.get(c) ?? 0) + 1);
+    return [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, 7);
+  }, [movers]);
+  const sum = (key: (r: Data['repos'][number]) => string[]) => {
+    const m = new Map<string, number>();
+    for (const { r } of movers) for (const k of key(r)) if (k) m.set(k, (m.get(k) ?? 0) + (r.mo.d7 ?? 0));
+    return [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+  };
+  const langs = useMemo(() => sum((r) => [r.l]), [movers]); // eslint-disable-line react-hooks/exhaustive-deps
+  const topics = useMemo(() => sum((r) => r.cat), [movers]); // eslint-disable-line react-hooks/exhaustive-deps
+  const rows = (cat ? movers.filter(({ r }) => r.cat.includes(cat)) : movers).slice(0, 12);
+  const vmax = Math.max(1, ...rows.map(({ r }) => r.mo.d7 ?? 0));
+  const label = (c: string) => data.ranking.labels[c] ?? c;
+  const gained = movers.reduce((a, { r }) => a + (r.mo.d7 ?? 0), 0);
+  return (
+    <section className="tile light page">
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow pill">Trending pipeline</p>
+            <h1 className="h-lg">Repos creators will be talking <span className="grad">about next.</span></h1>
+            <p className="lead">Ranked by stars gained in the last 7 days, measured from daily snapshots of the catalog. Values marked * are estimated from a new repo's age.</p>
+          </div>
+          <div className="hub-stats" style={{ gridTemplateColumns: 'repeat(2, minmax(140px, 1fr))', marginTop: 0 }}>
+            <div><small>Rising repos</small><b>{movers.length.toLocaleString()}</b><span>gained stars this week</span></div>
+            <div><small>Stars gained</small><b>{compact(gained)}</b><span>across the catalog · 7d</span></div>
+          </div>
+        </div>
+        <div className="filters" role="group" aria-label="Filter by category">
+          <button className={cat ? '' : 'on'} onClick={() => setCat('')}>All<em>{movers.length}</em></button>
+          {cats.map(([c, n]) => <button key={c} className={cat === c ? 'on' : ''} onClick={() => setCat(c)}>{label(c)}<em>{n}</em></button>)}
+        </div>
+        <div className="lb-wrap">
+          <table className="lb">
+            <thead><tr><th>#</th><th>Repository</th><th>Reels</th><th>Stars</th><th>7-day velocity</th><th>Stack</th><th>Licence</th><th /></tr></thead>
+            <tbody>
+              {rows.map(({ r, i }, k) => {
+                const reels = data.reelsByRepo.get(r.n.toLowerCase())?.length ?? 0;
+                return (
+                  <tr key={r.n}>
+                    <td className="rank">{String(k + 1).padStart(2, '0')}</td>
+                    <td><div className="repo"><img src={`https://github.com/${r.n.split('/')[0]}.png?size=60`} alt="" width="30" height="30" loading="lazy" /><span><b>{r.n}</b><small>{r.d}</small></span></div></td>
+                    <td className="lic">{reels || '—'}</td>
+                    <td className="stars">★ {compact(r.s)}</td>
+                    <td className="vel">+{compact(r.mo.d7 ?? 0)}{r.mo.est ? '*' : ''}<span className="lang-track" style={{ display: 'block', width: 90, marginTop: 6 }}><i className="lang-row-i" style={{ display: 'block', height: 6, borderRadius: 3, background: 'var(--ig)', width: `${((r.mo.d7 ?? 0) / vmax) * 100}%` }} /></span></td>
+                    <td className="tags">{[r.l, ...r.cat.slice(0, 1).map(label)].filter(Boolean).map((t) => <em key={t}>{t}</em>)}</td>
+                    <td className="lic">{r.lic && r.lic !== 'NOASSERTION' ? r.lic : '—'}</td>
+                    <td><div className="act">
+                      {reels > 0 && <a className="btn small primary" href={`#/?q=${encodeURIComponent(r.n.split('/')[1])}`}>Watch</a>}
+                      <button className="btn small ghost" onClick={() => onOpen(i)}>Details</button>
+                      <a className="btn small secondary" href={`https://github.com/${r.n}`} target="_blank" rel="noreferrer">Open</a>
+                    </div></td>
+                  </tr>
+                );
+              })}
+              {rows.length === 0 && <tr><td colSpan={8} className="lic">No rising repos in this category yet.</td></tr>}
+            </tbody>
+          </table>
+        </div>
+        <div className="trend-panels">
+          <div className="panel">
+            <p className="eyebrow">Velocity by language</p>
+            <h3>Top trending languages</h3>
+            {langs.map(([l, v]) => (
+              <div key={l} className="lang-row">
+                <div><span>{l}</span><span>+{compact(v)} ★</span></div>
+                <div className="lang-track"><i style={{ width: `${(v / (langs[0]?.[1] || 1)) * 100}%` }} /></div>
+              </div>
+            ))}
+          </div>
+          <div className="panel">
+            <p className="eyebrow">Archetypes</p>
+            <h3>What people are building</h3>
+            {topics.map(([c, v], k) => (
+              <div key={c} className="topic-row"><span className="n">{k + 1}</span><b>{label(c)}</b><small>+{compact(v)} ★ / wk</small></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
