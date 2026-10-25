@@ -3,6 +3,10 @@
 "full_name": "dibingfa/flash-linux0.11-talk",
 "stars": 22670
 },
+"12-month": {
+"full_name": "gamwe6/12-startups-in-12-months",
+"stars": 60
+},
 "30-day": {
 "full_name": "Asabeneh/30-Days-Of-Python",
 "stars": 77029
@@ -147,6 +151,10 @@
 "full_name": "ExploitsLabs/aihacking",
 "stars": 12
 },
+"aihacks": {
+"full_name": "ltejedor/aihacks",
+"stars": 9
+},
 "aihumanizer": {
 "full_name": "AIHumanizerBenchmark/AIHumanizerBenchmark",
 "stars": 2
@@ -241,6 +249,7 @@
 "stars": 0
 },
 "akash94ai": null,
+"algorithmicagility": null,
 "always-on": {
 "full_name": "pradt2/always-online-stun",
 "stars": 1046
@@ -285,6 +294,10 @@
 "full_name": "GmAbhishek/AppDevelopment",
 "stars": 16
 },
+"apple": {
+"full_name": "apple/container",
+"stars": 50882
+},
 "artcraft": {
 "full_name": "storytold/artcraft",
 "stars": 36244
@@ -293,9 +306,18 @@
 "full_name": "shaishaicookie/fcpx-auto-captions",
 "stars": 371
 },
+"auto-deduped": null,
+"auto-zoom": {
+"full_name": "v8hid/infinite-zoom-automatic1111-webui",
+"stars": 670
+},
 "automateddesign": {
 "full_name": "alfredtayloraero/AutomatedDesignOfCompositeSpacecraftStructures",
 "stars": 1
+},
+"automationtools": {
+"full_name": "justeat/AutomationTools",
+"stars": 51
 },
 "b-roll": {
 "full_name": "rollup/rollup-plugin-babel",
@@ -312,6 +334,10 @@
 "browserautomation": {
 "full_name": "AutomatedTester/W3-BrowserAutomation",
 "stars": 16
+},
+"build": {
+"full_name": "codecrafters-io/build-your-own-x",
+"stars": 556061
 },
 "buildinpublic": {
 "full_name": "buildinginpublic/buildinpublic",
@@ -341,6 +367,10 @@
 "full_name": "lvwzhen/ChatGPT-Matrix-Style",
 "stars": 81
 },
+"ci-ready": {
+"full_name": "woodpecker-ci/plugin-ready-release-go",
+"stars": 10
+},
 "cinematicvideo": {
 "full_name": "aiindonesiaart/cinematicvideo-promptgenerator",
 "stars": 0
@@ -369,6 +399,10 @@
 "full_name": "nagoya-foundation/co-authored-commit",
 "stars": 21
 },
+"co-sign": {
+"full_name": "VipaiLab/Signals-and-Systems-course",
+"stars": 1127
+},
 "code-review-and-quality": {
 "full_name": "jinx-cr/AI-Powered-Code-Reviewer-and-Quality-Assistant",
 "stars": 1
@@ -381,9 +415,17 @@
 "full_name": "SylphAI-Inc/codingagents.md",
 "stars": 45
 },
+"codinghacks": {
+"full_name": "PiyushMattoo/CodingHacks",
+"stars": 0
+},
 "coldemail": {
 "full_name": "mak-raiaan/ColdEmailPhDMSc",
 "stars": 130
+},
+"community-built": {
+"full_name": "cyclejs-community/built-with-cycle",
+"stars": 9
 },
 "computer": {
 "full_name": "ossu/computer-science",
@@ -396,6 +438,10 @@
 "constraint-driven-development": {
 "full_name": "alexbunardzic/constraints-driven-software-development",
 "stars": 0
+},
+"container-native": {
+"full_name": "expo/react-native-loading-container",
+"stars": 157
 },
 "content": {
 "full_name": "danilowoz/react-content-loader",
@@ -472,6 +518,10 @@
 "deepseek-ai": {
 "full_name": "deepseek-ai/deepseek-harness",
 "stars": 260359
+},
+"definitive-opensource": {
+"full_name": "mustbeperfect/definitive-opensource",
+"stars": 3638
 },
 "design": {
 "full_name": "donnemartin/system-design-primer",
@@ -561,9 +611,17 @@
 "full_name": "mrH0411/Ebook-EthicalHacking",
 "stars": 404
 },
+"face-based": {
+"full_name": "shubhamkumar27/Face_recognition_based_attendance_system",
+"stars": 251
+},
 "facefusion": {
 "full_name": "facefusion/facefusion",
 "stars": 30384
+},
+"faceid": {
+"full_name": "normandipalo/faceID_beta",
+"stars": 905
 },
 "fifty-three": {
 "full_name": "Twenty-Three-Fifty-Nine/grade-tracker",
@@ -576,6 +634,10 @@
 "fine-tuning": {
 "full_name": "Plachtaa/VITS-fast-fine-tuning",
 "stars": 5000
+},
+"fintechai": {
+"full_name": "anohana-007/FinTechAI",
+"stars": 1
 },
 "fitness": {
 "full_name": "CodeWithCJ/SparkyFitness",
@@ -601,6 +663,19 @@
 "full_name": "amebalabs/NineFortyOne",
 "stars": 11
 },
+"fpsr": {
+"full_name": "deadlykam/TutorialFPSRotation",
+"stars": 9
+},
+"fpsr_algorithm": null,
+"frame-for-frame": {
+"full_name": "dariusz-wozniak/List-of-Testing-Tools-and-Frameworks-for-.NET",
+"stars": 590
+},
+"frame-persistent": {
+"full_name": "T33R0/persistent-agent-framework",
+"stars": 6
+},
 "framermotion": {
 "full_name": "wrongakram/framermotion-react-router",
 "stars": 182
@@ -616,6 +691,14 @@
 "freellmapi": {
 "full_name": "tashfeenahmed/freellmapi",
 "stars": 40786
+},
+"freeresources": {
+"full_name": "nisso22000/freeresources.dev",
+"stars": 2
+},
+"freescreenrecorder": {
+"full_name": "plter/FreeScreenRecorder",
+"stars": 39
 },
 "freetools": {
 "full_name": "beNative/FreeTools",
@@ -689,9 +772,17 @@
 "full_name": "8LWXpg/PowerToysRun-GitHubRepo",
 "stars": 132
 },
+"githubtips": {
+"full_name": "santoshyadavdev/GitHubTips",
+"stars": 15
+},
 "goal-driven": {
 "full_name": "lidangzzz/goal-driven",
 "stars": 1749
+},
+"godaddy": {
+"full_name": "godaddy/terminus",
+"stars": 1912
 },
 "godmod3": {
 "full_name": "MSL135/GODMOD3",
@@ -730,6 +821,10 @@
 "full_name": "Hack-with-Github/Awesome-Hacking",
 "stars": 123508
 },
+"hand-scripted": {
+"full_name": "Gaurav-Van/Scripted_Insights-Handwritten_DS_ML_Notes",
+"stars": 10
+},
 "harbor": {
 "full_name": "goharbor/harbor",
 "stars": 29605
@@ -737,6 +832,10 @@
 "hardness": {
 "full_name": "Menoly-xin/Hardness-Level-Learning",
 "stars": 37
+},
+"hardware-backed": {
+"full_name": "brave-experiments/hardware-backed-webcrypto",
+"stars": 23
 },
 "hedgehog": {
 "full_name": "Hedgehog-Computing/hedgehog-lab",
@@ -758,9 +857,14 @@
 "full_name": "kampelmuehler/synthesizing_human_like_sketches",
 "stars": 44
 },
+"human-vetted": null,
 "humanizeai": {
 "full_name": "icarodredd/HumanizeAI",
 "stars": 4
+},
+"id-like": {
+"full_name": "clemera/helm-ido-like-guide",
+"stars": 95
 },
 "imagetovideo": {
 "full_name": "MasayukiSuda/ImageToVideoAndroid",
@@ -852,6 +956,10 @@
 "full_name": "freeCodeCamp/LearnToCodeRPG",
 "stars": 1136
 },
+"life": {
+"full_name": "danielmiessler/LifeOS",
+"stars": 19575
+},
 "link": {
 "full_name": "Ebazhanov/linkedin-skill-assessments-quizzes",
 "stars": 28869
@@ -929,6 +1037,10 @@
 "full_name": "herrbischoff/awesome-macos-command-line",
 "stars": 31038
 },
+"macsecurity": {
+"full_name": "MaHaoxuantb/MacSecurity",
+"stars": 2
+},
 "maps": {
 "full_name": "react-native-maps/react-native-maps",
 "stars": 16014
@@ -969,6 +1081,10 @@
 "full_name": "sensai7/Card-Sized-Midi-Controller",
 "stars": 30
 },
+"military-grade": {
+"full_name": "Atro-Rdx/military-grade-ip-tracker",
+"stars": 11
+},
 "mirofish": {
 "full_name": "666ghj/MiroFish",
 "stars": 81671
@@ -993,9 +1109,17 @@
 "full_name": "lorenz-MotionGraphics/lorenz-MotionGraphics",
 "stars": 4
 },
+"move-hold": {
+"full_name": "allsway/move-891-to-holding",
+"stars": 1
+},
 "mp3": {
 "full_name": "mpatric/mp3agic",
 "stars": 1234
+},
+"mp4": {
+"full_name": "sannies/mp4parser",
+"stars": 2799
 },
 "multi-agent": {
 "full_name": "open-multi-agent/open-multi-agent",
@@ -1013,6 +1137,10 @@
 "full_name": "facebookresearch/multipathnet",
 "stars": 1331
 },
+"nawfalmotii79": {
+"full_name": "NawfalMotii79/PLFM_RADAR",
+"stars": 27151
+},
 "netflix-style": {
 "full_name": "Nikhil22/netflix-style-recommender",
 "stars": 76
@@ -1024,6 +1152,10 @@
 "news": {
 "full_name": "newsnext/newsnow",
 "stars": 22152
+},
+"next-level": {
+"full_name": "NextLevel/NextLevel",
+"stars": 2337
 },
 "nextjs": {
 "full_name": "nextjs/saas-starter",
@@ -1045,13 +1177,29 @@
 "full_name": "kelseyhightower/nocode",
 "stars": 65949
 },
+"non-linear": {
+"full_name": "Shunichi09/PythonLinearNonlinearControl",
+"stars": 1049
+},
 "nosubscription": {
 "full_name": "netspan/pve-nosubscription-repo",
 "stars": 0
 },
+"nvidianim": {
+"full_name": "kinfey/Microsoft-Phi-3-NvidiaNIMWorkshop",
+"stars": 22
+},
+"on-device": {
+"full_name": "jomjol/AI-on-the-edge-device",
+"stars": 8888
+},
 "one-click": {
 "full_name": "jinwyp/one_click_script",
 "stars": 5138
+},
+"one-command": {
+"full_name": "arturoherrero/command-line-one-liners",
+"stars": 399
 },
 "one-liners": {
 "full_name": "0xPugal/One-Liners",
@@ -1117,6 +1265,7 @@
 "full_name": "tdollar15/OpusClip-Clone",
 "stars": 30
 },
+"organizationaldesign": null,
 "osint": {
 "full_name": "jivoi/awesome-osint",
 "stars": 30445
@@ -1147,9 +1296,14 @@
 },
 "phoenautomation": null,
 "phoneasawebcam": null,
+"photo-spoofing": null,
 "photoshop": {
 "full_name": "AbdullahAlfaraj/Auto-Photoshop-StableDiffusion-Plugin",
 "stars": 7303
+},
+"pi-hole": {
+"full_name": "pi-hole/pi-hole",
+"stars": 61434
 },
 "pink": {
 "full_name": "pinkary-project/pinkary.com",
@@ -1163,6 +1317,10 @@
 "full_name": "pavankat/big-o-in-plain-english",
 "stars": 253
 },
+"plfm_radar": {
+"full_name": "NawfalMotii79/PLFM_RADAR",
+"stars": 27151
+},
 "plugin": {
 "full_name": "anthropics/claude-plugins-official",
 "stars": 44315
@@ -1170,6 +1328,10 @@
 "pop-ups": {
 "full_name": "HaritaLT/webdriverio-appium-permission-pop-ups",
 "stars": 18
+},
+"port-forwarding": {
+"full_name": "twelvesec/port-forwarding",
+"stars": 166
 },
 "posthog": {
 "full_name": "PostHog/posthog",
@@ -1192,6 +1354,10 @@
 "stars": 12519
 },
 "princeguptaai": null,
+"proceduralmotion": {
+"full_name": "keijiro/ProceduralMotionTrack",
+"stars": 452
+},
 "product-market": {
 "full_name": "soumyadip007/E-Marketplace-for-buying-and-reselling-products-Web-Project-Using-JSP-Servlet-Jstl-Security-Jdbc",
 "stars": 79
@@ -1207,6 +1373,10 @@
 "productionready": {
 "full_name": "danthegoodman1/ProductionReadyPostgres",
 "stars": 3
+},
+"productivityhacks": {
+"full_name": "rushindrasinha/ProductivityHacks",
+"stars": 2
 },
 "productvalidation": {
 "full_name": "rottingham/ProductValidation",
@@ -1330,6 +1500,10 @@
 "full_name": "Sorosliu1029/Rule-based_Expert_System",
 "stars": 113
 },
+"rustdesk": {
+"full_name": "rustdesk/rustdesk",
+"stars": 126887
+},
 "rustlang": {
 "full_name": "PeterPierinakos/vanilla-rustlang-server",
 "stars": 41
@@ -1363,6 +1537,7 @@
 "stars": 2666
 },
 "scan-to-threejs": null,
+"screenstudioalternative": null,
 "secret": {
 "full_name": "trimstray/the-book-of-secret-knowledge",
 "stars": 252873
@@ -1396,6 +1571,7 @@
 "full_name": "sefyudem/Sliding-Sign-In-Sign-Up-Form",
 "stars": 739
 },
+"simulationstrategy": null,
 "singlecommand": {
 "full_name": "sohag-pro/SingleCommand",
 "stars": 7
@@ -1431,6 +1607,10 @@
 "step-by-step": {
 "full_name": "dvgodoy/PyTorchStepByStep",
 "stars": 1503
+},
+"studentdiscount": {
+"full_name": "JCCourt/StudentDiscountsNZ",
+"stars": 16
 },
 "supercomputer": {
 "full_name": "l4rz/building-a-poor-mans-supercomputer",
@@ -1472,6 +1652,10 @@
 "techcareers": {
 "full_name": "hamitmizrak/TechCareerSpringBoot1",
 "stars": 16
+},
+"techdeals": {
+"full_name": "techdeals/FiveM-Arkadia",
+"stars": 2
 },
 "techfounder": {
 "full_name": "TechFounder/stepup",
@@ -1534,9 +1718,17 @@
 "stars": 24
 },
 "thetechplate": null,
+"tiktok": {
+"full_name": "Evil0ctal/Douyin_TikTok_Download_API",
+"stars": 20889
+},
 "tokensavings": {
 "full_name": "codejunkie99/tokensavings-pro",
 "stars": 22
+},
+"trade": {
+"full_name": "nautechsystems/nautilus_trader",
+"stars": 30769
 },
 "tradingview": {
 "full_name": "tradingview/lightweight-charts",
