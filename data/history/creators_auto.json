@@ -7,10 +7,11 @@
   "seen": 5
  },
  "_mokshith_malla": {
+  "apify_feed": "2026-10-26",
   "followers": null,
-  "kept": 1,
+  "kept": 2,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 9
  },
  "_shreeindustries": {
   "first_seen": "2026-10-23",
@@ -171,6 +172,11 @@
   "repo_reels": 0,
   "seen": 1
  },
+ "awankkaley": {
+  "first_seen": "2026-10-26",
+  "followers": null,
+  "seen": 1
+ },
  "badarmunir_official": {
   "followers": null,
   "kept": 1,
@@ -178,11 +184,15 @@
   "seen": 1
  },
  "baqar.dev": {
+  "business": false,
+  "checked": "2026-10-26",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 14356,
+  "followers_source": "apify",
   "kept": 10,
   "repo_reels": 1,
-  "seen": 10
+  "seen": 10,
+  "verified": true
  },
  "baroi.ai": {
   "first_seen": "2026-10-24",
@@ -499,7 +509,7 @@
   "first_seen": "2026-10-24",
   "followers": null,
   "kept": 4,
-  "repo_reels": 1,
+  "repo_reels": 0,
   "seen": 4
  },
  "heystevetan": {
@@ -709,10 +719,14 @@
   "seen": 1
  },
  "nexttab": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-10-26",
+  "followers": 1182,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "nicholas.puru": {
   "followers": null,
@@ -732,10 +746,14 @@
   "verified": true
  },
  "nirmalrathaur.ai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-26",
+  "followers": 1021,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "nolimitswill": {
   "first_seen": "2026-10-24",
@@ -772,10 +790,14 @@
   "seen": 1
  },
  "paytkaleiwahea": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-26",
+  "followers": 3446,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "peterstewiestartup": {
   "first_seen": "2026-10-24",
@@ -840,10 +862,14 @@
   "seen": 1
  },
  "readecoded": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-26",
+  "followers": 2616,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "relentlessrisee_": {
   "first_seen": "2026-10-24",
@@ -1005,11 +1031,15 @@
   "seen": 1
  },
  "syntaix.ai": {
+  "business": false,
+  "checked": "2026-10-26",
   "first_seen": "2026-10-23",
-  "followers": null,
+  "followers": 74266,
+  "followers_source": "apify",
   "kept": 8,
   "repo_reels": 1,
-  "seen": 8
+  "seen": 8,
+  "verified": false
  },
  "tahabekey": {
   "followers": null,
@@ -1108,9 +1138,18 @@
   "seen": 3
  },
  "theyashsavla": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-10-26",
+  "followers": 16023,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
+  "seen": 1,
+  "verified": true
+ },
+ "thezaidfouad": {
+  "first_seen": "2026-10-26",
+  "followers": null,
   "seen": 1
  },
  "think_macro_": {
@@ -1172,10 +1211,14 @@
   "verified": true
  },
  "vee_daily19": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-26",
+  "followers": 1600826,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "vibe_arc__": {
   "followers": null,

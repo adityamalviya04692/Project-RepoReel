@@ -339,6 +339,10 @@
 "full_name": "codecrafters-io/build-your-own-x",
 "stars": 556061
 },
+"buildinginpublic": {
+"full_name": "buildinginpublic/buildinpublic",
+"stars": 105
+},
 "buildinpublic": {
 "full_name": "buildinginpublic/buildinpublic",
 "stars": 105
@@ -430,6 +434,10 @@
 "computer": {
 "full_name": "ossu/computer-science",
 "stars": 210305
+},
+"computerscience": {
+"full_name": "AatmikJain/ComputerScienceBooks",
+"stars": 1503
 },
 "computervision": {
 "full_name": "microsoft/computervision-recipes",
@@ -610,6 +618,10 @@
 "ethicalhacking": {
 "full_name": "mrH0411/Ebook-EthicalHacking",
 "stars": 404
+},
+"everything-claude-code": {
+"full_name": "WorldFlowAI/everything-claude-code",
+"stars": 5416
 },
 "face-based": {
 "full_name": "shubhamkumar27/Face_recognition_based_attendance_system",
@@ -898,6 +910,10 @@
 "full_name": "balena-io-examples/internetspeedtest",
 "stars": 57
 },
+"internship": {
+"full_name": "SimplifyJobs/Summer2027-Internships",
+"stars": 48148
+},
 "interview-me": {
 "full_name": "jdsutton/Technical-Interview-Megarepo",
 "stars": 1626
@@ -905,6 +921,10 @@
 "jobhunting": {
 "full_name": "qb0C80aE/jobhunting",
 "stars": 56
+},
+"jobs": {
+"full_name": "remoteintech/remote-jobs",
+"stars": 40931
 },
 "jub0t": {
 "full_name": "jub0t/Concat",
@@ -1088,6 +1108,10 @@
 "mirofish": {
 "full_name": "666ghj/MiroFish",
 "stars": 81671
+},
+"ml": {
+"full_name": "microsoft/ML-For-Beginners",
+"stars": 91754
 },
 "model": {
 "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
@@ -1341,6 +1365,10 @@
 "full_name": "GongRzhe/Office-PowerPoint-MCP-Server",
 "stars": 1858
 },
+"pre-built": {
+"full_name": "thommyho/Cpp-gRPC-Windows-PreBuilts",
+"stars": 65
+},
 "pre-delivery": {
 "full_name": "vinoharsithaas/predictive-modelling-for-food-delivery",
 "stars": 31
@@ -1430,6 +1458,10 @@
 "full_name": "AstraZeneca/awesome-explainable-graph-reasoning",
 "stars": 1995
 },
+"re-explaining": {
+"full_name": "NoahVl/Explaining-In-Style-Reproducibility-Study",
+"stars": 38
+},
 "re-exploring": {
 "full_name": "jbadger3/ExploringRectangleDetection",
 "stars": 40
@@ -1471,6 +1503,10 @@
 "stars": 8287
 },
 "removeplagiarism": null,
+"repos": {
+"full_name": "andersao/l5-repository",
+"stars": 4194
+},
 "reverse": {
 "full_name": "zhaoxuya520/reverse-skill",
 "stars": 43206
@@ -1718,6 +1754,7 @@
 "stars": 24
 },
 "thetechplate": null,
+"tier2college": null,
 "tiktok": {
 "full_name": "Evil0ctal/Douyin_TikTok_Download_API",
 "stars": 20889
