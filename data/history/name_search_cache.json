@@ -135,6 +135,10 @@
 "full_name": "MicrosoftLearning/AI-102-AIEngineer",
 "stars": 936
 },
+"aiengineering": {
+"full_name": "ivanovitchm/aiengineering",
+"stars": 109
+},
 "aifordevelopers": {
 "full_name": "franciscocastro54/aiForDevelopers",
 "stars": 1
@@ -410,6 +414,10 @@
 "code-review-and-quality": {
 "full_name": "jinx-cr/AI-Powered-Code-Reviewer-and-Quality-Assistant",
 "stars": 1
+},
+"codeanalysis": {
+"full_name": "Tencent/CodeAnalysis",
+"stars": 1850
 },
 "codevisualization": {
 "full_name": "Coiness/CodeVisualization-Client",
@@ -1556,6 +1564,7 @@
 "full_name": "nextjs/saas-starter",
 "stars": 16220
 },
+"saascloning": null,
 "sales": {
 "full_name": "PeterH0323/Streamer-Sales",
 "stars": 3796
@@ -1950,6 +1959,10 @@
 "ycombinator": {
 "full_name": "PolymerSearch/awesome-ycombinator",
 "stars": 61
+},
+"ydvkundan2005": {
+"full_name": "ydvkundan2005/FloatCam",
+"stars": 8
 },
 "youtube": {
 "full_name": "ytdl-org/youtube-dl",

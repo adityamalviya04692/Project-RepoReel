@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-10-26T09:22:29+00:00",
-  "seconds": 1634.1,
+  "finished": "2026-10-27T09:22:35+00:00",
+  "seconds": 1384.5,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 320.24,
+    "seconds": 302.25,
     "rows": {
-     "repos": 4164
+     "repos": 3672
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 71.34,
+    "seconds": 18.63,
     "rows": {
-     "repos_mentioned": 2937
+     "repos_mentioned": 2975
     }
    },
    {
@@ -28,57 +28,57 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 74.13,
+    "seconds": 42.49,
     "rows": {
-     "fetched": 24,
-     "history": 413,
-     "creators_seen": 190
+     "fetched": 20,
+     "history": 415,
+     "creators_seen": 200
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 888.27,
+    "seconds": 798.87,
     "rows": {
-     "repos": 4302,
-     "from_hn_or_reels": 140
+     "repos": 3812,
+     "from_hn_or_reels": 142
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.31,
+    "seconds": 0.36,
     "rows": {
-     "repos": 4301,
-     "snapshots": 17207,
-     "snapshot_days": 4
+     "repos": 3811,
+     "snapshots": 21018,
+     "snapshot_days": 5
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 174.61,
+    "seconds": 123.41,
     "rows": {
-     "vectors": 4301,
+     "vectors": 3811,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 26.13,
+    "seconds": 11.44,
     "rows": {
-     "reels": 413,
-     "matched": 88,
+     "reels": 415,
+     "matched": 85,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 2.25,
+    "seconds": 2.83,
     "rows": {
-     "added": 9
+     "added": 10
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 27.38,
+    "seconds": 37.14,
     "rows": {
      "creators": 148,
      "followers_filled": 8
@@ -86,11 +86,11 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.05,
+    "seconds": 0.74,
     "rows": {
-     "repos": 4310,
+     "repos": 3821,
      "creators": 148,
-     "eligible_creators": 5
+     "eligible_creators": 8
     }
    },
    {
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.46,
+    "seconds": 0.75,
     "rows": {
-     "queries": 12,
-     "hit1": 0.333,
-     "hit3": 0.5,
-     "mrr": 0.417
+     "queries": 11,
+     "hit1": 0.364,
+     "hit3": 0.545,
+     "mrr": 0.455
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 16.53,
+    "seconds": 14.79,
     "rows": {
      "files": 7,
-     "repos": 4310
+     "repos": 3821
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4310 repositories"
+    "detail": "3821 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4310 vectors for 4310 repos"
+    "detail": "3821 vectors for 3821 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4312 \u2192 4310 (-0%)"
+    "detail": "4310 \u2192 3821 (-11%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "413 reels, 148 creators"
+    "detail": "415 reels, 148 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "335 unmatched (see review queue)"
+    "detail": "340 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -174,10 +174,10 @@
    }
   ],
   "eval": {
-   "queries": 12,
-   "hit1": 0.333,
-   "hit3": 0.5,
-   "mrr": 0.417,
+   "queries": 11,
+   "hit1": 0.364,
+   "hit3": 0.545,
+   "mrr": 0.455,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -270,22 +270,7 @@
      "top3": [
       "cinnamon/kotaemon",
       "storytold/pdfcraft",
-      "weiwill88/local_pdf_chat_rag"
-     ]
-    },
-    {
-     "query": "open source text to speech model with natural voices",
-     "expect": [
-      "coqui-ai/TTS",
-      "SWivid/F5-TTS",
-      "resemble-ai/chatterbox",
-      "hexgrad/kokoro"
-     ],
-     "first_hit": null,
-     "top3": [
-      "debpalash/voicestudio",
-      "cjpais/handy",
-      "jamiepine/voicebox"
+      "paddlepaddle/paddleocr"
      ]
     },
     {
@@ -329,8 +314,8 @@
      "first_hit": null,
      "top3": [
       "mvschwarz/openrig",
-      "agno-agi/agno",
-      "langchain-ai/langchain"
+      "langchain-ai/langchain",
+      "ashishpatel26/500-ai-agents-projects"
      ]
     },
     {
@@ -350,8 +335,8 @@
     }
    ]
   },
-  "catalog": 4310,
-  "snapshot_days": 4
+  "catalog": 3821,
+  "snapshot_days": 5
  },
  "history": [
   {
@@ -418,6 +403,12 @@
    "finished": "2026-10-26T09:22:29+00:00",
    "seconds": 1634.1,
    "catalog": 4310,
+   "failed": 0
+  },
+  {
+   "finished": "2026-10-27T09:22:35+00:00",
+   "seconds": 1384.5,
+   "catalog": 3821,
    "failed": 0
   }
  ]
