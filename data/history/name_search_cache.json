@@ -27,6 +27,7 @@
 "full_name": "MichaelCade/90DaysOfDevOps",
 "stars": 29860
 },
+"aarohiinframe": null,
 "abacusai": {
 "full_name": "abacusai/Long-Context",
 "stars": 604
@@ -375,6 +376,14 @@
 "full_name": "lvwzhen/ChatGPT-Matrix-Style",
 "stars": 81
 },
+"chitkarau": {
+"full_name": "praveenscience/TrailBlazer-ChitkaraUni",
+"stars": 1
+},
+"chitkarauniversity": {
+"full_name": "Chitkara-University-2020/Code-Innovation-Series-ChitkaraUniversity",
+"stars": 0
+},
 "ci-ready": {
 "full_name": "woodpecker-ci/plugin-ready-release-go",
 "stars": 10
@@ -631,6 +640,10 @@
 "full_name": "WorldFlowAI/everything-claude-code",
 "stars": 5416
 },
+"explorepage": {
+"full_name": "DominykasBubnys/explorepage",
+"stars": 0
+},
 "face-based": {
 "full_name": "shubhamkumar27/Face_recognition_based_attendance_system",
 "stars": 251
@@ -679,6 +692,7 @@
 "full_name": "pandly/follow-up-system",
 "stars": 17
 },
+"followforfollowback": null,
 "forty-one": {
 "full_name": "amebalabs/NineFortyOne",
 "stars": 11
@@ -783,6 +797,10 @@
 "githubgems": {
 "full_name": "privacytoolsIO/GitHubGems",
 "stars": 68
+},
+"githubhack": {
+"full_name": "SSBun/GithubHacker",
+"stars": 10
 },
 "githubprojects": {
 "full_name": "ddnosh/GitHubProjects",
@@ -921,6 +939,10 @@
 "internship": {
 "full_name": "SimplifyJobs/Summer2027-Internships",
 "stars": 48148
+},
+"internships": {
+"full_name": "SimplifyJobs/Summer2027-Internships",
+"stars": 48202
 },
 "interview-me": {
 "full_name": "jdsutton/Technical-Interview-Megarepo",
@@ -1779,6 +1801,10 @@
 "tradingview": {
 "full_name": "tradingview/lightweight-charts",
 "stars": 17673
+},
+"trendingnow": {
+"full_name": "nQaze/TrendingNow",
+"stars": 4
 },
 "two-factor": {
 "full_name": "jazzband/django-two-factor-auth",
