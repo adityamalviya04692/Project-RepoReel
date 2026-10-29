@@ -47,10 +47,15 @@
   "seen": 1
  },
  "agilesingh.ai": {
-  "followers": null,
-  "kept": 1,
-  "repo_reels": 0,
-  "seen": 1
+  "apify_feed": "2026-10-29",
+  "business": false,
+  "checked": "2026-10-29",
+  "followers": 11659,
+  "followers_source": "apify",
+  "kept": 6,
+  "repo_reels": 2,
+  "seen": 9,
+  "verified": true
  },
  "ai.harssh": {
   "apify_feed": "2026-10-24",
@@ -102,10 +107,14 @@
   "seen": 1
  },
  "akash94.ai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-29",
+  "followers": 10401,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "akshitraja": {
   "first_seen": "2026-10-23",
@@ -119,9 +128,9 @@
   "first_seen": "2026-10-24",
   "followers": 266961,
   "followers_source": "apify",
-  "kept": 17,
+  "kept": 18,
   "repo_reels": 1,
-  "seen": 17,
+  "seen": 18,
   "verified": false
  },
  "alpha_tek_sl": {
@@ -148,7 +157,7 @@
   "followers": 23825,
   "followers_source": "apify",
   "kept": 0,
-  "seen": 1,
+  "seen": 2,
   "verified": true
  },
  "ariacodez": {
@@ -191,10 +200,14 @@
   "seen": 1
  },
  "avani.codes": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-29",
+  "followers": 129870,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "avello_tech": {
   "first_seen": "2026-10-28",
@@ -407,10 +420,14 @@
   "seen": 1
  },
  "daniel.cross.ai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-29",
+  "followers": 7541,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "decodingai.vs": {
   "followers": null,
@@ -571,6 +588,17 @@
   "repo_reels": 0,
   "seen": 1
  },
+ "haydenschmitty": {
+  "business": true,
+  "checked": "2026-10-29",
+  "first_seen": "2026-10-29",
+  "followers": 24105,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "heyshrutimishra": {
   "first_seen": "2026-10-24",
   "followers": null,
@@ -637,6 +665,11 @@
   "followers": null,
   "kept": 1,
   "repo_reels": 0,
+  "seen": 1
+ },
+ "joaopaulodealmeidapradocosta": {
+  "first_seen": "2026-10-29",
+  "followers": null,
   "seen": 1
  },
  "joojhome": {
@@ -1024,6 +1057,11 @@
   "seen": 1,
   "verified": false
  },
+ "ritzchandras": {
+  "first_seen": "2026-10-29",
+  "followers": null,
+  "seen": 1
+ },
  "rk.codex": {
   "business": false,
   "checked": "2026-10-25",
@@ -1147,10 +1185,14 @@
   "seen": 1
  },
  "sparklydeeps": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-29",
+  "followers": 19458,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "startscalr_sohum": {
   "followers": null,
@@ -1288,11 +1330,15 @@
   "verified": true
  },
  "theromanknox": {
+  "business": false,
+  "checked": "2026-10-29",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 306439,
+  "followers_source": "apify",
   "kept": 3,
   "repo_reels": 0,
-  "seen": 3
+  "seen": 3,
+  "verified": true
  },
  "theyashsavla": {
   "business": true,

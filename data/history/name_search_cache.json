@@ -112,6 +112,7 @@
 "full_name": "uezo/AIAvatarStackChan",
 "stars": 64
 },
+"aicheatcode": null,
 "aiclone": {
 "full_name": "StarKnightt/GeminiAIClone",
 "stars": 25
@@ -324,6 +325,7 @@
 "full_name": "justeat/AutomationTools",
 "stars": 51
 },
+"awwwardsskill": null,
 "b-roll": {
 "full_name": "rollup/rollup-plugin-babel",
 "stars": 698
@@ -851,6 +853,14 @@
 "full_name": "Graphify-Labs/graphify",
 "stars": 134300
 },
+"grok": {
+"full_name": "xai-org/grok-1",
+"stars": 52223
+},
+"grokbot": {
+"full_name": "unicodef1wn/grokbot-field-notes",
+"stars": 648
+},
 "gym": {
 "full_name": "openai/gym",
 "stars": 37234
@@ -907,6 +917,10 @@
 "imagetovideo": {
 "full_name": "MasayukiSuda/ImageToVideoAndroid",
 "stars": 116
+},
+"indiehacker": {
+"full_name": "hua1995116/indiehackers-steps",
+"stars": 3891
 },
 "inferenceengine": {
 "full_name": "inferenceengine/shadernn",
@@ -1191,6 +1205,10 @@
 "full_name": "facebookresearch/multipathnet",
 "stars": 1331
 },
+"muse": {
+"full_name": "musescore/MuseScore",
+"stars": 15320
+},
 "nawfalmotii79": {
 "full_name": "NawfalMotii79/PLFM_RADAR",
 "stars": 27151
@@ -1234,6 +1252,10 @@
 "non-linear": {
 "full_name": "Shunichi09/PythonLinearNonlinearControl",
 "stars": 1049
+},
+"non-technical": {
+"full_name": "mrhinkle/Vibe-Coding-for-Non-Technical-Professionals",
+"stars": 11
 },
 "nosubscription": {
 "full_name": "netspan/pve-nosubscription-repo",
@@ -1306,6 +1328,10 @@
 "opensourcecode": {
 "full_name": "dyyibang/MelonRewrite-OpenSourceCode",
 "stars": 13
+},
+"opensourceprojects": {
+"full_name": "ProjectCodex/OpenSourceProjects",
+"stars": 12
 },
 "opensourcetools": {
 "full_name": "database-mysql/OpenSourceTools",
@@ -1440,6 +1466,18 @@
 "full_name": "rottingham/ProductValidation",
 "stars": 1
 },
+"programmingprojects": {
+"full_name": "CrawfordGroup/ProgrammingProjects",
+"stars": 590
+},
+"project-based": {
+"full_name": "practical-tutorials/project-based-learning",
+"stars": 288358
+},
+"projectbasedlearning": {
+"full_name": "ProjectBasedLearning/resources",
+"stars": 19
+},
 "projects": {
 "full_name": "spring-projects/spring-boot",
 "stars": 81774
@@ -1524,6 +1562,10 @@
 "full_name": "shakurocom/Ready-Made-Swift-UI-Animation-Components",
 "stars": 65
 },
+"real-browser": {
+"full_name": "ZFC-Digital/puppeteer-real-browser",
+"stars": 1646
+},
 "real-world": {
 "full_name": "alecmuffett/real-world-onion-sites",
 "stars": 2250
@@ -1533,6 +1575,10 @@
 "stars": 8287
 },
 "removeplagiarism": null,
+"replica": {
+"full_name": "Jakeschincariol/replica-skill",
+"stars": 6350
+},
 "repos": {
 "full_name": "andersao/l5-repository",
 "stars": 4194
@@ -1591,6 +1637,10 @@
 "full_name": "PeterH0323/Streamer-Sales",
 "stars": 3796
 },
+"salesautomation": {
+"full_name": "jbarrancoandrade/appi_Salesautomation",
+"stars": 1
+},
 "sam3": {
 "full_name": "facebookresearch/sam3",
 "stars": 12091
@@ -1604,6 +1654,10 @@
 "stars": 2666
 },
 "scan-to-threejs": null,
+"scheduling-app": {
+"full_name": "sebastianhaas/medical-appointment-scheduling",
+"stars": 152
+},
 "screenstudioalternative": null,
 "secret": {
 "full_name": "trimstray/the-book-of-secret-knowledge",
@@ -1953,6 +2007,10 @@
 "websitebuilder": {
 "full_name": "jbuffin/WebsiteBuilder",
 "stars": 25
+},
+"websitedesign": {
+"full_name": "ChihyuenLi/WebSiteDesign",
+"stars": 27
 },
 "websocket": {
 "full_name": "gorilla/websocket",
