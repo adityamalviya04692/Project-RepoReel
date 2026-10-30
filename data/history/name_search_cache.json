@@ -185,6 +185,10 @@
 "full_name": "hammertoe/AIPromptingWorkshop",
 "stars": 2
 },
+"aiprompts": {
+"full_name": "WKahnZA/AIPrompts",
+"stars": 63
+},
 "airdrop": {
 "full_name": "handshake-org/hs-airdrop",
 "stars": 1415
@@ -299,6 +303,10 @@
 "appdevelopment": {
 "full_name": "GmAbhishek/AppDevelopment",
 "stars": 16
+},
+"appflowy": {
+"full_name": "AppFlowy-IO/AppFlowy",
+"stars": 77977
 },
 "apple": {
 "full_name": "apple/container",
@@ -626,6 +634,10 @@
 "full_name": "elevenlabs/elevenlabs-python",
 "stars": 3154
 },
+"emailfinder": {
+"full_name": "Josue87/EmailFinder",
+"stars": 431
+},
 "esp32": {
 "full_name": "78/xiaozhi-esp32",
 "stars": 31875
@@ -716,6 +728,10 @@
 "full_name": "wrongakram/framermotion-react-router",
 "stars": 182
 },
+"freeai": {
+"full_name": "elphen-wang/FreeAI",
+"stars": 185
+},
 "freeaitools": {
 "full_name": "lixwen/next-freeaitools",
 "stars": 5
@@ -759,6 +775,10 @@
 "game-changer": {
 "full_name": "Syy9/GameViewSizeChanger",
 "stars": 63
+},
+"game-related": {
+"full_name": "altun42/Game-related-actions",
+"stars": 2
 },
 "gamedev": {
 "full_name": "Kavex/GameDev-Resources",
@@ -897,9 +917,17 @@
 "full_name": "google/eleventy-high-performance-blog",
 "stars": 4035
 },
+"high-performing": {
+"full_name": "poojagosika/high-performing-thumbnail",
+"stars": 1
+},
 "hired": {
 "full_name": "redis/hiredis",
 "stars": 6689
+},
+"hiring": {
+"full_name": "poteto/hiring-without-whiteboards",
+"stars": 52999
 },
 "human-like": {
 "full_name": "kampelmuehler/synthesizing_human_like_sketches",
@@ -962,6 +990,10 @@
 "full_name": "jdsutton/Technical-Interview-Megarepo",
 "stars": 1626
 },
+"jaw-dropping": {
+"full_name": "MonaMobeen/-Jaw-Dropping-Thesaurus",
+"stars": 1
+},
 "jobhunting": {
 "full_name": "qb0C80aE/jobhunting",
 "stars": 56
@@ -999,6 +1031,10 @@
 "large-scale": {
 "full_name": "openai/large-scale-curiosity",
 "stars": 829
+},
+"leadgeneration": {
+"full_name": "MagnIeeT/leadGenerationAgentADK",
+"stars": 55
 },
 "learn": {
 "full_name": "practical-tutorials/project-based-learning",
@@ -1059,6 +1095,10 @@
 "llama3": {
 "full_name": "meta-llama/llama3",
 "stars": 29172
+},
+"llmtools": {
+"full_name": "kuleshov-group/llmtools",
+"stars": 728
 },
 "localgeneration": null,
 "lock-in": {
@@ -1149,6 +1189,10 @@
 "full_name": "Atro-Rdx/military-grade-ip-tracker",
 "stars": 11
 },
+"minimax": {
+"full_name": "MiniMax-AI/skills",
+"stars": 13744
+},
 "mirofish": {
 "full_name": "666ghj/MiroFish",
 "stars": 81671
@@ -1173,6 +1217,10 @@
 "full_name": "nairihar/the-most-starred-readme",
 "stars": 30
 },
+"motiondesign": {
+"full_name": "Yusuke57/MotionDesignFES",
+"stars": 34
+},
 "motiongraphics": {
 "full_name": "lorenz-MotionGraphics/lorenz-MotionGraphics",
 "stars": 4
@@ -1192,6 +1240,10 @@
 "multi-agent": {
 "full_name": "open-multi-agent/open-multi-agent",
 "stars": 7021
+},
+"multi-tenant": {
+"full_name": "tenancy/multi-tenant",
+"stars": 2602
 },
 "multi-track": {
 "full_name": "Smorodov/Multitarget-tracker",
@@ -1297,6 +1349,10 @@
 "full_name": "benbalter/open-sourcing-government",
 "stars": 26
 },
+"open-weight": {
+"full_name": "xigh/open-weight-models",
+"stars": 91
+},
 "openai-compatible": {
 "full_name": "kbykb/OpenAI-Compatible-API-Proxy-for-Z",
 "stars": 200
@@ -1313,6 +1369,7 @@
 "full_name": "opencv/opencv_contrib",
 "stars": 10222
 },
+"opengymfreadme": null,
 "openproject": {
 "full_name": "opf/openproject",
 "stars": 16618
@@ -1337,6 +1394,10 @@
 "full_name": "database-mysql/OpenSourceTools",
 "stars": 2
 },
+"openstock": {
+"full_name": "Open-Dev-Society/OpenStock",
+"stars": 20969
+},
 "openterminal": {
 "full_name": "ErTasselli/OpenTerminal",
 "stars": 2006
@@ -1349,6 +1410,10 @@
 "osint": {
 "full_name": "jivoi/awesome-osint",
 "stars": 30445
+},
+"outreach": {
+"full_name": "eracle/OpenOutreach",
+"stars": 3449
 },
 "p-e-w": {
 "full_name": "p-e-w/heretic",
@@ -1438,6 +1503,10 @@
 "stars": 12519
 },
 "princeguptaai": null,
+"privacy": {
+"full_name": "drduh/macOS-Security-and-Privacy-Guide",
+"stars": 22572
+},
 "proceduralmotion": {
 "full_name": "keijiro/ProceduralMotionTrack",
 "stars": 452
@@ -1658,6 +1727,10 @@
 "full_name": "sebastianhaas/medical-appointment-scheduling",
 "stars": 152
 },
+"scraping": {
+"full_name": "lorien/awesome-web-scraping",
+"stars": 8199
+},
 "screenstudioalternative": null,
 "secret": {
 "full_name": "trimstray/the-book-of-secret-knowledge",
@@ -1671,6 +1744,10 @@
 "self-driving": {
 "full_name": "udacity/self-driving-car",
 "stars": 6316
+},
+"self-host": {
+"full_name": "mikeroyal/Self-Hosting-Guide",
+"stars": 23402
 },
 "self-hosted": {
 "full_name": "n8n-io/self-hosted-ai-starter-kit",
