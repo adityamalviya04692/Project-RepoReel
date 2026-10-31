@@ -90,10 +90,11 @@
   "seen": 1
  },
  "aiwithdivyam": {
+  "apify_feed": "2026-10-31",
   "followers": null,
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 9
  },
  "aiwithsameer": {
   "followers": null,
@@ -249,11 +250,15 @@
   "verified": true
  },
  "baroi.ai": {
+  "business": false,
+  "checked": "2026-10-31",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 7277,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "baroobi.inc": {
   "followers": null,
@@ -664,11 +669,15 @@
   "verified": true
  },
  "heyypriyank": {
+  "business": false,
+  "checked": "2026-10-31",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 16966,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "hiracontrol": {
   "first_seen": "2026-10-23",
@@ -820,10 +829,14 @@
   "seen": 1
  },
  "louis_rlee": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-10-31",
+  "followers": 18206,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "madetoscale2026": {
   "first_seen": "2026-10-27",
@@ -1007,11 +1020,15 @@
   "verified": false
  },
  "peterstewiestartup": {
+  "business": false,
+  "checked": "2026-10-31",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 88296,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "pluto.careers": {
   "followers": null,
@@ -1088,11 +1105,15 @@
   "seen": 1
  },
  "remy.engineering": {
+  "business": false,
+  "checked": "2026-10-31",
   "first_seen": "2026-10-30",
-  "followers": null,
+  "followers": 1274141,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "ricaaaat": {
   "first_seen": "2026-10-23",
@@ -1207,11 +1228,20 @@
   "followers": null,
   "seen": 1
  },
- "shauneng": {
+ "shanir.ai": {
+  "first_seen": "2026-10-31",
   "followers": null,
+  "seen": 1
+ },
+ "shauneng": {
+  "business": false,
+  "checked": "2026-10-31",
+  "followers": 18479,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "shreya.easyhai": {
   "followers": null,
@@ -1456,11 +1486,15 @@
   "seen": 1
  },
  "trakin.ai": {
+  "business": false,
+  "checked": "2026-10-31",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 1004995,
+  "followers_source": "apify",
   "kept": 3,
   "repo_reels": 0,
-  "seen": 3
+  "seen": 3,
+  "verified": false
  },
  "trickyhash": {
   "followers": null,
