@@ -97,10 +97,15 @@
   "seen": 9
  },
  "aiwithsameer": {
-  "followers": null,
-  "kept": 1,
+  "apify_feed": "2026-11-01",
+  "business": false,
+  "checked": "2026-11-01",
+  "followers": 17422,
+  "followers_source": "apify",
+  "kept": 2,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 9,
+  "verified": false
  },
  "aiwithunnati": {
   "followers": null,
@@ -261,10 +266,14 @@
   "verified": false
  },
  "baroobi.inc": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-01",
+  "followers": 46146,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "baskaranbuilds.tamil": {
   "followers": null,
@@ -394,10 +403,14 @@
   "seen": 1
  },
  "codewithtoushif": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-01",
+  "followers": 87191,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "codexx.02": {
   "first_seen": "2026-10-25",
@@ -447,10 +460,14 @@
   "verified": false
  },
  "decodingai.vs": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-01",
+  "followers": 122605,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "deepanshu_o7": {
   "followers": null,
@@ -811,10 +828,14 @@
   "seen": 1
  },
  "leonyxai": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-11-01",
+  "followers": 2337,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "levelupwithpavan_": {
   "followers": null,
@@ -869,6 +890,11 @@
   "repo_reels": 12,
   "seen": 14,
   "verified": true
+ },
+ "mariusposkus": {
+  "first_seen": "2026-11-01",
+  "followers": null,
+  "seen": 1
  },
  "marketinginanutshell1": {
   "followers": null,
@@ -944,10 +970,14 @@
   "verified": false
  },
  "nicholas.puru": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-11-01",
+  "followers": 83179,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "nick_saraev": {
   "business": false,
@@ -1603,10 +1633,14 @@
   "seen": 1
  },
  "yadarilab": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-01",
+  "followers": 177109,
+  "followers_source": "apify",
   "kept": 2,
   "repo_reels": 0,
-  "seen": 2
+  "seen": 2,
+  "verified": true
  },
  "zbrunomoreira": {
   "first_seen": "2026-10-27",
