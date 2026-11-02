@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-01T11:02:05+00:00",
-  "seconds": 2082.6,
+  "finished": "2026-11-02T11:31:51+00:00",
+  "seconds": 1548.4,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 296.83,
+    "seconds": 317.79,
     "rows": {
      "repos": 4187
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 20.09,
+    "seconds": 21.16,
     "rows": {
-     "repos_mentioned": 2993
+     "repos_mentioned": 2992
     }
    },
    {
@@ -28,16 +28,16 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 57.5,
+    "seconds": 40.72,
     "rows": {
      "fetched": 24,
-     "history": 437,
-     "creators_seen": 223
+     "history": 439,
+     "creators_seen": 227
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 669.05,
+    "seconds": 859.58,
     "rows": {
      "repos": 4330,
      "from_hn_or_reels": 147
@@ -45,16 +45,16 @@
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.45,
+    "seconds": 0.46,
     "rows": {
      "repos": 4328,
-     "snapshots": 42609,
-     "snapshot_days": 10
+     "snapshots": 46937,
+     "snapshot_days": 11
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 180.93,
+    "seconds": 191.76,
     "rows": {
      "vectors": 4328,
      "dims": 384
@@ -62,34 +62,34 @@
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 778.98,
+    "seconds": 2.88,
     "rows": {
-     "reels": 437,
+     "reels": 439,
      "matched": 91,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 2.74,
+    "seconds": 3.41,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 31.41,
+    "seconds": 54.25,
     "rows": {
-     "creators": 156,
+     "creators": 157,
      "followers_filled": 7
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.12,
+    "seconds": 1.16,
     "rows": {
      "repos": 4340,
-     "creators": 156,
+     "creators": 157,
      "eligible_creators": 9
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.14,
+    "seconds": 1.56,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
@@ -114,7 +114,7 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 17.99,
+    "seconds": 19.03,
     "rows": {
      "files": 7,
      "repos": 4340
@@ -150,12 +150,12 @@
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4339 \u2192 4340 (+0%)"
+    "detail": "4340 \u2192 4340 (-0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "437 reels, 156 creators"
+    "detail": "439 reels, 157 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "358 unmatched (see review queue)"
+    "detail": "360 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -202,7 +202,7 @@
      "top3": [
       "unclecode/crawl4ai",
       "0xmassi/webclaw",
-      "scrapegraphai/scrapegraph-ai"
+      "d4vinci/scrapling"
      ]
     },
     {
@@ -329,8 +329,8 @@
      "first_hit": null,
      "top3": [
       "mvschwarz/openrig",
-      "langchain-ai/langchain",
-      "donchitos/claude-code-game-studios"
+      "donchitos/claude-code-game-studios",
+      "langchain-ai/langchain"
      ]
     },
     {
@@ -351,7 +351,7 @@
    ]
   },
   "catalog": 4340,
-  "snapshot_days": 10
+  "snapshot_days": 11
  },
  "history": [
   {
@@ -453,6 +453,12 @@
   {
    "finished": "2026-11-01T11:02:05+00:00",
    "seconds": 2082.6,
+   "catalog": 4340,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-02T11:31:51+00:00",
+   "seconds": 1548.4,
    "catalog": 4340,
    "failed": 0
   }

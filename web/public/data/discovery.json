@@ -5,44 +5,44 @@
   "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "githubprojects",
+    "q": "github",
     "kind": "hashtag",
     "reels": 8,
-    "kept": 0
+    "kept": 1
    },
    {
-    "q": "opensourcetools",
+    "q": "opensource",
     "kind": "hashtag",
     "reels": 8,
     "kept": 0
    }
   ],
   "fetched": 24,
-  "kept": 1,
+  "kept": 2,
   "rejected": {
-   "not_english": 1,
+   "not_english": 5,
    "off_topic": 7
   },
   "feeds": {
    "graph": 0,
    "apify": 1
   },
-  "ocr": 8,
+  "ocr": 9,
   "budget": {
-   "used": 3.326603399004791,
+   "used": 3.4120102874043385,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
-  "allowance": 16,
-  "repo_creators": 155,
-  "creators_seen": 223,
+  "allowance": 15,
+  "repo_creators": 156,
+  "creators_seen": 227,
   "history_pages": 0,
   "pauses": 0,
   "backfilled_creators": 0,
   "candidates": 0,
   "boost_usd": 0.0
  },
- "history_reels": 437,
- "shown_reels": 437,
+ "history_reels": 439,
+ "shown_reels": 439,
  "matched_reels": 79
 }
