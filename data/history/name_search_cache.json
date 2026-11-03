@@ -402,6 +402,10 @@
 "full_name": "wasabeef/awesome-android-ui",
 "stars": 58113
 },
+"androidtv": {
+"full_name": "jellyfin/jellyfin-androidtv",
+"stars": 4701
+},
 "ani_cli": {
 "full_name": "pystardust/ani-cli",
 "stars": 14036
@@ -913,6 +917,14 @@
 "full_name": "jackfrued/Python-100-Days",
 "stars": 187609
 },
+"day4": {
+"full_name": "leenguyenzz/day40",
+"stars": 10
+},
+"daytrading": {
+"full_name": "cryptocoyns/daytradingmethod",
+"stars": 35
+},
 "decode": {
 "full_name": "auth0/jwt-decode",
 "stars": 3401
@@ -1174,6 +1186,10 @@
 "full_name": "pandly/follow-up-system",
 "stars": 17
 },
+"follow-ups": {
+"full_name": "SchlossLab/Sze_FollowUps_Microbiome_2017",
+"stars": 1
+},
 "followforfollowback": null,
 "forty-one": {
 "full_name": "amebalabs/NineFortyOne",
@@ -1280,6 +1296,10 @@
 "full_name": "Ryan-LT/full-blown-react-structure",
 "stars": 3
 },
+"full-screen": {
+"full_name": "JoshuaKGoldberg/Old-Deleted-FullScreenMario",
+"stars": 2960
+},
 "future-tech": {
 "full_name": "post-kerbin-mining-corporation/FarFutureTechnologies",
 "stars": 38
@@ -1319,6 +1339,10 @@
 "gaming": {
 "full_name": "andrewmd5/Borderless-Gaming",
 "stars": 6675
+},
+"gathin23": {
+"full_name": "Gathin23/cleanyourtv",
+"stars": 50829
 },
 "geminiai": {
 "full_name": "ibrahimethemsen/GeminiAI",
@@ -1485,6 +1509,10 @@
 "full_name": "brave-experiments/hardware-backed-webcrypto",
 "stars": 23
 },
+"harveyai": {
+"full_name": "harveyai/harvey-labs",
+"stars": 1554
+},
 "headlessbrowser": {
 "full_name": "dhamaniasad/HeadlessBrowsers",
 "stars": 6703
@@ -1614,9 +1642,21 @@
 "full_name": "jdsutton/Technical-Interview-Megarepo",
 "stars": 1626
 },
+"itachi": {
+"full_name": "doma-itachi/Youtube-shorts-block",
+"stars": 306
+},
 "jaw-dropping": {
 "full_name": "MonaMobeen/-Jaw-Dropping-Thesaurus",
 "stars": 1
+},
+"job": {
+"full_name": "ai-job-search-dev/ai-job-search",
+"stars": 69236
+},
+"jobearly": {
+"full_name": "lamba17/JobEarly",
+"stars": 0
 },
 "jobhunting": {
 "full_name": "qb0C80aE/jobhunting",
@@ -1789,6 +1829,10 @@
 "full_name": "privacycg/is-logged-in",
 "stars": 97
 },
+"logo-only": {
+"full_name": "arshiafarrokhi/LoginLogout-regx-only-",
+"stars": 3
+},
 "long-form": {
 "full_name": "google-deepmind/long-form-factuality",
 "stars": 700
@@ -1828,6 +1872,10 @@
 "macsecurity": {
 "full_name": "MaHaoxuantb/MacSecurity",
 "stars": 2
+},
+"madam": {
+"full_name": "mtkennerly/madamiru",
+"stars": 118
 },
 "mail": {
 "full_name": "nylas/nylas-mail",
@@ -1985,6 +2033,10 @@
 "muse": {
 "full_name": "musescore/MuseScore",
 "stars": 15320
+},
+"naruto": {
+"full_name": "duorua/narutomobile",
+"stars": 455
 },
 "natural-sounding": {
 "full_name": "vrajpatel001/Natural-Sounding-Reverberator-Filter",
@@ -2535,6 +2587,10 @@
 "full_name": "TusharVerma2497/ResumeProjects",
 "stars": 2
 },
+"resumetips": {
+"full_name": "Gabekross/resumetips",
+"stars": 0
+},
 "reverse": {
 "full_name": "zhaoxuya520/reverse-skill",
 "stars": 43206
@@ -2790,6 +2846,10 @@
 "full_name": "Stirling-Tools/Stirling-PDF",
 "stars": 95495
 },
+"stockmarket": {
+"full_name": "philipplackner/StockMarketApp",
+"stars": 194
+},
 "stocks": {
 "full_name": "StockSharp/StockSharp",
 "stars": 11033
@@ -2924,6 +2984,10 @@
 "full_name": "anteph/techtutorialsx",
 "stars": 2
 },
+"techupdates": {
+"full_name": "GA-techupdates/GA-techupdates.github.io",
+"stars": 2
+},
 "terminal-bench": {
 "full_name": "harbor-framework/terminal-bench-1",
 "stars": 2606
@@ -2979,6 +3043,10 @@
 "full_name": "nautechsystems/nautilus_trader",
 "stars": 30769
 },
+"tradingtools": {
+"full_name": "SpiffSpaceman/TradingTools",
+"stars": 10
+},
 "tradingview": {
 "full_name": "tradingview/lightweight-charts",
 "stars": 17673
@@ -3010,6 +3078,10 @@
 "ubuntu": {
 "full_name": "wszqkzqk/deepin-wine-ubuntu",
 "stars": 5950
+},
+"uchiha": {
+"full_name": "uchiha-ben/FileTransfer",
+"stars": 55
 },
 "uditya-kumar": {
 "full_name": "uditya-kumar/MultiPath",
@@ -3306,5 +3378,9 @@
 "full_name": "Zelda64Recomp/Zelda64Recomp",
 "stars": 7515
 },
-"zerotofounder": null
+"zerotofounder": null,
+"zoom-in": {
+"full_name": "matrixxun/PullToZoomInListView",
+"stars": 867
+}
 }
