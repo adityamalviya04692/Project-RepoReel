@@ -474,6 +474,10 @@
 "full_name": "astralapp/astral",
 "stars": 3592
 },
+"atomic-red-team": {
+"full_name": "redcanaryco/atomic-red-team",
+"stars": 12773
+},
 "audit": {
 "full_name": "cloudflare/security-audit-skill",
 "stars": 55782
@@ -537,6 +541,10 @@
 "big-picture": {
 "full_name": "git-big-picture/git-big-picture",
 "stars": 561
+},
+"blueteam": {
+"full_name": "fabacab/awesome-cybersecurity-blueteam",
+"stars": 5633
 },
 "body-weight": {
 "full_name": "andrebert/body-weight-exercises",
@@ -829,6 +837,10 @@
 "full_name": "ochronus/contentresearch",
 "stars": 1
 },
+"context-focused": {
+"full_name": "Kunal88591/Privacy-Focused-Context-Aware-Digital-Wellbeing-System",
+"stars": 4
+},
 "copy-paste": {
 "full_name": "conradry/copy-paste-aug",
 "stars": 570
@@ -897,6 +909,10 @@
 "full_name": "mukul975/Anthropic-Cybersecurity-Skills",
 "stars": 34938
 },
+"cybersecurity-focused": {
+"full_name": "Afukam/people-focused-cybersecurity-projects",
+"stars": 3
+},
 "d-tier": {
 "full_name": "microsoft/ActiveDirectoryTierModel",
 "stars": 416
@@ -961,6 +977,10 @@
 "full_name": "brunabites/designsystemsbrasileiros",
 "stars": 43
 },
+"detectionlab": {
+"full_name": "clong/DetectionLab",
+"stars": 5053
+},
 "devcommunity": {
 "full_name": "mewmewdevart/DevCommunityPortfolioChallenge2026",
 "stars": 21
@@ -1004,6 +1024,10 @@
 "devtools": {
 "full_name": "ChromeDevTools/chrome-devtools-mcp",
 "stars": 54083
+},
+"dfir": {
+"full_name": "dfir-iris/iris-web",
+"stars": 1618
 },
 "digitalcreator": {
 "full_name": "DigitalCreator/Psychof4th",
@@ -1240,6 +1264,10 @@
 "full_name": "xiaoxuan6/FreeApiServer",
 "stars": 10
 },
+"freecodecamp": {
+"full_name": "freeCodeCamp/freeCodeCamp",
+"stars": 458580
+},
 "freecrm": {
 "full_name": "wicketbr/FreeCRM",
 "stars": 6
@@ -1352,6 +1380,10 @@
 "full_name": "NirDiamant/GenAI_Agents",
 "stars": 24682
 },
+"general-purpose": {
+"full_name": "yinkalario/General-Purpose-Sound-Recognition-Demo",
+"stars": 161
+},
 "generativeui": {
 "full_name": "thesysdev/voice-agent-generativeui",
 "stars": 13
@@ -1395,6 +1427,10 @@
 "githubrepo": {
 "full_name": "8LWXpg/PowerToysRun-GitHubRepo",
 "stars": 132
+},
+"githubrepos": {
+"full_name": "3-Delta/Unity-GithubRepositoryStudy",
+"stars": 21
 },
 "githubtips": {
 "full_name": "santoshyadavdev/GitHubTips",
@@ -1484,6 +1520,10 @@
 "gym": {
 "full_name": "openai/gym",
 "stars": 37234
+},
+"hackathon": {
+"full_name": "sahat/hackathon-starter",
+"stars": 35262
 },
 "hacking": {
 "full_name": "Hack-with-Github/Awesome-Hacking",
@@ -2231,6 +2271,10 @@
 "full_name": "longtermrisk/openweights",
 "stars": 31
 },
+"openwhisper": {
+"full_name": "Knuckles92/OpenWhisper",
+"stars": 242
+},
 "operator": {
 "full_name": "prometheus-operator/prometheus-operator",
 "stars": 9992
@@ -2786,6 +2830,10 @@
 "full_name": "mindvridge/SkyReelsV2",
 "stars": 0
 },
+"socanalyst": {
+"full_name": "danieleperera/SocAnalystArsenal",
+"stars": 43
+},
 "softwaredevelopement": {
 "full_name": "aryavashkiani/SoftwareDevelopement",
 "stars": 0
@@ -2874,6 +2922,10 @@
 "full_name": "obra/superpowers",
 "stars": 304547
 },
+"swiftonsecurity": {
+"full_name": "SwiftOnSecurity/sysmon-config",
+"stars": 5726
+},
 "sync-skills": {
 "full_name": "makenotion/notion-skills-github-sync",
 "stars": 42
@@ -2882,6 +2934,10 @@
 "sysadmin": {
 "full_name": "awesome-foss/awesome-sysadmin",
 "stars": 35490
+},
+"sysmon-config": {
+"full_name": "SwiftOnSecurity/sysmon-config",
+"stars": 5726
 },
 "system-design-primer": {
 "full_name": "donnemartin/system-design-primer",
@@ -3008,7 +3064,15 @@
 "full_name": "TextToVideoAI/TextToVideoAI",
 "stars": 24
 },
+"thehive": {
+"full_name": "TheHive-Project/TheHive",
+"stars": 3949
+},
 "thetechplate": null,
+"threathunting": {
+"full_name": "ThreatHuntingProject/ThreatHunting",
+"stars": 1899
+},
 "tier2college": null,
 "tiktok": {
 "full_name": "Evil0ctal/Douyin_TikTok_Download_API",
@@ -3336,6 +3400,10 @@
 "workflows": {
 "full_name": "Zie619/n8n-workflows",
 "stars": 57149
+},
+"xdr": {
+"full_name": "NightscoutFoundation/xDrip",
+"stars": 1822
 },
 "ycombinator": {
 "full_name": "PolymerSearch/awesome-ycombinator",

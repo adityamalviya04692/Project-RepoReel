@@ -69,7 +69,7 @@
   "followers": 6910,
   "followers_source": "apify",
   "kept": 7,
-  "repo_reels": 0,
+  "repo_reels": 3,
   "seen": 8,
   "verified": true
  },
@@ -146,9 +146,9 @@
   "first_seen": "2026-10-24",
   "followers": 266961,
   "followers_source": "apify",
-  "kept": 18,
+  "kept": 19,
   "repo_reels": 1,
-  "seen": 18,
+  "seen": 19,
   "verified": false
  },
  "alpha_tek_sl": {
@@ -223,9 +223,9 @@
   "first_seen": "2026-10-30",
   "followers": 8794,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 2,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 2,
   "verified": false
  },
  "avani.codes": {
@@ -287,10 +287,14 @@
   "verified": true
  },
  "baskaranbuilds.tamil": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-05",
+  "followers": 18670,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "bennett.spooner": {
   "business": false,
@@ -445,15 +449,26 @@
   "checked": "2026-10-25",
   "followers": 50170,
   "followers_source": "apify",
-  "kept": 2,
+  "kept": 3,
   "repo_reels": 1,
-  "seen": 2,
+  "seen": 3,
   "verified": false
  },
  "cursorhub": {
   "first_seen": "2026-10-24",
   "kept": 0,
   "seen": 1
+ },
+ "cybernarad": {
+  "business": false,
+  "checked": "2026-11-05",
+  "first_seen": "2026-11-05",
+  "followers": 12137,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 1,
+  "seen": 1,
+  "verified": true
  },
  "cyberpranshu_official": {
   "followers": null,
@@ -505,10 +520,14 @@
   "via": "princegupta.ai"
  },
  "desimadhurivibes": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-11-05",
+  "followers": 21844,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "devwithsmile": {
   "followers": null,
@@ -560,9 +579,9 @@
   "first_seen": "2026-10-24",
   "followers": 33798,
   "followers_source": "apify",
-  "kept": 13,
+  "kept": 14,
   "repo_reels": 1,
-  "seen": 13,
+  "seen": 14,
   "verified": true
  },
  "emmanuelsamms": {
@@ -894,10 +913,14 @@
   "seen": 1
  },
  "liamporterai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-05",
+  "followers": 77531,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "louis_rlee": {
   "business": false,
@@ -1145,7 +1168,7 @@
   "followers": 6835,
   "followers_source": "apify",
   "kept": 20,
-  "repo_reels": 5,
+  "repo_reels": 6,
   "seen": 20,
   "verified": true
  },
@@ -1285,10 +1308,14 @@
   "verified": false
  },
  "roddylawson.ai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-05",
+  "followers": 4527,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "rollins.io": {
   "business": false,
@@ -1300,6 +1327,17 @@
   "repo_reels": 0,
   "seen": 2,
   "verified": true
+ },
+ "sadie.ontech": {
+  "business": false,
+  "checked": "2026-11-05",
+  "first_seen": "2026-11-05",
+  "followers": 6164,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
  },
  "safiramaruapey": {
   "first_seen": "2026-10-23",
@@ -1323,10 +1361,14 @@
   "seen": 1
  },
  "sebintel": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-05",
+  "followers": 365844,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "sebyrock": {
   "first_seen": "2026-10-28",
@@ -1465,10 +1507,14 @@
   "seen": 1
  },
  "techtutorialswithpiyush": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-05",
+  "followers": 14923,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "techwith.praveen": {
   "business": false,
@@ -1643,6 +1689,13 @@
   "repo_reels": 1,
   "seen": 1,
   "verified": true
+ },
+ "vaibhavsisinty": {
+  "first_seen": "2026-11-05",
+  "followers": null,
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1
  },
  "valeridoesai": {
   "business": false,
