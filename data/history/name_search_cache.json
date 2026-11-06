@@ -141,6 +141,10 @@
 "full_name": "ianho7/ai-friendly-web-design-skill",
 "stars": 77
 },
+"ai-generated": {
+"full_name": "mitmedialab/AI-generated-characters",
+"stars": 477
+},
 "ai-powered": {
 "full_name": "treygrainger/ai-powered-search",
 "stars": 417
@@ -534,6 +538,10 @@
 },
 "baroobi": null,
 "baskaranbuilds": null,
+"beginner-friendly": {
+"full_name": "AlexandreSinger/mlir-beginner-friendly-tutorial",
+"stars": 167
+},
 "bengaluru-based": {
 "full_name": "karthikshettyk1810/Destination-based-Optimal-Metro-Station-Finder-for-Bengaluru",
 "stars": 1
@@ -796,6 +804,10 @@
 "full_name": "cyclejs-community/built-with-cycle",
 "stars": 9
 },
+"community-created": {
+"full_name": "sybrand-str/Community-created-custom-icons-for-Eve-ng-labs",
+"stars": 1
+},
 "computer": {
 "full_name": "ossu/computer-science",
 "stars": 210305
@@ -840,6 +852,10 @@
 "context-focused": {
 "full_name": "Kunal88591/Privacy-Focused-Context-Aware-Digital-Wellbeing-System",
 "stars": 4
+},
+"copy-and-paste": {
+"full_name": "shleecs/Copy-and-Paste-Networks-for-Deep-Video-Inpainting",
+"stars": 119
 },
 "copy-paste": {
 "full_name": "conradry/copy-paste-aug",

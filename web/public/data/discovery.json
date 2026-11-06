@@ -5,37 +5,37 @@
   "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "free github tool",
-    "kind": "keyword",
-    "reels": 1,
+    "q": "githubrepo",
+    "kind": "hashtag",
+    "reels": 8,
     "kept": 0
    },
    {
-    "q": "github project",
-    "kind": "keyword",
+    "q": "githubprojects",
+    "kind": "hashtag",
     "reels": 8,
-    "kept": 7
+    "kept": 0
    }
   ],
-  "fetched": 8,
-  "kept": 7,
+  "fetched": 16,
+  "kept": 0,
   "rejected": {
-   "not_english": 0,
+   "not_english": 1,
    "off_topic": 0
   },
   "feeds": {
    "graph": 0,
    "apify": 0
   },
-  "ocr": 6,
+  "ocr": 0,
   "budget": {
-   "used": 3.6187808545532727,
+   "used": 3.644896417097051,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
   "allowance": 13,
   "repo_creators": 160,
-  "creators_seen": 234,
+  "creators_seen": 235,
   "history_pages": 0,
   "pauses": 0,
   "backfilled_creators": 0,
@@ -44,5 +44,5 @@
  },
  "history_reels": 450,
  "shown_reels": 450,
- "matched_reels": 86
+ "matched_reels": 85
 }

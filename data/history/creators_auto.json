@@ -13,10 +13,14 @@
  },
  "_mokshith_malla": {
   "apify_feed": "2026-10-26",
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 34883,
+  "followers_source": "apify",
   "kept": 2,
   "repo_reels": 0,
-  "seen": 9
+  "seen": 9,
+  "verified": false
  },
  "_shreeindustries": {
   "first_seen": "2026-10-23",
@@ -249,10 +253,14 @@
   "seen": 1
  },
  "badarmunir_official": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 37878,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "baqar.dev": {
   "business": false,
@@ -393,10 +401,14 @@
   "seen": 1
  },
  "carterperez.dev": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 203294,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "chanti.dev": {
   "first_seen": "2026-10-23",
@@ -724,11 +736,15 @@
   "verified": true
  },
  "heyshrutimishra": {
+  "business": false,
+  "checked": "2026-11-06",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 8888,
+  "followers_source": "apify",
   "kept": 4,
   "repo_reels": 0,
-  "seen": 4
+  "seen": 4,
+  "verified": true
  },
  "heystevetan": {
   "business": true,
@@ -907,10 +923,14 @@
   "seen": 2
  },
  "levelupwithpavan_": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 91435,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "liamporterai": {
   "business": false,
@@ -1402,10 +1422,14 @@
   "verified": true
  },
  "shreya.easyhai": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 122550,
+  "followers_source": "apify",
   "kept": 2,
   "repo_reels": 0,
-  "seen": 2
+  "seen": 2,
+  "verified": true
  },
  "singhkunal2050.dev": {
   "followers": null,
@@ -1542,10 +1566,14 @@
   "seen": 1
  },
  "tevahub": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 25639,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "thanatos66": {
   "first_seen": "2026-10-27",
@@ -1553,10 +1581,14 @@
   "seen": 2
  },
  "the_devops_girl": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-06",
+  "followers": 18894,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "theaiscaler": {
   "business": false,
@@ -1714,7 +1746,7 @@
   "followers": 1600826,
   "followers_source": "apify",
   "kept": 1,
-  "repo_reels": 1,
+  "repo_reels": 0,
   "seen": 1,
   "verified": true
  },
@@ -1796,6 +1828,11 @@
  },
  "zbrunomoreira": {
   "first_seen": "2026-10-27",
+  "followers": null,
+  "seen": 1
+ },
+ "ziobudda": {
+  "first_seen": "2026-11-06",
   "followers": null,
   "seen": 1
  }
