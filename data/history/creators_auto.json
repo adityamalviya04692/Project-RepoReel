@@ -62,7 +62,7 @@
   "followers": 11659,
   "followers_source": "apify",
   "kept": 6,
-  "repo_reels": 2,
+  "repo_reels": 0,
   "seen": 9,
   "verified": true
  },
@@ -134,7 +134,7 @@
   "followers": 10401,
   "followers_source": "apify",
   "kept": 4,
-  "repo_reels": 1,
+  "repo_reels": 0,
   "seen": 9,
   "verified": false
  },
@@ -230,6 +230,17 @@
   "kept": 2,
   "repo_reels": 0,
   "seen": 2,
+  "verified": false
+ },
+ "automationswithrahul": {
+  "business": false,
+  "checked": "2026-11-07",
+  "first_seen": "2026-11-07",
+  "followers": 1250,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
   "verified": false
  },
  "avani.codes": {
@@ -614,7 +625,7 @@
  "fajarmandorai": {
   "first_seen": "2026-10-27",
   "followers": null,
-  "seen": 1
+  "seen": 2
  },
  "finalbossproject": {
   "first_seen": "2026-10-23",
@@ -626,6 +637,11 @@
   "followers": null,
   "seen": 1
  },
+ "frontback_ia": {
+  "first_seen": "2026-11-07",
+  "followers": null,
+  "seen": 1
+ },
  "fytbstreams": {
   "first_seen": "2026-10-24",
   "kept": 0,
@@ -634,7 +650,7 @@
  "gab.gouvea": {
   "first_seen": "2026-10-27",
   "followers": null,
-  "seen": 2
+  "seen": 3
  },
  "github": {
   "first_seen": "2026-11-02",
@@ -707,11 +723,15 @@
   "verified": true
  },
  "hasantoxr": {
+  "business": false,
+  "checked": "2026-11-07",
   "first_seen": "2026-10-30",
-  "followers": null,
+  "followers": 46471,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "haydenschmitty": {
   "business": true,
@@ -771,6 +791,11 @@
  "hiracontrol": {
   "first_seen": "2026-10-23",
   "kept": 0,
+  "seen": 1
+ },
+ "howhub001": {
+  "first_seen": "2026-11-07",
+  "followers": null,
   "seen": 1
  },
  "igao.ia": {
@@ -1046,10 +1071,14 @@
   "seen": 1
  },
  "narasimhalakkimsetty": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-07",
+  "followers": 20926,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "neuralninjaaa": {
   "followers": null,
@@ -1165,11 +1194,15 @@
   "seen": 1
  },
  "pranathi.rai": {
+  "business": false,
+  "checked": "2026-11-07",
   "first_seen": "2026-10-24",
-  "followers": null,
+  "followers": 54752,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "primal_rationalist": {
   "business": false,
@@ -1475,10 +1508,14 @@
   "verified": false
  },
  "startscalr_sohum": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-07",
+  "followers": 18318,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "stebowebb": {
   "first_seen": "2026-10-24",
@@ -1486,10 +1523,14 @@
   "seen": 1
  },
  "stewieaiguy": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-07",
+  "followers": 15389,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "syntaix.ai": {
   "business": false,
@@ -1525,10 +1566,14 @@
   "seen": 1
  },
  "techtalkswithayush": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-11-07",
+  "followers": 180363,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "techtutorialswithpiyush": {
   "business": false,
@@ -1640,6 +1685,11 @@
   "seen": 3,
   "verified": true
  },
+ "thetechstien": {
+  "first_seen": "2026-11-07",
+  "followers": null,
+  "seen": 1
+ },
  "thevalantino": {
   "first_seen": "2026-11-02",
   "followers": null,
@@ -1723,11 +1773,15 @@
   "verified": true
  },
  "vaibhavsisinty": {
+  "business": false,
+  "checked": "2026-11-07",
   "first_seen": "2026-11-05",
-  "followers": null,
+  "followers": 2172227,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "valeridoesai": {
   "business": false,
@@ -1746,7 +1800,7 @@
   "followers": 1600826,
   "followers_source": "apify",
   "kept": 1,
-  "repo_reels": 0,
+  "repo_reels": 1,
   "seen": 1,
   "verified": true
  },
@@ -1806,7 +1860,7 @@
   "followers": 32990,
   "followers_source": "apify",
   "kept": 3,
-  "repo_reels": 2,
+  "repo_reels": 1,
   "seen": 3,
   "verified": true
  },

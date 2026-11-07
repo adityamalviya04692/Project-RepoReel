@@ -10,8 +10,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.381,
-   "recency": 0.936,
-   "trust": 0.863,
+   "recency": 0.905,
+   "trust": 0.857,
    "eligible": true,
    "badge": "top",
    "reasons": []
@@ -26,8 +26,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.628,
-   "recency": 0.648,
-   "trust": 0.855,
+   "recency": 0.627,
+   "trust": 0.851,
    "eligible": true,
    "badge": "top",
    "reasons": []
@@ -42,8 +42,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.514,
-   "recency": 0.627,
-   "trust": 0.828,
+   "recency": 0.607,
+   "trust": 0.824,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -60,8 +60,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.466,
-   "recency": 0.627,
-   "trust": 0.819,
+   "recency": 0.607,
+   "trust": 0.815,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -78,8 +78,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.379,
-   "recency": 0.648,
-   "trust": 0.805,
+   "recency": 0.627,
+   "trust": 0.801,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -95,9 +95,9 @@
    "posts_60d": 13,
    "accuracy": 1.0,
    "consistency": 1.0,
-   "engagement": 0.402,
-   "recency": 0.607,
-   "trust": 0.802,
+   "engagement": 0.387,
+   "recency": 0.587,
+   "trust": 0.795,
    "eligible": true,
    "badge": "verified",
    "reasons": []
@@ -112,26 +112,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.243,
-   "recency": 0.627,
-   "trust": 0.774,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers"
-   ]
-  },
-  {
-   "handle": "ashutoshwithclaude",
-   "followers": 18693,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 6,
-   "posts_60d": 6,
-   "accuracy": 1.0,
-   "consistency": 0.75,
-   "engagement": 0.527,
-   "recency": 0.648,
-   "trust": 0.773,
+   "recency": 0.607,
+   "trust": 0.77,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -148,8 +130,26 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.367,
-   "recency": 0.497,
-   "trust": 0.773,
+   "recency": 0.48,
+   "trust": 0.77,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers"
+   ]
+  },
+  {
+   "handle": "ashutoshwithclaude",
+   "followers": 18693,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 6,
+   "posts_60d": 6,
+   "accuracy": 1.0,
+   "consistency": 0.75,
+   "engagement": 0.527,
+   "recency": 0.627,
+   "trust": 0.768,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -166,8 +166,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.255,
-   "recency": 0.607,
-   "trust": 0.772,
+   "recency": 0.587,
+   "trust": 0.768,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -184,8 +184,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.289,
-   "recency": 0.567,
-   "trust": 0.771,
+   "recency": 0.549,
+   "trust": 0.768,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -202,8 +202,8 @@
    "accuracy": 1.0,
    "consistency": 1.0,
    "engagement": 0.261,
-   "recency": 0.513,
-   "trust": 0.755,
+   "recency": 0.497,
+   "trust": 0.752,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -219,48 +219,12 @@
    "posts_60d": 9,
    "accuracy": 0.917,
    "consistency": 1.0,
-   "engagement": 0.271,
-   "recency": 0.627,
-   "trust": 0.75,
+   "engagement": 0.266,
+   "recency": 0.607,
+   "trust": 0.745,
    "eligible": true,
    "badge": "top",
    "reasons": []
-  },
-  {
-   "handle": "agilesingh.ai",
-   "followers": 11659,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 6,
-   "posts_60d": 5,
-   "accuracy": 1.0,
-   "consistency": 0.625,
-   "engagement": 0.372,
-   "recency": 0.741,
-   "trust": 0.729,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers"
-   ]
-  },
-  {
-   "handle": "akash94.ai",
-   "followers": 10401,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 4,
-   "posts_60d": 4,
-   "accuracy": 1.0,
-   "consistency": 0.5,
-   "engagement": 0.417,
-   "recency": 0.846,
-   "trust": 0.728,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers"
-   ]
   },
   {
    "handle": "krishna.ai_9",
@@ -272,8 +236,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.988,
-   "recency": 0.693,
-   "trust": 0.717,
+   "recency": 0.67,
+   "trust": 0.713,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -291,8 +255,8 @@
    "accuracy": 0.5,
    "consistency": 1.0,
    "engagement": 0.609,
-   "recency": 0.627,
-   "trust": 0.672,
+   "recency": 0.607,
+   "trust": 0.668,
    "eligible": true,
    "badge": "verified",
    "reasons": []
@@ -307,8 +271,8 @@
    "accuracy": 1.0,
    "consistency": 0.375,
    "engagement": 0.488,
-   "recency": 0.587,
-   "trust": 0.659,
+   "recency": 0.567,
+   "trust": 0.655,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -325,8 +289,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.572,
-   "recency": 0.717,
-   "trust": 0.639,
+   "recency": 0.693,
+   "trust": 0.634,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -344,8 +308,8 @@
    "accuracy": 1.0,
    "consistency": 0.5,
    "engagement": 0.539,
-   "recency": 0.255,
-   "trust": 0.634,
+   "recency": 0.247,
+   "trust": 0.632,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -362,8 +326,8 @@
    "accuracy": 1.0,
    "consistency": 0.375,
    "engagement": 0.357,
-   "recency": 0.531,
-   "trust": 0.621,
+   "recency": 0.513,
+   "trust": 0.618,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -381,8 +345,8 @@
    "accuracy": 1.0,
    "consistency": 0.5,
    "engagement": 0.166,
-   "recency": 0.549,
-   "trust": 0.618,
+   "recency": 0.531,
+   "trust": 0.614,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -399,8 +363,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.507,
-   "recency": 0.648,
-   "trust": 0.612,
+   "recency": 0.627,
+   "trust": 0.608,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -414,12 +378,12 @@
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 18,
-   "posts_60d": 15,
+   "posts_60d": 14,
    "accuracy": 0.5,
    "consistency": 1.0,
    "engagement": 0.313,
-   "recency": 0.607,
-   "trust": 0.609,
+   "recency": 0.587,
+   "trust": 0.605,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -436,8 +400,8 @@
    "accuracy": 1.0,
    "consistency": 0.375,
    "engagement": 0.189,
-   "recency": 0.627,
-   "trust": 0.607,
+   "recency": 0.607,
+   "trust": 0.603,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -455,8 +419,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.49,
-   "recency": 0.607,
-   "trust": 0.601,
+   "recency": 0.587,
+   "trust": 0.597,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -474,8 +438,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.466,
-   "recency": 0.567,
-   "trust": 0.588,
+   "recency": 0.549,
+   "trust": 0.584,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -493,8 +457,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.361,
-   "recency": 0.648,
-   "trust": 0.583,
+   "recency": 0.627,
+   "trust": 0.579,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -512,8 +476,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.443,
-   "recency": 0.497,
-   "trust": 0.569,
+   "recency": 0.48,
+   "trust": 0.566,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -531,8 +495,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.415,
-   "recency": 0.465,
-   "trust": 0.557,
+   "recency": 0.449,
+   "trust": 0.554,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -550,29 +514,28 @@
    "accuracy": 0.5,
    "consistency": 0.5,
    "engagement": 0.515,
-   "recency": 0.766,
-   "trust": 0.556,
+   "recency": 0.741,
+   "trust": 0.551,
    "eligible": true,
    "badge": "verified",
    "reasons": []
   },
   {
-   "handle": "sneakylarper",
-   "followers": 2162,
+   "handle": "agilesingh.ai",
+   "followers": 11659,
    "niche": "auto-discovered",
    "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 1.0,
-   "consistency": 0.125,
-   "engagement": 0.339,
-   "recency": 0.513,
-   "trust": 0.552,
+   "reels": 6,
+   "posts_60d": 5,
+   "accuracy": 0.5,
+   "consistency": 0.625,
+   "engagement": 0.372,
+   "recency": 0.717,
+   "trust": 0.549,
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 1)"
+    "needs 50,000+ followers"
    ]
   },
   {
@@ -585,12 +548,49 @@
    "accuracy": 1.0,
    "consistency": 0.375,
    "engagement": 0.105,
-   "recency": 0.435,
-   "trust": 0.552,
+   "recency": 0.42,
+   "trust": 0.549,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 4+ repo posts in 60 days (has 3)"
+   ]
+  },
+  {
+   "handle": "sneakylarper",
+   "followers": 2162,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.339,
+   "recency": 0.497,
+   "trust": 0.548,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "akash94.ai",
+   "followers": 10401,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 4,
+   "posts_60d": 4,
+   "accuracy": 0.5,
+   "consistency": 0.5,
+   "engagement": 0.417,
+   "recency": 0.819,
+   "trust": 0.547,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers"
    ]
   },
   {
@@ -603,8 +603,8 @@
    "accuracy": 0.5,
    "consistency": 0.875,
    "engagement": 0.165,
-   "recency": 0.607,
-   "trust": 0.548,
+   "recency": 0.587,
+   "trust": 0.544,
    "eligible": true,
    "badge": "verified",
    "reasons": []
@@ -619,8 +619,8 @@
    "accuracy": 0.5,
    "consistency": 0.625,
    "engagement": 0.372,
-   "recency": 0.648,
-   "trust": 0.535,
+   "recency": 0.627,
+   "trust": 0.531,
    "eligible": true,
    "badge": "verified",
    "reasons": []
@@ -635,8 +635,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.256,
-   "recency": 0.393,
-   "trust": 0.511,
+   "recency": 0.38,
+   "trust": 0.509,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -654,12 +654,30 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 1.0,
-   "recency": 0.449,
-   "trust": 0.496,
+   "recency": 0.435,
+   "trust": 0.493,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "vee_daily19",
+   "followers": 1600826,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 1.0,
+   "consistency": 0.125,
+   "engagement": 0.123,
+   "recency": 0.393,
+   "trust": 0.484,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
     "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
@@ -673,11 +691,30 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.56,
-   "recency": 0.846,
-   "trust": 0.488,
+   "recency": 0.819,
+   "trust": 0.482,
    "eligible": false,
    "badge": "pending",
    "reasons": [
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "automationswithrahul",
+   "followers": 1250,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.4,
+   "recency": 0.967,
+   "trust": 0.48,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
@@ -691,8 +728,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.302,
-   "recency": 0.195,
-   "trust": 0.481,
+   "recency": 0.189,
+   "trust": 0.48,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -710,8 +747,8 @@
    "accuracy": 1.0,
    "consistency": 0.125,
    "engagement": 0.233,
-   "recency": 0.255,
-   "trust": 0.479,
+   "recency": 0.247,
+   "trust": 0.477,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -729,7 +766,7 @@
    "accuracy": 1.0,
    "consistency": 0.0,
    "engagement": 0.551,
-   "recency": 0.085,
+   "recency": 0.082,
    "trust": 0.477,
    "eligible": false,
    "badge": "pending",
@@ -748,31 +785,12 @@
    "accuracy": 1.0,
    "consistency": 0.0,
    "engagement": 0.584,
-   "recency": 0.036,
+   "recency": 0.035,
    "trust": 0.474,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 4+ repo posts in 60 days (has 0)"
-   ]
-  },
-  {
-   "handle": "auraguy.ai",
-   "followers": 8794,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 2,
-   "posts_60d": 2,
-   "accuracy": 0.5,
-   "consistency": 0.25,
-   "engagement": 0.254,
-   "recency": 0.905,
-   "trust": 0.469,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 2)"
    ]
   },
   {
@@ -785,8 +803,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.728,
-   "recency": 0.587,
-   "trust": 0.469,
+   "recency": 0.567,
+   "trust": 0.465,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -804,13 +822,32 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.808,
-   "recency": 0.497,
-   "trust": 0.467,
+   "recency": 0.48,
+   "trust": 0.464,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "auraguy.ai",
+   "followers": 8794,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 2,
+   "posts_60d": 2,
+   "accuracy": 0.5,
+   "consistency": 0.25,
+   "engagement": 0.254,
+   "recency": 0.875,
+   "trust": 0.463,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 2)"
    ]
   },
   {
@@ -833,24 +870,6 @@
    ]
   },
   {
-   "handle": "ariacodez",
-   "followers": 689012,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.599,
-   "recency": 0.607,
-   "trust": 0.447,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
    "handle": "sebastianhardy_",
    "followers": 120521,
    "niche": "auto-discovered",
@@ -860,8 +879,8 @@
    "accuracy": 0.5,
    "consistency": 0.25,
    "engagement": 0.667,
-   "recency": 0.38,
-   "trust": 0.447,
+   "recency": 0.368,
+   "trust": 0.445,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -869,21 +888,20 @@
    ]
   },
   {
-   "handle": "sadie.ontech",
-   "followers": 6164,
+   "handle": "ariacodez",
+   "followers": 689012,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
    "posts_60d": 1,
    "accuracy": 0.5,
    "consistency": 0.125,
-   "engagement": 0.286,
-   "recency": 0.875,
-   "trust": 0.439,
+   "engagement": 0.599,
+   "recency": 0.587,
+   "trust": 0.443,
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
@@ -897,8 +915,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.608,
-   "recency": 0.549,
-   "trust": 0.438,
+   "recency": 0.531,
+   "trust": 0.434,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -915,12 +933,31 @@
    "accuracy": 1.0,
    "consistency": 0.0,
    "engagement": 0.344,
-   "recency": 0.079,
-   "trust": 0.435,
+   "recency": 0.077,
+   "trust": 0.434,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "sadie.ontech",
+   "followers": 6164,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.286,
+   "recency": 0.846,
+   "trust": 0.433,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
   {
@@ -933,8 +970,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.395,
-   "recency": 0.741,
-   "trust": 0.433,
+   "recency": 0.717,
+   "trust": 0.429,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -952,8 +989,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.74,
-   "recency": 0.38,
-   "trust": 0.43,
+   "recency": 0.368,
+   "trust": 0.428,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -971,8 +1008,8 @@
    "accuracy": 0.5,
    "consistency": 0.25,
    "engagement": 0.741,
-   "recency": 0.216,
-   "trust": 0.429,
+   "recency": 0.209,
+   "trust": 0.428,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -989,8 +1026,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.439,
-   "recency": 0.648,
-   "trust": 0.424,
+   "recency": 0.627,
+   "trust": 0.419,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1008,8 +1045,8 @@
    "accuracy": 0.5,
    "consistency": 0.25,
    "engagement": 0.354,
-   "recency": 0.549,
-   "trust": 0.418,
+   "recency": 0.531,
+   "trust": 0.415,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1026,8 +1063,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.559,
-   "recency": 0.465,
-   "trust": 0.411,
+   "recency": 0.449,
+   "trust": 0.408,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1045,30 +1082,12 @@
    "accuracy": 1.0,
    "consistency": 0.0,
    "engagement": 0.141,
-   "recency": 0.127,
-   "trust": 0.404,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 4+ repo posts in 60 days (has 0)"
-   ]
-  },
-  {
-   "handle": "maxjohnscn",
-   "followers": 53080,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 2,
-   "posts_60d": 2,
-   "accuracy": 0.5,
-   "consistency": 0.25,
-   "engagement": 0.26,
-   "recency": 0.567,
+   "recency": 0.122,
    "trust": 0.403,
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "needs 4+ repo posts in 60 days (has 2)"
+    "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
   {
@@ -1091,6 +1110,24 @@
    ]
   },
   {
+   "handle": "maxjohnscn",
+   "followers": 53080,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 2,
+   "posts_60d": 2,
+   "accuracy": 0.5,
+   "consistency": 0.25,
+   "engagement": 0.26,
+   "recency": 0.549,
+   "trust": 0.399,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 4+ repo posts in 60 days (has 2)"
+   ]
+  },
+  {
    "handle": "remy.engineering",
    "followers": 1274141,
    "niche": "auto-discovered",
@@ -1100,8 +1137,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.641,
-   "recency": 0.333,
-   "trust": 0.401,
+   "recency": 0.322,
+   "trust": 0.399,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1118,8 +1155,8 @@
    "accuracy": 0.5,
    "consistency": 0.25,
    "engagement": 0.485,
-   "recency": 0.322,
-   "trust": 0.399,
+   "recency": 0.311,
+   "trust": 0.397,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1136,8 +1173,8 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 1.0,
-   "recency": 0.115,
-   "trust": 0.398,
+   "recency": 0.111,
+   "trust": 0.397,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1154,8 +1191,8 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 1.0,
-   "recency": 0.088,
-   "trust": 0.393,
+   "recency": 0.085,
+   "trust": 0.392,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1173,8 +1210,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.189,
-   "recency": 0.717,
-   "trust": 0.387,
+   "recency": 0.693,
+   "trust": 0.383,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1192,31 +1229,13 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.703,
-   "recency": 0.165,
-   "trust": 0.38,
+   "recency": 0.16,
+   "trust": 0.379,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "theromanknox",
-   "followers": 306439,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 3,
-   "posts_60d": 3,
-   "accuracy": 0.5,
-   "consistency": 0.375,
-   "engagement": 0.118,
-   "recency": 0.435,
-   "trust": 0.379,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 4+ repo posts in 60 days (has 3)"
    ]
   },
   {
@@ -1236,6 +1255,24 @@
    "reasons": [
     "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "theromanknox",
+   "followers": 306439,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 3,
+   "posts_60d": 3,
+   "accuracy": 0.5,
+   "consistency": 0.375,
+   "engagement": 0.118,
+   "recency": 0.42,
+   "trust": 0.376,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 4+ repo posts in 60 days (has 3)"
    ]
   },
   {
@@ -1381,8 +1418,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.343,
-   "recency": 0.497,
-   "trust": 0.374,
+   "recency": 0.48,
+   "trust": 0.371,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1400,8 +1437,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.243,
-   "recency": 0.587,
-   "trust": 0.372,
+   "recency": 0.567,
+   "trust": 0.368,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1419,8 +1456,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.212,
-   "recency": 0.607,
-   "trust": 0.37,
+   "recency": 0.587,
+   "trust": 0.366,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1438,8 +1475,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.3,
-   "recency": 0.513,
-   "trust": 0.369,
+   "recency": 0.497,
+   "trust": 0.366,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1457,8 +1494,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.458,
-   "recency": 0.344,
-   "trust": 0.367,
+   "recency": 0.333,
+   "trust": 0.364,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1475,8 +1512,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.513,
-   "recency": 0.264,
-   "trust": 0.362,
+   "recency": 0.255,
+   "trust": 0.36,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1494,8 +1531,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.333,
-   "recency": 0.435,
-   "trust": 0.36,
+   "recency": 0.42,
+   "trust": 0.357,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1513,49 +1550,12 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.492,
-   "recency": 0.273,
-   "trust": 0.359,
+   "recency": 0.264,
+   "trust": 0.357,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "rapidlygrow.ai",
-   "followers": 18705,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.246,
-   "recency": 0.513,
-   "trust": 0.358,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "themrtechking",
-   "followers": 224421,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 2,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.246,
-   "recency": 0.513,
-   "trust": 0.358,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
     "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
@@ -1569,8 +1569,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.521,
-   "recency": 0.239,
-   "trust": 0.358,
+   "recency": 0.231,
+   "trust": 0.357,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1597,6 +1597,43 @@
    ]
   },
   {
+   "handle": "rapidlygrow.ai",
+   "followers": 18705,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.246,
+   "recency": 0.497,
+   "trust": 0.355,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
+   "handle": "themrtechking",
+   "followers": 224421,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 2,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.246,
+   "recency": 0.497,
+   "trust": 0.355,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
    "handle": "nicholas.puru",
    "followers": 83179,
    "niche": "auto-discovered",
@@ -1606,8 +1643,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.534,
-   "recency": 0.209,
-   "trust": 0.355,
+   "recency": 0.202,
+   "trust": 0.353,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1624,8 +1661,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.262,
-   "recency": 0.435,
-   "trust": 0.346,
+   "recency": 0.42,
+   "trust": 0.343,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1642,8 +1679,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.239,
-   "recency": 0.449,
-   "trust": 0.344,
+   "recency": 0.435,
+   "trust": 0.341,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1661,12 +1698,30 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.722,
-   "recency": 0.107,
-   "trust": 0.341,
+   "recency": 0.104,
+   "trust": 0.34,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "sebintel",
+   "followers": 365844,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 0,
+   "accuracy": 0.5,
+   "consistency": 0.0,
+   "engagement": 0.744,
+   "recency": 0.05,
+   "trust": 0.334,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -1680,31 +1735,13 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.456,
-   "recency": 0.183,
-   "trust": 0.334,
+   "recency": 0.177,
+   "trust": 0.333,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "sebintel",
-   "followers": 365844,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 0,
-   "accuracy": 0.5,
-   "consistency": 0.0,
-   "engagement": 0.744,
-   "recency": 0.051,
-   "trust": 0.334,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
   {
@@ -1717,31 +1754,12 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.753,
-   "recency": 0.032,
+   "recency": 0.031,
    "trust": 0.332,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 4+ repo posts in 60 days (has 0)"
-   ]
-  },
-  {
-   "handle": "techwith.praveen",
-   "followers": 2807,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.235,
-   "recency": 0.38,
-   "trust": 0.329,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
   {
@@ -1764,8 +1782,27 @@
    ]
   },
   {
+   "handle": "techwith.praveen",
+   "followers": 2807,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.235,
+   "recency": 0.368,
+   "trust": 0.327,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
+   ]
+  },
+  {
    "handle": "techtalkswithayush",
-   "followers": null,
+   "followers": 180363,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -1778,13 +1815,12 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
   {
    "handle": "narasimhalakkimsetty",
-   "followers": null,
+   "followers": 20926,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -1797,13 +1833,13 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
   {
    "handle": "pranathi.rai",
-   "followers": null,
+   "followers": 54752,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -1816,7 +1852,24 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
+    "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "bennett.spooner",
+   "followers": 109067,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 8,
+   "posts_60d": 0,
+   "accuracy": 0.5,
+   "consistency": 0.0,
+   "engagement": 0.664,
+   "recency": 0.065,
+   "trust": 0.321,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -1830,8 +1883,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.432,
-   "recency": 0.14,
-   "trust": 0.321,
+   "recency": 0.135,
+   "trust": 0.32,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1839,20 +1892,21 @@
    ]
   },
   {
-   "handle": "bennett.spooner",
-   "followers": 109067,
+   "handle": "startscalr_sohum",
+   "followers": 18318,
    "niche": "auto-discovered",
    "source": "auto",
-   "reels": 8,
+   "reels": 1,
    "posts_60d": 0,
    "accuracy": 0.5,
    "consistency": 0.0,
-   "engagement": 0.664,
-   "recency": 0.067,
-   "trust": 0.321,
+   "engagement": 0.723,
+   "recency": 0.002,
+   "trust": 0.32,
    "eligible": false,
    "badge": "pending",
    "reasons": [
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -1866,31 +1920,12 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.4,
-   "recency": 0.171,
-   "trust": 0.32,
+   "recency": 0.165,
+   "trust": 0.319,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "startscalr_sohum",
-   "followers": null,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 0,
-   "accuracy": 0.5,
-   "consistency": 0.0,
-   "engagement": 0.723,
-   "recency": 0.002,
-   "trust": 0.32,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "followers not checked yet",
-    "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
   {
@@ -1903,8 +1938,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.38,
-   "recency": 0.183,
-   "trust": 0.319,
+   "recency": 0.177,
+   "trust": 0.317,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -1940,50 +1975,13 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.646,
-   "recency": 0.047,
+   "recency": 0.045,
    "trust": 0.313,
    "eligible": false,
    "badge": "pending",
    "reasons": [
     "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
-   ]
-  },
-  {
-   "handle": "vee_daily19",
-   "followers": 1600826,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.123,
-   "recency": 0.407,
-   "trust": 0.312,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 4+ repo posts in 60 days (has 1)"
-   ]
-  },
-  {
-   "handle": "shauneng",
-   "followers": 18479,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 1,
-   "posts_60d": 1,
-   "accuracy": 0.5,
-   "consistency": 0.125,
-   "engagement": 0.177,
-   "recency": 0.344,
-   "trust": 0.31,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers",
-    "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
   {
@@ -2006,17 +2004,17 @@
    ]
   },
   {
-   "handle": "heyypriyank",
-   "followers": 16966,
+   "handle": "shauneng",
+   "followers": 18479,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
    "posts_60d": 1,
    "accuracy": 0.5,
    "consistency": 0.125,
-   "engagement": 0.215,
-   "recency": 0.291,
-   "trust": 0.307,
+   "engagement": 0.177,
+   "recency": 0.333,
+   "trust": 0.308,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -2041,6 +2039,25 @@
    "reasons": [
     "followers not checked yet",
     "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "heyypriyank",
+   "followers": 16966,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 1,
+   "posts_60d": 1,
+   "accuracy": 0.5,
+   "consistency": 0.125,
+   "engagement": 0.215,
+   "recency": 0.282,
+   "trust": 0.306,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
+    "needs 4+ repo posts in 60 days (has 1)"
    ]
   },
   {
@@ -2139,7 +2156,7 @@
   },
   {
    "handle": "stewieaiguy",
-   "followers": null,
+   "followers": 15389,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -2152,7 +2169,7 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -2185,7 +2202,7 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.425,
-   "recency": 0.061,
+   "recency": 0.059,
    "trust": 0.272,
    "eligible": false,
    "badge": "pending",
@@ -2299,7 +2316,7 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.342,
-   "recency": 0.091,
+   "recency": 0.088,
    "trust": 0.261,
    "eligible": false,
    "badge": "pending",
@@ -2386,7 +2403,7 @@
   },
   {
    "handle": "vaibhavsisinty",
-   "followers": null,
+   "followers": 2172227,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -2399,26 +2416,6 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
-    "needs 4+ repo posts in 60 days (has 0)"
-   ]
-  },
-  {
-   "handle": "heyshrutimishra",
-   "followers": 8888,
-   "niche": "auto-discovered",
-   "source": "auto",
-   "reels": 4,
-   "posts_60d": 0,
-   "accuracy": 0.5,
-   "consistency": 0.0,
-   "engagement": 0.372,
-   "recency": 0.02,
-   "trust": 0.254,
-   "eligible": false,
-   "badge": "pending",
-   "reasons": [
-    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -2438,6 +2435,25 @@
    "badge": "pending",
    "reasons": [
     "followers not checked yet",
+    "needs 4+ repo posts in 60 days (has 0)"
+   ]
+  },
+  {
+   "handle": "heyshrutimishra",
+   "followers": 8888,
+   "niche": "auto-discovered",
+   "source": "auto",
+   "reels": 4,
+   "posts_60d": 0,
+   "accuracy": 0.5,
+   "consistency": 0.0,
+   "engagement": 0.372,
+   "recency": 0.02,
+   "trust": 0.253,
+   "eligible": false,
+   "badge": "pending",
+   "reasons": [
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -2527,7 +2543,7 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.334,
-   "recency": 0.016,
+   "recency": 0.015,
    "trust": 0.245,
    "eligible": false,
    "badge": "pending",
@@ -2556,7 +2572,7 @@
   },
   {
    "handle": "hasantoxr",
-   "followers": null,
+   "followers": 46471,
    "niche": "auto-discovered",
    "source": "auto",
    "reels": 1,
@@ -2569,7 +2585,7 @@
    "eligible": false,
    "badge": "pending",
    "reasons": [
-    "followers not checked yet",
+    "needs 50,000+ followers",
     "needs 4+ repo posts in 60 days (has 0)"
    ]
   },
@@ -2659,8 +2675,8 @@
    "accuracy": 0.5,
    "consistency": 0.125,
    "engagement": 0.005,
-   "recency": 0.14,
-   "trust": 0.235,
+   "recency": 0.135,
+   "trust": 0.234,
    "eligible": false,
    "badge": "pending",
    "reasons": [
@@ -2943,8 +2959,8 @@
    "accuracy": 0.5,
    "consistency": 0.0,
    "engagement": 0.002,
-   "recency": 0.061,
-   "trust": 0.188,
+   "recency": 0.059,
+   "trust": 0.187,
    "eligible": false,
    "badge": "pending",
    "reasons": [

@@ -474,6 +474,10 @@
 "full_name": "storytold/artcraft",
 "stars": 36244
 },
+"asana": {
+"full_name": "Asana/Drawsana",
+"stars": 691
+},
 "astra": {
 "full_name": "astralapp/astral",
 "stars": 3592
@@ -598,6 +602,10 @@
 "full_name": "libav/c99-to-c89",
 "stars": 275
 },
+"calendly": {
+"full_name": "tcampb/react-calendly",
+"stars": 269
+},
 "california-only": {
 "full_name": "SerenaCavicchia/Only-California",
 "stars": 0
@@ -638,6 +646,10 @@
 "chatgpt-style": {
 "full_name": "lvwzhen/ChatGPT-Matrix-Style",
 "stars": 81
+},
+"chatwoot": {
+"full_name": "chatwoot/chatwoot",
+"stars": 39028
 },
 "china": {
 "full_name": "TapXWorld/ChinaTextbook",
@@ -1320,6 +1332,10 @@
 "full_name": "plter/FreeScreenRecorder",
 "stars": 39
 },
+"freesoftware": {
+"full_name": "nimafanniasl/FreeSoftwareAlts",
+"stars": 15
+},
 "freetools": {
 "full_name": "beNative/FreeTools",
 "stars": 27
@@ -1565,6 +1581,10 @@
 "full_name": "brave-experiments/hardware-backed-webcrypto",
 "stars": 23
 },
+"harvey": {
+"full_name": "harveyai/harvey-labs",
+"stars": 1573
+},
 "harveyai": {
 "full_name": "harveyai/harvey-labs",
 "stars": 1554
@@ -1588,6 +1608,10 @@
 "heygen-com": {
 "full_name": "heygen-com/hyperframes",
 "stars": 71340
+},
+"higgsfield": {
+"full_name": "higgsfield-ai/higgsfield",
+"stars": 6295
 },
 "high-performance": {
 "full_name": "google/eleventy-high-performance-blog",
@@ -1677,6 +1701,10 @@
 "instinct": {
 "full_name": "project-instinct/InstinctLab",
 "stars": 856
+},
+"intercom": {
+"full_name": "nicobailon/pi-intercom",
+"stars": 581
 },
 "interface": {
 "full_name": "Dammyjay93/interface-design",
@@ -1896,6 +1924,10 @@
 "long-term": {
 "full_name": "longbridge/longbridge-terminal",
 "stars": 1024
+},
+"loom": {
+"full_name": "tokio-rs/loom",
+"stars": 2861
 },
 "losslesscut": {
 "full_name": "tazztone/losslesscut-android",
@@ -2161,6 +2193,10 @@
 "nosubscription": {
 "full_name": "netspan/pve-nosubscription-repo",
 "stars": 0
+},
+"notion": {
+"full_name": "notionnext-org/NotionNext",
+"stars": 11903
 },
 "nvidianim": {
 "full_name": "kinfey/Microsoft-Phi-3-NvidiaNIMWorkshop",
@@ -2709,6 +2745,7 @@
 "full_name": "nextjs/saas-starter",
 "stars": 16220
 },
+"saasalternatives": null,
 "saascloning": null,
 "sales": {
 "full_name": "PeterH0323/Streamer-Sales",
@@ -2793,6 +2830,10 @@
 "full_name": "AnkurTambe/SelfPromoApp",
 "stars": 3
 },
+"selfhosted": {
+"full_name": "awesome-selfhosted/awesome-selfhosted",
+"stars": 334657
+},
 "selfhostedai": {
 "full_name": "josStorer/selfhostedAI",
 "stars": 410
@@ -2800,6 +2841,10 @@
 "selfhosting": {
 "full_name": "jackyzy823/fxa-selfhosting",
 "stars": 201
+},
+"semrush": {
+"full_name": "springvoiceswell/semrush-ai-tool",
+"stars": 365
 },
 "seven-agent": {
 "full_name": "sanyexieai/seven_chat_agent",
@@ -3404,6 +3449,10 @@
 "wisperflow": {
 "full_name": "ydvSajal/Not_Wisperflow",
 "stars": 3
+},
+"wisprflow": {
+"full_name": "ThisisShashwat/wisprflow-sdk",
+"stars": 20
 },
 "word-level": {
 "full_name": "vlraik/word-level-rnn-keras",
