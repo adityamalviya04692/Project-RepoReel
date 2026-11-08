@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-07T10:28:10+00:00",
-  "seconds": 1219.7,
+  "finished": "2026-11-08T10:43:20+00:00",
+  "seconds": 1263.6,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 301.02,
+    "seconds": 296.01,
     "rows": {
      "repos": 4191
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 18.93,
+    "seconds": 19.39,
     "rows": {
-     "repos_mentioned": 3008
+     "repos_mentioned": 2972
     }
    },
    {
@@ -28,16 +28,16 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 16.27,
+    "seconds": 28.15,
     "rows": {
      "fetched": 16,
-     "history": 451,
-     "creators_seen": 239
+     "history": 452,
+     "creators_seen": 247
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 700.32,
+    "seconds": 674.55,
     "rows": {
      "repos": 4335,
      "from_hn_or_reels": 147
@@ -45,16 +45,16 @@
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.35,
+    "seconds": 0.47,
     "rows": {
      "repos": 4333,
-     "snapshots": 64268,
-     "snapshot_days": 15
+     "snapshots": 68601,
+     "snapshot_days": 16
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 90.27,
+    "seconds": 171.35,
     "rows": {
      "vectors": 4333,
      "dims": 384
@@ -62,34 +62,34 @@
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 33.81,
+    "seconds": 5.47,
     "rows": {
-     "reels": 451,
-     "matched": 95,
+     "reels": 452,
+     "matched": 94,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 2.76,
+    "seconds": 2.67,
     "rows": {
-     "added": 13
+     "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 21.05,
+    "seconds": 17.78,
     "rows": {
-     "creators": 162,
+     "creators": 163,
      "followers_filled": 8
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.68,
+    "seconds": 1.05,
     "rows": {
-     "repos": 4346,
-     "creators": 162,
+     "repos": 4345,
+     "creators": 163,
      "eligible_creators": 8
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.62,
+    "seconds": 1.08,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 9.27,
+    "seconds": 17.96,
     "rows": {
      "files": 7,
-     "repos": 4346
+     "repos": 4345
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4346 repositories"
+    "detail": "4345 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4346 vectors for 4346 repos"
+    "detail": "4345 vectors for 4345 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4347 \u2192 4346 (-0%)"
+    "detail": "4346 \u2192 4345 (-0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "451 reels, 162 creators"
+    "detail": "452 reels, 163 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "369 unmatched (see review queue)"
+    "detail": "372 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -255,8 +255,8 @@
      "first_hit": 1,
      "top3": [
       "speedyapply/jobspy",
-      "spinlud/py-linkedin-jobs-scraper",
-      "d4vinci/scrapling"
+      "godsscion/auto_job_applier_linkedin",
+      "spinlud/py-linkedin-jobs-scraper"
      ]
     },
     {
@@ -285,7 +285,7 @@
      "top3": [
       "debpalash/voicestudio",
       "cjpais/handy",
-      "jamiepine/voicebox"
+      "openbmb/voxcpm"
      ]
     },
     {
@@ -330,7 +330,7 @@
      "top3": [
       "mvschwarz/openrig",
       "ashishpatel26/500-ai-agents-projects",
-      "donchitos/claude-code-game-studios"
+      "langchain-ai/langchain"
      ]
     },
     {
@@ -350,8 +350,8 @@
     }
    ]
   },
-  "catalog": 4346,
-  "snapshot_days": 15
+  "catalog": 4345,
+  "snapshot_days": 16
  },
  "history": [
   {
@@ -484,6 +484,12 @@
    "finished": "2026-11-07T10:28:10+00:00",
    "seconds": 1219.7,
    "catalog": 4346,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-08T10:43:20+00:00",
+   "seconds": 1263.6,
+   "catalog": 4345,
    "failed": 0
   }
  ]

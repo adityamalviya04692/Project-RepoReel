@@ -5,13 +5,13 @@
   "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "opensourcetools",
+    "q": "opensource",
     "kind": "hashtag",
     "reels": 8,
     "kept": 1
    },
    {
-    "q": "github",
+    "q": "claudecode",
     "kind": "hashtag",
     "reels": 8,
     "kept": 0
@@ -20,7 +20,7 @@
   "fetched": 16,
   "kept": 1,
   "rejected": {
-   "not_english": 5,
+   "not_english": 11,
    "off_topic": 0
   },
   "feeds": {
@@ -29,20 +29,20 @@
   },
   "ocr": 1,
   "budget": {
-   "used": 3.7074220308836225,
+   "used": 3.7699609276297763,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
-  "allowance": 12,
-  "repo_creators": 161,
-  "creators_seen": 239,
+  "allowance": 11,
+  "repo_creators": 162,
+  "creators_seen": 247,
   "history_pages": 0,
   "pauses": 0,
   "backfilled_creators": 0,
   "candidates": 0,
   "boost_usd": 0.0
  },
- "history_reels": 451,
- "shown_reels": 451,
- "matched_reels": 82
+ "history_reels": 452,
+ "shown_reels": 452,
+ "matched_reels": 80
 }
