@@ -80,6 +80,10 @@
 "full_name": "abacusai/Long-Context",
 "stars": 604
 },
+"account-ban": {
+"full_name": "wirecardBrasil/bank-account-validator-js",
+"stars": 123
+},
 "ad-blocker": {
 "full_name": "Xeroday/Spotify-Ad-Blocker",
 "stars": 1836
@@ -405,6 +409,10 @@
 "full_name": "ikaijua/Awesome-AITools",
 "stars": 6266
 },
+"aitools2025": {
+"full_name": "pornchai1889/aitools2025",
+"stars": 0
+},
 "aitools2026": null,
 "aitrends": {
 "full_name": "Nouran99/ITI_mansoura_AITrends_final_students_projects",
@@ -475,6 +483,10 @@
 "alibaba": {
 "full_name": "alibaba/open-code-review",
 "stars": 49212
+},
+"alishahryar1": {
+"full_name": "Alishahryar1/free-claude-code",
+"stars": 67836
 },
 "all-in-one": {
 "full_name": "nextcloud/all-in-one",
@@ -1552,6 +1564,10 @@
 "full_name": "shuhratjan/ExcelTutorial",
 "stars": 1
 },
+"explore": {
+"full_name": "exo-explore/exo",
+"stars": 48276
+},
 "explorepage": {
 "full_name": "DominykasBubnys/explorepage",
 "stars": 0
@@ -1655,6 +1671,10 @@
 "founder": {
 "full_name": "EdoStra/Marketing-for-Founders",
 "stars": 7153
+},
+"founders": {
+"full_name": "EdoStra/Marketing-for-Founders",
+"stars": 7194
 },
 "fpsr": {
 "full_name": "deadlykam/TutorialFPSRotation",
@@ -2300,6 +2320,10 @@
 "full_name": "MonaMobeen/-Jaw-Dropping-Thesaurus",
 "stars": 1
 },
+"jetbrains": {
+"full_name": "JetBrains/kotlin",
+"stars": 53556
+},
 "job": {
 "full_name": "ai-job-search-dev/ai-job-search",
 "stars": 69236
@@ -2910,6 +2934,10 @@
 "full_name": "nodejs/node",
 "stars": 123435
 },
+"nomadev": {
+"full_name": "mr-karan/nomadev",
+"stars": 13
+},
 "non-linear": {
 "full_name": "Shunichi09/PythonLinearNonlinearControl",
 "stars": 1049
@@ -2939,6 +2967,10 @@
 "stars": 3356
 },
 "offgridcommunication": null,
+"offline": {
+"full_name": "HubSpot/offline",
+"stars": 8556
+},
 "offlineai": {
 "full_name": "Wakoma/OfflineAI",
 "stars": 70
@@ -3071,6 +3103,10 @@
 "openwhisper": {
 "full_name": "Knuckles92/OpenWhisper",
 "stars": 242
+},
+"openwispr": {
+"full_name": "RohitAg13/openWispr",
+"stars": 37
 },
 "operator": {
 "full_name": "prometheus-operator/prometheus-operator",
@@ -3269,6 +3305,10 @@
 "privacy": {
 "full_name": "drduh/macOS-Security-and-Privacy-Guide",
 "stars": 22572
+},
+"privacy-first": {
+"full_name": "yoloshii/privacy-first-network",
+"stars": 62
 },
 "privateai": {
 "full_name": "privateai/deid-examples",

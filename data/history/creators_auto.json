@@ -104,6 +104,11 @@
   "kept": 0,
   "seen": 1
  },
+ "aiseedhibaat": {
+  "first_seen": "2026-11-10",
+  "followers": null,
+  "seen": 1
+ },
  "aistart_up": {
   "first_seen": "2026-10-24",
   "kept": 0,
@@ -191,11 +196,21 @@
   "seen": 1,
   "verified": true
  },
- "ambika_visions": {
+ "altamashhh__": {
+  "first_seen": "2026-11-10",
   "followers": null,
+  "probe": "pending",
+  "via": "nomadev.ai"
+ },
+ "ambika_visions": {
+  "business": false,
+  "checked": "2026-11-10",
+  "followers": 26860,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "analyticxhub": {
   "followers": null,
@@ -264,6 +279,17 @@
   "kept": 2,
   "repo_reels": 0,
   "seen": 2,
+  "verified": false
+ },
+ "automation.normie": {
+  "business": false,
+  "checked": "2026-11-10",
+  "first_seen": "2026-11-10",
+  "followers": 552,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
   "verified": false
  },
  "automationswithrahul": {
@@ -516,6 +542,11 @@
   "followers": null,
   "seen": 4
  },
+ "computer__hub": {
+  "first_seen": "2026-11-10",
+  "followers": null,
+  "seen": 1
+ },
  "cracked.artificial": {
   "business": false,
   "checked": "2026-10-25",
@@ -543,10 +574,14 @@
   "verified": true
  },
  "cyberpranshu_official": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-10",
+  "followers": 9090,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "cybersecurity.aman": {
   "followers": null,
@@ -602,10 +637,14 @@
   "verified": false
  },
  "devwithsmile": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-10",
+  "followers": 789,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "donimas": {
   "first_seen": "2026-10-23",
@@ -1134,6 +1173,22 @@
   "seen": 2,
   "verified": true
  },
+ "mitrajit_22": {
+  "first_seen": "2026-11-10",
+  "followers": null,
+  "seen": 1
+ },
+ "moeeztech_ai": {
+  "business": false,
+  "checked": "2026-11-10",
+  "first_seen": "2026-11-10",
+  "followers": 30757,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 1,
+  "seen": 1,
+  "verified": true
+ },
  "mqkhilji": {
   "followers": null,
   "kept": 1,
@@ -1224,6 +1279,17 @@
   "kept": 0,
   "seen": 1
  },
+ "nomadev.ai": {
+  "business": false,
+  "checked": "2026-11-10",
+  "first_seen": "2026-11-10",
+  "followers": 1312,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "nostackdeveloper": {
   "business": false,
   "checked": "2026-10-24",
@@ -1287,10 +1353,14 @@
   "verified": true
  },
  "pluto.careers": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-10",
+  "followers": 104677,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "pranathi.rai": {
   "business": false,
@@ -1561,6 +1631,17 @@
   "repo_reels": 0,
   "seen": 1,
   "verified": true
+ },
+ "shreya.ai.jugaad": {
+  "business": false,
+  "checked": "2026-11-10",
+  "first_seen": "2026-11-10",
+  "followers": 13920,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
  },
  "shreya.easyhai": {
   "business": false,
