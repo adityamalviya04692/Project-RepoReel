@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-10T11:38:19+00:00",
-  "seconds": 1559.7,
+  "finished": "2026-11-11T11:19:12+00:00",
+  "seconds": 1358.9,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 324.93,
+    "seconds": 331.23,
     "rows": {
-     "repos": 4190
+     "repos": 4199
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 18.6,
+    "seconds": 22.79,
     "rows": {
-     "repos_mentioned": 2974
+     "repos_mentioned": 3014
     }
    },
    {
@@ -28,68 +28,68 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 35.06,
+    "seconds": 63.53,
     "rows": {
-     "fetched": 8,
-     "history": 461,
-     "creators_seen": 259
+     "fetched": 16,
+     "history": 464,
+     "creators_seen": 261
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 899.91,
+    "seconds": 788.48,
     "rows": {
-     "repos": 4342,
-     "from_hn_or_reels": 155
+     "repos": 4345,
+     "from_hn_or_reels": 149
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.44,
+    "seconds": 0.31,
     "rows": {
-     "repos": 4340,
-     "snapshots": 77272,
-     "snapshot_days": 18
+     "repos": 4343,
+     "snapshots": 81615,
+     "snapshot_days": 19
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 183.99,
+    "seconds": 93.03,
     "rows": {
-     "vectors": 4340,
+     "vectors": 4343,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 26.55,
+    "seconds": 0.15,
     "rows": {
-     "reels": 461,
-     "matched": 98,
+     "reels": 464,
+     "matched": 99,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.29,
+    "seconds": 3.77,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 15.0,
+    "seconds": 16.67,
     "rows": {
-     "creators": 171,
+     "creators": 173,
      "followers_filled": 8
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.02,
+    "seconds": 0.7,
     "rows": {
-     "repos": 4352,
-     "creators": 171,
+     "repos": 4355,
+     "creators": 173,
      "eligible_creators": 8
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.05,
+    "seconds": 0.74,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 19.24,
+    "seconds": 9.69,
     "rows": {
      "files": 7,
-     "repos": 4352
+     "repos": 4355
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4352 repositories"
+    "detail": "4355 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4352 vectors for 4352 repos"
+    "detail": "4355 vectors for 4355 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4343 \u2192 4352 (+0%)"
+    "detail": "4352 \u2192 4355 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "461 reels, 171 creators"
+    "detail": "464 reels, 173 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "378 unmatched (see review queue)"
+    "detail": "380 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -228,8 +228,8 @@
      "first_hit": null,
      "top3": [
       "handsonllm/hands-on-large-language-models",
-      "rasbt/llms-from-scratch",
-      "mudler/localai"
+      "mudler/localai",
+      "rasbt/llms-from-scratch"
      ]
     },
     {
@@ -330,7 +330,7 @@
      "top3": [
       "mvschwarz/openrig",
       "ashishpatel26/500-ai-agents-projects",
-      "langchain-ai/langchain"
+      "openagents-org/openagents"
      ]
     },
     {
@@ -350,8 +350,8 @@
     }
    ]
   },
-  "catalog": 4352,
-  "snapshot_days": 18
+  "catalog": 4355,
+  "snapshot_days": 19
  },
  "history": [
   {
@@ -502,6 +502,12 @@
    "finished": "2026-11-10T11:38:19+00:00",
    "seconds": 1559.7,
    "catalog": 4352,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-11T11:19:12+00:00",
+   "seconds": 1358.9,
+   "catalog": 4355,
    "failed": 0
   }
  ]
