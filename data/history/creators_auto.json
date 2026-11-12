@@ -1,10 +1,14 @@
 {
  "2am.cozyy": {
   "apify_feed": "2026-10-25",
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 8713,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 5
+  "seen": 5,
+  "verified": false
  },
  "99hud": {
   "first_seen": "2026-10-28",
@@ -588,10 +592,14 @@
   "verified": false
  },
  "cybersecurity.aman": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 35327,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "daily_lyyf": {
   "first_seen": "2026-10-23",
@@ -947,10 +955,14 @@
   "verified": false
  },
  "jayantigoyal": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 588,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "joaopaulodealmeidapradocosta": {
   "first_seen": "2026-10-29",
@@ -1052,10 +1064,14 @@
   "seen": 1
  },
  "learnwithmubeen": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 92302,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "leoerdman.ai": {
   "first_seen": "2026-11-08",
@@ -1251,10 +1267,14 @@
   "verified": false
  },
  "neuralninjaaa": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 228,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "nexoupdates": {
   "business": false,
@@ -1364,10 +1384,14 @@
   "verified": false
  },
  "patrickwoo76": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 699,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "paytkaleiwahea": {
   "business": false,
@@ -1469,10 +1493,14 @@
   "seen": 1
  },
  "ranchofullstack": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-12",
+  "followers": 110899,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "rapidlygrow.ai": {
   "business": true,
@@ -2008,10 +2036,14 @@
   "seen": 1
  },
  "upcodestudios": {
-  "followers": null,
+  "business": true,
+  "checked": "2026-11-12",
+  "followers": 1917,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "utkarshhh.ai": {
   "business": false,

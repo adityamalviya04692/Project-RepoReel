@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-11T11:19:12+00:00",
-  "seconds": 1358.9,
+  "finished": "2026-11-12T11:30:50+00:00",
+  "seconds": 1358.3,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 331.23,
+    "seconds": 365.41,
     "rows": {
-     "repos": 4199
+     "repos": 4206
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 22.79,
+    "seconds": 20.42,
     "rows": {
-     "repos_mentioned": 3014
+     "repos_mentioned": 3002
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 63.53,
+    "seconds": 27.35,
     "rows": {
      "fetched": 16,
      "history": 464,
@@ -37,32 +37,32 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 788.48,
+    "seconds": 775.09,
     "rows": {
-     "repos": 4345,
-     "from_hn_or_reels": 149
+     "repos": 4357,
+     "from_hn_or_reels": 154
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.31,
+    "seconds": 0.33,
     "rows": {
-     "repos": 4343,
-     "snapshots": 81615,
-     "snapshot_days": 19
+     "repos": 4356,
+     "snapshots": 85971,
+     "snapshot_days": 20
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 93.03,
+    "seconds": 96.58,
     "rows": {
-     "vectors": 4343,
+     "vectors": 4356,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.15,
+    "seconds": 0.12,
     "rows": {
      "reels": 464,
      "matched": 99,
@@ -71,14 +71,14 @@
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.77,
+    "seconds": 3.09,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 16.67,
+    "seconds": 28.06,
     "rows": {
      "creators": 173,
      "followers_filled": 8
@@ -86,9 +86,9 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.7,
+    "seconds": 0.72,
     "rows": {
-     "repos": 4355,
+     "repos": 4368,
      "creators": 173,
      "eligible_creators": 8
     }
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.74,
+    "seconds": 0.71,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 9.69,
+    "seconds": 10.2,
     "rows": {
      "files": 7,
-     "repos": 4355
+     "repos": 4368
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4355 repositories"
+    "detail": "4368 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4355 vectors for 4355 repos"
+    "detail": "4368 vectors for 4368 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4352 \u2192 4355 (+0%)"
+    "detail": "4355 \u2192 4368 (+0%)"
    },
    {
     "name": "reels reference known creators",
@@ -215,7 +215,7 @@
      "top3": [
       "punkpeye/awesome-mcp-servers",
       "prefecthq/fastmcp",
-      "mcpjungle/mcpjungle"
+      "samanhappy/mcphub"
      ]
     },
     {
@@ -330,7 +330,7 @@
      "top3": [
       "mvschwarz/openrig",
       "ashishpatel26/500-ai-agents-projects",
-      "openagents-org/openagents"
+      "rowboatlabs/rowboat"
      ]
     },
     {
@@ -350,8 +350,8 @@
     }
    ]
   },
-  "catalog": 4355,
-  "snapshot_days": 19
+  "catalog": 4368,
+  "snapshot_days": 20
  },
  "history": [
   {
@@ -508,6 +508,12 @@
    "finished": "2026-11-11T11:19:12+00:00",
    "seconds": 1358.9,
    "catalog": 4355,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-12T11:30:50+00:00",
+   "seconds": 1358.3,
+   "catalog": 4368,
    "failed": 0
   }
  ]

@@ -5,20 +5,20 @@
   "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "github project",
-    "kind": "keyword",
+    "q": "githubprojects",
+    "kind": "hashtag",
     "reels": 8,
-    "kept": 3
+    "kept": 0
    },
    {
-    "q": "githubrepo",
+    "q": "opensourcetools",
     "kind": "hashtag",
     "reels": 8,
     "kept": 0
    }
   ],
   "fetched": 16,
-  "kept": 3,
+  "kept": 0,
   "rejected": {
    "not_english": 0,
    "off_topic": 0
@@ -27,13 +27,13 @@
    "graph": 0,
    "apify": 0
   },
-  "ocr": 3,
+  "ocr": 0,
   "budget": {
-   "used": 3.957472106067902,
+   "used": 4.0225805831910355,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
-  "allowance": 9,
+  "allowance": 8,
   "repo_creators": 172,
   "creators_seen": 261,
   "history_pages": 0,
