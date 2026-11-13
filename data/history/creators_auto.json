@@ -13,7 +13,7 @@
  "99hud": {
   "first_seen": "2026-10-28",
   "followers": null,
-  "seen": 2
+  "seen": 3
  },
  "_mokshith_malla": {
   "apify_feed": "2026-10-26",
@@ -44,15 +44,19 @@
  },
  "aarohi.inframe": {
   "apify_feed": "2026-10-28",
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 46867,
+  "followers_source": "apify",
   "kept": 2,
   "repo_reels": 0,
-  "seen": 9
+  "seen": 9,
+  "verified": true
  },
  "abyane_nb": {
   "first_seen": "2026-11-03",
   "followers": null,
-  "seen": 1
+  "seen": 2
  },
  "adaviotittoni": {
   "first_seen": "2026-10-27",
@@ -520,10 +524,14 @@
   "verified": true
  },
  "codedale.tech": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 57424,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "codersoni": {
   "business": false,
@@ -685,10 +693,14 @@
   "verified": true
  },
  "drk_talks": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 359165,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": true
  },
  "drtechtrick": {
   "business": false,
@@ -754,7 +766,7 @@
  "gab.gouvea": {
   "first_seen": "2026-10-27",
   "followers": null,
-  "seen": 4
+  "seen": 5
  },
  "gagantalksbiz": {
   "business": false,
@@ -1241,10 +1253,14 @@
   "seen": 1
  },
  "mukul.mogha": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 282,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "n3rdcev": {
   "business": false,
@@ -1452,7 +1468,7 @@
   "followers": 6835,
   "followers_source": "apify",
   "kept": 20,
-  "repo_reels": 6,
+  "repo_reels": 5,
   "seen": 20,
   "verified": true
  },
@@ -1475,6 +1491,11 @@
  "radix_global": {
   "first_seen": "2026-10-23",
   "kept": 0,
+  "seen": 1
+ },
+ "raffaele_acanfora85": {
+  "first_seen": "2026-11-13",
+  "followers": null,
   "seen": 1
  },
  "rafli.dev": {
@@ -1586,7 +1607,7 @@
   "followers": 3983,
   "followers_source": "apify",
   "kept": 13,
-  "repo_reels": 3,
+  "repo_reels": 2,
   "seen": 13,
   "verified": true
  },
@@ -1670,7 +1691,7 @@
  "sebyrock": {
   "first_seen": "2026-10-28",
   "followers": null,
-  "seen": 3
+  "seen": 4
  },
  "selfmadecoders": {
   "followers": null,
@@ -1680,6 +1701,11 @@
  },
  "sergivalencia.ai": {
   "first_seen": "2026-10-28",
+  "followers": null,
+  "seen": 1
+ },
+ "serhatsenkal_": {
+  "first_seen": "2026-11-13",
   "followers": null,
   "seen": 1
  },
@@ -1808,10 +1834,14 @@
   "verified": false
  },
  "tahabekey": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 37497,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "talkwith.rk": {
   "business": false,
@@ -1824,10 +1854,14 @@
   "verified": false
  },
  "techinsixty": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 85126,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "techtalkswithayush": {
   "business": true,
@@ -2030,10 +2064,14 @@
   "verified": false
  },
  "trickyhash": {
-  "followers": null,
+  "business": false,
+  "checked": "2026-11-13",
+  "followers": 204475,
+  "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1
+  "seen": 1,
+  "verified": false
  },
  "upcodestudios": {
   "business": true,
@@ -2182,5 +2220,16 @@
   "first_seen": "2026-11-06",
   "followers": null,
   "seen": 1
+ },
+ "zubair_trabzada": {
+  "business": false,
+  "checked": "2026-11-13",
+  "first_seen": "2026-11-13",
+  "followers": 17775,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
  }
 }

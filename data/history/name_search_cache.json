@@ -2300,6 +2300,10 @@
 "full_name": "itprojects/InboxPager",
 "stars": 74
 },
+"jarvis": {
+"full_name": "microsoft/JARVIS",
+"stars": 25640
+},
 "java": {
 "full_name": "trekhleb/javascript-algorithms",
 "stars": 196722
@@ -4341,6 +4345,10 @@
 "full_name": "1EchA/how-to-vibecoding",
 "stars": 930
 },
+"vibewise": {
+"full_name": "vibewisehq/vibewise",
+"stars": 2
+},
 "video": {
 "full_name": "Developer-Y/cs-video-courses",
 "stars": 83758
@@ -4579,6 +4587,10 @@
 "full_name": "ydvkundan2005/FloatCam",
 "stars": 8
 },
+"yoinks": {
+"full_name": "pablostanley/yoinks",
+"stars": 7156
+},
 "youtube": {
 "full_name": "ytdl-org/youtube-dl",
 "stars": 141378
@@ -4600,6 +4612,10 @@
 "stars": 254
 },
 "youtubetips": null,
+"youtubetools": {
+"full_name": "waliarubal/YoutubeTools",
+"stars": 31
+},
 "yt-dlp": {
 "full_name": "yt-dlp/yt-dlp",
 "stars": 201442

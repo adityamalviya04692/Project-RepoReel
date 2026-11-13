@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-12T11:30:50+00:00",
-  "seconds": 1358.3,
+  "finished": "2026-11-13T11:23:31+00:00",
+  "seconds": 1466.9,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 365.41,
+    "seconds": 334.5,
     "rows": {
-     "repos": 4206
+     "repos": 4214
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 20.42,
+    "seconds": 18.81,
     "rows": {
-     "repos_mentioned": 3002
+     "repos_mentioned": 2992
     }
    },
    {
@@ -28,68 +28,68 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 27.35,
+    "seconds": 54.79,
     "rows": {
      "fetched": 16,
-     "history": 464,
-     "creators_seen": 261
+     "history": 465,
+     "creators_seen": 264
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 775.09,
+    "seconds": 807.62,
     "rows": {
-     "repos": 4357,
-     "from_hn_or_reels": 154
+     "repos": 4362,
+     "from_hn_or_reels": 151
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.33,
+    "seconds": 0.39,
     "rows": {
-     "repos": 4356,
-     "snapshots": 85971,
-     "snapshot_days": 20
+     "repos": 4361,
+     "snapshots": 90332,
+     "snapshot_days": 21
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 96.58,
+    "seconds": 163.98,
     "rows": {
-     "vectors": 4356,
+     "vectors": 4361,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.12,
+    "seconds": 10.99,
     "rows": {
-     "reels": 464,
-     "matched": 99,
+     "reels": 465,
+     "matched": 97,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.09,
+    "seconds": 3.83,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 28.06,
+    "seconds": 23.93,
     "rows": {
-     "creators": 173,
+     "creators": 174,
      "followers_filled": 8
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.72,
+    "seconds": 0.92,
     "rows": {
-     "repos": 4368,
-     "creators": 173,
+     "repos": 4373,
+     "creators": 174,
      "eligible_creators": 8
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.71,
+    "seconds": 1.27,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 10.2,
+    "seconds": 17.03,
     "rows": {
      "files": 7,
-     "repos": 4368
+     "repos": 4373
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4368 repositories"
+    "detail": "4373 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4368 vectors for 4368 repos"
+    "detail": "4373 vectors for 4373 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4355 \u2192 4368 (+0%)"
+    "detail": "4368 \u2192 4373 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "464 reels, 173 creators"
+    "detail": "465 reels, 174 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "380 unmatched (see review queue)"
+    "detail": "383 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -350,8 +350,8 @@
     }
    ]
   },
-  "catalog": 4368,
-  "snapshot_days": 20
+  "catalog": 4373,
+  "snapshot_days": 21
  },
  "history": [
   {
@@ -514,6 +514,12 @@
    "finished": "2026-11-12T11:30:50+00:00",
    "seconds": 1358.3,
    "catalog": 4368,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-13T11:23:31+00:00",
+   "seconds": 1466.9,
+   "catalog": 4373,
    "failed": 0
   }
  ]
