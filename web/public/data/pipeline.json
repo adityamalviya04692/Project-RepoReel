@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-14T10:46:02+00:00",
-  "seconds": 1254.9,
+  "finished": "2026-11-15T11:15:33+00:00",
+  "seconds": 1360.9,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 308.8,
+    "seconds": 307.69,
     "rows": {
-     "repos": 4217
+     "repos": 4216
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 40.8,
+    "seconds": 17.87,
     "rows": {
-     "repos_mentioned": 2963
+     "repos_mentioned": 2923
     }
    },
    {
@@ -28,68 +28,68 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 31.08,
+    "seconds": 45.29,
     "rows": {
      "fetched": 16,
-     "history": 465,
-     "creators_seen": 267
+     "history": 476,
+     "creators_seen": 275
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 697.11,
+    "seconds": 749.6,
     "rows": {
-     "repos": 4363,
-     "from_hn_or_reels": 149
+     "repos": 4365,
+     "from_hn_or_reels": 152
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.32,
+    "seconds": 0.33,
     "rows": {
-     "repos": 4362,
-     "snapshots": 94694,
-     "snapshot_days": 22
+     "repos": 4364,
+     "snapshots": 99058,
+     "snapshot_days": 23
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 102.24,
+    "seconds": 117.59,
     "rows": {
-     "vectors": 4362,
+     "vectors": 4364,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.15,
+    "seconds": 62.96,
     "rows": {
-     "reels": 465,
-     "matched": 97,
+     "reels": 476,
+     "matched": 101,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.18,
+    "seconds": 2.93,
     "rows": {
-     "added": 12
+     "added": 13
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 32.08,
+    "seconds": 16.65,
     "rows": {
-     "creators": 174,
+     "creators": 181,
      "followers_filled": 8
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.72,
+    "seconds": 0.83,
     "rows": {
-     "repos": 4374,
-     "creators": 174,
+     "repos": 4377,
+     "creators": 181,
      "eligible_creators": 8
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.63,
+    "seconds": 0.84,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 9.85,
+    "seconds": 10.46,
     "rows": {
      "files": 7,
-     "repos": 4374
+     "repos": 4377
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4374 repositories"
+    "detail": "4377 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4374 vectors for 4374 repos"
+    "detail": "4377 vectors for 4377 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4373 \u2192 4374 (+0%)"
+    "detail": "4374 \u2192 4377 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "465 reels, 174 creators"
+    "detail": "476 reels, 181 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "383 unmatched (see review queue)"
+    "detail": "390 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -299,9 +299,9 @@
      ],
      "first_hit": null,
      "top3": [
+      "qwenlm/qwen-code",
       "cline/cline",
-      "aaif-goose/goose",
-      "stablyai/orca"
+      "aaif-goose/goose"
      ]
     },
     {
@@ -329,8 +329,8 @@
      "first_hit": null,
      "top3": [
       "mvschwarz/openrig",
-      "ashishpatel26/500-ai-agents-projects",
-      "rowboatlabs/rowboat"
+      "rowboatlabs/rowboat",
+      "ashishpatel26/500-ai-agents-projects"
      ]
     },
     {
@@ -350,8 +350,8 @@
     }
    ]
   },
-  "catalog": 4374,
-  "snapshot_days": 22
+  "catalog": 4377,
+  "snapshot_days": 23
  },
  "history": [
   {
@@ -526,6 +526,12 @@
    "finished": "2026-11-14T10:46:02+00:00",
    "seconds": 1254.9,
    "catalog": 4374,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-15T11:15:33+00:00",
+   "seconds": 1360.9,
+   "catalog": 4377,
    "failed": 0
   }
  ]

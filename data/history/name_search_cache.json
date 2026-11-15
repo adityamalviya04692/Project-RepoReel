@@ -149,6 +149,10 @@
 "full_name": "microsoft/agenticai-design-patterns",
 "stars": 691
 },
+"agenticrag": {
+"full_name": "asinghcsu/AgenticRAG-Survey",
+"stars": 1747
+},
 "ai-assisted": {
 "full_name": "iam-veeramalla/ai-assisted-devops",
 "stars": 929
@@ -767,6 +771,10 @@
 "full_name": "TwoTailsGames/Unity-Built-in-Shaders",
 "stars": 959
 },
+"burn-rate": {
+"full_name": "ronitgupta138/BurnRate",
+"stars": 32
+},
 "burnstubbornfat": null,
 "businessgrowth": {
 "full_name": "marvelg/businessgrowth",
@@ -1179,6 +1187,10 @@
 "full_name": "adityabelnekar/creatorhacks",
 "stars": 0
 },
+"creators": {
+"full_name": "Cog-Creators/Red-DiscordBot",
+"stars": 5764
+},
 "creatortools": {
 "full_name": "HackWithSumit/WindowsPhishingPayloads-CreatorTools",
 "stars": 17
@@ -1343,6 +1355,10 @@
 "deskorganization": {
 "full_name": "dabai1127/DeskOrganization",
 "stars": 3
+},
+"desksetup": {
+"full_name": "brenogcota/desksetup-bot",
+"stars": 1
 },
 "detectionlab": {
 "full_name": "clong/DetectionLab",
@@ -1536,6 +1552,10 @@
 "full_name": "dair-ai/Prompt-Engineering-Guide",
 "stars": 79724
 },
+"entrepreneur": {
+"full_name": "charlax/entrepreneurship-resources",
+"stars": 615
+},
 "entrepreneurs": {
 "full_name": "charlax/entrepreneurship-resources",
 "stars": 615
@@ -1664,6 +1684,10 @@
 "stars": 1
 },
 "followforfollowback": null,
+"form-filling": {
+"full_name": "1lck/AI-Resume-Form-Filling-Assistant",
+"stars": 226
+},
 "forty-one": {
 "full_name": "amebalabs/NineFortyOne",
 "stars": 11
@@ -1764,6 +1788,10 @@
 "freeflow": {
 "full_name": "zachlatta/freeflow",
 "stars": 3025
+},
+"freelancing": {
+"full_name": "sam-hosseini/freelancing-in-finland",
+"stars": 1671
 },
 "freelearning": {
 "full_name": "PaulWaltersDev/FreeLearningResourcesForSoftwareTesters",
@@ -2010,6 +2038,10 @@
 "full_name": "SoCloseSociety/GoogleMapScraper",
 "stars": 10
 },
+"googletv": {
+"full_name": "google/googletv-android-samples",
+"stars": 165
+},
 "gpio-based": {
 "full_name": "SATVIKA07/APB-based-GPIO",
 "stars": 1
@@ -2205,6 +2237,10 @@
 "hy-mt2": {
 "full_name": "Tencent-Hunyuan/Hy-MT2",
 "stars": 1518
+},
+"hyper-realistic": {
+"full_name": "seanpm2001/Hyper-realistic-farm-simulator",
+"stars": 11
 },
 "hyvatheme": {
 "full_name": "HiMagento/hyvatheme",
@@ -2592,6 +2628,10 @@
 "full_name": "tazztone/losslesscut-android",
 "stars": 109
 },
+"lovableai": {
+"full_name": "CodebyGaurav/lovableAI",
+"stars": 1
+},
 "lowleveldesign": {
 "full_name": "lowleveldesign/process-governor",
 "stars": 826
@@ -2636,6 +2676,10 @@
 "full_name": "mtkennerly/madamiru",
 "stars": 118
 },
+"made-up": {
+"full_name": "HectorPulido/Beat-em-up-made-with-unity",
+"stars": 14
+},
 "magento": {
 "full_name": "magento/magento2",
 "stars": 12223
@@ -2664,6 +2708,10 @@
 "manus": {
 "full_name": "FoundationAgents/OpenManus",
 "stars": 58850
+},
+"manusai": {
+"full_name": "ASHR12/ManusAI_OptimalHohmannTransferOrbit",
+"stars": 4
 },
 "maps": {
 "full_name": "react-native-maps/react-native-maps",
@@ -2795,6 +2843,10 @@
 "monday": {
 "full_name": "trungdq88/Awesome-Black-Friday-Cyber-Monday",
 "stars": 7491
+},
+"moomoo": {
+"full_name": "lookatwallstreet/WallTrading-Bot-MooMoo-Futu",
+"stars": 121
 },
 "moonshotai": {
 "full_name": "MoonshotAI/kimi-cli",
@@ -3003,6 +3055,14 @@
 "full_name": "AdelinGhanaem/OnlineBusinessCatalog",
 "stars": 4
 },
+"onyx-dot-app": {
+"full_name": "onyx-dot-app/onyx",
+"stars": 33405
+},
+"onyxai": {
+"full_name": "zafaraftab1/OnyxAI",
+"stars": 0
+},
 "open-core": {
 "full_name": "dortania/OpenCore-Legacy-Patcher",
 "stars": 18712
@@ -3194,6 +3254,10 @@
 },
 "phoenautomation": null,
 "phoneasawebcam": null,
+"phonebox": {
+"full_name": "ersinkoc/phonebox",
+"stars": 513
+},
 "photo-spoofing": null,
 "photoediting": {
 "full_name": "mrk-9/iOS-PhotoEditing-app_EmojiMe",
@@ -3394,6 +3458,10 @@
 "full_name": "MrXie23/PromptLibrary",
 "stars": 44
 },
+"prompts": {
+"full_name": "f/prompts.chat",
+"stars": 177473
+},
 "proteinforfatloss": null,
 "prowebsite": {
 "full_name": "yildiz442351/prowebsiteee",
@@ -3550,6 +3618,10 @@
 "recon": {
 "full_name": "six2dez/reconftw",
 "stars": 8287
+},
+"rednote": {
+"full_name": "rednote-machine-learning/RedKnot",
+"stars": 3173
 },
 "reelitfeelit": null,
 "reelsindia": {
@@ -3737,6 +3809,10 @@
 "full_name": "mikeroyal/Self-Hosting-Guide",
 "stars": 23402
 },
+"self-hostable": {
+"full_name": "aw-junaid/self-hostable-services",
+"stars": 17
+},
 "self-hosted": {
 "full_name": "n8n-io/self-hosted-ai-starter-kit",
 "stars": 15302
@@ -3786,6 +3862,14 @@
 "full_name": "sanyexieai/seven_chat_agent",
 "stars": 25
 },
+"shelf": {
+"full_name": "calibrain/shelfmark",
+"stars": 4152
+},
+"short-form": {
+"full_name": "DrewStewart7/ShortFormGenerator",
+"stars": 63
+},
 "shortformvideo": {
 "full_name": "PantherValley13/shortformvideo",
 "stars": 0
@@ -3798,6 +3882,10 @@
 "side-by-side": {
 "full_name": "digidem/leaflet-side-by-side",
 "stars": 375
+},
+"sidehustle": {
+"full_name": "olusoladev/sidehustle-sonawap",
+"stars": 18
 },
 "sign-in": {
 "full_name": "harshbg/Sign-Language-Interpreter-using-Deep-Learning",
@@ -3997,6 +4085,10 @@
 "systemprompt": {
 "full_name": "systempromptio/systemprompt-code-orchestrator",
 "stars": 140
+},
+"systemprompts": {
+"full_name": "schroneko/systemprompts",
+"stars": 137
 },
 "t-echo": {
 "full_name": "Luur/SwiftEchoes-Tips",
@@ -4610,6 +4702,10 @@
 "youtubeautomation": {
 "full_name": "aahashemi/YouTubeAutomation-Reddit",
 "stars": 254
+},
+"youtubers": {
+"full_name": "JoseDeFreitas/awesome-youtubers",
+"stars": 7940
 },
 "youtubetips": null,
 "youtubetools": {

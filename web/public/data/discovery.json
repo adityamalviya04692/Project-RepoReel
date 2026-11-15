@@ -5,44 +5,44 @@
   "graph_hashtags": "not configured",
   "topics": [
    {
-    "q": "claudecode",
-    "kind": "hashtag",
+    "q": "github repo",
+    "kind": "keyword",
     "reels": 8,
-    "kept": 0
+    "kept": 5
    },
    {
-    "q": "opensourceai",
-    "kind": "hashtag",
+    "q": "open source github",
+    "kind": "keyword",
     "reels": 8,
-    "kept": 0
+    "kept": 6
    }
   ],
   "fetched": 16,
-  "kept": 0,
+  "kept": 11,
   "rejected": {
-   "not_english": 5,
-   "off_topic": 1
+   "not_english": 1,
+   "off_topic": 0
   },
   "feeds": {
    "graph": 0,
    "apify": 0
   },
-  "ocr": 1,
+  "ocr": 8,
   "budget": {
-   "used": 4.147557613936078,
+   "used": 4.228246382098118,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
-  "allowance": 5,
-  "repo_creators": 173,
-  "creators_seen": 267,
+  "allowance": 2,
+  "repo_creators": 180,
+  "creators_seen": 275,
   "history_pages": 0,
   "pauses": 0,
   "backfilled_creators": 0,
   "candidates": 0,
   "boost_usd": 0.0
  },
- "history_reels": 465,
- "shown_reels": 465,
- "matched_reels": 82
+ "history_reels": 476,
+ "shown_reels": 476,
+ "matched_reels": 86
 }
