@@ -1,39 +1,26 @@
 {
  "stats": {
-  "apify": "ok",
+  "apify": "skipped: monthly free credit nearly used",
   "graph": "not configured",
   "graph_hashtags": "not configured",
-  "topics": [
-   {
-    "q": "github repo",
-    "kind": "keyword",
-    "reels": 8,
-    "kept": 5
-   },
-   {
-    "q": "open source github",
-    "kind": "keyword",
-    "reels": 8,
-    "kept": 6
-   }
-  ],
-  "fetched": 16,
-  "kept": 11,
+  "topics": [],
+  "fetched": 0,
+  "kept": 0,
   "rejected": {
-   "not_english": 1,
+   "not_english": 0,
    "off_topic": 0
   },
   "feeds": {
    "graph": 0,
    "apify": 0
   },
-  "ocr": 8,
+  "ocr": 0,
   "budget": {
-   "used": 4.228246382098118,
+   "used": 4.2517445417602175,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
-  "allowance": 2,
+  "allowance": 0,
   "repo_creators": 180,
   "creators_seen": 275,
   "history_pages": 0,

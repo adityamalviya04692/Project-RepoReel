@@ -1,11 +1,5 @@
 [
  {
-  "finished": "2026-10-23T11:27:04+00:00",
-  "seconds": 569.5,
-  "catalog": 463,
-  "failed": 0
- },
- {
   "finished": "2026-10-23T11:52:15+00:00",
   "seconds": 1494.5,
   "catalog": 4303,
@@ -177,6 +171,12 @@
   "finished": "2026-11-15T11:15:33+00:00",
   "seconds": 1360.9,
   "catalog": 4377,
+  "failed": 0
+ },
+ {
+  "finished": "2026-11-16T11:41:11+00:00",
+  "seconds": 1472.7,
+  "catalog": 4373,
   "failed": 0
  }
 ]
