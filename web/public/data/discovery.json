@@ -16,7 +16,7 @@
   },
   "ocr": 0,
   "budget": {
-   "used": 4.2517445417602175,
+   "used": 4.251795181593196,
    "plan_cap": 5.0,
    "resets": "2026-11-22T23:59:59.999Z"
   },
@@ -31,5 +31,5 @@
  },
  "history_reels": 476,
  "shown_reels": 476,
- "matched_reels": 86
+ "matched_reels": 89
 }

@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-16T11:41:11+00:00",
-  "seconds": 1472.7,
+  "finished": "2026-11-17T12:21:57+00:00",
+  "seconds": 1813.0,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 341.54,
+    "seconds": 325.79,
     "rows": {
-     "repos": 4213
+     "repos": 4214
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 18.58,
+    "seconds": 18.97,
     "rows": {
-     "repos_mentioned": 2917
+     "repos_mentioned": 2964
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.43,
+    "seconds": 0.32,
     "rows": {
      "fetched": 0,
      "history": 476,
@@ -37,48 +37,48 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 899.53,
+    "seconds": 785.76,
     "rows": {
-     "repos": 4361,
-     "from_hn_or_reels": 151
+     "repos": 4363,
+     "from_hn_or_reels": 152
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
     "seconds": 0.4,
     "rows": {
-     "repos": 4360,
-     "snapshots": 103418,
-     "snapshot_days": 24
+     "repos": 4362,
+     "snapshots": 107780,
+     "snapshot_days": 25
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 160.01,
+    "seconds": 116.23,
     "rows": {
-     "vectors": 4360,
+     "vectors": 4362,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.34,
+    "seconds": 519.01,
     "rows": {
      "reels": 476,
-     "matched": 101,
+     "matched": 104,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 4.17,
+    "seconds": 3.14,
     "rows": {
-     "added": 13
+     "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.08,
+    "seconds": 0.17,
     "rows": {
      "creators": 181,
      "followers_filled": 0
@@ -86,9 +86,9 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.9,
+    "seconds": 0.83,
     "rows": {
-     "repos": 4373,
+     "repos": 4374,
      "creators": 181,
      "eligible_creators": 8
     }
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.26,
+    "seconds": 0.72,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 17.14,
+    "seconds": 13.2,
     "rows": {
      "files": 7,
-     "repos": 4373
+     "repos": 4374
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4373 repositories"
+    "detail": "4374 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4373 vectors for 4373 repos"
+    "detail": "4374 vectors for 4374 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4377 \u2192 4373 (-0%)"
+    "detail": "4373 \u2192 4374 (+0%)"
    },
    {
     "name": "reels reference known creators",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "390 unmatched (see review queue)"
+    "detail": "387 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -200,8 +200,8 @@
      ],
      "first_hit": 4,
      "top3": [
-      "d4vinci/scrapling",
       "0xmassi/webclaw",
+      "d4vinci/scrapling",
       "scrapegraphai/scrapegraph-ai"
      ]
     },
@@ -299,8 +299,8 @@
      ],
      "first_hit": null,
      "top3": [
-      "qwenlm/qwen-code",
       "cline/cline",
+      "qwenlm/qwen-code",
       "aaif-goose/goose"
      ]
     },
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4373,
-  "snapshot_days": 24
+  "catalog": 4374,
+  "snapshot_days": 25
  },
  "history": [
-  {
-   "finished": "2026-10-23T11:52:15+00:00",
-   "seconds": 1494.5,
-   "catalog": 4303,
-   "failed": 0
-  },
   {
    "finished": "2026-10-23T11:56:07+00:00",
    "seconds": 214.1,
@@ -532,6 +526,12 @@
    "finished": "2026-11-16T11:41:11+00:00",
    "seconds": 1472.7,
    "catalog": 4373,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-17T12:21:57+00:00",
+   "seconds": 1813.0,
+   "catalog": 4374,
    "failed": 0
   }
  ]
