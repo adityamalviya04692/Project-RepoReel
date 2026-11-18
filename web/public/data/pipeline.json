@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-17T12:21:57+00:00",
-  "seconds": 1813.0,
+  "finished": "2026-11-18T12:06:32+00:00",
+  "seconds": 1484.3,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 325.79,
+    "seconds": 375.86,
     "rows": {
-     "repos": 4214
+     "repos": 4217
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 18.97,
+    "seconds": 21.28,
     "rows": {
-     "repos_mentioned": 2964
+     "repos_mentioned": 2994
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.32,
+    "seconds": 0.39,
     "rows": {
      "fetched": 0,
      "history": 476,
@@ -37,32 +37,32 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 785.76,
+    "seconds": 870.16,
     "rows": {
-     "repos": 4363,
-     "from_hn_or_reels": 152
+     "repos": 4367,
+     "from_hn_or_reels": 154
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
     "seconds": 0.4,
     "rows": {
-     "repos": 4362,
-     "snapshots": 107780,
-     "snapshot_days": 25
+     "repos": 4366,
+     "snapshots": 112146,
+     "snapshot_days": 26
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 116.23,
+    "seconds": 158.95,
     "rows": {
-     "vectors": 4362,
+     "vectors": 4366,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 519.01,
+    "seconds": 0.31,
     "rows": {
      "reels": 476,
      "matched": 104,
@@ -71,14 +71,14 @@
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.14,
+    "seconds": 3.97,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.17,
+    "seconds": 0.13,
     "rows": {
      "creators": 181,
      "followers_filled": 0
@@ -86,9 +86,9 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.83,
+    "seconds": 0.91,
     "rows": {
-     "repos": 4374,
+     "repos": 4378,
      "creators": 181,
      "eligible_creators": 8
     }
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.72,
+    "seconds": 1.01,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
-     "hit3": 0.417,
-     "mrr": 0.382
+     "hit3": 0.5,
+     "mrr": 0.389
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 13.2,
+    "seconds": 17.05,
     "rows": {
      "files": 7,
-     "repos": 4374
+     "repos": 4378
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4374 repositories"
+    "detail": "4378 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4374 vectors for 4374 repos"
+    "detail": "4378 vectors for 4378 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4373 \u2192 4374 (+0%)"
+    "detail": "4374 \u2192 4378 (+0%)"
    },
    {
     "name": "reels reference known creators",
@@ -176,8 +176,8 @@
   "eval": {
    "queries": 12,
    "hit1": 0.333,
-   "hit3": 0.417,
-   "mrr": 0.382,
+   "hit3": 0.5,
+   "mrr": 0.389,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -188,7 +188,7 @@
      "top3": [
       "browser-use/browser-use",
       "jackwener/opencli",
-      "firecrawl/firecrawl"
+      "citrolabs/ego-lite"
      ]
     },
     {
@@ -198,11 +198,11 @@
       "mendableai/firecrawl",
       "firecrawl/firecrawl"
      ],
-     "first_hit": 4,
+     "first_hit": 3,
      "top3": [
       "0xmassi/webclaw",
       "d4vinci/scrapling",
-      "scrapegraphai/scrapegraph-ai"
+      "firecrawl/firecrawl"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4374,
-  "snapshot_days": 25
+  "catalog": 4378,
+  "snapshot_days": 26
  },
  "history": [
-  {
-   "finished": "2026-10-23T11:56:07+00:00",
-   "seconds": 214.1,
-   "catalog": 4303,
-   "failed": 0
-  },
   {
    "finished": "2026-10-23T12:05:19+00:00",
    "seconds": 303.3,
@@ -532,6 +526,12 @@
    "finished": "2026-11-17T12:21:57+00:00",
    "seconds": 1813.0,
    "catalog": 4374,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-18T12:06:32+00:00",
+   "seconds": 1484.3,
+   "catalog": 4378,
    "failed": 0
   }
  ]
