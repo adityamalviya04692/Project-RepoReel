@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-18T12:06:32+00:00",
-  "seconds": 1484.3,
+  "finished": "2026-11-19T12:04:40+00:00",
+  "seconds": 1332.4,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 375.86,
+    "seconds": 361.83,
     "rows": {
-     "repos": 4217
+     "repos": 4223
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 21.28,
+    "seconds": 18.19,
     "rows": {
-     "repos_mentioned": 2994
+     "repos_mentioned": 3008
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.39,
+    "seconds": 0.32,
     "rows": {
      "fetched": 0,
      "history": 476,
@@ -37,32 +37,32 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 870.16,
+    "seconds": 794.43,
     "rows": {
-     "repos": 4367,
-     "from_hn_or_reels": 154
+     "repos": 4368,
+     "from_hn_or_reels": 149
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.4,
+    "seconds": 0.38,
     "rows": {
-     "repos": 4366,
-     "snapshots": 112146,
-     "snapshot_days": 26
+     "repos": 4367,
+     "snapshots": 116513,
+     "snapshot_days": 27
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 158.95,
+    "seconds": 109.73,
     "rows": {
-     "vectors": 4366,
+     "vectors": 4367,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.31,
+    "seconds": 0.19,
     "rows": {
      "reels": 476,
      "matched": 104,
@@ -71,14 +71,14 @@
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.97,
+    "seconds": 2.79,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.13,
+    "seconds": 0.06,
     "rows": {
      "creators": 181,
      "followers_filled": 0
@@ -86,9 +86,9 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.91,
+    "seconds": 0.83,
     "rows": {
-     "repos": 4378,
+     "repos": 4379,
      "creators": 181,
      "eligible_creators": 8
     }
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.01,
+    "seconds": 0.7,
     "rows": {
      "queries": 12,
      "hit1": 0.333,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 17.05,
+    "seconds": 12.59,
     "rows": {
      "files": 7,
-     "repos": 4378
+     "repos": 4379
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4378 repositories"
+    "detail": "4379 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4378 vectors for 4378 repos"
+    "detail": "4379 vectors for 4379 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4374 \u2192 4378 (+0%)"
+    "detail": "4378 \u2192 4379 (+0%)"
    },
    {
     "name": "reels reference known creators",
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4378,
-  "snapshot_days": 26
+  "catalog": 4379,
+  "snapshot_days": 27
  },
  "history": [
-  {
-   "finished": "2026-10-23T12:05:19+00:00",
-   "seconds": 303.3,
-   "catalog": 4303,
-   "failed": 0
-  },
   {
    "finished": "2026-10-23T12:19:15+00:00",
    "seconds": 249.2,
@@ -532,6 +526,12 @@
    "finished": "2026-11-18T12:06:32+00:00",
    "seconds": 1484.3,
    "catalog": 4378,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-19T12:04:40+00:00",
+   "seconds": 1332.4,
+   "catalog": 4379,
    "failed": 0
   }
  ]
