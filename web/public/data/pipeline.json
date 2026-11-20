@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-19T12:04:40+00:00",
-  "seconds": 1332.4,
+  "finished": "2026-11-20T12:02:11+00:00",
+  "seconds": 1353.8,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 361.83,
+    "seconds": 349.42,
     "rows": {
-     "repos": 4223
+     "repos": 4224
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 18.19,
+    "seconds": 22.23,
     "rows": {
-     "repos_mentioned": 3008
+     "repos_mentioned": 2982
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.32,
+    "seconds": 0.41,
     "rows": {
      "fetched": 0,
      "history": 476,
@@ -37,32 +37,32 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 794.43,
+    "seconds": 770.64,
     "rows": {
-     "repos": 4368,
-     "from_hn_or_reels": 149
+     "repos": 4365,
+     "from_hn_or_reels": 145
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.38,
+    "seconds": 0.4,
     "rows": {
-     "repos": 4367,
-     "snapshots": 116513,
-     "snapshot_days": 27
+     "repos": 4364,
+     "snapshots": 120877,
+     "snapshot_days": 28
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 109.73,
+    "seconds": 160.14,
     "rows": {
-     "vectors": 4367,
+     "vectors": 4364,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.19,
+    "seconds": 0.24,
     "rows": {
      "reels": 476,
      "matched": 104,
@@ -71,14 +71,14 @@
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 2.79,
+    "seconds": 3.54,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.06,
+    "seconds": 0.18,
     "rows": {
      "creators": 181,
      "followers_filled": 0
@@ -86,9 +86,9 @@
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.83,
+    "seconds": 0.93,
     "rows": {
-     "repos": 4379,
+     "repos": 4376,
      "creators": 181,
      "eligible_creators": 8
     }
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.7,
+    "seconds": 0.95,
     "rows": {
      "queries": 12,
-     "hit1": 0.333,
+     "hit1": 0.417,
      "hit3": 0.5,
-     "mrr": 0.389
+     "mrr": 0.453
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 12.59,
+    "seconds": 17.43,
     "rows": {
      "files": 7,
-     "repos": 4379
+     "repos": 4376
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4379 repositories"
+    "detail": "4376 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4379 vectors for 4379 repos"
+    "detail": "4376 vectors for 4376 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4378 \u2192 4379 (+0%)"
+    "detail": "4379 \u2192 4376 (-0%)"
    },
    {
     "name": "reels reference known creators",
@@ -175,9 +175,9 @@
   ],
   "eval": {
    "queries": 12,
-   "hit1": 0.333,
+   "hit1": 0.417,
    "hit3": 0.5,
-   "mrr": 0.389,
+   "mrr": 0.453,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -198,11 +198,11 @@
       "mendableai/firecrawl",
       "firecrawl/firecrawl"
      ],
-     "first_hit": 3,
+     "first_hit": 1,
      "top3": [
-      "0xmassi/webclaw",
+      "firecrawl/firecrawl",
       "d4vinci/scrapling",
-      "firecrawl/firecrawl"
+      "scrapegraphai/scrapegraph-ai"
      ]
     },
     {
@@ -297,11 +297,11 @@
       "anthropics/claude-code",
       "sst/opencode"
      ],
-     "first_hit": null,
+     "first_hit": 10,
      "top3": [
       "cline/cline",
       "qwenlm/qwen-code",
-      "aaif-goose/goose"
+      "stablyai/orca"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4379,
-  "snapshot_days": 27
+  "catalog": 4376,
+  "snapshot_days": 28
  },
  "history": [
-  {
-   "finished": "2026-10-23T12:19:15+00:00",
-   "seconds": 249.2,
-   "catalog": 4303,
-   "failed": 0
-  },
   {
    "finished": "2026-10-23T13:30:34+00:00",
    "seconds": 1060.4,
@@ -532,6 +526,12 @@
    "finished": "2026-11-19T12:04:40+00:00",
    "seconds": 1332.4,
    "catalog": 4379,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-20T12:02:11+00:00",
+   "seconds": 1353.8,
+   "catalog": 4376,
    "failed": 0
   }
  ]
