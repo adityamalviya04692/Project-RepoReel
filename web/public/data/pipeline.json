@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-21T11:21:06+00:00",
-  "seconds": 1244.0,
+  "finished": "2026-11-22T11:44:18+00:00",
+  "seconds": 1219.4,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 312.84,
+    "seconds": 304.0,
     "rows": {
-     "repos": 4223
+     "repos": 4231
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 19.26,
+    "seconds": 17.97,
     "rows": {
-     "repos_mentioned": 2941
+     "repos_mentioned": 2899
     }
    },
    {
@@ -28,7 +28,7 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.58,
+    "seconds": 0.49,
     "rows": {
      "fetched": 0,
      "history": 476,
@@ -37,32 +37,32 @@
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 676.86,
+    "seconds": 664.31,
     "rows": {
-     "repos": 4361,
-     "from_hn_or_reels": 143
+     "repos": 4367,
+     "from_hn_or_reels": 140
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.47,
+    "seconds": 0.46,
     "rows": {
-     "repos": 4358,
-     "snapshots": 125235,
-     "snapshot_days": 29
+     "repos": 4366,
+     "snapshots": 129601,
+     "snapshot_days": 30
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 183.92,
+    "seconds": 183.86,
     "rows": {
-     "vectors": 4358,
+     "vectors": 4366,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.47,
+    "seconds": 0.38,
     "rows": {
      "reels": 476,
      "matched": 104,
@@ -71,14 +71,14 @@
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.02,
+    "seconds": 3.04,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.1,
+    "seconds": 0.13,
     "rows": {
      "creators": 181,
      "followers_filled": 0
@@ -88,7 +88,7 @@
     "name": "score \u00b7 health, momentum, trust",
     "seconds": 1.13,
     "rows": {
-     "repos": 4370,
+     "repos": 4378,
      "creators": 181,
      "eligible_creators": 8
     }
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.2,
+    "seconds": 1.09,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
      "hit3": 0.5,
-     "mrr": 0.453
+     "mrr": 0.469
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 20.31,
+    "seconds": 19.85,
     "rows": {
      "files": 7,
-     "repos": 4370
+     "repos": 4378
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4370 repositories"
+    "detail": "4378 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,12 +145,12 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4370 vectors for 4370 repos"
+    "detail": "4378 vectors for 4378 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4376 \u2192 4370 (-0%)"
+    "detail": "4370 \u2192 4378 (+0%)"
    },
    {
     "name": "reels reference known creators",
@@ -177,7 +177,7 @@
    "queries": 12,
    "hit1": 0.417,
    "hit3": 0.5,
-   "mrr": 0.453,
+   "mrr": 0.469,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -297,7 +297,7 @@
       "anthropics/claude-code",
       "sst/opencode"
      ],
-     "first_hit": 10,
+     "first_hit": 8,
      "top3": [
       "cline/cline",
       "qwenlm/qwen-code",
@@ -312,11 +312,11 @@
       "DS4SD/docling",
       "opendatalab/MinerU"
      ],
-     "first_hit": 3,
+     "first_hit": 2,
      "top3": [
       "firecrawl/anydoc",
-      "oomol-lab/pdf-craft",
-      "docling-project/docling"
+      "docling-project/docling",
+      "oomol-lab/pdf-craft"
      ]
     },
     {
@@ -329,8 +329,8 @@
      "first_hit": null,
      "top3": [
       "mvschwarz/openrig",
-      "rowboatlabs/rowboat",
-      "ashishpatel26/500-ai-agents-projects"
+      "ashishpatel26/500-ai-agents-projects",
+      "rowboatlabs/rowboat"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4370,
-  "snapshot_days": 29
+  "catalog": 4378,
+  "snapshot_days": 30
  },
  "history": [
-  {
-   "finished": "2026-10-24T08:30:14+00:00",
-   "seconds": 1353.2,
-   "catalog": 4299,
-   "failed": 0
-  },
   {
    "finished": "2026-10-24T17:05:25+00:00",
    "seconds": 1646.0,
@@ -532,6 +526,12 @@
    "finished": "2026-11-21T11:21:06+00:00",
    "seconds": 1244.0,
    "catalog": 4370,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-22T11:44:18+00:00",
+   "seconds": 1219.4,
+   "catalog": 4378,
    "failed": 0
   }
  ]
