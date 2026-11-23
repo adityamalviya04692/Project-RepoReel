@@ -1,18 +1,18 @@
 {
  "last": {
-  "finished": "2026-11-22T11:44:18+00:00",
-  "seconds": 1219.4,
+  "finished": "2026-11-23T13:06:00+00:00",
+  "seconds": 1626.7,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 304.0,
+    "seconds": 368.88,
     "rows": {
-     "repos": 4231
+     "repos": 4232
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 17.97,
+    "seconds": 43.85,
     "rows": {
      "repos_mentioned": 2899
     }
@@ -28,74 +28,74 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 0.49,
+    "seconds": 80.58,
     "rows": {
-     "fetched": 0,
-     "history": 476,
-     "creators_seen": 275
+     "fetched": 41,
+     "history": 485,
+     "creators_seen": 281
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 664.31,
+    "seconds": 888.2,
     "rows": {
-     "repos": 4367,
-     "from_hn_or_reels": 140
+     "repos": 4370,
+     "from_hn_or_reels": 142
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.46,
+    "seconds": 0.54,
     "rows": {
-     "repos": 4366,
-     "snapshots": 129601,
-     "snapshot_days": 30
+     "repos": 4369,
+     "snapshots": 133970,
+     "snapshot_days": 31
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 183.86,
+    "seconds": 149.18,
     "rows": {
-     "vectors": 4366,
+     "vectors": 4369,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 0.38,
+    "seconds": 35.07,
     "rows": {
-     "reels": 476,
-     "matched": 104,
+     "reels": 485,
+     "matched": 105,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.04,
+    "seconds": 3.96,
     "rows": {
      "added": 12
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 0.13,
+    "seconds": 9.65,
     "rows": {
-     "creators": 181,
-     "followers_filled": 0
+     "creators": 184,
+     "followers_filled": 5
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.13,
+    "seconds": 1.16,
     "rows": {
-     "repos": 4378,
-     "creators": 181,
+     "repos": 4381,
+     "creators": 184,
      "eligible_creators": 8
     }
    },
    {
     "name": "quality \u00b7 checks",
-    "seconds": 0.01,
+    "seconds": 0.02,
     "rows": {
      "passed": 9,
      "warnings": 1,
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.09,
+    "seconds": 1.05,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
      "hit3": 0.5,
-     "mrr": 0.469
+     "mrr": 0.456
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 19.85,
+    "seconds": 17.19,
     "rows": {
      "files": 7,
-     "repos": 4378
+     "repos": 4381
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4378 repositories"
+    "detail": "4381 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4378 vectors for 4378 repos"
+    "detail": "4381 vectors for 4381 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4370 \u2192 4378 (+0%)"
+    "detail": "4378 \u2192 4381 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "476 reels, 181 creators"
+    "detail": "485 reels, 184 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "387 unmatched (see review queue)"
+    "detail": "395 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -177,7 +177,7 @@
    "queries": 12,
    "hit1": 0.417,
    "hit3": 0.5,
-   "mrr": 0.469,
+   "mrr": 0.456,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -297,7 +297,7 @@
       "anthropics/claude-code",
       "sst/opencode"
      ],
-     "first_hit": 8,
+     "first_hit": 7,
      "top3": [
       "cline/cline",
       "qwenlm/qwen-code",
@@ -312,11 +312,11 @@
       "DS4SD/docling",
       "opendatalab/MinerU"
      ],
-     "first_hit": 2,
+     "first_hit": 3,
      "top3": [
       "firecrawl/anydoc",
-      "docling-project/docling",
-      "oomol-lab/pdf-craft"
+      "oomol-lab/pdf-craft",
+      "docling-project/docling"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4378,
-  "snapshot_days": 30
+  "catalog": 4381,
+  "snapshot_days": 31
  },
  "history": [
-  {
-   "finished": "2026-10-24T17:05:25+00:00",
-   "seconds": 1646.0,
-   "catalog": 4301,
-   "failed": 0
-  },
   {
    "finished": "2026-10-24T18:13:26+00:00",
    "seconds": 1027.5,
@@ -532,6 +526,12 @@
    "finished": "2026-11-22T11:44:18+00:00",
    "seconds": 1219.4,
    "catalog": 4378,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-23T13:06:00+00:00",
+   "seconds": 1626.7,
+   "catalog": 4381,
    "failed": 0
   }
  ]

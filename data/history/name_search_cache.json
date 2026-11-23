@@ -411,6 +411,14 @@
 "full_name": "handshake-org/hs-airdrop",
 "stars": 1415
 },
+"aireels": {
+"full_name": "aireels-dev/mini-cal",
+"stars": 3
+},
+"airesearch": {
+"full_name": "airesearch-official/Z-Image-Turbo-Windows",
+"stars": 128
+},
 "airesources": {
 "full_name": "ChenBeici/AIresources",
 "stars": 31
@@ -460,6 +468,10 @@
 "stars": 0
 },
 "aitools2026": null,
+"aitrading": {
+"full_name": "QuantConnect/HandsOnAITradingBook",
+"stars": 374
+},
 "aitrends": {
 "full_name": "Nouran99/ITI_mansoura_AITrends_final_students_projects",
 "stars": 3
@@ -574,6 +586,10 @@
 "androidhacks": {
 "full_name": "DIY-green/AndroidHacks",
 "stars": 41
+},
+"androidonly": {
+"full_name": "RHUBois08/androidonlyebida",
+"stars": 0
 },
 "androidtv": {
 "full_name": "jellyfin/jellyfin-androidtv",
@@ -2434,6 +2450,14 @@
 "full_name": "Cherancherry/growwithme",
 "stars": 1
 },
+"gta6": {
+"full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+"stars": 278
+},
+"gtavi": {
+"full_name": "umautobots/GTAVisionExport",
+"stars": 137
+},
 "gym": {
 "full_name": "openai/gym",
 "stars": 37234
@@ -2441,6 +2465,10 @@
 "hackathon": {
 "full_name": "sahat/hackathon-starter",
 "stars": 35262
+},
+"hackers": {
+"full_name": "CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers",
+"stars": 28212
 },
 "hacking": {
 "full_name": "Hack-with-Github/Awesome-Hacking",
@@ -3438,6 +3466,10 @@
 "full_name": "sasansafari/Ninety-seven-things",
 "stars": 352
 },
+"nirowfx": {
+"full_name": "nirowfx/ni",
+"stars": 0
+},
 "no": {
 "full_name": "CyC2018/CS-Notes",
 "stars": 186325
@@ -3718,6 +3750,14 @@
 "full_name": "nearai/pay-per-prompt",
 "stars": 1
 },
+"pc-compatible": {
+"full_name": "homebrew8088/8088-PC-Compatible",
+"stars": 238
+},
+"pcgaming": {
+"full_name": "sharkusmanch/playnite-pcgamingwiki-metadata-provider",
+"stars": 10
+},
 "pdf": {
 "full_name": "Stirling-Tools/Stirling-PDF",
 "stars": 94878
@@ -3751,6 +3791,10 @@
 "stars": 3504
 },
 "phoenautomation": null,
+"phone": {
+"full_name": "sundowndev/phoneinfoga",
+"stars": 18657
+},
 "phoneasawebcam": null,
 "phonebox": {
 "full_name": "ersinkoc/phonebox",
@@ -4207,6 +4251,10 @@
 "full_name": "andersao/l5-repository",
 "stars": 4194
 },
+"research": {
+"full_name": "Imbad0202/academic-research-skills",
+"stars": 58208
+},
 "researchtools": {
 "full_name": "weisongwen/researchTools",
 "stars": 245
@@ -4279,6 +4327,10 @@
 "rtldesign": {
 "full_name": "sean-galloway/RTLDesignSherpa",
 "stars": 26
+},
+"ruflow": {
+"full_name": "henryalouf/ruflow",
+"stars": 199
 },
 "rule-based": {
 "full_name": "Sorosliu1029/Rule-based_Expert_System",

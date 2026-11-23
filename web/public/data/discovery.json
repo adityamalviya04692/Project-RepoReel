@@ -1,35 +1,48 @@
 {
  "stats": {
-  "apify": "skipped: monthly free credit nearly used",
+  "apify": "ok",
   "graph": "not configured",
   "graph_hashtags": "not configured",
-  "topics": [],
-  "fetched": 0,
-  "kept": 0,
+  "topics": [
+   {
+    "q": "githubprojects",
+    "kind": "hashtag",
+    "reels": 10,
+    "kept": 6
+   },
+   {
+    "q": "opensourcetools",
+    "kind": "hashtag",
+    "reels": 10,
+    "kept": 1
+   }
+  ],
+  "fetched": 41,
+  "kept": 9,
   "rejected": {
-   "not_english": 0,
-   "off_topic": 0
+   "not_english": 5,
+   "off_topic": 20
   },
   "feeds": {
    "graph": 0,
-   "apify": 0
+   "apify": 3
   },
-  "ocr": 0,
+  "ocr": 24,
   "budget": {
-   "used": 4.25195939520458,
+   "used": 0.1154365656313068,
    "plan_cap": 5.0,
-   "resets": "2026-11-22T23:59:59.999Z"
+   "resets": "2026-12-22T23:59:59.999Z"
   },
-  "allowance": 0,
-  "repo_creators": 180,
-  "creators_seen": 275,
+  "allowance": 52,
+  "repo_creators": 182,
+  "creators_seen": 281,
   "history_pages": 0,
   "pauses": 0,
   "backfilled_creators": 0,
   "candidates": 0,
   "boost_usd": 0.0
  },
- "history_reels": 476,
- "shown_reels": 476,
- "matched_reels": 89
+ "history_reels": 485,
+ "shown_reels": 485,
+ "matched_reels": 90
 }
