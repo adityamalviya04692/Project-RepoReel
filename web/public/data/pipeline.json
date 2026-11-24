@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-23T13:06:00+00:00",
-  "seconds": 1626.7,
+  "finished": "2026-11-24T14:12:19+00:00",
+  "seconds": 1797.4,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 368.88,
+    "seconds": 376.56,
     "rows": {
-     "repos": 4232
+     "repos": 4237
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 43.85,
+    "seconds": 19.35,
     "rows": {
-     "repos_mentioned": 2899
+     "repos_mentioned": 2949
     }
    },
    {
@@ -28,74 +28,74 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 80.58,
+    "seconds": 71.48,
     "rows": {
-     "fetched": 41,
-     "history": 485,
-     "creators_seen": 281
+     "fetched": 39,
+     "history": 493,
+     "creators_seen": 289
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 888.2,
+    "seconds": 1013.08,
     "rows": {
-     "repos": 4370,
-     "from_hn_or_reels": 142
+     "repos": 4377,
+     "from_hn_or_reels": 145
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.54,
+    "seconds": 0.48,
     "rows": {
-     "repos": 4369,
-     "snapshots": 133970,
-     "snapshot_days": 31
+     "repos": 4376,
+     "snapshots": 138346,
+     "snapshot_days": 32
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 149.18,
+    "seconds": 183.71,
     "rows": {
-     "vectors": 4369,
+     "vectors": 4376,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 35.07,
+    "seconds": 46.64,
     "rows": {
-     "reels": 485,
-     "matched": 105,
+     "reels": 493,
+     "matched": 107,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.96,
+    "seconds": 3.95,
     "rows": {
-     "added": 12
+     "added": 13
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 9.65,
+    "seconds": 32.57,
     "rows": {
-     "creators": 184,
+     "creators": 189,
      "followers_filled": 5
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 1.16,
+    "seconds": 1.15,
     "rows": {
-     "repos": 4381,
-     "creators": 184,
+     "repos": 4389,
+     "creators": 189,
      "eligible_creators": 8
     }
    },
    {
     "name": "quality \u00b7 checks",
-    "seconds": 0.02,
+    "seconds": 0.01,
     "rows": {
      "passed": 9,
      "warnings": 1,
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 1.05,
+    "seconds": 1.3,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
-     "hit3": 0.5,
-     "mrr": 0.456
+     "hit3": 0.417,
+     "mrr": 0.451
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 17.19,
+    "seconds": 20.94,
     "rows": {
      "files": 7,
-     "repos": 4381
+     "repos": 4389
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4381 repositories"
+    "detail": "4389 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4381 vectors for 4381 repos"
+    "detail": "4389 vectors for 4389 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4378 \u2192 4381 (+0%)"
+    "detail": "4381 \u2192 4389 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "485 reels, 184 creators"
+    "detail": "493 reels, 189 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "395 unmatched (see review queue)"
+    "detail": "402 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -176,8 +176,8 @@
   "eval": {
    "queries": 12,
    "hit1": 0.417,
-   "hit3": 0.5,
-   "mrr": 0.456,
+   "hit3": 0.417,
+   "mrr": 0.451,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -255,8 +255,8 @@
      "first_hit": 1,
      "top3": [
       "speedyapply/jobspy",
-      "godsscion/auto_job_applier_linkedin",
-      "spinlud/py-linkedin-jobs-scraper"
+      "spinlud/py-linkedin-jobs-scraper",
+      "godsscion/auto_job_applier_linkedin"
      ]
     },
     {
@@ -297,7 +297,7 @@
       "anthropics/claude-code",
       "sst/opencode"
      ],
-     "first_hit": 7,
+     "first_hit": 6,
      "top3": [
       "cline/cline",
       "qwenlm/qwen-code",
@@ -312,11 +312,11 @@
       "DS4SD/docling",
       "opendatalab/MinerU"
      ],
-     "first_hit": 3,
+     "first_hit": 4,
      "top3": [
       "firecrawl/anydoc",
-      "oomol-lab/pdf-craft",
-      "docling-project/docling"
+      "datalab-to/marker",
+      "oomol-lab/pdf-craft"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4381,
-  "snapshot_days": 31
+  "catalog": 4389,
+  "snapshot_days": 32
  },
  "history": [
-  {
-   "finished": "2026-10-24T18:13:26+00:00",
-   "seconds": 1027.5,
-   "catalog": 4309,
-   "failed": 0
-  },
   {
    "finished": "2026-10-25T08:48:22+00:00",
    "seconds": 1387.3,
@@ -532,6 +526,12 @@
    "finished": "2026-11-23T13:06:00+00:00",
    "seconds": 1626.7,
    "catalog": 4381,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-24T14:12:19+00:00",
+   "seconds": 1797.4,
+   "catalog": 4389,
    "failed": 0
   }
  ]

@@ -63,6 +63,17 @@
   "followers": null,
   "seen": 1
  },
+ "adilet.fndr": {
+  "business": false,
+  "checked": "2026-11-24",
+  "first_seen": "2026-11-24",
+  "followers": 65588,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "agilesingh.ai": {
   "apify_feed": "2026-10-29",
   "business": false,
@@ -107,6 +118,22 @@
   "repo_reels": 0,
   "seen": 9,
   "verified": true
+ },
+ "ai_afterhoursss": {
+  "business": false,
+  "checked": "2026-11-24",
+  "first_seen": "2026-11-24",
+  "followers": 4075,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
+ "aiboy.ai": {
+  "first_seen": "2026-11-24",
+  "followers": null,
+  "seen": 1
  },
  "aidaasoufi": {
   "first_seen": "2026-10-23",
@@ -214,23 +241,25 @@
   "via": "nomadev.ai"
  },
  "ambika_visions": {
+  "apify_feed": "2026-11-24",
   "business": false,
   "checked": "2026-11-10",
   "followers": 26860,
   "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 9,
   "verified": true
  },
  "analyticxhub": {
+  "apify_feed": "2026-11-24",
   "business": false,
   "checked": "2026-11-14",
   "followers": 83025,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 2,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 7,
   "verified": true
  },
  "andycufari": {
@@ -243,13 +272,14 @@
   "verified": true
  },
  "ariacodez": {
+  "apify_feed": "2026-11-24",
   "business": true,
   "checked": "2026-10-27",
   "followers": 689012,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 3,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 9,
   "verified": true
  },
  "aru_code": {
@@ -677,6 +707,17 @@
   "probe": "pending",
   "via": "princegupta.ai"
  },
+ "deployskool": {
+  "business": false,
+  "checked": "2026-11-24",
+  "first_seen": "2026-11-24",
+  "followers": 21308,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "desimadhurivibes": {
   "business": true,
   "checked": "2026-11-05",
@@ -809,6 +850,17 @@
   "repo_reels": 0,
   "seen": 1,
   "verified": true
+ },
+ "git.radar": {
+  "business": false,
+  "checked": "2026-11-24",
+  "first_seen": "2026-11-24",
+  "followers": 26766,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 1,
+  "seen": 1,
+  "verified": false
  },
  "github": {
   "first_seen": "2026-11-02",
@@ -980,6 +1032,11 @@
   "seen": 1,
   "verified": false
  },
+ "internships_world": {
+  "first_seen": "2026-11-24",
+  "followers": null,
+  "seen": 1
+ },
  "iojeet": {
   "first_seen": "2026-11-14",
   "followers": null,
@@ -1019,6 +1076,17 @@
   "repo_reels": 0,
   "seen": 1,
   "verified": false
+ },
+ "jesserurka": {
+  "business": true,
+  "checked": "2026-11-24",
+  "first_seen": "2026-11-24",
+  "followers": 52359,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
  },
  "joaopaulodealmeidapradocosta": {
   "first_seen": "2026-10-29",
@@ -1538,6 +1606,11 @@
   "repo_reels": 0,
   "seen": 1,
   "verified": true
+ },
+ "placementdrive.in": {
+  "first_seen": "2026-11-24",
+  "followers": null,
+  "seen": 1
  },
  "pluto.careers": {
   "business": false,

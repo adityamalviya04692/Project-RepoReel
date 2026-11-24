@@ -480,6 +480,10 @@
 "full_name": "Vauth/aiuncensored",
 "stars": 24
 },
+"aiux": {
+"full_name": "KL13NT/AIUX",
+"stars": 18
+},
 "aivideo": {
 "full_name": "Longxiaohao/AIvideo",
 "stars": 112
@@ -565,6 +569,10 @@
 "always-on": {
 "full_name": "pradt2/always-online-stun",
 "stars": 1046
+},
+"analysis_of_the_2015_world_population": {
+"full_name": "Pranshu-2308/Analysis_of_the_2015_World_population",
+"stars": 0
 },
 "analyticscareer": {
 "full_name": "Dnyananda/AnalyticsCareer",
@@ -946,6 +954,10 @@
 "full_name": "zhaomeiru66/CareerTips",
 "stars": 0
 },
+"cart-database-project": {
+"full_name": "aaronzguan/Online-Shopping-Cart-Database-Project",
+"stars": 182
+},
 "cartooning": {
 "full_name": "mrubenw/image-cartooning-web-app",
 "stars": 8
@@ -1060,6 +1072,10 @@
 "closed-loop": {
 "full_name": "creapunk/CLN-ClosedLoopNemaDriver",
 "stars": 1111
+},
+"cloud": {
+"full_name": "Binaryify/NeteaseCloudMusicApi",
+"stars": 30220
 },
 "cloud-based": {
 "full_name": "NemophilistJohn/BOBOcloud-A-cloud-based-remote-compilation-platform",
@@ -1436,6 +1452,26 @@
 "stars": 416
 },
 "dadbodtofitbod": null,
+"dark": {
+"full_name": "pjreddie/darknet",
+"stars": 26521
+},
+"data": {
+"full_name": "awesomedata/awesome-public-datasets",
+"stars": 80355
+},
+"data-analysis": {
+"full_name": "iamseancheney/python_for_data_analysis_2nd_chinese_version",
+"stars": 9028
+},
+"data-analysis-u": {
+"full_name": "liangdabiao/claude-data-analysis-ultra-main",
+"stars": 303
+},
+"data-analysis-using-sql": {
+"full_name": "mrankitgupta/Sales-Insights-Data-Analysis-using-Tableau-and-SQL",
+"stars": 61
+},
 "data-center": {
 "full_name": "ddutt/cloud-native-data-center-networking",
 "stars": 190
@@ -1560,6 +1596,7 @@
 "full_name": "Pranav24205/deploynow",
 "stars": 0
 },
+"deployskool": null,
 "design": {
 "full_name": "donnemartin/system-design-primer",
 "stars": 375437
@@ -1764,6 +1801,10 @@
 "stars": 945
 },
 "dysontoothbrush": null,
+"e-commerce": {
+"full_name": "abuanwar072/E-commerce-Complete-Flutter-UI",
+"stars": 4852
+},
 "early-stage": {
 "full_name": "Bala-0630/Early-Stage-Behavioral-Detection-Prevention-Of-Ransomware-Attacks-On-Devices-",
 "stars": 63
@@ -2425,6 +2466,10 @@
 "full_name": "Graphify-Labs/graphify",
 "stars": 134300
 },
+"graph-based": {
+"full_name": "naganandy/graph-based-deep-learning-literature",
+"stars": 5118
+},
 "graphicdesign": {
 "full_name": "Relph1119/GraphicDesignPatternByPython",
 "stars": 40
@@ -3066,6 +3111,10 @@
 "full_name": "arshiafarrokhi/LoginLogout-regx-only-",
 "stars": 3
 },
+"loicchamplong": {
+"full_name": "LoicChamplong/Data-Analysis-SQL",
+"stars": 208
+},
 "long-form": {
 "full_name": "google-deepmind/long-form-factuality",
 "stars": 700
@@ -3565,6 +3614,10 @@
 "full_name": "0range-x/Domain-penetration_one-stop",
 "stars": 739
 },
+"online-shopping": {
+"full_name": "PuneethReddyHC/online-shopping-system-advanced",
+"stars": 447
+},
 "onlinebusiness": {
 "full_name": "AdelinGhanaem/OnlineBusinessCatalog",
 "stars": 4
@@ -3923,6 +3976,10 @@
 "predict": {
 "full_name": "apache/predictionio",
 "stars": 12519
+},
+"prefers-reduced-motion": {
+"full_name": "anatoliygatt/use-prefers-reduced-motion",
+"stars": 24
 },
 "princeguptaai": null,
 "privacy": {
@@ -4609,6 +4666,10 @@
 "full_name": "smicallef/spiderfoot",
 "stars": 23742
 },
+"sql-data-analysis-and-visualization-projects": {
+"full_name": "ptyadana/SQL-Data-Analysis-and-Visualization-Projects",
+"stars": 1846
+},
 "sqlbasics": {
 "full_name": "anxkhn/SQLBasics",
 "stars": 30
@@ -5229,6 +5290,10 @@
 "vunerability": {
 "full_name": "zanghaoxuan/Reentrancy-Vunerability-Detect-Script-for-VScode",
 "stars": 24
+},
+"waiting": {
+"full_name": "waiting-for-dev/devise-jwt",
+"stars": 1292
 },
 "walnut": {
 "full_name": "StudioCherno/Walnut",
