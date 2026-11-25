@@ -51,6 +51,10 @@
 "full_name": "Taichu-AI/ZDTaichu5.0-9B",
 "stars": 3063
 },
+"5-hour": {
+"full_name": "zephyo/5fonts10hours",
+"stars": 30
+},
 "50-day": {
 "full_name": "bradtraversy/50projects50days",
 "stars": 40638
@@ -152,6 +156,10 @@
 "agent-to-agent": {
 "full_name": "NirDiamant/agents-towards-production",
 "stars": 21760
+},
+"agent-zero": {
+"full_name": "agent0ai/agent-zero",
+"stars": 19980
 },
 "agentcommunication": {
 "full_name": "GoogleCloudPlatform/agentcommunication_client",
@@ -398,6 +406,10 @@
 "aiprojects": {
 "full_name": "Upasana1216/AiProjects",
 "stars": 45
+},
+"aiprompt": {
+"full_name": "LBEILC/NovelAIPromptStudio",
+"stars": 143
 },
 "aiprompting": {
 "full_name": "hammertoe/AIPromptingWorkshop",
@@ -833,6 +845,7 @@
 "full_name": "ThioJoe/Browser-Based-Tools",
 "stars": 283
 },
+"browser-useai": null,
 "browserautomation": {
 "full_name": "AutomatedTester/W3-BrowserAutomation",
 "stars": 16
@@ -1344,6 +1357,10 @@
 "craft": {
 "full_name": "xiaolai/the-craft-of-selfteaching",
 "stars": 17918
+},
+"creativeai": {
+"full_name": "sony/creativeai",
+"stars": 82
 },
 "creativealternatives": {
 "full_name": "creativealternatives/Client-Points",
@@ -1957,6 +1974,10 @@
 "feature-focused": {
 "full_name": "aaronsilinskas/feature-focused-testing",
 "stars": 3
+},
+"feder-cr": {
+"full_name": "feder-cr/Jobs_Applier_AI_Agent",
+"stars": 32638
 },
 "fifty-three": {
 "full_name": "Twenty-Three-Fifty-Nine/grade-tracker",
@@ -2867,6 +2888,10 @@
 "full_name": "remoteintech/remote-jobs",
 "stars": 40931
 },
+"jobs_applier_ai_agent_aihawk": {
+"full_name": "ElephantPrinceDev/Jobs_Applier_AI_Agent_AIHawk",
+"stars": 6
+},
 "js-heavy": {
 "full_name": "gargakshit/heavy.js",
 "stars": 59
@@ -3147,10 +3172,15 @@
 "full_name": "Lightricks/LTX-Video",
 "stars": 11167
 },
+"ltx-2": {
+"full_name": "Lightricks/LTX-2",
+"stars": 10391
+},
 "ltx2": {
 "full_name": "wildminder/awesome-ltx2",
 "stars": 600
 },
+"ltxdesktop": null,
 "ltxv": {
 "full_name": "Lightricks/ComfyUI-LTXVideo",
 "stars": 4268
@@ -4324,6 +4354,10 @@
 "full_name": "bradtraversy/design-resources-for-developers",
 "stars": 67361
 },
+"resume": {
+"full_name": "resume/resume.github.com",
+"stars": 62906
+},
 "resume-ready": {
 "full_name": "HtetWaiYann/ats-ready-resume",
 "stars": 2
@@ -4427,6 +4461,10 @@
 "saasdevelopment": {
 "full_name": "saasdevelopment/docs",
 "stars": 0
+},
+"sabrinaramonov": {
+"full_name": "SabrinaRamonov/prompts",
+"stars": 1086
 },
 "sales": {
 "full_name": "PeterH0323/Streamer-Sales",
@@ -4581,6 +4619,10 @@
 "full_name": "sefyudem/Sliding-Sign-In-Sign-Up-Form",
 "stars": 739
 },
+"significant-gravitas": {
+"full_name": "Significant-Gravitas/AutoGPT",
+"stars": 188181
+},
 "simulationstrategy": null,
 "singlecommand": {
 "full_name": "sohag-pro/SingleCommand",
@@ -4605,6 +4647,10 @@
 "skyreelsv2": {
 "full_name": "mindvridge/SkyReelsV2",
 "stars": 0
+},
+"skyvern-ai": {
+"full_name": "Skyvern-AI/skyvern",
+"stars": 23532
 },
 "slow-motion": {
 "full_name": "shu223/SlowMotionVideoRecorder",
@@ -5283,6 +5329,10 @@
 "stars": 3
 },
 "voiceovertools": null,
+"vram": {
+"full_name": "Overv/vramfs",
+"stars": 1553
+},
 "vulnerabilityscanning": {
 "full_name": "whitesea5189/vulnerabilityScanning",
 "stars": 0
@@ -5302,6 +5352,10 @@
 "wan": {
 "full_name": "k1tbyte/Wand-Enhancer",
 "stars": 33463
+},
+"wan2gp": {
+"full_name": "Square-Zero-Labs/Wan2GP-on-Colab",
+"stars": 214
 },
 "water-based": {
 "full_name": "skyerhxx/Visual-watermarking-system-based-on-digital-image",
