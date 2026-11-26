@@ -3,6 +3,7 @@
 "full_name": "rajamanraj0000-pixel/rajamanraj0000-pixel",
 "stars": 1
 },
+"1-billion-byte": null,
 "1-flash": {
 "full_name": "dibingfa/flash-linux0.11-talk",
 "stars": 22670
@@ -14,6 +15,10 @@
 "10-question": {
 "full_name": "Saran-pariyar/100_Days_Of_Frontend_Interview_Questions",
 "stars": 592
+},
+"12-layer": {
+"full_name": "microsoft/D3D12TranslationLayer",
+"stars": 363
 },
 "12-month": {
 "full_name": "gamwe6/12-startups-in-12-months",
@@ -34,6 +39,10 @@
 "20-25": {
 "full_name": "DmitryRyumin/ICCV-2023-25-Papers",
 "stars": 973
+},
+"200-a-month": {
+"full_name": "1379388971/aid_2009_month02",
+"stars": 0
 },
 "30-day": {
 "full_name": "Asabeneh/30-Days-Of-Python",
@@ -262,6 +271,10 @@
 "aicompare": {
 "full_name": "taoAIGC/AICompare",
 "stars": 130
+},
+"aicompression": {
+"full_name": "castafra/aicompression",
+"stars": 0
 },
 "aiconsultants": {
 "full_name": "jtgrady1051-code/aiconsultantsofnepa",
@@ -779,6 +792,10 @@
 "b-roll": {
 "full_name": "rollup/rollup-plugin-babel",
 "stars": 698
+},
+"b200": {
+"full_name": "Int21-AI/KDA-B200",
+"stars": 47
 },
 "b2b": {
 "full_name": "fogbender/b2b-saaskit",
@@ -1796,6 +1813,10 @@
 "double-take": {
 "full_name": "jakowenko/double-take",
 "stars": 1446
+},
+"download": {
+"full_name": "spotDL/spotify-downloader",
+"stars": 26976
 },
 "dsh": {
 "full_name": "Ebony-Vinyl/dsh-our-free-model",
@@ -3144,6 +3165,10 @@
 "full_name": "google-deepmind/long-form-factuality",
 "stars": 700
 },
+"long-running": {
+"full_name": "anthropics/cwc-long-running-agents",
+"stars": 771
+},
 "long-term": {
 "full_name": "longbridge/longbridge-terminal",
 "stars": 1024
@@ -3364,6 +3389,10 @@
 "miniserver": {
 "full_name": "sarnau/Inside-The-Loxone-Miniserver",
 "stars": 244
+},
+"miramurati": {
+"full_name": "Mijayo/MiraMurati_Interamericana_Norte_Demo",
+"stars": 1
 },
 "mirofish": {
 "full_name": "666ghj/MiroFish",
@@ -3644,6 +3673,10 @@
 "full_name": "0range-x/Domain-penetration_one-stop",
 "stars": 739
 },
+"one-tenth": {
+"full_name": "eandert/One_Tenth_Scale_Autonomous_Vehicle",
+"stars": 5
+},
 "online-shopping": {
 "full_name": "PuneethReddyHC/online-shopping-system-advanced",
 "stars": 447
@@ -3651,6 +3684,10 @@
 "onlinebusiness": {
 "full_name": "AdelinGhanaem/OnlineBusinessCatalog",
 "stars": 4
+},
+"onlinelearning": {
+"full_name": "HarrieO/OnlineLearningToRank",
+"stars": 63
 },
 "onyx-dot-app": {
 "full_name": "onyx-dot-app/onyx",
@@ -3679,6 +3716,10 @@
 "open-weight": {
 "full_name": "xigh/open-weight-models",
 "stars": 91
+},
+"open-weights": {
+"full_name": "Open-Weights/Definition",
+"stars": 152
 },
 "openai-compatible": {
 "full_name": "kbykb/OpenAI-Compatible-API-Proxy-for-Z",
@@ -3946,6 +3987,10 @@
 "plain-english": {
 "full_name": "pavankat/big-o-in-plain-english",
 "stars": 253
+},
+"plan-before-code": {
+"full_name": "amirghazali1276-pixel/plan-before-code",
+"stars": 0
 },
 "plfm_radar": {
 "full_name": "NawfalMotii79/PLFM_RADAR",
@@ -4280,6 +4325,10 @@
 "full_name": "ZFC-Digital/puppeteer-real-browser",
 "stars": 1646
 },
+"real-data": {
+"full_name": "bytewax/awesome-public-real-time-datasets",
+"stars": 2999
+},
 "real-time": {
 "full_name": "CorentinJ/Real-Time-Voice-Cloning",
 "stars": 60223
@@ -4380,6 +4429,10 @@
 "stars": 0
 },
 "resumetipsforfreshers": null,
+"revenuecat": {
+"full_name": "RevenueCat/purchases-ios",
+"stars": 3099
+},
 "reverse": {
 "full_name": "zhaoxuya520/reverse-skill",
 "stars": 43206
@@ -4525,6 +4578,10 @@
 "stars": 224
 },
 "self-asked": null,
+"self-correcting": {
+"full_name": "sanowl/Self-Correcting-LLM--Reinforcement-Learning-",
+"stars": 39
+},
 "self-driving": {
 "full_name": "udacity/self-driving-car",
 "stars": 6316
@@ -4589,6 +4646,10 @@
 "shelf": {
 "full_name": "calibrain/shelfmark",
 "stars": 4152
+},
+"ship": {
+"full_name": "ehazlett/shipyard",
+"stars": 6308
 },
 "short-form": {
 "full_name": "DrewStewart7/ShortFormGenerator",
@@ -5071,6 +5132,10 @@
 "full_name": "toothbrush/debounce-mac",
 "stars": 201
 },
+"top": {
+"full_name": "hollischuang/toBeTopJavaer",
+"stars": 25265
+},
 "top-scoring": {
 "full_name": "Atrus619/Top-Scoring-Kaggle-Model-LANL-EQ-Prediction-4th-Place-",
 "stars": 4
@@ -5087,6 +5152,10 @@
 "trade": {
 "full_name": "nautechsystems/nautilus_trader",
 "stars": 30769
+},
+"trade-off": {
+"full_name": "ghostscript3r/poe-trade-official-site-enhancer",
+"stars": 89
 },
 "tradingtools": {
 "full_name": "SpiffSpaceman/TradingTools",
@@ -5208,6 +5277,10 @@
 "uxdesignmatters": {
 "full_name": "thomasyung/uxdesignmatters.org",
 "stars": 3
+},
+"v1": {
+"full_name": "snapshot-labs/snapshot-v1",
+"stars": 9070
 },
 "v2": {
 "full_name": "2dust/v2rayN",
@@ -5460,6 +5533,10 @@
 "websiteinspiration": {
 "full_name": "websiteinspiration/SolanaProject-frontend",
 "stars": 1
+},
+"websites": {
+"full_name": "sdmg15/Best-websites-a-programmer-should-visit",
+"stars": 76127
 },
 "websocket": {
 "full_name": "gorilla/websocket",

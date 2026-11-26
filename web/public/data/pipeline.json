@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-25T13:20:36+00:00",
-  "seconds": 1588.3,
+  "finished": "2026-11-26T13:00:46+00:00",
+  "seconds": 1651.6,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 334.78,
+    "seconds": 357.68,
     "rows": {
-     "repos": 4245
+     "repos": 4251
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 23.0,
+    "seconds": 19.58,
     "rows": {
-     "repos_mentioned": 2934
+     "repos_mentioned": 2930
     }
    },
    {
@@ -28,68 +28,68 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 62.98,
+    "seconds": 144.13,
     "rows": {
-     "fetched": 31,
-     "history": 500,
-     "creators_seen": 296
+     "fetched": 49,
+     "history": 519,
+     "creators_seen": 303
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 894.02,
+    "seconds": 838.12,
     "rows": {
-     "repos": 4382,
-     "from_hn_or_reels": 142
+     "repos": 4389,
+     "from_hn_or_reels": 144
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
     "seconds": 0.41,
     "rows": {
-     "repos": 4381,
-     "snapshots": 142727,
-     "snapshot_days": 33
+     "repos": 4388,
+     "snapshots": 147115,
+     "snapshot_days": 34
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 160.13,
+    "seconds": 161.71,
     "rows": {
-     "vectors": 4381,
+     "vectors": 4388,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 43.81,
+    "seconds": 53.55,
     "rows": {
-     "reels": 500,
-     "matched": 109,
+     "reels": 519,
+     "matched": 111,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.14,
+    "seconds": 3.77,
     "rows": {
      "added": 13
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 19.41,
+    "seconds": 20.3,
     "rows": {
-     "creators": 194,
-     "followers_filled": 5
+     "creators": 197,
+     "followers_filled": 3
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.94,
+    "seconds": 0.95,
     "rows": {
-     "repos": 4394,
-     "creators": 194,
+     "repos": 4401,
+     "creators": 197,
      "eligible_creators": 8
     }
    },
@@ -104,20 +104,20 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.88,
+    "seconds": 0.91,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
      "hit3": 0.417,
-     "mrr": 0.451
+     "mrr": 0.448
     }
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 18.2,
+    "seconds": 18.91,
     "rows": {
      "files": 7,
-     "repos": 4394
+     "repos": 4401
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4394 repositories"
+    "detail": "4401 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4394 vectors for 4394 repos"
+    "detail": "4401 vectors for 4401 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4389 \u2192 4394 (+0%)"
+    "detail": "4394 \u2192 4401 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "500 reels, 194 creators"
+    "detail": "519 reels, 197 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "407 unmatched (see review queue)"
+    "detail": "424 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -177,7 +177,7 @@
    "queries": 12,
    "hit1": 0.417,
    "hit3": 0.417,
-   "mrr": 0.451,
+   "mrr": 0.448,
    "rows": [
     {
      "query": "an AI agent that can use my web browser and click around websites for me",
@@ -297,7 +297,7 @@
       "anthropics/claude-code",
       "sst/opencode"
      ],
-     "first_hit": 6,
+     "first_hit": 8,
      "top3": [
       "cline/cline",
       "qwenlm/qwen-code",
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4394,
-  "snapshot_days": 33
+  "catalog": 4401,
+  "snapshot_days": 34
  },
  "history": [
-  {
-   "finished": "2026-10-26T09:22:29+00:00",
-   "seconds": 1634.1,
-   "catalog": 4310,
-   "failed": 0
-  },
   {
    "finished": "2026-10-27T09:22:35+00:00",
    "seconds": 1384.5,
@@ -532,6 +526,12 @@
    "finished": "2026-11-25T13:20:36+00:00",
    "seconds": 1588.3,
    "catalog": 4394,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-26T13:00:46+00:00",
+   "seconds": 1651.6,
+   "catalog": 4401,
    "failed": 0
   }
  ]
