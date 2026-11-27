@@ -98,6 +98,17 @@
   "seen": 9,
   "verified": true
  },
+ "ai.daily.jam": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 2122,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
+ },
  "ai.harssh": {
   "apify_feed": "2026-10-24",
   "business": false,
@@ -365,24 +376,26 @@
   "verified": false
  },
  "automationswithrahul": {
+  "apify_feed": "2026-11-27",
   "business": false,
   "checked": "2026-11-07",
   "first_seen": "2026-11-07",
   "followers": 1250,
   "followers_source": "apify",
-  "kept": 1,
-  "repo_reels": 0,
-  "seen": 1,
+  "kept": 7,
+  "repo_reels": 2,
+  "seen": 8,
   "verified": false
  },
  "avani.codes": {
+  "apify_feed": "2026-11-27",
   "business": false,
   "checked": "2026-10-29",
   "followers": 129870,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 3,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 9,
   "verified": true
  },
  "avello_tech": {
@@ -396,13 +409,14 @@
   "seen": 1
  },
  "badarmunir_official": {
+  "apify_feed": "2026-11-27",
   "business": false,
   "checked": "2026-11-06",
   "followers": 37878,
   "followers_source": "apify",
-  "kept": 1,
-  "repo_reels": 0,
-  "seen": 1,
+  "kept": 6,
+  "repo_reels": 1,
+  "seen": 9,
   "verified": false
  },
  "baptisteodonovan": {
@@ -598,6 +612,17 @@
   "seen": 15,
   "verified": true
  },
+ "cindie.zhu": {
+  "business": true,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 113742,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
+ },
  "codecraftman_": {
   "business": false,
   "checked": "2026-11-25",
@@ -647,7 +672,7 @@
  "computer__hub": {
   "first_seen": "2026-11-10",
   "followers": null,
-  "seen": 1
+  "seen": 2
  },
  "cracked.artificial": {
   "business": false,
@@ -888,7 +913,7 @@
   "followers_source": "apify",
   "kept": 1,
   "repo_reels": 1,
-  "seen": 1,
+  "seen": 2,
   "verified": false
  },
  "github": {
@@ -903,9 +928,9 @@
   "first_seen": "2026-10-30",
   "followers": 181660,
   "followers_source": "apify",
-  "kept": 2,
+  "kept": 3,
   "repo_reels": 1,
-  "seen": 2,
+  "seen": 3,
   "verified": false
  },
  "graphixguruz": {
@@ -1076,6 +1101,17 @@
   "followers": null,
   "seen": 1
  },
+ "ismailx_5": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 33540,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "itstundeanthony": {
   "first_seen": "2026-10-24",
   "kept": 0,
@@ -1110,6 +1146,17 @@
   "repo_reels": 0,
   "seen": 1,
   "verified": false
+ },
+ "jens.heitmann": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 96781,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 1,
+  "seen": 1,
+  "verified": true
  },
  "jesserurka": {
   "business": true,
@@ -1530,9 +1577,9 @@
   "checked": "2026-11-01",
   "followers": 83179,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 2,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 2,
   "verified": true
  },
  "nick_saraev": {
@@ -1541,9 +1588,9 @@
   "first_seen": "2026-10-24",
   "followers": 716610,
   "followers_source": "apify",
-  "kept": 22,
+  "kept": 23,
   "repo_reels": 9,
-  "seen": 22,
+  "seen": 23,
   "verified": true
  },
  "nirmalrathaur.ai": {
@@ -1715,9 +1762,9 @@
   "checked": "2026-10-24",
   "followers": 6835,
   "followers_source": "apify",
-  "kept": 20,
+  "kept": 21,
   "repo_reels": 5,
-  "seen": 20,
+  "seen": 21,
   "verified": true
  },
  "privatekey_ai": {
@@ -1949,6 +1996,17 @@
   "followers": null,
   "seen": 1
  },
+ "seb.ai": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 158167,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
+ },
  "sebastianhardy_": {
   "business": false,
   "checked": "2026-10-30",
@@ -2148,6 +2206,17 @@
   "followers": null,
   "seen": 2
  },
+ "swerikcodes": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 271234,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
+ },
  "sybrainsofficial": {
   "first_seen": "2026-11-15",
   "followers": null,
@@ -2259,6 +2328,17 @@
   "checked": "2026-11-23",
   "first_seen": "2026-11-23",
   "followers": 18777,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
+ "the_cyber_bite": {
+  "business": false,
+  "checked": "2026-11-27",
+  "first_seen": "2026-11-27",
+  "followers": 61312,
   "followers_source": "apify",
   "kept": 1,
   "repo_reels": 0,

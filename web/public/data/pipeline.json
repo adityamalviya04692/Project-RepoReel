@@ -1,20 +1,20 @@
 {
  "last": {
-  "finished": "2026-11-26T13:00:46+00:00",
-  "seconds": 1651.6,
+  "finished": "2026-11-27T12:48:41+00:00",
+  "seconds": 1793.0,
   "stages": [
    {
     "name": "discover \u00b7 GitHub search",
-    "seconds": 357.68,
+    "seconds": 339.67,
     "rows": {
-     "repos": 4251
+     "repos": 4254
     }
    },
    {
     "name": "hn \u00b7 Algolia mentions",
-    "seconds": 19.58,
+    "seconds": 18.31,
     "rows": {
-     "repos_mentioned": 2930
+     "repos_mentioned": 2907
     }
    },
    {
@@ -28,68 +28,68 @@
    },
    {
     "name": "reels \u00b7 discover on Instagram",
-    "seconds": 144.13,
+    "seconds": 170.92,
     "rows": {
-     "fetched": 49,
-     "history": 519,
-     "creators_seen": 303
+     "fetched": 46,
+     "history": 543,
+     "creators_seen": 310
     }
    },
    {
     "name": "enrich \u00b7 GitHub GraphQL",
-    "seconds": 838.12,
+    "seconds": 720.83,
     "rows": {
-     "repos": 4389,
-     "from_hn_or_reels": 144
+     "repos": 4394,
+     "from_hn_or_reels": 146
     }
    },
    {
     "name": "silver \u00b7 DuckDB transforms",
-    "seconds": 0.41,
+    "seconds": 0.48,
     "rows": {
-     "repos": 4388,
-     "snapshots": 147115,
-     "snapshot_days": 34
+     "repos": 4393,
+     "snapshots": 151508,
+     "snapshot_days": 35
     }
    },
    {
     "name": "embed \u00b7 all-MiniLM-L6-v2",
-    "seconds": 161.71,
+    "seconds": 188.07,
     "rows": {
-     "vectors": 4388,
+     "vectors": 4393,
      "dims": 384
     }
    },
    {
     "name": "match \u00b7 reels \u2192 repos",
-    "seconds": 53.55,
+    "seconds": 258.63,
     "rows": {
-     "reels": 519,
-     "matched": 111,
+     "reels": 543,
+     "matched": 115,
      "review_queue": 0
     }
    },
    {
     "name": "extend \u00b7 repos found in reels",
-    "seconds": 3.77,
+    "seconds": 3.58,
     "rows": {
      "added": 13
     }
    },
    {
     "name": "creators \u00b7 discover & vet",
-    "seconds": 20.3,
+    "seconds": 40.9,
     "rows": {
-     "creators": 197,
-     "followers_filled": 3
+     "creators": 204,
+     "followers_filled": 7
     }
    },
    {
     "name": "score \u00b7 health, momentum, trust",
-    "seconds": 0.95,
+    "seconds": 1.19,
     "rows": {
-     "repos": 4401,
-     "creators": 197,
+     "repos": 4406,
+     "creators": 204,
      "eligible_creators": 8
     }
    },
@@ -104,7 +104,7 @@
    },
    {
     "name": "eval \u00b7 golden queries",
-    "seconds": 0.91,
+    "seconds": 1.43,
     "rows": {
      "queries": 12,
      "hit1": 0.417,
@@ -114,10 +114,10 @@
    },
    {
     "name": "gold \u00b7 publish site data",
-    "seconds": 18.91,
+    "seconds": 22.82,
     "rows": {
      "files": 7,
-     "repos": 4401
+     "repos": 4406
     }
    }
   ],
@@ -125,7 +125,7 @@
    {
     "name": "catalog not empty",
     "status": "pass",
-    "detail": "4401 repositories"
+    "detail": "4406 repositories"
    },
    {
     "name": "unique repositories",
@@ -145,17 +145,17 @@
    {
     "name": "embeddings aligned",
     "status": "pass",
-    "detail": "4401 vectors for 4401 repos"
+    "detail": "4406 vectors for 4406 repos"
    },
    {
     "name": "catalog size stable",
     "status": "pass",
-    "detail": "4394 \u2192 4401 (+0%)"
+    "detail": "4401 \u2192 4406 (+0%)"
    },
    {
     "name": "reels reference known creators",
     "status": "pass",
-    "detail": "519 reels, 197 creators"
+    "detail": "543 reels, 204 creators"
    },
    {
     "name": "reels reference known repositories",
@@ -165,7 +165,7 @@
    {
     "name": "every reel matched to a repo",
     "status": "warn",
-    "detail": "424 unmatched (see review queue)"
+    "detail": "444 unmatched (see review queue)"
    },
    {
     "name": "plausible star velocity",
@@ -201,8 +201,8 @@
      "first_hit": 1,
      "top3": [
       "firecrawl/firecrawl",
-      "d4vinci/scrapling",
-      "0xmassi/webclaw"
+      "0xmassi/webclaw",
+      "d4vinci/scrapling"
      ]
     },
     {
@@ -350,16 +350,10 @@
     }
    ]
   },
-  "catalog": 4401,
-  "snapshot_days": 34
+  "catalog": 4406,
+  "snapshot_days": 35
  },
  "history": [
-  {
-   "finished": "2026-10-27T09:22:35+00:00",
-   "seconds": 1384.5,
-   "catalog": 3821,
-   "failed": 0
-  },
   {
    "finished": "2026-10-28T10:04:41+00:00",
    "seconds": 1487.3,
@@ -532,6 +526,12 @@
    "finished": "2026-11-26T13:00:46+00:00",
    "seconds": 1651.6,
    "catalog": 4401,
+   "failed": 0
+  },
+  {
+   "finished": "2026-11-27T12:48:41+00:00",
+   "seconds": 1793.0,
+   "catalog": 4406,
    "failed": 0
   }
  ]

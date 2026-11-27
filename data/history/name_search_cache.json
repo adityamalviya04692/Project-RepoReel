@@ -214,6 +214,10 @@
 "full_name": "zxs731/AIApps",
 "stars": 43
 },
+"aiarchitect": {
+"full_name": "Straitcode/AIArchitecture",
+"stars": 4
+},
 "aiart": {
 "full_name": "Jermic/awesome-aiart-pics-prompts",
 "stars": 553
@@ -221,6 +225,10 @@
 "aiasistant": {
 "full_name": "BrahimMaarouf/AiAsistant",
 "stars": 2
+},
+"aiassistant": {
+"full_name": "anisayari/AIAssistantStreamer",
+"stars": 113
 },
 "aiaudio": {
 "full_name": "smaranjitghose/AIAudioTranscriber",
@@ -250,9 +258,21 @@
 "full_name": "ai-builders/aibuilders-exam-thai-instructions",
 "stars": 6
 },
+"aicareers": {
+"full_name": "sumangc14122/aicareersuite",
+"stars": 1
+},
 "aicensorship": {
 "full_name": "jasonclarkagain/AICensorshipBypass",
 "stars": 0
+},
+"aicertification": {
+"full_name": "sebbrochet/aicertifications",
+"stars": 1
+},
+"aichatbot": {
+"full_name": "cheungchazz/WeChat-AIChatbot-WinOnly",
+"stars": 374
 },
 "aicheatcode": null,
 "aiclone": {
@@ -388,6 +408,10 @@
 "full_name": "Naotsun19B/UnrealAIIntegrationPlatform-Document",
 "stars": 13
 },
+"aijobs": {
+"full_name": "elchananvol/AIJobScraper",
+"stars": 4
+},
 "aimagic": {
 "full_name": "svendev888/aimagicx-final",
 "stars": 7
@@ -497,6 +521,10 @@
 "full_name": "QuantConnect/HandsOnAITradingBook",
 "stars": 374
 },
+"aitradingbot": {
+"full_name": "dmitryartuh/AITradingBot",
+"stars": 26
+},
 "aitrends": {
 "full_name": "Nouran99/ITI_mansoura_AITrends_final_students_projects",
 "stars": 3
@@ -579,6 +607,14 @@
 },
 "akash94ai": null,
 "algorithmicagility": null,
+"algorithmictrading": {
+"full_name": "JerBouma/AlgorithmicTrading",
+"stars": 1102
+},
+"algotrading": {
+"full_name": "ivopetiz/algotrading",
+"stars": 1722
+},
 "alibaba": {
 "full_name": "alibaba/open-code-review",
 "stars": 49212
@@ -664,6 +700,10 @@
 "full_name": "dariogriffo/ApiKeySample",
 "stars": 82
 },
+"apimonitoring": {
+"full_name": "Shatwik7/ApiMonitoring",
+"stars": 2
+},
 "app-building": {
 "full_name": "hamzafarooq/building-llm-applications-from-scratch",
 "stars": 2391
@@ -695,6 +735,10 @@
 "appsec": {
 "full_name": "paragonie/awesome-appsec",
 "stars": 7126
+},
+"appsecurity": {
+"full_name": "momoxiaoray/AppSecurityTool",
+"stars": 26
 },
 "arena": {
 "full_name": "id-Software/Quake-III-Arena",
@@ -779,6 +823,10 @@
 "full_name": "alfredtayloraero/AutomatedDesignOfCompositeSpacecraftStructures",
 "stars": 1
 },
+"automationagency": {
+"full_name": "cerdas-ai/automationagency",
+"stars": 0
+},
 "automationrevolution": null,
 "automationtools": {
 "full_name": "justeat/AutomationTools",
@@ -813,6 +861,15 @@
 "full_name": "fixpunkt-com/backendtools",
 "stars": 7
 },
+"backtesting": {
+"full_name": "kernc/backtesting.py",
+"stars": 9308
+},
+"badarmunir": {
+"full_name": "muhammadali1210/badarmunir",
+"stars": 1
+},
+"badarmunir_official": null,
 "baroobi": null,
 "baskaranbuilds": null,
 "beginner-friendly": {
@@ -841,6 +898,10 @@
 "billion-dollar": {
 "full_name": "codeReadyy/billion-dollar-galaxy",
 "stars": 7
+},
+"bitcoin": {
+"full_name": "bitcoin/bitcoin",
+"stars": 90772
 },
 "blueteam": {
 "full_name": "fabacab/awesome-cybersecurity-blueteam",
@@ -911,6 +972,10 @@
 "stars": 32
 },
 "burnstubbornfat": null,
+"businessautomation": {
+"full_name": "redhat-cop/businessautomation-cop",
+"stars": 62
+},
 "businessgrowth": {
 "full_name": "marvelg/businessgrowth",
 "stars": 0
@@ -972,6 +1037,10 @@
 "full_name": "Yulandia/CareerGoals",
 "stars": 0
 },
+"careergrowth": {
+"full_name": "softnshare/careergrowth",
+"stars": 98
+},
 "careerindata": {
 "full_name": "Reese0301/careerindatascience",
 "stars": 0
@@ -1009,6 +1078,10 @@
 "stars": 24507
 },
 "censorship-like": null,
+"certification": {
+"full_name": "sathishvj/awesome-gcp-certifications",
+"stars": 4501
+},
 "cfa-level": {
 "full_name": "PachaTech/CFA-Level-1",
 "stars": 45
@@ -1026,6 +1099,10 @@
 "chandigarhuniversity": {
 "full_name": "wie-chandigarhuniversity/HacktoberFest-2022",
 "stars": 8
+},
+"chatbotdevelopment": {
+"full_name": "ArthurPimentell/chatBotDevelopment",
+"stars": 2
 },
 "chatgpt-style": {
 "full_name": "lvwzhen/ChatGPT-Matrix-Style",
@@ -1071,9 +1148,21 @@
 "full_name": "sahaj-b/claudeAI-frontend-clone",
 "stars": 11
 },
+"claudecertification": {
+"full_name": "sadanandu/ClaudeCertification",
+"stars": 0
+},
+"claudecertified": {
+"full_name": "MarceloCFerraz/ClaudeCertifiedArchitect",
+"stars": 6
+},
 "claudefable5": {
 "full_name": "CristianSifuentes/_ClaudeFable5",
 "stars": 1
+},
+"claudepartnernetwork": {
+"full_name": "matiasmedina5/ClaudePartnerNetwork",
+"stars": 0
 },
 "claudeskill": {
 "full_name": "staruhub/ClaudeSkills",
@@ -1081,6 +1170,10 @@
 },
 "claudetips": {
 "full_name": "dcubasoy/claudetips",
+"stars": 0
+},
+"claudeultra": {
+"full_name": "miao1114/K5-L3B-DAY10-ClaudeUltraX20-PoCtoPilotGate1",
 "stars": 0
 },
 "clerkauth": {
@@ -1331,6 +1424,10 @@
 "full_name": "ochronus/contentresearch",
 "stars": 1
 },
+"contentstrategy": {
+"full_name": "JenWike/contentstrategy",
+"stars": 2
+},
 "context-focused": {
 "full_name": "Kunal88591/Privacy-Focused-Context-Aware-Digital-Wellbeing-System",
 "stars": 4
@@ -1415,6 +1512,18 @@
 "full_name": "HackWithSumit/WindowsPhishingPayloads-CreatorTools",
 "stars": 17
 },
+"crypto": {
+"full_name": "cryptomator/cryptomator",
+"stars": 16604
+},
+"crypto-basket": {
+"full_name": "Nilay27/crypto_baskets",
+"stars": 5
+},
+"cryptotrading": {
+"full_name": "Tomortec/CryptoTradingAgents",
+"stars": 288
+},
 "csestudents": {
 "full_name": "csestudents4226-cmd/csestudents4226-cmd",
 "stars": 0
@@ -1422,6 +1531,10 @@
 "csresources": {
 "full_name": "CompuuterJuiced/CSResources",
 "stars": 35
+},
+"cssanimation": {
+"full_name": "cssanimation/css-animation-101",
+"stars": 5050
 },
 "csstudent": {
 "full_name": "smalMUMU/CSstudent-ai-learning-journey",
@@ -1582,6 +1695,7 @@
 "full_name": "cryptocoyns/daytradingmethod",
 "stars": 35
 },
+"daytradingtips": null,
 "debuglife": {
 "full_name": "MINAKHAN142005/DebugLife",
 "stars": 1
@@ -2008,6 +2122,14 @@
 "full_name": "files-community/Files",
 "stars": 46184
 },
+"fileconversion": {
+"full_name": "IntelligenceX/fileconversion",
+"stars": 69
+},
+"fileconverter": {
+"full_name": "Tichau/FileConverter",
+"stars": 15808
+},
 "filmindustryai": null,
 "fine-tune": {
 "full_name": "ronitsingh10/FineTune",
@@ -2016,6 +2138,10 @@
 "fine-tuning": {
 "full_name": "Plachtaa/VITS-fast-fine-tuning",
 "stars": 5000
+},
+"fintech": {
+"full_name": "jc2744-fintech/taxguard-xai",
+"stars": 989
 },
 "fintechai": {
 "full_name": "anohana-007/FinTechAI",
@@ -2143,6 +2269,10 @@
 "freeapps": {
 "full_name": "PMZeroSkyline/FreeApps",
 "stars": 6
+},
+"freebies": {
+"full_name": "Revadike/epicgames-freebies-claimer",
+"stars": 2216
 },
 "freecodecamp": {
 "full_name": "freeCodeCamp/freeCodeCamp",
@@ -2302,6 +2432,10 @@
 "futureofwork": {
 "full_name": "ericboocock/futureofwork",
 "stars": 3
+},
+"futureskills": {
+"full_name": "kshitijkat/Wipro-FutureSkills-Preliminary-Programing-Test",
+"stars": 11
 },
 "futuretech": {
 "full_name": "Roxonn-FutureTech/Roxonn-Platform",
@@ -2533,9 +2667,17 @@
 "full_name": "growthbook/growthbook",
 "stars": 8553
 },
+"growthhacking": {
+"full_name": "wx-chevalier/GrowthHacking-Notes",
+"stars": 78
+},
 "growwithme": {
 "full_name": "Cherancherry/growwithme",
 "stars": 1
+},
+"gsap": {
+"full_name": "greensock/GSAP",
+"stars": 31355
 },
 "gta6": {
 "full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
@@ -2762,6 +2904,10 @@
 "full_name": "mairajfatima/imagineart-checkout-clarity-case-study",
 "stars": 1
 },
+"india": {
+"full_name": "covid19india/covid19india.github.io",
+"stars": 6797
+},
 "indiedev": {
 "full_name": "TDogVoid/indiedevdog-v2",
 "stars": 5
@@ -2836,6 +2982,7 @@
 "full_name": "InterviewTips/Java",
 "stars": 16
 },
+"ismailx_5": null,
 "itachi": {
 "full_name": "doma-itachi/Youtube-shorts-block",
 "stars": 306
@@ -2904,6 +3051,10 @@
 "full_name": "robobeau/JobInterviewStory",
 "stars": 55
 },
+"jobopportunity": {
+"full_name": "quicktech-as/JobOpportunity",
+"stars": 3
+},
 "jobreadyprojects": null,
 "jobs": {
 "full_name": "remoteintech/remote-jobs",
@@ -2963,6 +3114,46 @@
 "stars": 128945
 },
 "kunalthinks_ai": null,
+"l1": {
+"full_name": "elder-plinius/L1B3RT4S",
+"stars": 23554
+},
+"l10": {
+"full_name": "xuhuisheng/sonar-l10n-zh",
+"stars": 837
+},
+"l2": {
+"full_name": "l20n/l20n.js",
+"stars": 889
+},
+"l3": {
+"full_name": "tomer8007/widevine-l3-decryptor",
+"stars": 1247
+},
+"l4": {
+"full_name": "mholt/caddy-l4",
+"stars": 1829
+},
+"l5": {
+"full_name": "andersao/l5-repository",
+"stars": 4193
+},
+"l6": {
+"full_name": "clems4ever/torchserve-all-minilm-l6-v2",
+"stars": 35
+},
+"l7": {
+"full_name": "antvis/L7",
+"stars": 4085
+},
+"l8": {
+"full_name": "GlitchedPolygons/l8w8jwt",
+"stars": 174
+},
+"l9": {
+"full_name": "LeakIX/l9explore",
+"stars": 128
+},
 "large-scale": {
 "full_name": "openai/large-scale-curiosity",
 "stars": 829
@@ -3027,6 +3218,10 @@
 "full_name": "zhravan/LearningResources",
 "stars": 116
 },
+"learnn8n": {
+"full_name": "hc-codes/Learnn8n",
+"stars": 0
+},
 "learnpython": {
 "full_name": "xianhu/LearnPython",
 "stars": 8624
@@ -3090,6 +3285,10 @@
 "linkedinpost": {
 "full_name": "DivyamTalwar/LinkedinPost",
 "stars": 7
+},
+"linkedintips": {
+"full_name": "guilhermebarth/LinkedInTips",
+"stars": 0
 },
 "links": {
 "full_name": "hmjz100/LinkSwift",
@@ -3263,6 +3462,7 @@
 "full_name": "nylas/nylas-mail",
 "stars": 24727
 },
+"makefirstmillion": null,
 "makemoneyonline": {
 "full_name": "1414044032/MakeMoneyOnline",
 "stars": 2
@@ -3354,6 +3554,10 @@
 "full_name": "FoundationAgents/MetaGPT",
 "stars": 71004
 },
+"mid-session": {
+"full_name": "akrabat/rka-slim-session-middleware",
+"stars": 42
+},
 "mid-size": {
 "full_name": "sensai7/Card-Sized-Midi-Controller",
 "stars": 30
@@ -3439,6 +3643,14 @@
 "stars": 7491
 },
 "monetizecreativity": null,
+"montecarlo": {
+"full_name": "baggepinnen/MonteCarloMeasurements.jl",
+"stars": 297
+},
+"montecarlosimulation": {
+"full_name": "ZhijingEu/MonteCarloSimulation",
+"stars": 9
+},
 "moomoo": {
 "full_name": "lookatwallstreet/WallTrading-Bot-MooMoo-Futu",
 "stars": 121
@@ -3462,6 +3674,10 @@
 "motiondesign": {
 "full_name": "Yusuke57/MotionDesignFES",
 "stars": 34
+},
+"motionforge": {
+"full_name": "aykutucesai/motionforge",
+"stars": 262
 },
 "motiongraphics": {
 "full_name": "lorenz-MotionGraphics/lorenz-MotionGraphics",
@@ -3515,6 +3731,26 @@
 "muse": {
 "full_name": "musescore/MuseScore",
 "stars": 15320
+},
+"n8nautomation": {
+"full_name": "uzeeibekwe/n8nautomation",
+"stars": 1
+},
+"n8ncourse": {
+"full_name": "AbrarTunio/n8ncourse",
+"stars": 2
+},
+"n8ncreator": {
+"full_name": "rodrigosilvacio/lovable-n8ncreator",
+"stars": 0
+},
+"n8ntutorial": {
+"full_name": "satyamranatc/n8nTutorial",
+"stars": 0
+},
+"n8nworkflows": {
+"full_name": "nusquama/n8nworkflows.xyz",
+"stars": 2554
 },
 "naruto": {
 "full_name": "duorua/narutomobile",
@@ -3594,6 +3830,10 @@
 "full_name": "kelseyhightower/nocode",
 "stars": 65949
 },
+"nocodeautomation": {
+"full_name": "ttvamartical/nocodeautomation7342",
+"stars": 0
+},
 "nocodedevelopment": {
 "full_name": "kensudogit/noCodeDevelopmentPlatform",
 "stars": 0
@@ -3635,6 +3875,14 @@
 "nvidianim": {
 "full_name": "kinfey/Microsoft-Phi-3-NvidiaNIMWorkshop",
 "stars": 22
+},
+"octo": {
+"full_name": "ovity/octotree",
+"stars": 23331
+},
+"octobot": {
+"full_name": "Drakkar-Software/OctoBot",
+"stars": 6991
 },
 "off-grid": {
 "full_name": "off-grid-ai/OGAM",
@@ -3684,6 +3932,10 @@
 "onlinebusiness": {
 "full_name": "AdelinGhanaem/OnlineBusinessCatalog",
 "stars": 4
+},
+"onlinecourse": {
+"full_name": "KartikTalwar/OnlineCourses",
+"stars": 111
 },
 "onlinelearning": {
 "full_name": "HarrieO/OnlineLearningToRank",
@@ -3773,6 +4025,10 @@
 "opensourcecode": {
 "full_name": "dyyibang/MelonRewrite-OpenSourceCode",
 "stars": 13
+},
+"opensourcemaintainer": {
+"full_name": "0xjah/OpenSourceMaintainer",
+"stars": 0
 },
 "opensourceproject": {
 "full_name": "hjhejun/OpenSourceProject_C",
@@ -3869,6 +4125,10 @@
 "pandaslibrary": {
 "full_name": "ashwini198/PandasLibraryTutorial",
 "stars": 3
+},
+"papertrading": {
+"full_name": "Shiroim/astrbot_plugin_papertrading",
+"stars": 13
 },
 "pay-per-prompt": {
 "full_name": "nearai/pay-per-prompt",
@@ -4097,6 +4357,10 @@
 "full_name": "rushindrasinha/ProductivityHacks",
 "stars": 2
 },
+"productivitytools": {
+"full_name": "philippleidig/TwinCAT.ProductivityTools",
+"stars": 62
+},
 "productvalidation": {
 "full_name": "rottingham/ProductValidation",
 "stars": 1
@@ -4150,9 +4414,17 @@
 "stars": 7
 },
 "projectswithsourcecode": null,
+"promovideo": {
+"full_name": "jessegoetz55-design/PromoVideo",
+"stars": 0
+},
 "prompt": {
 "full_name": "f/prompts.chat",
 "stars": 174364
+},
+"promptinjection": {
+"full_name": "darkfiv/PromptInjectionScanner",
+"stars": 134
 },
 "promptlibrary": {
 "full_name": "MrXie23/PromptLibrary",
@@ -4213,6 +4485,10 @@
 "full_name": "kannansingaravelu/PythonResources",
 "stars": 72
 },
+"pythontrading": {
+"full_name": "LucaBallan/PythonTradingPlatform",
+"stars": 15
+},
 "q4": {
 "full_name": "michielpost/Q42.HueApi",
 "stars": 420
@@ -4220,6 +4496,10 @@
 "q4_k_m": {
 "full_name": "PrinceNanChan/AI_Voice_Agent-Phi-2_Q4_K_M",
 "stars": 4
+},
+"quanttrading": {
+"full_name": "letianzj/QuantTrading",
+"stars": 172
 },
 "qwen-image-2": {
 "full_name": "QwenLM/Qwen-Image-2.1",
@@ -4455,6 +4735,10 @@
 "stars": 0
 },
 "risewithrathi": null,
+"riskmanagement": {
+"full_name": "albahnsen/ML_RiskManagement",
+"stars": 266
+},
 "roadmap": {
 "full_name": "nilbuild/developer-roadmap",
 "stars": 370306
@@ -4565,6 +4849,10 @@
 "stars": 20
 },
 "screenstudioalternative": null,
+"scriptwriting": {
+"full_name": "jimmyslagle/anti-ai-slop-scriptwriting",
+"stars": 13
+},
 "scroll-stopping": {
 "full_name": "BTheofil/StoppingScroll",
 "stars": 0
@@ -4572,6 +4860,10 @@
 "secret": {
 "full_name": "trimstray/the-book-of-secret-knowledge",
 "stars": 252873
+},
+"secure": {
+"full_name": "imthenachoman/How-To-Secure-A-Linux-Server",
+"stars": 32106
 },
 "security-tests": {
 "full_name": "akto-api-security/30-API-security-tests",
@@ -4717,6 +5009,10 @@
 "full_name": "shu223/SlowMotionVideoRecorder",
 "stars": 490
 },
+"smallbusiness": {
+"full_name": "jayambadkar/SmallBusinessConnector",
+"stars": 18
+},
 "smartsoftware": {
 "full_name": "gerotom123/grupo_6_SmartSoftware",
 "stars": 2
@@ -4724,6 +5020,10 @@
 "socanalyst": {
 "full_name": "danieleperera/SocAnalystArsenal",
 "stars": 43
+},
+"socialmediamarketing": {
+"full_name": "LMaicelo/SocialMediaMarketing",
+"stars": 1
 },
 "softaculous": {
 "full_name": "myadmin-plugins/softaculous-licensing",
@@ -4830,6 +5130,10 @@
 "full_name": "StockSharp/StockSharp",
 "stars": 11033
 },
+"stockscanner": {
+"full_name": "FarhoudFlair/StockScanner",
+"stars": 8
+},
 "strixai": {
 "full_name": "roshanraundal15/StrixAI",
 "stars": 0
@@ -4869,6 +5173,10 @@
 "superpowers": {
 "full_name": "obra/superpowers",
 "stars": 304547
+},
+"swarm": {
+"full_name": "openai/swarm",
+"stars": 22177
 },
 "swiftonsecurity": {
 "full_name": "SwiftOnSecurity/sysmon-config",
@@ -5026,6 +5334,10 @@
 "full_name": "FueledAmp/TechSavvyGranny",
 "stars": 7
 },
+"techskills": {
+"full_name": "debabratasaha-dev/techskills",
+"stars": 10
+},
 "techstack": {
 "full_name": "Get-Tech-Stack/TechStack",
 "stars": 500
@@ -5106,6 +5418,14 @@
 "full_name": "ThreatHuntingProject/ThreatHunting",
 "stars": 1899
 },
+"threejs": {
+"full_name": "img2threejs/img2threejs",
+"stars": 21991
+},
+"thumbnails": {
+"full_name": "SmileyChris/easy-thumbnails",
+"stars": 1408
+},
 "tier2college": null,
 "tiktok": {
 "full_name": "Evil0ctal/Douyin_TikTok_Download_API",
@@ -5156,6 +5476,22 @@
 "trade-off": {
 "full_name": "ghostscript3r/poe-trade-official-site-enhancer",
 "stars": 89
+},
+"tradingautomation": {
+"full_name": "tamingnifty-Youtube/TradingAutomation",
+"stars": 3
+},
+"tradingbot": {
+"full_name": "ilcardella/TradingBot",
+"stars": 283
+},
+"tradingeducation": {
+"full_name": "dmitriykotov333/TradingEducation",
+"stars": 1
+},
+"tradingplan": {
+"full_name": "zuluchaka/tradingplan",
+"stars": 21
 },
 "tradingtools": {
 "full_name": "SpiffSpaceman/TradingTools",
@@ -5234,6 +5570,10 @@
 "full_name": "fireice-uk/xmr-stak",
 "stars": 4058
 },
+"ultra": {
+"full_name": "ultralytics/ultralytics",
+"stars": 63804
+},
 "uncensoredai": {
 "full_name": "kalm88/UncensoredAI",
 "stars": 1
@@ -5245,6 +5585,10 @@
 "upcode": {
 "full_name": "Srivaths-P/UpCode",
 "stars": 54
+},
+"upskilling": {
+"full_name": "renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp",
+"stars": 76
 },
 "useful": {
 "full_name": "oldratlee/useful-scripts",
@@ -5273,6 +5617,10 @@
 "ux": {
 "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
 "stars": 139820
+},
+"uxdesign": {
+"full_name": "JakeSteam/uxdesign-certificate-notes",
+"stars": 37
 },
 "uxdesignmatters": {
 "full_name": "thomasyung/uxdesignmatters.org",
@@ -5356,6 +5704,10 @@
 "full_name": "DuxSec/videoGenerator",
 "stars": 296
 },
+"videomarketing": {
+"full_name": "Afrimann/videomarketingclone",
+"stars": 1
+},
 "videoproduction": {
 "full_name": "yarinka82/Project_Videoproduction",
 "stars": 3
@@ -5369,6 +5721,10 @@
 "stars": 24
 },
 "viralvideo": {
+"full_name": "FriesFlorian/viralvideos",
+"stars": 65
+},
+"viralvideos": {
 "full_name": "FriesFlorian/viralvideos",
 "stars": 65
 },
@@ -5405,6 +5761,10 @@
 "vram": {
 "full_name": "Overv/vramfs",
 "stars": 1553
+},
+"vulnerability-hunting": {
+"full_name": "khinlapyaewoon-cyberdev/Vulnerability-Driven-Defensive-Threat-Hunting---THREAT-HUNT",
+"stars": 1
 },
 "vulnerabilityscanning": {
 "full_name": "whitesea5189/vulnerabilityScanning",
@@ -5449,6 +5809,10 @@
 "webagents": {
 "full_name": "w3c-cg/webagents",
 "stars": 49
+},
+"webanimation": {
+"full_name": "yuneco/webanimation-star",
+"stars": 14
 },
 "webappdevelopment": {
 "full_name": "No-Country-simulation/S02-26-Equipo12-WebAppDevelopment",
@@ -5594,6 +5958,10 @@
 "full_name": "WordPress/WordPress",
 "stars": 21500
 },
+"workflowautomation": {
+"full_name": "yhzhu99/MedAgentBoard-WorkflowAutomation",
+"stars": 2
+},
 "workflowhack": {
 "full_name": "BlenderChen/workflowHackathon",
 "stars": 0
@@ -5638,6 +6006,10 @@
 "full_name": "aahashemi/YouTubeAutomation-Reddit",
 "stars": 254
 },
+"youtubegrowth": {
+"full_name": "splt240/YouTubeGrowth",
+"stars": 0
+},
 "youtuber": {
 "full_name": "JoseDeFreitas/awesome-youtubers",
 "stars": 7942
@@ -5645,6 +6017,10 @@
 "youtubers": {
 "full_name": "JoseDeFreitas/awesome-youtubers",
 "stars": 7940
+},
+"youtubeshorts": {
+"full_name": "rc19/YoutubeShortsGeneration",
+"stars": 10
 },
 "youtubetips": null,
 "youtubetools": {
@@ -5662,6 +6038,10 @@
 "zelda": {
 "full_name": "Zelda64Recomp/Zelda64Recomp",
 "stars": 7515
+},
+"zero-dollar": {
+"full_name": "marmelab/ZeroDollarHomePage",
+"stars": 44
 },
 "zerotofounder": null,
 "zoom-in": {
