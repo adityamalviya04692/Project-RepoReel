@@ -96,6 +96,10 @@
 "full_name": "MichaelCade/90DaysOfDevOps",
 "stars": 29860
 },
+"a1": {
+"full_name": "a11yproject/a11yproject.com",
+"stars": 3913
+},
 "aarohiinframe": null,
 "abacusai": {
 "full_name": "abacusai/Long-Context",
@@ -627,6 +631,10 @@
 "full_name": "nextcloud/all-in-one",
 "stars": 10801
 },
+"always-free": {
+"full_name": "hashirahmad/Best-always-free-tier-cloud-platforms",
+"stars": 201
+},
 "always-on": {
 "full_name": "pradt2/always-online-stun",
 "stars": 1046
@@ -1116,6 +1124,10 @@
 "full_name": "chatwoot/chatwoot",
 "stars": 39028
 },
+"check-up": {
+"full_name": "raineorshine/npm-check-updates",
+"stars": 10335
+},
 "china": {
 "full_name": "TapXWorld/ChinaTextbook",
 "stars": 83901
@@ -1139,6 +1151,10 @@
 "cinematicvideo": {
 "full_name": "aiindonesiaart/cinematicvideo-promptgenerator",
 "stars": 0
+},
+"claude-style": {
+"full_name": "Nwflower/dsh-claude-style",
+"stars": 736
 },
 "claude3": {
 "full_name": "firecrawl/claude37TrendFinder",
@@ -1307,6 +1323,10 @@
 "codingcommunity": {
 "full_name": "shengchengchao/CodingCommunity",
 "stars": 2
+},
+"codingforstudents": {
+"full_name": "emaanfatima757/codingforstudents",
+"stars": 0
 },
 "codingfromscratch": {
 "full_name": "camoyphillips/codingfromscratch",
@@ -2101,6 +2121,10 @@
 "full_name": "mhsefidgar/FacelessYoutubeData",
 "stars": 5
 },
+"fastest-growing": {
+"full_name": "davidlifschitz/fastest-growing-finance-repos",
+"stars": 4
+},
 "fatlossformen": null,
 "fcksignups": {
 "full_name": "brianmarhel-web/FckSignups",
@@ -2290,6 +2314,10 @@
 "full_name": "Asver77/freeDeveloperResources",
 "stars": 0
 },
+"freedevelopertools": {
+"full_name": "code-celestialminds/freedevelopertools",
+"stars": 3
+},
 "freedevtools": {
 "full_name": "HexmosTech/FreeDevTools",
 "stars": 66
@@ -2309,6 +2337,14 @@
 "freeflow": {
 "full_name": "zachlatta/freeflow",
 "stars": 3025
+},
+"freefordev": {
+"full_name": "FreeForDev/FreeForDev",
+"stars": 309
+},
+"freehosting": {
+"full_name": "3uj/FreeHosting",
+"stars": 1
 },
 "freelancing": {
 "full_name": "sam-hosseini/freelancing-in-finland",
@@ -2344,6 +2380,10 @@
 },
 "freevoiceai": null,
 "freevoiceover": null,
+"freevps": {
+"full_name": "DoMicroTasks/freevps",
+"stars": 5
+},
 "fresherresume": {
 "full_name": "NandkishorTiwari/fresherresume",
 "stars": 0
@@ -2609,6 +2649,10 @@
 "full_name": "eliranwong/googleaistudio",
 "stars": 8
 },
+"googleantigravity": {
+"full_name": "MatheusAlvarez/Jogo-GoogleAntigravity",
+"stars": 4
+},
 "googleartemis": null,
 "googlemapscraper": {
 "full_name": "SoCloseSociety/GoogleMapScraper",
@@ -2633,6 +2677,10 @@
 "gpt-6": {
 "full_name": "3641397194-wq/gpt6-Astra",
 "stars": 1434
+},
+"gpt-oss-120b": {
+"full_name": "LivioGama/gpt-oss-120b-MAX",
+"stars": 15
 },
 "gpu": {
 "full_name": "BradLarson/GPUImage",
@@ -3985,6 +4033,10 @@
 "full_name": "pujan-modha/openalternative",
 "stars": 5
 },
+"openchatcut": {
+"full_name": "0xsline/OpenChatCut",
+"stars": 3385
+},
 "openclaude": {
 "full_name": "Twigpine/openclaude",
 "stars": 34311
@@ -4073,6 +4125,10 @@
 "opusclip": {
 "full_name": "tdollar15/OpusClip-Clone",
 "stars": 30
+},
+"oraclecloud": {
+"full_name": "MallocArray/obico-oraclecloud",
+"stars": 79
 },
 "oral-care": {
 "full_name": "wasit7/DeepOralCare",
@@ -5227,6 +5283,10 @@
 "full_name": "Luur/SwiftEchoes-Tips",
 "stars": 958
 },
+"t3": {
+"full_name": "pingdotgg/t3code",
+"stars": 82568
+},
 "tableau": {
 "full_name": "tableau/TabPy",
 "stars": 1654
@@ -5520,6 +5580,10 @@
 "tubeguruji": {
 "full_name": "mdshorif-islam/TubeGuruji",
 "stars": 0
+},
+"tv-style": {
+"full_name": "eTakazawa/stylegan-wasm-with-tvm",
+"stars": 4
 },
 "twitter": {
 "full_name": "twitter/the-algorithm",

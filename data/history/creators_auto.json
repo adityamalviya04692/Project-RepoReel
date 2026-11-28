@@ -99,14 +99,15 @@
   "verified": true
  },
  "ai.daily.jam": {
+  "apify_feed": "2026-11-28",
   "business": false,
   "checked": "2026-11-27",
   "first_seen": "2026-11-27",
   "followers": 2122,
   "followers_source": "apify",
-  "kept": 1,
+  "kept": 3,
   "repo_reels": 0,
-  "seen": 1,
+  "seen": 9,
   "verified": true
  },
  "ai.harssh": {
@@ -246,6 +247,17 @@
   "kept": 19,
   "repo_reels": 1,
   "seen": 19,
+  "verified": false
+ },
+ "almu_yousef": {
+  "business": false,
+  "checked": "2026-11-28",
+  "first_seen": "2026-11-28",
+  "followers": 27631,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
   "verified": false
  },
  "alpha_tek_sl": {
@@ -420,25 +432,27 @@
   "verified": false
  },
  "baptisteodonovan": {
+  "apify_feed": "2026-11-28",
   "business": true,
   "checked": "2026-11-09",
   "first_seen": "2026-11-09",
   "followers": 10637,
   "followers_source": "apify",
-  "kept": 1,
-  "repo_reels": 0,
-  "seen": 1,
+  "kept": 4,
+  "repo_reels": 2,
+  "seen": 9,
   "verified": true
  },
  "baqar.dev": {
+  "apify_feed": "2026-11-28",
   "business": false,
   "checked": "2026-10-26",
   "first_seen": "2026-10-24",
   "followers": 14356,
   "followers_source": "apify",
-  "kept": 10,
+  "kept": 13,
   "repo_reels": 1,
-  "seen": 10,
+  "seen": 18,
   "verified": true
  },
  "baroi.ai": {
@@ -679,9 +693,9 @@
   "checked": "2026-10-25",
   "followers": 50170,
   "followers_source": "apify",
-  "kept": 3,
+  "kept": 4,
   "repo_reels": 1,
-  "seen": 3,
+  "seen": 4,
   "verified": false
  },
  "cursorhub": {
@@ -1475,6 +1489,17 @@
   "seen": 1,
   "verified": true
  },
+ "morensaraev": {
+  "business": false,
+  "checked": "2026-11-28",
+  "first_seen": "2026-11-28",
+  "followers": 957,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": false
+ },
  "motionreel.dev": {
   "business": false,
   "checked": "2026-11-11",
@@ -1995,6 +2020,17 @@
   "first_seen": "2026-11-23",
   "followers": null,
   "seen": 1
+ },
+ "sansser.ai": {
+  "business": false,
+  "checked": "2026-11-28",
+  "first_seen": "2026-11-28",
+  "followers": 12418,
+  "followers_source": "apify",
+  "kept": 1,
+  "repo_reels": 0,
+  "seen": 1,
+  "verified": true
  },
  "seb.ai": {
   "business": false,
